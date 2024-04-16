@@ -1,0 +1,81 @@
+@article{Anand2015ANA,
+  title={A Novel and Efficient Selection Method in Genetic Algorithm},
+  author={Smit Anand and Nishat Afreen and Shama Yazdani},
+  journal={International Journal of Computer Applications},
+  year={2015},
+  volume={129},
+  pages={7-12},
+  url={https://api.semanticscholar.org/CorpusID:1795409}
+}
+
+@article{umbarkar2015crossover,
+  title={Crossover operators in genetic algorithms: a review.},
+  author={Umbarkar, Anant J and Sheth, Pranali D},
+  journal={ICTACT journal on soft computing},
+  volume={6},
+  number={1},
+  year={2015}
+}
+
+@ARTICLE{Dockhorn2022,
+  author={Dockhorn, Alexander and Lucas, Simon},
+  journal={IEEE Computational Intelligence Magazine}, 
+  title={Choosing Representation, Mutation, and Crossover in Genetic Algorithms}, 
+  year={2022},
+  volume={17},
+  number={4},
+  pages={52-53},
+  keywords={Evolutionary computation;Genetics;Genetic algorithms},
+  doi={10.1109/MCI.2022.3199626}}
+
+
+
+@article{Hasni2013,
+	abstract = {This paper presents a new hybrid genetic algorithm for solving the container loading problem in the general case, precisely when the boxes have no orientation constraints. In order to improve the genetic algorithm efficiency, we developed a hybrid method, based on deterministic approaches combining the wall-building, level-slice approach and strip packing. A serie of experiments was achieved on 47 related benchmarks from the OR-Library. We could reach an average utilization of 94.47{\%} and an average computation time of 840s on a 1.7 GHz core duo.},
+	author = {Hasni, Hamadi and Sabri, Houssem},
+	date = {2013/03/01},
+	date-added = {2024-04-09 9:27:15 PM +0200},
+	date-modified = {2024-04-09 9:27:15 PM +0200},
+	doi = {10.1007/s10852-012-9179-3},
+	id = {Hasni2013},
+	isbn = {1572-9214},
+	journal = {Journal of Mathematical Modelling and Algorithms in Operations Research},
+	number = {1},
+	pages = {67--84},
+	title = {On a Hybrid Genetic Algorithm for Solving the Container Loading Problem with no Orientation Constraints},
+	url = {https://doi.org/10.1007/s10852-012-9179-3},
+	volume = {12},
+	year = {2013},
+	bdsk-url-1 = {https://doi.org/10.1007/s10852-012-9179-3}}
+
+
+@inproceedings{karabulut2004hybrid,
+  title={A hybrid genetic algorithm for packing in 3D with deepest bottom left with fill method},
+  author={Karabulut, Korhan and {\.I}nceo{\u{g}}lu, Mustafa Murat},
+  booktitle={International Conference on Advances in Information Systems},
+  pages={441--450},
+  year={2004},
+  organization={Springer}
+}
+
+@INPROCEEDINGS{wang2010hybrid,
+  author={Wang, Hongfeng and Yanjie Chen},
+  booktitle={2010 IEEE Fifth International Conference on Bio-Inspired Computing: Theories and Applications (BIC-TA)}, 
+  title={A hybrid genetic algorithm for 3D bin packing problems}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={703-707},
+  keywords={},
+  doi={10.1109/BICTA.2010.5645211}}
+
+@article{kang2012hybrid,
+  title={A hybrid genetic algorithm with a new packing strategy for the three-dimensional bin packing problem},
+  author={Kang, Kyungdaw and Moon, Ilkyeong and Wang, Hongfeng},
+  journal={Applied Mathematics and Computation},
+  volume={219},
+  number={3},
+  pages={1287--1299},
+  year={2012},
+  publisher={Elsevier}
+}

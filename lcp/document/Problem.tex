@@ -1,0 +1,11 @@
+\section{Formulación del problema}
+
+Siendo un contenedor de ancho $W$, largo $L$, alto $H$, y una capacidad de carga $P$,
+se tiene definido unos tipos de paquetes $t \in T = \{0, 1, 2, \ldots, n\}$, donde cada tipo $t$ posee ciertas dimensiones de ancho $w_t$, largo $l_t$, alto $h_t$, también posee un peso $p_t$ y un costo $c_t$, además se conoce la cantidad máxima de paquetes por cada tipo $q_t$ que un contenedor puede tener.
+En este problema, consideramos que $W$, $L$, $H$ y $P$ , $w_t$, $l_t$, $h_t$, $p_t$, $q_t$ son enteros positivos.
+
+Se tienen restricciones de rotación debido al enfoque de carga manual, en el cual se establece que $\forall r \in r_t, r \in \{0, 1\}, t \in T$ donde $0$ representa que el tipo no se encuentra girado y $1$ que el tipo está girado 90 grados en el eje $x$, lo que implica que los anchos y largos pueden intercambiarse, mientras que la altura no puede ser modificada.
+
+Por otro lado para facilitar la carga manual, se debe disponer de un orden donde cada paquete del mismo tipo debe ser cargado de manera contigua.
+
+El problema consiste en determinar la cantidad de paquetes por cada tipo a cargar $\tilde{q}_t$ (la cual no puede superar al máximo establecido por tipo, $0 \leq \tilde{q}_t \leq q_t$) y el orden de carga de cada tipo $o_t$ con determinada rotación $r_t$, de tal modo que se pueda obtener la disposición óptima de los paquetes en el contenedor, asegurando el cumplimiento de las restricciones relacionadas al espacio disponible y el peso. Además, se busca maximizar la utilización del espacio del contenedor y al mismo tiempo el costo de la carga.

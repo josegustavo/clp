@@ -1,0 +1,3162 @@
+[
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    328,
+                    766
+                ],
+                "value": 72108176,
+                "volume": 72108176,
+                "min_count": 17,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 21,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 14,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    766
+                ],
+                "value": 72108176,
+                "volume": 72108176,
+                "min_count": 18,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 21,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    575
+                ],
+                "value": 108256400,
+                "volume": 108256400,
+                "min_count": 25,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 28,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    328
+                ],
+                "value": 81098000,
+                "volume": 81098000,
+                "min_count": 85,
+                "max_count": 118,
+                "solution": {
+                    "box_count": 112,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    520,
+                    460,
+                    766
+                ],
+                "value": 183227200,
+                "volume": 183227200,
+                "min_count": 13,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 15,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    430,
+                    328,
+                    328
+                ],
+                "value": 46261120,
+                "volume": 46261120,
+                "min_count": 83,
+                "max_count": 107,
+                "solution": {
+                    "box_count": 98,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 15,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    328
+                ],
+                "value": 144216352,
+                "volume": 144216352,
+                "min_count": 17,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 21,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 16,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    382,
+                    383,
+                    575
+                ],
+                "value": 84125950,
+                "volume": 84125950,
+                "min_count": 122,
+                "max_count": 180,
+                "solution": {
+                    "box_count": 144,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    575
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 20,
+                "max_count": 30,
+                "solution": {
+                    "box_count": 24,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    766
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 16,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 18,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 8,
+                "max_count": 9,
+                "solution": {
+                    "box_count": 9,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    575
+                ],
+                "value": 189778750,
+                "volume": 189778750,
+                "min_count": 13,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    766
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 15,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 15,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 17,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 20,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    460
+                ],
+                "value": 121458400,
+                "volume": 121458400,
+                "min_count": 19,
+                "max_count": 31,
+                "solution": {
+                    "box_count": 25,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 20,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 24,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 19,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 20,
+                    "order": 4
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63364086840,
+            "box_count": 679,
+            "value_total": 63364086840
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    430,
+                    460,
+                    575
+                ],
+                "value": 113735000,
+                "volume": 113735000,
+                "min_count": 36,
+                "max_count": 44,
+                "solution": {
+                    "box_count": 40,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 12,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 12,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 16,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    766
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 28,
+                "max_count": 42,
+                "solution": {
+                    "box_count": 36,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    328
+                ],
+                "value": 108256400,
+                "volume": 108256400,
+                "min_count": 23,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 28,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    717,
+                    575,
+                    575
+                ],
+                "value": 237058125,
+                "volume": 237058125,
+                "min_count": 25,
+                "max_count": 35,
+                "solution": {
+                    "box_count": 32,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 14,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 16,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 19,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 20,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 13,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    383
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 23,
+                "max_count": 35,
+                "solution": {
+                    "box_count": 30,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    430,
+                    383,
+                    460
+                ],
+                "value": 75757400,
+                "volume": 75757400,
+                "min_count": 56,
+                "max_count": 68,
+                "solution": {
+                    "box_count": 60,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    574,
+                    287,
+                    328
+                ],
+                "value": 54034064,
+                "volume": 54034064,
+                "min_count": 55,
+                "max_count": 68,
+                "solution": {
+                    "box_count": 56,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    460
+                ],
+                "value": 50563660,
+                "volume": 50563660,
+                "min_count": 26,
+                "max_count": 35,
+                "solution": {
+                    "box_count": 30,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    520,
+                    766,
+                    766
+                ],
+                "value": 305113120,
+                "volume": 305113120,
+                "min_count": 7,
+                "max_count": 9,
+                "solution": {
+                    "box_count": 9,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    328
+                ],
+                "value": 61753216,
+                "volume": 61753216,
+                "min_count": 46,
+                "max_count": 59,
+                "solution": {
+                    "box_count": 49,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 23,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 30,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 12,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 15,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 21,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 24,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    460
+                ],
+                "value": 90988000,
+                "volume": 90988000,
+                "min_count": 43,
+                "max_count": 59,
+                "solution": {
+                    "box_count": 50,
+                    "order": 17
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63402593248,
+            "box_count": 581,
+            "value_total": 63402593248
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    766,
+                    328
+                ],
+                "value": 72108176,
+                "volume": 72108176,
+                "min_count": 20,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 21,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    328
+                ],
+                "value": 36054088,
+                "volume": 36054088,
+                "min_count": 42,
+                "max_count": 43,
+                "solution": {
+                    "box_count": 42,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    766
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 13,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 15,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    766
+                ],
+                "value": 144216352,
+                "volume": 144216352,
+                "min_count": 19,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 21,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 10,
+                "max_count": 13,
+                "solution": {
+                    "box_count": 12,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    382,
+                    575,
+                    460
+                ],
+                "value": 101039000,
+                "volume": 101039000,
+                "min_count": 59,
+                "max_count": 74,
+                "solution": {
+                    "box_count": 60,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    575
+                ],
+                "value": 189778750,
+                "volume": 189778750,
+                "min_count": 12,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 16,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    382,
+                    460,
+                    575
+                ],
+                "value": 101039000,
+                "volume": 101039000,
+                "min_count": 48,
+                "max_count": 65,
+                "solution": {
+                    "box_count": 60,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 24,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 28,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    690,
+                    766,
+                    766
+                ],
+                "value": 404861640,
+                "volume": 404861640,
+                "min_count": 14,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 18,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    766
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 12,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 15,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 42,
+                "max_count": 50,
+                "solution": {
+                    "box_count": 48,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 122,
+                "max_count": 172,
+                "solution": {
+                    "box_count": 140,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 9,
+                "max_count": 15,
+                "solution": {
+                    "box_count": 12,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    766
+                ],
+                "value": 72108176,
+                "volume": 72108176,
+                "min_count": 16,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 21,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 21,
+                "max_count": 34,
+                "solution": {
+                    "box_count": 28,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 16,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 16,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 19,
+                "max_count": 25,
+                "solution": {
+                    "box_count": 24,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 32,
+                "max_count": 43,
+                "solution": {
+                    "box_count": 36,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    430,
+                    383,
+                    460
+                ],
+                "value": 75757400,
+                "volume": 75757400,
+                "min_count": 51,
+                "max_count": 70,
+                "solution": {
+                    "box_count": 60,
+                    "order": 8
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63378817000,
+            "box_count": 693,
+            "value_total": 63378817000
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    460,
+                    575
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 20,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 20,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 20,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 24,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    766
+                ],
+                "value": 252305080,
+                "volume": 252305080,
+                "min_count": 14,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 18,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    383
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 27,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 30,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    547,
+                    460,
+                    575
+                ],
+                "value": 144681500,
+                "volume": 144681500,
+                "min_count": 38,
+                "max_count": 43,
+                "solution": {
+                    "box_count": 40,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    766
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 28,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 30,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 12,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 19,
+                "max_count": 30,
+                "solution": {
+                    "box_count": 24,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 7,
+                "max_count": 11,
+                "solution": {
+                    "box_count": 9,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 13,
+                "solution": {
+                    "box_count": 12,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    478,
+                    575,
+                    460
+                ],
+                "value": 126431000,
+                "volume": 126431000,
+                "min_count": 55,
+                "max_count": 62,
+                "solution": {
+                    "box_count": 60,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 10,
+                "max_count": 12,
+                "solution": {
+                    "box_count": 12,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    575
+                ],
+                "value": 189393500,
+                "volume": 189393500,
+                "min_count": 19,
+                "max_count": 29,
+                "solution": {
+                    "box_count": 24,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    575
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 16,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 20,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 25,
+                "max_count": 34,
+                "solution": {
+                    "box_count": 30,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    460
+                ],
+                "value": 113735000,
+                "volume": 113735000,
+                "min_count": 37,
+                "max_count": 43,
+                "solution": {
+                    "box_count": 40,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    460
+                ],
+                "value": 90988000,
+                "volume": 90988000,
+                "min_count": 38,
+                "max_count": 58,
+                "solution": {
+                    "box_count": 50,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 48,
+                "max_count": 66,
+                "solution": {
+                    "box_count": 56,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 41,
+                "max_count": 51,
+                "solution": {
+                    "box_count": 48,
+                    "order": 6
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63407356788,
+            "box_count": 571,
+            "value_total": 63407356788
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    766,
+                    383
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 16,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 18,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    574,
+                    383,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 18,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 18,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    766
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 25,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 30,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    383
+                ],
+                "value": 36054088,
+                "volume": 36054088,
+                "min_count": 33,
+                "max_count": 46,
+                "solution": {
+                    "box_count": 42,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    766
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 17,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 18,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 47,
+                "max_count": 49,
+                "solution": {
+                    "box_count": 48,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    766
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 16,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 18,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    460
+                ],
+                "value": 151823000,
+                "volume": 151823000,
+                "min_count": 15,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 20,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 9,
+                "max_count": 11,
+                "solution": {
+                    "box_count": 9,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    766
+                ],
+                "value": 336797944,
+                "volume": 336797944,
+                "min_count": 8,
+                "max_count": 10,
+                "solution": {
+                    "box_count": 9,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    383
+                ],
+                "value": 50563660,
+                "volume": 50563660,
+                "min_count": 25,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 30,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    403,
+                    287,
+                    460
+                ],
+                "value": 53204060,
+                "volume": 53204060,
+                "min_count": 67,
+                "max_count": 94,
+                "solution": {
+                    "box_count": 80,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    575
+                ],
+                "value": 142168750,
+                "volume": 142168750,
+                "min_count": 26,
+                "max_count": 36,
+                "solution": {
+                    "box_count": 32,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 19,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 20,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    575
+                ],
+                "value": 151823000,
+                "volume": 151823000,
+                "min_count": 37,
+                "max_count": 45,
+                "solution": {
+                    "box_count": 40,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    574,
+                    383,
+                    383
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 33,
+                "max_count": 36,
+                "solution": {
+                    "box_count": 36,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    575
+                ],
+                "value": 189393500,
+                "volume": 189393500,
+                "min_count": 22,
+                "max_count": 30,
+                "solution": {
+                    "box_count": 24,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    766
+                ],
+                "value": 336797944,
+                "volume": 336797944,
+                "min_count": 16,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 18,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    766
+                ],
+                "value": 252305080,
+                "volume": 252305080,
+                "min_count": 15,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 18,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 37,
+                "max_count": 53,
+                "solution": {
+                    "box_count": 48,
+                    "order": 12
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63382805408,
+            "box_count": 576,
+            "value_total": 63382805408
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 19,
+                "max_count": 29,
+                "solution": {
+                    "box_count": 24,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    430,
+                    383,
+                    460
+                ],
+                "value": 75757400,
+                "volume": 75757400,
+                "min_count": 57,
+                "max_count": 65,
+                "solution": {
+                    "box_count": 60,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    575
+                ],
+                "value": 108256400,
+                "volume": 108256400,
+                "min_count": 21,
+                "max_count": 30,
+                "solution": {
+                    "box_count": 28,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 29,
+                "max_count": 31,
+                "solution": {
+                    "box_count": 30,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    766
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 14,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 18,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    287
+                ],
+                "value": 56768600,
+                "volume": 56768600,
+                "min_count": 70,
+                "max_count": 87,
+                "solution": {
+                    "box_count": 80,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    766
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 24,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 30,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 9,
+                "max_count": 12,
+                "solution": {
+                    "box_count": 12,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    575
+                ],
+                "value": 189393500,
+                "volume": 189393500,
+                "min_count": 23,
+                "max_count": 26,
+                "solution": {
+                    "box_count": 24,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 15,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 20,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    575
+                ],
+                "value": 189393500,
+                "volume": 189393500,
+                "min_count": 21,
+                "max_count": 29,
+                "solution": {
+                    "box_count": 24,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    478,
+                    575,
+                    383
+                ],
+                "value": 105267550,
+                "volume": 105267550,
+                "min_count": 68,
+                "max_count": 75,
+                "solution": {
+                    "box_count": 72,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 14,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 15,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    520,
+                    575,
+                    575
+                ],
+                "value": 171925000,
+                "volume": 171925000,
+                "min_count": 16,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 16,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    574,
+                    383,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 16,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 18,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 15,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 12,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 16,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    460
+                ],
+                "value": 202254640,
+                "volume": 202254640,
+                "min_count": 13,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 15,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 10,
+                "max_count": 13,
+                "solution": {
+                    "box_count": 12,
+                    "order": 16
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63388886644,
+            "box_count": 542,
+            "value_total": 63388886644
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    383,
+                    383
+                ],
+                "value": 42099743,
+                "volume": 42099743,
+                "min_count": 32,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 36,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    575
+                ],
+                "value": 108256400,
+                "volume": 108256400,
+                "min_count": 25,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 28,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    328
+                ],
+                "value": 108256400,
+                "volume": 108256400,
+                "min_count": 25,
+                "max_count": 33,
+                "solution": {
+                    "box_count": 28,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    478,
+                    766,
+                    575
+                ],
+                "value": 210535100,
+                "volume": 210535100,
+                "min_count": 28,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 36,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    364,
+                    575,
+                    383
+                ],
+                "value": 80161900,
+                "volume": 80161900,
+                "min_count": 71,
+                "max_count": 86,
+                "solution": {
+                    "box_count": 72,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    575
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 20,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 20,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    575
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 19,
+                "max_count": 28,
+                "solution": {
+                    "box_count": 24,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    383
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 45,
+                "max_count": 53,
+                "solution": {
+                    "box_count": 48,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 26,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 28,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    382,
+                    766,
+                    575
+                ],
+                "value": 168251900,
+                "volume": 168251900,
+                "min_count": 36,
+                "max_count": 42,
+                "solution": {
+                    "box_count": 36,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    430,
+                    383,
+                    766
+                ],
+                "value": 126152540,
+                "volume": 126152540,
+                "min_count": 31,
+                "max_count": 43,
+                "solution": {
+                    "box_count": 36,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 14,
+                "max_count": 17,
+                "solution": {
+                    "box_count": 16,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 23,
+                "max_count": 35,
+                "solution": {
+                    "box_count": 28,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 13,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 16,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 12,
+                "max_count": 12,
+                "solution": {
+                    "box_count": 12,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    575
+                ],
+                "value": 142168750,
+                "volume": 142168750,
+                "min_count": 27,
+                "max_count": 40,
+                "solution": {
+                    "box_count": 32,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    383
+                ],
+                "value": 50563660,
+                "volume": 50563660,
+                "min_count": 25,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 30,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    766
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 27,
+                "max_count": 33,
+                "solution": {
+                    "box_count": 30,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 27,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 28,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    575
+                ],
+                "value": 151823000,
+                "volume": 151823000,
+                "min_count": 16,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 20,
+                    "order": 18
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63378560788,
+            "box_count": 604,
+            "value_total": 63378560788
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    766,
+                    328
+                ],
+                "value": 72108176,
+                "volume": 72108176,
+                "min_count": 18,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 21,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    383
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 30,
+                "max_count": 42,
+                "solution": {
+                    "box_count": 36,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    460
+                ],
+                "value": 113735000,
+                "volume": 113735000,
+                "min_count": 38,
+                "max_count": 46,
+                "solution": {
+                    "box_count": 40,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    460
+                ],
+                "value": 60729200,
+                "volume": 60729200,
+                "min_count": 24,
+                "max_count": 31,
+                "solution": {
+                    "box_count": 25,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    430,
+                    383,
+                    575
+                ],
+                "value": 94696750,
+                "volume": 94696750,
+                "min_count": 41,
+                "max_count": 58,
+                "solution": {
+                    "box_count": 48,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 10,
+                "max_count": 12,
+                "solution": {
+                    "box_count": 12,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    575
+                ],
+                "value": 142168750,
+                "volume": 142168750,
+                "min_count": 25,
+                "max_count": 34,
+                "solution": {
+                    "box_count": 32,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    383
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 16,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 18,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    574,
+                    328,
+                    460
+                ],
+                "value": 86605120,
+                "volume": 86605120,
+                "min_count": 57,
+                "max_count": 72,
+                "solution": {
+                    "box_count": 70,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    403,
+                    766,
+                    328
+                ],
+                "value": 101252944,
+                "volume": 101252944,
+                "min_count": 34,
+                "max_count": 50,
+                "solution": {
+                    "box_count": 42,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 21,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 24,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    287,
+                    287,
+                    575
+                ],
+                "value": 47362175,
+                "volume": 47362175,
+                "min_count": 27,
+                "max_count": 34,
+                "solution": {
+                    "box_count": 32,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    460
+                ],
+                "value": 50563660,
+                "volume": 50563660,
+                "min_count": 80,
+                "max_count": 111,
+                "solution": {
+                    "box_count": 90,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 51,
+                "max_count": 65,
+                "solution": {
+                    "box_count": 60,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 12,
+                "max_count": 14,
+                "solution": {
+                    "box_count": 12,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    766
+                ],
+                "value": 202254640,
+                "volume": 202254640,
+                "min_count": 13,
+                "max_count": 19,
+                "solution": {
+                    "box_count": 15,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    574,
+                    383,
+                    575
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 24,
+                "max_count": 26,
+                "solution": {
+                    "box_count": 24,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    574,
+                    460,
+                    575
+                ],
+                "value": 151823000,
+                "volume": 151823000,
+                "min_count": 19,
+                "max_count": 23,
+                "solution": {
+                    "box_count": 20,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 10,
+                "max_count": 12,
+                "solution": {
+                    "box_count": 12,
+                    "order": 13
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63398886588,
+            "box_count": 645,
+            "value_total": 63398886588
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    520,
+                    766,
+                    575
+                ],
+                "value": 229034000,
+                "volume": 229034000,
+                "min_count": 9,
+                "max_count": 13,
+                "solution": {
+                    "box_count": 12,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 53,
+                "max_count": 60,
+                "solution": {
+                    "box_count": 56,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    766
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 14,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 18,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    717,
+                    575,
+                    766
+                ],
+                "value": 315802650,
+                "volume": 315802650,
+                "min_count": 21,
+                "max_count": 30,
+                "solution": {
+                    "box_count": 24,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    766
+                ],
+                "value": 168398972,
+                "volume": 168398972,
+                "min_count": 15,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 18,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    574,
+                    287,
+                    575
+                ],
+                "value": 94724350,
+                "volume": 94724350,
+                "min_count": 101,
+                "max_count": 156,
+                "solution": {
+                    "box_count": 128,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    575
+                ],
+                "value": 113735000,
+                "volume": 113735000,
+                "min_count": 37,
+                "max_count": 42,
+                "solution": {
+                    "box_count": 40,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 23,
+                "max_count": 33,
+                "solution": {
+                    "box_count": 28,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    766
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 11,
+                "max_count": 13,
+                "solution": {
+                    "box_count": 12,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 14,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 15,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    383
+                ],
+                "value": 94696750,
+                "volume": 94696750,
+                "min_count": 44,
+                "max_count": 59,
+                "solution": {
+                    "box_count": 48,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 18,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 20,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    766
+                ],
+                "value": 126409150,
+                "volume": 126409150,
+                "min_count": 11,
+                "max_count": 15,
+                "solution": {
+                    "box_count": 12,
+                    "order": 6
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    766
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 11,
+                "max_count": 16,
+                "solution": {
+                    "box_count": 15,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 54,
+                "max_count": 65,
+                "solution": {
+                    "box_count": 56,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    575
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 83,
+                "max_count": 91,
+                "solution": {
+                    "box_count": 84,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    575
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 16,
+                "max_count": 25,
+                "solution": {
+                    "box_count": 20,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    575
+                ],
+                "value": 94889375,
+                "volume": 94889375,
+                "min_count": 15,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 16,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    287,
+                    383,
+                    575
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 23,
+                "max_count": 25,
+                "solution": {
+                    "box_count": 24,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    460
+                ],
+                "value": 60729200,
+                "volume": 60729200,
+                "min_count": 21,
+                "max_count": 26,
+                "solution": {
+                    "box_count": 25,
+                    "order": 11
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63393100244,
+            "box_count": 671,
+            "value_total": 63393100244
+        }
+    },
+    {
+        "container": [
+            12000,
+            2300,
+            2300
+        ],
+        "container_volume": 63480000000,
+        "box_types": [
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 27,
+                "max_count": 32,
+                "solution": {
+                    "box_count": 28,
+                    "order": 15
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    575
+                ],
+                "value": 189393500,
+                "volume": 189393500,
+                "min_count": 20,
+                "max_count": 26,
+                "solution": {
+                    "box_count": 24,
+                    "order": 18
+                }
+            },
+            {
+                "size": [
+                    574,
+                    575,
+                    575
+                ],
+                "value": 189778750,
+                "volume": 189778750,
+                "min_count": 16,
+                "max_count": 20,
+                "solution": {
+                    "box_count": 16,
+                    "order": 4
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 15,
+                "max_count": 22,
+                "solution": {
+                    "box_count": 20,
+                    "order": 5
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    575
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 19,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 20,
+                    "order": 14
+                }
+            },
+            {
+                "size": [
+                    430,
+                    287,
+                    575
+                ],
+                "value": 70960750,
+                "volume": 70960750,
+                "min_count": 54,
+                "max_count": 71,
+                "solution": {
+                    "box_count": 64,
+                    "order": 16
+                }
+            },
+            {
+                "size": [
+                    520,
+                    328,
+                    766
+                ],
+                "value": 130648960,
+                "volume": 130648960,
+                "min_count": 20,
+                "max_count": 21,
+                "solution": {
+                    "box_count": 21,
+                    "order": 19
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    460
+                ],
+                "value": 75911500,
+                "volume": 75911500,
+                "min_count": 18,
+                "max_count": 24,
+                "solution": {
+                    "box_count": 20,
+                    "order": 13
+                }
+            },
+            {
+                "size": [
+                    478,
+                    328,
+                    383
+                ],
+                "value": 60048272,
+                "volume": 60048272,
+                "min_count": 96,
+                "max_count": 127,
+                "solution": {
+                    "box_count": 126,
+                    "order": 11
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    383
+                ],
+                "value": 63204575,
+                "volume": 63204575,
+                "min_count": 62,
+                "max_count": 83,
+                "solution": {
+                    "box_count": 72,
+                    "order": 8
+                }
+            },
+            {
+                "size": [
+                    287,
+                    766,
+                    460
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 12,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 15,
+                    "order": 17
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    383
+                ],
+                "value": 36054088,
+                "volume": 36054088,
+                "min_count": 39,
+                "max_count": 44,
+                "solution": {
+                    "box_count": 42,
+                    "order": 3
+                }
+            },
+            {
+                "size": [
+                    430,
+                    460,
+                    766
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 27,
+                "max_count": 35,
+                "solution": {
+                    "box_count": 30,
+                    "order": 9
+                }
+            },
+            {
+                "size": [
+                    287,
+                    328,
+                    328
+                ],
+                "value": 30876608,
+                "volume": 30876608,
+                "min_count": 40,
+                "max_count": 56,
+                "solution": {
+                    "box_count": 49,
+                    "order": 12
+                }
+            },
+            {
+                "size": [
+                    287,
+                    460,
+                    766
+                ],
+                "value": 101127320,
+                "volume": 101127320,
+                "min_count": 15,
+                "max_count": 18,
+                "solution": {
+                    "box_count": 15,
+                    "order": 2
+                }
+            },
+            {
+                "size": [
+                    430,
+                    575,
+                    460
+                ],
+                "value": 113735000,
+                "volume": 113735000,
+                "min_count": 38,
+                "max_count": 49,
+                "solution": {
+                    "box_count": 40,
+                    "order": 7
+                }
+            },
+            {
+                "size": [
+                    574,
+                    766,
+                    575
+                ],
+                "value": 252818300,
+                "volume": 252818300,
+                "min_count": 23,
+                "max_count": 26,
+                "solution": {
+                    "box_count": 24,
+                    "order": 10
+                }
+            },
+            {
+                "size": [
+                    574,
+                    383,
+                    383
+                ],
+                "value": 84199486,
+                "volume": 84199486,
+                "min_count": 35,
+                "max_count": 44,
+                "solution": {
+                    "box_count": 36,
+                    "order": 1
+                }
+            },
+            {
+                "size": [
+                    430,
+                    766,
+                    460
+                ],
+                "value": 151514800,
+                "volume": 151514800,
+                "min_count": 26,
+                "max_count": 37,
+                "solution": {
+                    "box_count": 30,
+                    "order": 0
+                }
+            },
+            {
+                "size": [
+                    287,
+                    575,
+                    328
+                ],
+                "value": 54128200,
+                "volume": 54128200,
+                "min_count": 24,
+                "max_count": 33,
+                "solution": {
+                    "box_count": 28,
+                    "order": 6
+                }
+            }
+        ],
+        "types_count": 20,
+        "solution": {
+            "volume_total": 63369854816,
+            "box_count": 720,
+            "value_total": 63369854816
+        }
+    }
+]
