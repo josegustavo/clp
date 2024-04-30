@@ -13,7 +13,7 @@ from .population import Population
 class GeneticAlgorithm:
     TOURNAMENT_SIZE: int = field(default=2)
     P_CROSSOVER: float = field(default=0.8)
-    MAX_GENERATIONS: int = field(default=150)
+    MAX_GENERATIONS: int = field(default=300)
     STOP_UNIMPROVED: int = field(default=50)
     P_MUT: int = field(default=0.01)
     P_MUT_GEN: int = field(default=0.05)
@@ -66,9 +66,9 @@ class GeneticAlgorithm:
                   generation, elite.get_fitness))
             self.select_with_crossover(elite)
 
-            P_MUT = self.P_MUT + (generations_not_improved/100)
-            P_MUT_GEN = self.P_MUT_GEN + (generations_not_improved/200)
-            self.population.mutation(P_MUT, P_MUT_GEN)
+            # P_MUT = self.P_MUT + (generations_not_improved/1000)
+            # P_MUT_GEN = self.P_MUT_GEN + (generations_not_improved/2000)
+            self.population.mutation(self.P_MUT, self.P_MUT_GEN)
 
             new_best = self.population.best
             if new_best.get_fitness > elite_fitness:

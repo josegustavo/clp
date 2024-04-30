@@ -33,7 +33,7 @@ class Problems:
             None
         """
 
-        problems = [ProblemMaker(**kwargs).boxes for _ in range(count)]
+        problems = [ProblemMaker(**kwargs).random_boxes for _ in range(count)]
         with open(self.file_path, 'w') as file:
             json.dump(problems, file, indent=4)
         logging.info(f"Problems saved to '{self.file_path}'")

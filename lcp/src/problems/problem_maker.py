@@ -1,3 +1,4 @@
+from math import prod
 import random
 from attr import dataclass, field
 
@@ -5,14 +6,48 @@ from attr import dataclass, field
 @dataclass
 class ProblemMaker:
     N_TYPES: int = 20
-    CONTAINER_DIM: tuple = (12000, 2300, 2300)
+    CONTAINER_DIM: tuple = (12010, 2330, 2380)  # Contenedor de 40 pies
     BOX_SIDE_MIN: int = 300
     BOX_SIDE_MAX: int = 600
 
     result: dict = field(init=False, repr=False)
 
     @property
-    def boxes(self):
+    def random_boxes(self):
+        container_volume = prod(self.CONTAINER_DIM)
+        result = {
+            'container': self.CONTAINER_DIM,
+            'container_volume': container_volume,
+        }
+        box_types = []
+        min_volume, max_volume = 0, 0
+        for i in range(self.N_TYPES):
+            l, w, h = [random.randint(self.BOX_SIDE_MIN, self.BOX_SIDE_MAX)
+                       for _ in range(3)]
+            vol = l*w*h
+            mean_count = int((container_volume/self.N_TYPES) // vol)
+            max_count = mean_count + random.randint(0, mean_count)
+            min_count = max(0, mean_count - random.randint(0, mean_count))
+            box_type = {
+                'type': i,
+                'size': (l, w, h),
+                'value':  random.randint(1, 100),
+                'volume': vol,
+                'min_count': min_count,
+                'max_count': max_count,
+            }
+            min_volume += box_type['min_count']*box_type['volume']
+            max_volume += box_type['max_count']*box_type['volume']
+
+            box_types.append(box_type)
+
+        result['box_types'] = box_types
+        result['types_count'] = len(box_types)
+        self.result = result
+        return result
+
+    @property
+    def exact_boxes(self):
         """
         Generate a dictionary containing information about the generated boxes.
 

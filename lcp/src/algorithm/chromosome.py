@@ -1,16 +1,16 @@
-from copy import deepcopy, copy
+from copy import copy
 from dataclasses import dataclass, field
+from enum import Enum
 import logging
-from operator import ge
 import random
 from types import NoneType
-
-from pyparsing import C
 
 from lcp.src.location import Position
 from lcp.src.container import Box, Container, FreeSpace
 from .gene import Gene
 from .dblf import DBLF
+
+Improvement = Enum('Improvement', ['none', 'during', 'late'])
 
 
 @dataclass
@@ -34,7 +34,7 @@ class Chromosome(list):
 {"\n".join([str(g) for g in self.genes])}
 Fitness: {self.fitness}"""
 
-    def evaluate(self) -> NoneType:
+    def evaluate(self, improvement: Improvement = Improvement.none) -> NoneType:
         max_volume = self.container.volume
         dblf = DBLF(
             side=[FreeSpace(Position(0, 0, 0), self.container, 'side')])
@@ -42,67 +42,90 @@ Fitness: {self.fitness}"""
         number_boxes = 0
         value = 0
         result: list[Box] = []
-        for gene in self.genes:
-            min_pos = Position(99999, 99999, 99999)
-            max_pos = Position(-99999, -99999, -99999)
-            one_type = gene.type
-            box_number = 0
-            # logging.debug("Comenzó el tipo %d %s" % (one_type.type, gene.size))
-            while box_number < gene.box_count:
-                box_number += 1
-                available = dblf.first_available(gene.size)
-                if available:
-                    min_pos = Position(min(min_pos.x, available.position.x),
-                                       min(min_pos.y, available.position.y),
-                                       min(min_pos.z, available.position.z))
+        is_improving_late = False
+        while len(dblf):
+            for g_i, gene in enumerate(self.genes):
+                min_pos = Position(99999, 99999, 99999)
+                max_pos = Position(-99999, -99999, -99999)
+                one_type = gene.type
+                box_number = 0
+                # logging.debug("Comenzó el tipo %d %s" % (one_type.type, gene.size))
+                while box_number < gene.box_count:
+                    box_number += 1
+                    available = dblf.first_available(gene.size,
+                                                     one_type.type if is_improving_late else None)
+                    if available:
+                        min_pos = Position(min(min_pos.x, available.position.x),
+                                           min(min_pos.y, available.position.y),
+                                           min(min_pos.z, available.position.z))
 
-                    max_pos = Position(max(max_pos.x, available.position.x + gene.size.length),
-                                       max(max_pos.y, available.position.y +
-                                           gene.size.width),
-                                       max(max_pos.z, available.position.z + gene.size.height))
+                        max_pos = Position(max(max_pos.x, available.position.x + gene.size.length),
+                                           max(max_pos.y, available.position.y +
+                                               gene.size.width),
+                                           max(max_pos.z, available.position.z + gene.size.height))
 
-                    new_box = Box(available.position,
-                                  gene.size, one_type.type)
-                    # logging.debug("\nnew box (%d): %s" % (box_number, new_box))
-                    occupied_vol += gene.size.volume
-                    number_boxes += 1
-                    value += one_type.value_individual
-                    if value > max_volume:
-                        raise ValueError(
-                            "Se excedió el volumen del contenedor %s" % self)
+                        new_box = Box(available.position,
+                                      gene.size, one_type.type)
+                        # logging.debug("\nnew box (%d): %s" % (box_number, new_box))
+                        occupied_vol += gene.size.volume
+                        number_boxes += 1
+                        value += one_type.value_individual
+                        if value > max_volume:
+                            raise ValueError(
+                                "Se excedió el volumen del contenedor %s" % self)
 
-                    result.append(new_box)
+                        result.append(new_box)
 
-                    # Eliminar el espacio usado
-                    dblf.remove(available)
-                    # Añadir los nuevos espacios generados
-                    side, top, front = available.split(gene.size)
-                    dblf += DBLF(side=side, top=top, front=front)
-                    dblf.compact()
-                else:
-                    # logging.debug("No hay espacio disponible para la caja %d %s" %
-                    #              (box_number, gene.size))
-                    box_number -= 1
-                    break
+                        # Eliminar el espacio usado
+                        dblf.remove(available)
+                        # Añadir los nuevos espacios generados
+                        side, top, front = available.split(
+                            gene.size, one_type.type)
+                        dblf += DBLF(side=side, top=top, front=front)
+                        dblf.compact()
+                    else:
+                        # logging.debug("No hay espacio disponible para la caja %d %s" %
+                        #              (box_number, gene.size))
+                        box_number -= 1
+                        break
 
-                # Si se ha llegado al límite de cajas, intentar aumentar el límite de cajas si queda espacio al lado o encima
-                if box_number == gene.box_count and one_type.max_count > box_number:
-                    available = DBLF(side=dblf.side, top=dblf.top).first_available(
-                        gene.size)  # No buscar en el frente
-                    if available:  # Si hay espacio disponible seguir añadiendo cajas
-                        # logging.debug(
-                        #    "Se llegó al número de cajas definido %d, se añadirá una caja más" % box_number)
-                        gene.box_count += 1
+                    # Mejorar
+                    # Si se ha llegado al límite de cajas, intentar aumentar el límite de cajas si queda espacio al lado o encima
+                    if improvement.name == 'during' and box_number == gene.box_count and one_type.max_count > box_number:
+                        available = DBLF(side=dblf.side, top=dblf.top).first_available(gene.size,
+                                                                                       one_type.type if is_improving_late else None)  # No buscar en el frente
+                        if available:  # Si hay espacio disponible seguir añadiendo cajas
+                            # logging.debug(
+                            #    "Se llegó al número de cajas definido %d, se añadirá una caja más" % box_number)
+                            gene.box_count += 1
 
-            gene.box_count = box_number  # Actualizar el número de cajas realmente añadidas
+                gene.box_count = box_number  # Actualizar el número de cajas realmente añadidas
 
-            # logging.debug("Terminó el tipo %d con %d cajas" %
-            #              (one_type.type, box_number))
+                # logging.debug("Terminó el tipo %d con %d cajas" %
+                #              (one_type.type, box_number))
+                # Usar solo espacios frontales
+                # if dblf.front:
+                #    dblf = DBLF(side=[dblf.front[0]], top=[], front=[])
+                if box_number > 0:
+                    # Eliminar espacios al fondo que quedaron no accesibles
+                    max_depth = self.genes[g_i+1].size.length if g_i + \
+                        1 < len(self.genes) else 0
+                    dblf.remove_unreachable(min_pos, max_pos, max_depth)
 
-            if box_number > 0:
-                # Eliminar espacios al fondo que quedaron no accesibles
-                dblf.remove_unreachable(min_pos, max_pos)
-
+            if improvement.name == 'late' and not is_improving_late and len(dblf.unused) > 0:
+                is_improving_late = True
+                # print(dblf.unused)
+                top_group = list(
+                    filter(lambda x: x.group == 'top', dblf.unused))
+                side_group = list(
+                    filter(lambda x: x.group == 'side', dblf.unused))
+                front_group = list(
+                    filter(lambda x: x.group == 'front', dblf.unused))
+                dblf = DBLF(side=side_group,
+                            top=top_group,
+                            front=front_group)
+            else:
+                break
         # Activar para visualizar los espacios disponibles
         # for d in dblf.side:
         #     result.append(Box(d.position, d.size, 20))
