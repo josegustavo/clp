@@ -2,7 +2,7 @@
 
 \subsection{Codificación de soluciones}
     
-Existen diferentes maneras de codificar las soluciones para el problema de llenado de contenedores. Algunos de los más interesantes son por ejemplo Bortfeldt y otros \cite{baez/article} que propusieron una codificación basada dobles o simplemente dos listas de igual longitud, la primera representa la secuencia de llenado de los paquetes y la segunda indica la rotación de cada paquete. De manera similar Xianbo y otros [2] propusieron el uso de la primera lista como la secuencia de llenado de cada tipo de paquete y la segunda como la rotación de cada tipo de paquete.
+Existen diferentes maneras de codificar las soluciones para el problema de llenado de contenedores. Algunos de los más interesantes son por ejemplo Bortfeldt y otros \cite{GEHRING1997401} que propusieron una codificación basada dobles o simplemente dos listas de igual longitud, la primera representa la secuencia de llenado de los paquetes y la segunda indica la rotación de cada paquete. De manera similar Xianbo y otros [2] propusieron el uso de la primera lista como la secuencia de llenado de cada tipo de paquete y la segunda como la rotación de cada tipo de paquete.
 
 Sin embargo, para las restricciones en nuestro problema, esta codificaciones no son adecuadas ya que necesitamos considerar que las cantidades de un tipo de paquete no son fijas sino que pueden variar de un rango mínimo a un máximo. Por lo tanto, proponemos una codificación basada en 3 listas de igual longitud, la primera lista representa la secuencia de llenado de cada tipo de paquete, la segunda lista indica la rotación de cada tipo de paquete y la tercera lista indica la cantidad de paquetes de cada tipo que se llenan en el contenedor.
 
@@ -95,7 +95,7 @@ De esta manera, se generan dos listas de padres que se utilizarán en el operado
 
 \subsection{Cruce}
 
-Como resultado de la selección de padres, se generan dos listas de padres que se utilizarán en el operador de cruce para generar una nueva población. Para el operador de cruce se propone un mecanismo de cruce basado en el cruce de un punto. Según Umbarkar y otros [4], para este tipo de operador, se selecciona un punto aleatorio en la solución y se intercambian las partes de las dos soluciones que están a la izquierda y a la derecha del punto. Este operador de cruce es simple y fácil de implementar, y se ha demostrado que es eficiente para resolver problemas de optimización combinatoria.
+Como resultado de la selección de padres, se generan dos listas de padres que se utilizarán en el operador de cruce para generar una nueva población. Para el operador de cruce se propone un mecanismo de cruce basado en el cruce de un punto. Según \textcite{Umbarkar2015}, para este tipo de operador, se selecciona un punto aleatorio en la solución y se intercambian las partes de las dos soluciones que están a la izquierda y a la derecha del punto. Este operador de cruce es simple y fácil de implementar, y se ha demostrado que es eficiente para resolver problemas de optimización combinatoria.
 
 Cabe mencionar que el operador de cruce se aplica a una proporción de la población, dependiendo de la tasa de cruce $P_CROSS$, que se define como la probabilidad de que dos soluciones seleccionadas se crucen. De esta manera, se garantiza que la población se mantenga diversa y que se generen nuevas soluciones que puedan ser mejores que las soluciones actuales.
 
@@ -160,7 +160,7 @@ De esta manera, se garantiza que las soluciones generadas sean factibles y que c
 
 \subsection{Mutación}
 
-Según Dockhorn y otros \textcite{Dockhorn2022}, la mutación consiste en aplicar pequeños cambios a las soluciones candidatas para tratar de explorar nuevas regiones locales del espacio de búsqueda. Para el presente problema, ya que codificación propuesta consta de tres listas, se propone también tres operadores de mutación, uno para cada lista. El primer tipo de mutación intercambia dos tipos de paquetes en la secuencia de llenado, el segundo tipo de mutación cambia la rotación de un tipo de paquete y el tercer tipo de mutación cambia la cantidad de paquetes de un tipo de paquete.
+Según \textcite{Dockhorn2022}, la mutación consiste en aplicar pequeños cambios a las soluciones candidatas para tratar de explorar nuevas regiones locales del espacio de búsqueda. Para el presente problema, ya que codificación propuesta consta de tres listas, se propone también tres operadores de mutación, uno para cada lista. El primer tipo de mutación intercambia dos tipos de paquetes en la secuencia de llenado, el segundo tipo de mutación cambia la rotación de un tipo de paquete y el tercer tipo de mutación cambia la cantidad de paquetes de un tipo de paquete.
 
 El algoritmo de mutación se muestra en el Algoritmo~\ref{alg:mutacion}. En este algoritmo, $S$ es la solución a mutar, $T$ es el conjunto de tipos de paquetes, $R$ es el conjunto de rotaciones, $t_i^{\min}$ y $t_i^{\max}$ son el mínimo y el máximo de paquetes de cada tipo, respectivamente, y $S'$ es la solución mutada.
 
@@ -188,4 +188,4 @@ El algoritmo de mutación se muestra en el Algoritmo~\ref{alg:mutacion}. En este
 
 \subsection{Elitismo}
 
-Según Hasni y otros \textcite{Hasni2013}, el principio del elitismo consiste en mantener las mejores soluciones de una generación a la siguiente, lo que permite garantizar que siempre se mantenga la mejor solución encontrada hasta el momento, ya que los operadores de cruce y mutación pueden generar soluciones las cuales no sean mejores que las soluciones actuales, en dicho caso se reemplazan el mejor individuo de la generación anterior por el peor individuo de la generación actual.
+Según \textcite{Hasni2013}, el principio del elitismo consiste en mantener las mejores soluciones de una generación a la siguiente, lo que permite garantizar que siempre se mantenga la mejor solución encontrada hasta el momento, ya que los operadores de cruce y mutación pueden generar soluciones las cuales no sean mejores que las soluciones actuales, en dicho caso se reemplazan el mejor individuo de la generación anterior por el peor individuo de la generación actual.

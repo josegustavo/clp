@@ -1,56 +1,77 @@
 \section{Formulación del problema}
 
-El siguiente problema está basado en una situación real de una empresa que se dedica a la venta de productos y al envío de los mismos a sus clientes a través de contenedores marítimos.
+El siguiente problema está basado en una situación real de una empresa que se dedica a la venta de productos y al envío de los mismos a sus compradores o clientes a través de contenedores marítimos.
 
-La problemática que enfrenta la empresa consiste en optimizar el envío de productos a sus clientes, aprovechando al máximo el espacio disponible en contenedores marítimos. Los clientes realizan pedidos de diversos tipos de productos cada uno con cantidades deseadas estimadas por el cliente. Por otro lado la empresa envía los distintos tipos de productos lo cual implica el uso de cajas de diferentes tamaños, pesos y valores, llenando un contenedor por cliente. Sin embargo, si el pedido no ocupa completamente el contenedor, se produce un desperdicio de espacio. Para contrarrestar este inconveniente, la empresa puede sugerir al cliente incrementar la cantidad de productos en su pedido, aprovechando que el costo de envío del contenedor es fijo, independientemente de si está lleno o no, de este modo, también lograría aumentar la venta de productos manteniendo el mismo costo de envío.
+El desafío principal al que se enfrenta la empresa es optimizar el proceso de envío de productos a sus clientes, maximizando el uso del espacio en los contenedores. Los clientes suelen hacer pedidos de varios productos en cantidades estimadas, pero generalmente no están familiarizados con las dimensiones de las cajas de cada tipo de producto. Esto dificulta determinar si un pedido puede llenar completamente un contenedor. Por su parte, la empresa maneja productos de diferentes tamaños, pesos y valores, y cada pedido se embala en cajas que varían según estas características. La empresa se encarga de llenar un contenedor con los productos solicitados para un cliente específico. No obstante, si el contenedor no se llena por completo, se produce un desperdicio de espacio. Este desperdicio no solo representa una pérdida financiera para el cliente, quien paga la tarifa completa de envío independientemente del llenado del contenedor, sino también para la empresa, que no maximiza el valor de la carga transportada. Además, el espacio no utilizado tiene un impacto negativo en el medio ambiente, dado que cada viaje consume combustible y genera emisiones contaminantes, independientemente de la eficiencia de carga del contenedor.
 
-En situaciones donde el pedido excede la capacidad de un contenedor, se hace necesario utilizar dos o más contenedores, multiplicando los costos de envío. Ante este escenario, la empresa puede proponer dos alternativas: aumentar aún más la cantidad de productos para justificar el uso de más contenedores completamente llenos, o bien, reducir la cantidad de productos para ajustar el pedido a un solo contenedor, eliminando preferentemente los productos de menor valor. Esta estrategia busca maximizar tanto el valor de la carga como la utilización del espacio disponible en los contenedores.
+Para contrarrestar este inconveniente, la empresa puede sugerir al cliente incrementar la cantidad de productos en su pedido, aprovechando que el costo de envío del contenedor es fijo, es decir el costo es el mismo independientemente de si el contenedor está lleno o no, de este modo, también lograría aumentar la venta de productos manteniendo el mismo costo de envío. En situaciones donde el pedido excede la capacidad de un contenedor, se hace necesario utilizar dos o más contenedores, multiplicando los costos de envío. Ante este escenario, la empresa puede proponer dos alternativas: aumentar la cantidad de productos solicitada inicialmente para justificar el uso de más contenedores completamente llenos, o bien, reducir la cantidad de productos para ajustar el pedido a un solo contenedor, eliminando preferentemente los productos de menor valor. Esta estrategia busca maximizar tanto el valor de la carga como la utilización del espacio disponible en los contenedores.
 
-Por otro lado la empresa también enfrenta la problemática de la carga manual de los contenedores, en la que los operadores humanos deben cargar los paquetes en el contenedor de forma eficiente, siguiendo ciertas restricciones y reglas. Por lo tanto se propone un procedimiento estratégico que permita a la empresa cumplir con sus objetivos.
+Las variaciones en las cantidades de productos pedidos son justificables, dado que los clientes, usualmente distribuidores, no tienen urgencia en recibir los productos. Esto les permite esperar hasta que un contenedor esté completamente lleno para proceder con el envío. Adicionalmente, la empresa puede incentivar a los clientes a incrementar las cantidades de sus pedidos mediante descuentos o promociones. Esta estrategia resulta beneficiosa tanto para la empresa, que optimiza el uso del espacio en los contenedores, como para los clientes, que pueden reducir sus costos de envío.
 
-Esta propuesta de procedimiento estratégico no solo optimiza el uso del espacio del contenedor, sino que también permite gestionar de manera eficiente el llenado manual, con el objetivo de maximizar el valor de la carga y en consecuencia la utilización del espacio en el contenedor, de este modo se propone una solución que beneficie tanto a la operatividad de su logística como a la satisfacción del cliente, garantizando la máxima eficacia en cada envío.
+Por otro lado, la empresa enfrenta la limitación de realizar pocos envíos en un periodo de tiempo determinado debido a un proceso logístico previo que complica la previsión de disponibilidad de los productos. Generalmente, la empresa opta por aprovechar aquellos productos que se disponen más rápidamente para preparar los envíos. Los clientes, por su parte, no presentan inconvenientes en postergar el envío de productos cuyo tiempo de fabricación es más prolongado.
 
-\subsection{Propuesta de solución}
+Debido a esta situación específica, la empresa opta por llenar los contenedores de forma manual. Esto implica que los operadores humanos son responsables de cargar los paquetes en el contenedor de manera eficiente, para esto, la empresa ha establecido un procedimiento específico que guía a los operadores en la colocación de los paquetes. Sin embargo, este procedimiento no está optimizado y no considera la disposición óptima de los paquetes en el contenedor, lo que resulta en una carga subóptima y un desperdicio de espacio.
 
-Para abordar el problema de la carga manual de paquetes en un contenedor, se divide la propuesta de solución en dos partes: la primera consiste un procedimiento específico que incorpora restricciones determinadas, centrado en la acción de un operador humano. Este método busca la manera más sencilla y eficiente de organizar los paquetes dentro del contenedor, con el objetivo de estandarizar el proceso de carga y reducir la carga cognitiva del operador al minimizar la necesidad de tomar decisiones sobre la disposición de los mismos. Este proceso representa el punto de conexión entre la solución de optimización y la intervención manual del operador, permitiendo que este último siga instrucciones claras y precisas para realizar la carga de manera eficiente. La segunda parte de la propuesta de solución consiste en un algoritmo de optimización genético que determina la cantidad de paquetes por tipo a cargar en el contenedor, así como el orden de carga y rotación de cada tipo.
+Este procedimiento manual de carga forma una barrera para la optimización de la carga, por un lado, la empresa tiene que proponer a los clientes incrementar la cantidad de productos en sus pedidos para llenar completamente un contenedor, y por otro lado, los operadores humanos tienen que lograr acomodar los paquetes de tal modo que todas las cantidades propuestas por la empresa puedan ser cargadas en el contenedor. Entonces es necesario que antes de proponer a los clientes incrementar la cantidad de productos en sus pedidos, la empresa pueda optimizar la carga considerando las restricciones del llenado manual.
 
-En las secciones siguientes, detallaremos cómo se efectúa la carga de los paquetes, las suposiciones y restricciones que se consideran, y la representación matemática del problema, luego presentaremos el algoritmo de llenado manual y en el siguiente capítulo el algoritmo de optimización genético.
+Respecto a las restricciones que se generan debido a la carga manual, se consideran las siguientes:
 
-\subsection{Procedimiento de carga manual}
+Los paquetes que son cajas de forma rectangular, pueden variar en tamaño, peso y valor, pero han sido concebidos previamente para que puedan ser cargados manualmente es decir que no son paquetes muy grandes o pesados.
 
-Con el objetivo de facilitar la carga manual, se detallan una serie de supuestos, restricciones y reglas que el operador humano debe seguir para cargar paquetes en el contenedor de manera eficiente.
+Los paquetes que comparten el mismo tamaño, peso y valor estrictamente se consideran del mismo tipo, dos paquetes pueden tener el mismo tamaño y peso pero distinto valor, lo que los convierte en tipos diferentes. El valor de un paquete no depende de su tamaño o peso, es decir que un paquete sea más grande y pesado que otro no implica que sea de mayor valor y viceversa.
 
-Se consideran las siguientes suposiciones sobre los paquetes:
+Los paquetes llegan a la puerta del contenedor agrupados por tipo y en un orden específico, los paquetes pueden apilarse unos sobre otros independientemente de su tipo ya que las cajas lo soportan y sus pesos no son muy disparejos, pero se debe asegurar la estabilidad de la carga. Por ejemplo en el la Figura \ref{fig:paquetes_apilados} se muestra un ejemplo de cómo se apila un tipo de paquete encima de otro.
 
-\begin{itemize}
-    \item Los paquetes son cajas de forma rectangular.
-    \item Los paquetes pueden variar en tamaño, peso y valor.
-    \item Los paquetes presentan tamaños y pesos razonables para ser cargados manualmente.
-    \item Los paquetes que comparten el mismo tamaño, peso y valor estrictamente se consideran del mismo tipo.
-    \item Dos paquetes pueden tener el mismo tamaño y peso pero distinto valor, lo que los convierte en tipos diferentes.
-    \item El valor de un paquete no depende de su tamaño o peso, es decir que un paquete sea más grande y pesado que otro no implica que sea de mayor valor y viceversa.
-    \item Los paquetes llegan al contenedor agrupados por tipo y en un orden específico.
-    \item Los paquetes pueden apilarse unos sobre otros, independientemente de su tipo, pero se debe asegurar la estabilidad de la carga.
-    \item Cada tipo de paquete tiene una cantidad fija deseada que debe ser cargada en el contenedor.
-    \item Todos los paquetes de un mismo tipo deben mantener la misma orientación.
-    \item Los grupos de paquetes llegan en bloques del mismo tipo o de forma secuencial, por ejemplo, a través de cintas transportadoras.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{Figures/paquetes_apilados.svg}
+    \caption{Ejemplo de cómo se apila un tipo de paquete encima de otro.}
+    \label{fig:paquetes_apilados}
+\end{figure}
 
-Las suposiciones relacionadas con el operador humano son las siguientes:
+Para asegurar la estabilidad de la carga, por ejemplo un paquete más grande no puede estar encima de uno más pequeño, es decir un paquete siempre debe tener una base sobre la que se apoye, en la Figura \ref{fig:paquetes_mal_apilados} se muestra un ejemplo de una carga inestable.
 
-\begin{itemize}
-    \item Uno o varios operadores humanos realizan la carga de los paquetes en el contenedor de forma manual.
-    \item El operador humano recibe indicaciones previas sobre cómo cargar los paquetes en el contenedor, incluyendo el orden, la cantidad y la orientación de cada tipo de paquete.
-    \item Las indicaciones también podrían especificar los espacios que deberán quedar vacíos en el contenedor, los cuales pueden ser llenados con material de relleno para evitar que los paquetes se muevan durante el transporte.
-    \item Las indicaciones previas proporcionadas al operador humano son el resultado de la solución del problema de optimización de la carga.
-    \item El objetivo del operador humano es seguir las indicaciones previas de manera eficiente y precisa, sin necesidad de tomar decisiones adicionales sobre la disposición de los paquetes.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{Figures/paquetes_mal_apilados.svg}
+    \caption{Ejemplo de una carga inestable.}
+    \label{fig:paquetes_mal_apilados}
+\end{figure}
 
-El procedimiento de carga manual se basa en la combinación de las suposiciones, restricciones y reglas mencionadas anteriormente, con el objetivo de lograr una carga eficiente y organizada de los paquetes en el contenedor. Este procedimiento se implementa siguiendo una metodología específica que guía al operador humano en la colocación de los paquetes, asegurando que se cumplan todas las condiciones establecidas.
+Para facilitar la carga manual se considera de que todos los paquetes de un mismo tipo deben mantener la misma orientación, es decir que no se pueden colocar paquetes de un mismo tipo en diferentes orientaciones, por ejemplo en la Figura \ref{fig:paquetes_mal_orientados} se muestra un ejemplo de cómo no se deben colocar los paquetes, ya que dificultaría al operador humano seguir dicho procedimiento, además que aumentaría el riesgo de desperdiciar espacio o de que la carga sea inestable.
 
-\subsection{Representación matemática}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{Figures/paquetes_mal_orientados.svg}
+    \caption{Ejemplo de cómo los paquetes de un mismo tipo tienen distinta orientación.}
+    \label{fig:paquetes_mal_orientados}
+\end{figure}
 
-Antes de presentar el algoritmo propuesto de llenado del contenedor, es necesario definir formalmente un lenguaje para el problema de optimización de la carga manual de paquetes en un contenedor. A continuación, se presenta la formulación matemática del problema.
+Muchas de las cajas están diseñadas para ser apiladas y soportar un gran peso encima siempre y cuando se respete la indicación de mantener una posición mirando hacia arriba, por lo que los paquetes solo pueden ser girados en un eje, por ejemplo en la Figura \ref{fig:paquetes_girados} se muestra un mismo tipo de paquete girado en un eje.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{Figures/paquetes_girados.svg}
+    \caption{Ejemplo de cómo los paquetes de un mismo tipo pueden ser girados en un eje.}
+    \label{fig:paquetes_girados}
+\end{figure}
+
+Para evitar la fatiga del operador de levantar los paquetes, la empresa suele usar cintas o bandas transportadoras, para aprovechar su uso, esto implica que los paquetes deben ser colocados en primer lugar lo más profundo posible del contenedor, es decir que los paquetes que están siendo cargados, deben ser colocados en la parte más alejada de la puerta del contenedor, de este modo también se evita que los paquetes obstruyan el ingreso del operador humano al contenedor. En la Figura \ref{fig:cinta_transportadora} se muestra un ejemplo de cómo se puede hacer uso de una cinta transportadora que desliza los paquetes hacia el fondo del contenedor, mientras el contenedor se va llenando la cinta se va moviendo en sentido contrario.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{Figures/cinta_transportadora.svg}
+    \caption{Ejemplo del uso de una cinta transportadora.}
+    \label{fig:cinta_transportadora}
+\end{figure}
+
+La empresa ha implementado un procedimiento específico para guiar a los operadores en la colocación de paquetes dentro del contenedor, con el objetivo de cumplir con todas las condiciones preestablecidas. No obstante, este procedimiento aún no está optimizado y no garantiza la disposición óptima de los paquetes, lo que conduce a una carga subóptima y al desperdicio de espacio.
+
+El desafío que se enfrenta es conocer con anticipación la cantidad de paquetes por tipo que deben cargarse en el contenedor para poder proponer a los clientes incrementar la cantidad de productos en sus pedidos, así como definir el orden de carga y la rotación de cada tipo de paquete. El objetivo es lograr una disposición que no solo cumpla con las restricciones de espacio y los requerimientos del llenado manual, sino que también maximice la eficiencia en el uso del espacio y el valor económico de la carga transportada.
+
+\subsection{Definición formal del problema}
+
+El problema de la carga manual de paquetes en un contenedor se define formalmente de la siguiente manera:
 
 \begin{figure}[H]
     \centering
@@ -75,228 +96,3 @@ Se tienen restricciones de rotación debido al enfoque de carga manual, en el cu
 Por otro lado para facilitar la carga manual, se debe disponer de un orden de carga $o_t$ para cada tipo $t$, donde $o_t \in O = \{0, 1, 2, \ldots, n\}$, que indica el orden en el que se debe cargar cada tipo de paquete en el contenedor.
 
 El problema consiste en determinar la cantidad de paquetes por cada tipo a cargar $\tilde{q}_t$ (la cual se encuentra en torno a la cantidad deseada por tipo, $\tilde{q}_t ~ q_t$) y el orden de carga de cada tipo $o_t$ con determinada rotación $r_t$, de tal modo que se pueda obtener la disposición óptima de los paquetes en el contenedor, asegurando el cumplimiento de las restricciones relacionadas al espacio disponible. Además, se busca maximizar el costo de la carga y al mismo tiempo la utilización del espacio del contenedor.
-
-Para resolver esta primera parte problema, se propone un algoritmo de llenado manual que guía al operador humano en la colocación exacta de los paquetes en el contenedor, siguiendo un orden específico y respetando las restricciones de rotación y orientación de los paquetes.
-
-\subsection{Algoritmo de llenado manual}
-
-El algoritmo de llenado propuesto está basado en el método Deepest Bottom Left with Fill (DBLF) propuesto por Karabulut y otros \ref{karabulut2004hybrid}, cuyo uso se ha extendido y varios autores han realizado propuestas para mejorarlo o adaptarlo a determinados contextos por ejemplo Wang y otros \ref{wang2010hybrid}, Kang y otros. \ref{kang2012hybrid}. El algoritmo propuesto en el presente trabajo está enfocado en cumplir las restricciones y adaptarse al contexto de una carga manual de paquetes en un contenedor.
-
-La idea básica del algoritmo DBLF es que los paquetes comienzan a ser cargados en el contenedor de forma secuencial, se prioriza que el paquete se coloque en las siguientes posiciones: 
-
-\begin{itemize}
-    \item La posición más profunda del contenedor, que ayuda a llenar primero los espacios más alejados de la puerta y evitar obstaculizar el ingreso del operador humano al contenedor.
-    \item La posición más baja del contenedor, se da naturalmente debido al efecto de la gravedad, un paquete no podría ser colocado en una posición alta si no se ha llenado primero las posiciones más bajas.
-    \item La posición más a la izquierda del contenedor, aunque no es una restricción fuerte, podría usarse el criterio de priorizar la posición más a la derecha si se considera necesario, lo crucial es mantener la consistencia al elegir una de estas dos direcciones. Para el caso de este trabajo se ha elegido la posición más a la izquierda.
-\end{itemize}
-
-Al inicio del procedimiento un paquete se coloca en la posición más profunda, más baja y más a la izquierda del contenedor vacío, luego al colocar el paquete en el contenedor, el espacio restante se divide en tres nuevos subespacios, la parte superior, la parte lateral y la parte frontal, en la figura \ref{fig:subespacios} se muestra de cómo se divide el espacio restante en el contenedor al colocar un paquete.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.9\textwidth]{Figures/subespacios.svg}
-    \caption{División del espacio restante en el contenedor al colocar un paquete. a) Subespacio frontal, b) Subespacio lateral, c) Subespacio superior.}
-    \label{fig:subespacios}
-\end{figure}
-
-Cada subespacio es considerado como un nuevo contenedor y se repite el proceso de colocar el siguiente paquete en uno de los subespacios creados. Para elegir el siguiente subespacio donde colocar el siguiente paquete, se usa el mismo criterio de priorización DBL, es decir, se elige el subespacio más profundo, más bajo y más a la izquierda, luego se coloca el paquete en dicho subespacio y se repite el proceso.
-
-En la figura \ref{fig:segundo_paquete} se muestra un ejemplo de cómo se coloca un segundo paquete en el contenedor siguiendo el algoritmo DBLF.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.5\textwidth]{Figures/segundo_paquete.svg}
-    \caption{Ejemplo de colocación de un segundo paquete en el contenedor luego de elegir el último subespacio lateral.}
-    \label{fig:segundo_paquete}
-\end{figure}
-
-Para este segundo paquete, se ha elegido el anterior subespacio lateral, el cual fué el subespacio más profundo, más bajo y más a la izquierda, siguiendo el criterio de priorización DBL, luego se coloca el paquete en dicho subespacio y se repite el proceso de dividir el espacio restante. Como resultado de esta subdivisión, se obtienen en este caso solamente dos subespacios, la parte superior y la parte lateral, ya que no queda espacio frontal para dividir. En la figura \ref{fig:segundos_subespacios} se muestra estos dos nuevos subespacios.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.75\textwidth]{Figures/segundos_subespacios.svg}
-    \caption{División del espacio restante en el contenedor al colocar un segundo paquete. a) Nuevo subespacio lateral, b) Nuevo subespacio superior.}
-    \label{fig:segundos_subespacios}
-\end{figure}
-
-Este procedimiento se repite hasta que se hayan colocado todos los paquetes en el contenedor o no se pueda colocar más paquetes debido a restricciones de espacio. En la figura \ref{fig:contruccion_muro} se muestra como este procedimiento se asemeja a un tipo de construcción de un muro el cuál es otro método de llenado de contenedores.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.5\textwidth]{Figures/contruccion_muro.svg}
-    \caption{Ejemplo de colocación de más paquetes en el contenedor}
-    \label{fig:contruccion_muro}
-\end{figure}
-
-El Algoritmo \ref{alg:dblf} muestra el procedimiento de llenado manual de paquetes en un contenedor basado en el algoritmo DBLF.
-
-\begin{algorithm}[H]
-\caption{Algoritmo de llenado manual de paquetes en un contenedor}
-\label{alg:dblf}
-\begin{algorithmic}[1]
-    \State $Paquetes \gets \text{lista de paquetes ordenados por tamaño}$
-    \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
-    \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
-    \For{$paquete \in Paquetes$}
-        \State $SubespacioOptimo \gets \text{buscar el subespacio más adecuado en } dblf$
-        \If{$SubespacioOptimo \neq \text{null}$}
-            \State $Contenedor.\text{add}( \text{colocar}(paquete, SubespacioOptimo) )$
-            \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, paquete)$
-            \State $dblf.\text{remove}(SubespacioOptimo)$
-            \State $dblf.\text{extend}(NuevosSubespacios)$
-        \Else
-            \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
-        \EndIf
-    \EndFor
-    \State \Return $Contenedor$
-\end{algorithmic}
-\end{algorithm}
-
-El el Algoritmo \ref{alg:dblf}, en la línea 1: se inicializa una lista llamada $Paquetes$ que contiene los paquetes ordenados. Este orden será determinado previamente por el algoritmo de optimización genético, el cual se detallará en la próxima sección. En la línea 2: Se inicializa una lista llamada $dblf$, que representa los subespacios libres en el $Contenedor$. Inicialmente, esta lista contiene un único subespacio que es el contenedor entero. En la línea 3: Se crea una lista vacía llamada $Contenedor$ donde se almacenarán la posición y tamaños de los paquetes que se vayan colocando. Para la parte del proceso de llenado, en la líneas 4: El ciclo for recorre cada paquete en la lista de paquetes.
-En la línea 5: Se busca en $dblf$ el primer subespacio disponible que sea suficientemente grande para el paquete. La búsqueda tiene en cuenta que el subespacio debe ser el más profundo, más bajo y más a la izquierda posible donde el paquete pueda caber. En la línea 6: Si tiene una condicional por si se encuentra o no un subespacio adecuado. De continuar con el procedimiento En la línea 7: La función $colocar$ ubica el $paquete$ en la posición más profunda, más baja y más a la izquierda del $SubespacioOptimo$ y devuelve la posición del paquete en el $Contenedor$, la función $add$ agrega el valor devuelto a la lista $Contenedor$. En la línea 8: El subespacio original $SubespacioOptimo$ donde se colocó el paquete se divide hasta en tres nuevos subespacios menores usando la función $dividir$. En la línea 9: se elimina el subespacio original $SubespacioOptimo$ de $dblf$ y en la línea 10: se agregan los nuevos subespacios a la lista $dblf$. En la línea 12: Si no se encuentra un subespacio adecuado para el paquete, se imprime un mensaje de error. Finalmente, en la línea 15: se retorna la lista $Contenedor$ con los paquetes colocados.
-
-En el contexto del llenado manual de contenedores, la propuesta de algoritmo presentado no es suficiente ya que no considera las restricciones propias de un llenado manual, por ejemplo un paquete más grande podría ser colocado encima de varios paquetes más pequeños. Por lo tanto se proponen mejoras al algoritmo DBLF para adaptarlo a las restricciones de un llenado manual de contenedores.
-
-\subsubsection{Unión de subespacios}
-
-El primer cambio a considerar es la posibilidad que un paquete pueda ser colocado encima de otros paquetes, en el algoritmo DBLF presentado, un paquete no podía ser colocado encima de otro paquete debido a que los subespacios superiores están separados, por lo tanto se propone una estrategia de unión de subespacios similares. Por ejemplo en la figura \ref{fig:union_subespacios} se muestra como se unen dos subespacios superiores para permitir que un paquete de otro tipo pueda ser colocado encima de otros paquetes.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.5\textwidth]{Figures/union_subespacios.svg}
-    \caption{Ejemplo de unión de dos subespacios superiores para permitir que un paquete pueda ser colocado encima de otros paquetes.}
-    \label{fig:union_subespacios}
-\end{figure}
-
-Para realizar la unión de subespacios superiores, se propone un algoritmo de unión de subespacios que se detalla en el Algoritmo \ref{alg:union_subespacios}. Este algoritmo recibe como entrada la lista de subespacios disponibles y recorre dicha lista de atrás hacia adelante, buscando subespacios contiguos y similares para unirlos en un solo subespacio. El algoritmo se detiene cuando no se encuentran más subespacios para unir.
-
-\begin{algorithm}[H]
-\caption{Algoritmo de unión de subespacios}
-\label{alg:union_subespacios}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
-        \If{$Subespacios[i].\text{esSimilar}(Subespacios[i-1])$}
-            \State $Subespacios[i-1].\text{unir}(Subespacios[i])$
-            \State $Subespacios.\text{remove}(Subespacios[i])$
-        \EndIf
-        \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
-\end{algorithm}
-
-En el Algoritmo \ref{alg:union_subespacios}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre el último con el anterior. En la línea 3: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 4: Se verifica si el subespacio actual y el subespacio anterior son similares, es decir si comparten ciertas características de posición en el contenedor y tamaño. En la línea 5: Si los subespacios son similares, se unen en un solo subespacio y se elimina el subespacio actual de la lista. En la línea 6: Se decrementa el valor de $i$ en uno. En la línea 8: Se retorna la lista de subespacios actualizada.
-
-\subsubsection{Eliminación de subespacios inaccesibles}
-
-En el contexto del llenado manual un espacio se vuelve inaccesible cuando un operador no puede colocar un paquete en dicho espacio debido a que fue bloqueado por otro paquete, en la figura \ref{fig:subespacio_inaccesible} se muestra un ejemplo de un subespacio inaccesible.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.5\textwidth]{Figures/subespacio_inaccesible.svg}
-    \caption{Ejemplo de un subespacio inaccesible.}
-    \label{fig:subespacio_inaccesible}
-\end{figure}
-
-La figura \ref{fig:subespacio_inaccesible} muestra desde una perspectiva superior del contenedor, en a) espacios libres en rojo que ha sido bloqueado por un paquete verde colocado, en b) este espacio inaccesible no podrá ser utilizado en su totalidad y se partirá para que quede solo la parte accesible.
-
-Para evitar que un subespacio inaccesible sea considerado en el proceso de llenado, se propone un algoritmo de eliminación de subespacios inaccesibles que se detalla en el Algoritmo \ref{alg:eliminacion_subespacios}. Este algoritmo recibe como entrada la lista de subespacios disponibles y recorre dicha lista desde el último hacia el primero, eliminando o recortando los subespacios inaccesibles.
-
-\begin{algorithm}[H]
-\caption{Algoritmo de eliminación de subespacios inaccesibles}
-\label{alg:eliminacion_subespacios}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
-        \If{$Subespacios[i].\text{esInaccesibleParcialmente}()$}
-            \State $Subespacios[i].\text{recortar}()$
-        \ElsIf{$Subespacios[i].\text{esInaccesibleTotalmente}()$}
-            \State $Subespacios.\text{remove}(Subespacios[i])$
-        \EndIf
-        \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
-\end{algorithm}
-
-En el Algoritmo \ref{alg:eliminacion_subespacios}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre desde el último ya que la lista podría ser modificada durante la ejecución del bucle. En la línea 3: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 4: Se verifica si el subespacio actual es inaccesible parcialmente, es decir si un paquete bloquea parcialmente el subespacio. En la línea 5: Si el subespacio es inaccesible parcialmente, se recorta el subespacio para eliminar la parte inaccesible. En la línea 6: Se verifica si el subespacio actual es inaccesible totalmente, es decir si un paquete bloquea completamente el subespacio. En la línea 7: Si el subespacio es inaccesible totalmente, se elimina el subespacio de la lista. En la línea 8: Se decrementa el valor de $i$ en uno. En la línea 10: Se retorna la lista de subespacios actualizada.
-
-\subsubsection{Eliminación de subespacios profundos}
-
-Un espacio profundo se considera inaccesible cuando un operador no puede alcanzar dicho espacio usando sus brazos, en este caso la distancia máxima que una persona puede alcanzar con sus brazos es una constante a definir en el sistema ya que podría usarse un valor promedio que no resulte en un esfuerzo excesivo para el operador humano. Una estrategia para evitar que un espacio profundo sea considerado en el proceso de llenado es recortar la parte posterior del espacio, en la figura \ref{fig:subespacio_profundo} se muestra un ejemplo de un subespacio profundo.
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=0.85\textwidth]{Figures/subespacio_profundo.svg}
-    \caption{Ejemplo de un subespacio profundo.}
-    \label{fig:subespacio_profundo}
-\end{figure}
-
-La figura \ref{fig:subespacio_profundo} muestra desde una perspectiva lateral del contenedor, en a) un espacio profundo en rojo, en b) este espacio profundo ha sido recortado para solo ser considerado la parte frontal accesible.
-
-Para evitar que un subespacio profundo sea considerado en el proceso de llenado, se propone un algoritmo que se detalla en el Algoritmo \ref{alg:eliminacion_subespacios_profundos}. Este algoritmo recibe como entrada la posición de la caja más cercana a la puerta del contenedor para calcular la posición máxima que un operador puede alcanzar con sus manos, y también recibe la lista de subespacios disponibles, recorre dicha lista desde el último hacia el primero, eliminando o recortando los subespacios profundos.
-
-\begin{algorithm}[H]
-\caption{Algoritmo de eliminación de subespacios profundos}
-\label{alg:eliminacion_subespacios_profundos}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $PosicionCajaMasCercana \gets \text{posición de la caja más cercana a la puerta}$
-    \State $PosicionMaxima \gets \text{posición máxima que un operador puede alcanzar}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
-        \If{$Subespacios[i].\text{esProfundoParcialmente}(PosicionMaxima)$}
-            \State $Subespacios[i].\text{recortar}()$
-        \ElsIf{$Subespacios[i].\text{esProfundoTotalmente}(PosicionMaxima)$}
-            \State $Subespacios.\text{remove}(Subespacios[i])$
-        \EndIf
-        \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
-\end{algorithm}
-
-En el Algoritmo \ref{alg:eliminacion_subespacios_profundos}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $PosicionCajaMasCercana$ con la posición de la caja más cercana a la puerta del contenedor contando el largo de la caja, el cuál daría el punto más cercano a la puerta del contenedor. En la línea 3: se inicializa una variable $PosicionMaxima$ con la posición máxima que un operador puede alcanzar con sus brazos, se calcula usando el punto más cercano a la puerta del contenedor menos la distancia establecida que los brazos de un operador puede alcanzar. En la línea 4: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre desde el último ya que la lista podría ser modificada durante la ejecución del bucle. En la línea 5: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 6: Se verifica si el subespacio actual es profundo parcialmente. En la línea 7: Si el subespacio es profundo parcialmente, se recorta el subespacio para eliminar la parte profunda y se mantiene la parte más frontal accesible. En la línea 8: Se verifica si el subespacio actual es profundo totalmente. En la línea 9: Si el subespacio es profundo totalmente, se elimina el subespacio completamente de la lista. En la línea 10: Se decrementa el valor de $i$ en uno. En la línea 12: Se retorna la lista de subespacios actualizada.
-
-\subsubsection{Algoritmo de llenado manual adaptado}
-
-El Algoritmo \ref{alg:dblf_adaptado} muestra el procedimiento de llenado manual de paquetes en un contenedor considerando que los paquetes se reciben por tipos además usando las estrategias de unión de subespacios, eliminación de subespacios inaccesibles y eliminación de subespacios profundos.
-
-\begin{algorithm}[H]
-\caption{Algoritmo de llenado manual de paquetes en un contenedor adaptado}
-\label{alg:dblf_adaptado}
-\begin{algorithmic}[1]
-    \State \textbf{Parámetros:} $Tipos \gets \text{lista de tipos de paquetes}$
-    \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
-    \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
-    \For{$tipo \in Tipos$}
-        \For{$i \gets 1 \text{ to } tipo.cantidad$}
-            \State $SubespacioOptimo \gets \text{buscar el subespacio más adecuado en } dblf$
-            \If{$SubespacioOptimo \neq \text{null}$}
-                \State $Contenedor.\text{add}( \text{colocar}(tipo, SubespacioOptimo) )$
-                \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, tipo)$
-                \State $dblf.\text{remove}(SubespacioOptimo)$
-                \State $dblf.\text{extend}(NuevosSubespacios)$
-            \Else
-                \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
-            \EndIf
-        \EndFor
-        \State $dblf \gets \text{unirSubespacios}(dblf)$
-        \State $dblf \gets \text{eliminarSubespaciosInaccesibles}(dblf)$
-        \State $dblf \gets \text{eliminarSubespaciosProfundos}(dblf)$
-    \EndFor
-    \State \Return $Contenedor$
-\end{algorithmic}
-\end{algorithm}
-
-En el Algoritmo \ref{alg:dblf_adaptado}, en la línea 1: se recibe una lista llamada $Tipos$ que contiene los tipos de paquetes cuya información incluye el tamaño, rotación y cantidad de paquetes. En la línea 2: Se inicializa una lista llamada $dblf$, que representa los subespacios libres en el $Contenedor$. Inicialmente, esta lista contiene un único subespacio que es el contenedor entero. En la línea 3: Se crea una lista vacía llamada $Contenedor$ donde se almacenarán la posición y tamaños de los paquetes que se vayan colocando. Para la parte del proceso de llenado, en la línea 4: El ciclo for recorre cada tipo de paquete en la lista de tipos. En la línea 5: Se inicia un ciclo for que recorre la cantidad de paquetes por tipo. En la línea 6: Se busca en $dblf$ el primer subespacio disponible que sea suficientemente grande para el paquete. La búsqueda tiene en cuenta que el subespacio debe ser el más profundo, más bajo y más a la izquierda posible donde el paquete pueda caber. En la línea 7: Si tiene una condicional por si se encuentra o no un subespacio adecuado. De continuar con el procedimiento En la línea 8: La función $colocar$ ubica el $tipo$ en la posición más profunda, más baja y más a la izquierda del $SubespacioOptimo$ y devuelve la posición del paquete en el $Contenedor$, la función $add$ agrega el valor devuelto a la lista $Contenedor$. En la línea 9: El subespacio original $SubespacioOptimo$ donde se colocó el paquete se divide hasta en tres nuevos subespacios menores usando la función $dividir$. En la línea 10: se elimina el subespacio original $SubespacioOptimo$ de $dblf$ y en la línea 11: se agregan los nuevos subespacios a la lista $dblf$. En la línea 16: Se unen los subespacios similares en $dblf$ usando la función $unirSubespacios$. En la línea 17: Se eliminan los subespacios inaccesibles en $dblf$ usando la función $eliminarSubespaciosInaccesibles$. En la línea 18: Se eliminan los subespacios profundos en $dblf$ usando la función $eliminarSubespaciosProfundos$. En la línea 20: Se retorna la lista $Contenedor$ con los paquetes colocados.
-
-
-\subsection{Conclusiones}
-
-En este capítulo se ha detallado la problemática, también se ha descrito una propuesta de solución, se ha especificado las restricciones, reglas y suposiciones para el problema, formulando una representación matemática, así como una propuesta de algoritmo de llenado manual basado en el método Deepest Bottom Left with Fill (DBLF) adaptado a las restricciones de un llenado manual de contenedores. Se han propuesto mejoras al algoritmo DBLF, como la unión de subespacios, la eliminación de subespacios inaccesibles y la eliminación de subespacios profundos, para adaptarlo a las restricciones de un llenado manual de contenedores.
-
-En el siguiente capítulo se presentará un algoritmo de optimización genético para resolver el problema de optimización de la carga manual de paquetes en un contenedor, considerando las restricciones de espacio del contenedor, así como las restricciones de rotación y orientación de los paquetes.
