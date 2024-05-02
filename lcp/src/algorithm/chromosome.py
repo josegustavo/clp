@@ -38,7 +38,7 @@ class Chromosome(list):
 
     def __str__(self) -> str:
         return f"""Chromosome with {len(self.genes)} genes
-{"\n".join([str(g) for g in self.genes])}
+{chr(10).join([str(g) for g in self.genes])}
 Fitness: {self.fitness}"""
 
     def evaluate(self, improvement: Improvement = Improvement.none, is_improving_late=False) -> 'Chromosome':
