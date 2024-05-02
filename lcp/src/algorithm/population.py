@@ -1,12 +1,15 @@
 from copy import deepcopy
 from dataclasses import dataclass, field
+from enum import Enum
 import logging
 import random
-from tkinter import N
-from typing import Iterator, Optional
+from typing import Iterator
 
 from lcp.src.problems import Problem
-from .chromosome import Chromosome, Gene
+from .chromosome import Chromosome, Gene, Improvement
+
+GroupImprovement = Enum(
+    'GroupImprovement', ['none', 'during', 'late_all', 'late_some', 'late_best'])
 
 
 @dataclass
@@ -14,6 +17,8 @@ class Population:
     problem: Problem
     individuals: list[Chromosome] = field(default_factory=list[Chromosome],
                                           init=False)
+    group_improvement: GroupImprovement = field(default=GroupImprovement.none)
+    evaluated: bool = field(default=False, init=False)
 
     def __iter__(self) -> Iterator[Chromosome]:
         return iter(self.individuals)
@@ -29,15 +34,18 @@ class Population:
 
     @property
     def best(self) -> Chromosome:
-        return max(self.individuals, key=lambda i: i.get_fitness)
+        if not self.evaluated:
+            self.evaluate()
+
+        return self.individuals[0]
 
     @property
     def best_fitness(self) -> float:
         return self.best.get_fitness
 
-    def generate_random_individuals(self, count: int = 100, seed=42) -> 'Population':
+    def generate_random_individuals(self, count: int = 100) -> 'Population':
         self.individuals.clear()
-        # random.seed(seed)
+
         for _ in range(count):
             genes = [Gene(t, random.randint(t.min_count, t.max_count),
                           random.randint(0, 1)) for t in self.problem.box_types]
@@ -51,13 +59,33 @@ class Population:
         return self
 
     def evaluate(self) -> 'Population':
-        best_fit = 0
-        for individual in self.individuals:
-            if individual.get_fitness == 0:
-                individual.evaluate()
-            if individual.get_fitness > best_fit:
-                best_fit = individual.get_fitness
+        # for individual in self.individuals:
+        #    if individual.get_fitness == 0:
+        #        individual.evaluate(
+        #            )
+        #    if individual.get_fitness > best_fit:
+        #        best_fit = individual.get_fitness
+        if self.group_improvement == GroupImprovement.none:
+            self.individuals.sort(
+                key=lambda i: i.evaluate().get_fitness, reverse=True)
+        elif self.group_improvement == GroupImprovement.during:
+            self.individuals.sort(key=lambda i: i.evaluate(
+                Improvement.during).get_fitness, reverse=True)
+        elif self.group_improvement == GroupImprovement.late_all:
+            self.individuals.sort(key=lambda i: i.evaluate(
+                Improvement.late).get_fitness, reverse=True)
+        else:
+            self.individuals.sort(
+                key=lambda i: i.evaluate().get_fitness, reverse=True)
+            if self.group_improvement == GroupImprovement.late_some:
+                for i in self.individuals[:5]:
+                    i.evaluate_with_improvement_late()
+            elif self.group_improvement == GroupImprovement.late_best:
+                self.individuals[0].evaluate_with_improvement_late()
+            self.individuals.sort(
+                key=lambda i: i.get_fitness, reverse=True)
         # print(f"Best fitness: {best_fit}")
+        self.evaluated = True
         return self
 
     def tournament(self, TOURNAMENT_SIZE=2) -> Chromosome:
@@ -66,9 +94,9 @@ class Population:
         max_item = max(t, key=lambda i: i.get_fitness)
         return max_item
 
-    def mutation(self, P_MUT: float = 0.1, P_MUT_GEN=0.05) -> 'Population':
+    def mutation(self, P_MUT: float = 0.05, P_MUT_GEN=0.05) -> 'Population':
         mutate_total = [0, 0, 0]
-        # print(P_MUT, P_MUT_GEN)
+
         for i in range(len(self.individuals)):
             if random.random() < P_MUT:
                 mutate_result, c = self.individuals[i].mutate(P_MUT_GEN)

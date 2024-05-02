@@ -1,29 +1,42 @@
 from copy import deepcopy
-import logging
+from enum import Enum
+from hmac import new
 import random
+import sys
+import time
+from tracemalloc import stop
 from typing import Callable, Optional
-from attr import dataclass, field
-
+from dataclasses import dataclass, field
 from lcp.src.algorithm.chromosome import Chromosome
-
 from .population import Population
+
+inf = sys.maxsize
 
 
 @dataclass
 class GeneticAlgorithm:
+    population: Population
+
     TOURNAMENT_SIZE: int = field(default=2)
+
     P_CROSSOVER: float = field(default=0.8)
-    MAX_GENERATIONS: int = field(default=300)
-    STOP_UNIMPROVED: int = field(default=50)
-    P_MUT: int = field(default=0.01)
-    P_MUT_GEN: int = field(default=0.05)
+    P_MUT: float = field(default=0.05)
+    P_MUT_GEN: float = field(default=0.05)
 
-    MIN_TIME: int = field(default=0)
+    MAX_GENERATIONS: int = field(default=inf)
+    STOP_UNIMPROVED: int = field(default=inf)
+    MAX_DURATION: int = field(default=inf)
 
-    population: Population = field(default=None)
+    stats: dict = field(default_factory=dict, init=False)
+
+    def __post_init__(self):
+        if self.MAX_GENERATIONS == inf and self.STOP_UNIMPROVED == inf and self.MAX_DURATION == inf:
+            raise ValueError(
+                "At least one of MAX_GENERATIONS, STOP_UNIMPROVED or MAX_TIME must be set")
 
     def select_with_crossover(self, elite) -> 'GeneticAlgorithm':
-        new_population = Population(self.population.problem)
+        new_population = Population(
+            self.population.problem, self.population.group_improvement)
 
         while len(new_population) < len(self.population):
             # Selección aleatoria de 2 individuos eligiendo el mejor
@@ -40,8 +53,8 @@ class GeneticAlgorithm:
                 new_population.append(child_2)
             else:
                 # Si no se cruzan, se añaden los padres
-                new_population.append(parent_1)
-                new_population.append(parent_2)
+                new_population.append(deepcopy(parent_1))
+                new_population.append(deepcopy(parent_2))
 
         new_best = new_population.best
         # Si el mejor individuo de la elite sigue siendo el mejor, se reemplaza por el peor de los seleccionados
@@ -50,6 +63,8 @@ class GeneticAlgorithm:
             min_item = min(new_population, key=lambda i: i.get_fitness)
             min_item_index = new_population.individuals.index(min_item)
             new_population.individuals[min_item_index] = deepcopy(elite)
+
+        new_population.evaluate()
         self.population = new_population
         return self
 
@@ -60,10 +75,12 @@ class GeneticAlgorithm:
         generations_not_improved = 0
         generation = 0
         best_values = [elite.get_fitness]
+        time_start = int(time.time())
+        time_end = time_start
         # Iterar hasta que no se mejore en M generaciones o se alcance la generación N
-        while generations_not_improved < self.STOP_UNIMPROVED and generation < self.MAX_GENERATIONS:
-            print("-> Generation %d best value: %d" % (
-                  generation, elite.get_fitness))
+        while (time_end-time_start) < self.MAX_DURATION and generations_not_improved < self.STOP_UNIMPROVED and generation < self.MAX_GENERATIONS:
+            # print("-> Generation %d best value: %d" % (
+            #      generation, elite.get_fitness))
             self.select_with_crossover(elite)
 
             # P_MUT = self.P_MUT + (generations_not_improved/1000)
@@ -72,20 +89,20 @@ class GeneticAlgorithm:
 
             new_best = self.population.best
             if new_best.get_fitness > elite_fitness:
-                print("New elite: ", new_best.get_fitness,
-                      "Old elite: ", elite_fitness)
+                # print("New elite: ", new_best.get_fitness,
+                #      "Old elite: ", elite_fitness)
                 elite = deepcopy(new_best)
                 elite_fitness = elite.get_fitness
                 generations_not_improved = 0
             # Si en la mutación se perdió el individuo de la elite, reemplazar el peor de la población
             elif new_best.get_fitness < elite_fitness:
-                print("El nuevo mejor individuo %d es peor que el elite %d" % (
-                    new_best.get_fitness, elite_fitness))
+                # print("El nuevo mejor individuo %d es peor que el elite %d" % (
+                #    new_best.get_fitness, elite_fitness))
                 min_item = min(self.population.individuals,
                                key=lambda i: i.get_fitness)
                 min_item_index = self.population.individuals.index(min_item)
                 self.population.individuals[min_item_index] = deepcopy(elite)
-                print("Se ha perdido el elite, reemplazado al peor de la población")
+                # print("Se ha perdido el elite, reemplazado al peor de la población")
                 generations_not_improved += 1
             else:
                 generations_not_improved += 1
@@ -94,5 +111,15 @@ class GeneticAlgorithm:
             generation += 1
             if callable(onGeneration):
                 onGeneration(best_values, self.population)
-
+            time_end = int(time.time())
+        self.stats = {
+            'best_value': self.population.best.fitness,
+            'time_start': time_start,
+            'types_count': len(self.population.problem.box_types),
+            'generations': generation,
+            'best_values': best_values,
+            'start_time': time_start,
+            'end_time': time_end,
+            'duration': time_end-time_start,
+        }
         return self

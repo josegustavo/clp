@@ -2,6 +2,8 @@
 
 import json
 import logging
+from os import makedirs
+import os
 from attr import dataclass, field
 
 from lcp.src.container import BoxType, Container
@@ -34,6 +36,9 @@ class Problems:
         """
 
         problems = [ProblemMaker(**kwargs).random_boxes for _ in range(count)]
+        # Make sure folder exists or create
+        makedirs(os.path.dirname(self.file_path), exist_ok=True)
+
         with open(self.file_path, 'w') as file:
             json.dump(problems, file, indent=4)
         logging.info(f"Problems saved to '{self.file_path}'")
