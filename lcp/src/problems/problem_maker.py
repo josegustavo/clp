@@ -1,6 +1,9 @@
 from math import prod
 import random
-from attr import dataclass, field
+import string
+from dataclasses import dataclass, field
+
+alphabet = string.ascii_lowercase + string.digits
 
 
 @dataclass
@@ -9,6 +12,10 @@ class ProblemMaker:
     CONTAINER_DIM: tuple = (12010, 2330, 2380)  # Contenedor de 40 pies
     BOX_SIDE_MIN: int = 300
     BOX_SIDE_MAX: int = 600
+    id: str = field(default='')
+
+    def __post_init__(self):
+        self.id = ''.join(random.choices(alphabet, k=8))
 
     result: dict = field(init=False, repr=False)
 
@@ -16,6 +23,7 @@ class ProblemMaker:
     def random_boxes(self):
         container_volume = prod(self.CONTAINER_DIM)
         result = {
+            'id': self.id,
             'container': self.CONTAINER_DIM,
             'container_volume': container_volume,
         }
@@ -26,7 +34,7 @@ class ProblemMaker:
                        for _ in range(3)]
             vol = l*w*h
             mean_count = int((container_volume/self.N_TYPES) // vol)
-            max_count = mean_count  # + random.randint(0, mean_count//2)
+            max_count = mean_count + random.randint(0, mean_count//2)
             min_count = max(0, mean_count - random.randint(0, mean_count//2))
             box_type = {
                 'type': i,

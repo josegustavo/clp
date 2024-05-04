@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
+import json
 from lcp.src.problems.problems import Problems
 from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.graphic.draw_container import draw
@@ -8,9 +9,14 @@ from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
 
-random.seed(42)
+# random.seed(43)
 
 types_count = [5, 10, 15, 20]
+
+for i in types_count:
+    Problems(file_path='problems/types_%d.json' % i)\
+        .generate(10, N_TYPES=i, BOX_SIDE_MIN=250, BOX_SIDE_MAX=750)
+
 improvements = [GroupImprovement.none,
                 GroupImprovement.during,
                 GroupImprovement.late_all,
@@ -20,11 +26,11 @@ improvements = [GroupImprovement.none,
 
 def solve(args):
     problem, imp, num_types = args
-    random.seed(100)
+    # random.seed(100)
     population = Population(problem, imp)\
         .generate_random_individuals(100).evaluate()
     ga = GeneticAlgorithm(population=population,
-                          MAX_DURATION=60,
+                          MAX_DURATION=300,
                           P_MUT_GEN=1/num_types,
                           )
     ga.start()
@@ -44,6 +50,9 @@ def main():
         results = executor.map(solve, args)
 
         for result in results:
+            with open('results.txt', 'a') as outfile:
+                json.dump(result, outfile)
+                outfile.write('\n')
             print(result)
 
 

@@ -4,7 +4,7 @@ import json
 import logging
 from os import makedirs
 import os
-from attr import dataclass, field
+from dataclasses import dataclass, field
 
 from lcp.src.container import BoxType, Container
 from lcp.src.problems.problem import Problem
@@ -64,7 +64,7 @@ class Problems:
                                   width=problem_data['container'][1],
                                   height=problem_data['container'][2],
                                   )
-            problem = Problem(container, box_types)
+            problem = Problem(problem_data['id'], container, box_types)
             problems.append(problem)
         logging.info("%d problems loaded from '%s'",
                      len(problems), self.file_path)

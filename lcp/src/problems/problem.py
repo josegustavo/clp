@@ -1,11 +1,12 @@
 from typing import Container
-from attr import dataclass
+from dataclasses import dataclass
 
 from lcp.src.container import Container, BoxType
 
 
 @dataclass
 class Problem:
+    id: str
     container: Container
     box_types: list[BoxType]
 

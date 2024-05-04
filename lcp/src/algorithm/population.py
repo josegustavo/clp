@@ -3,7 +3,9 @@ from dataclasses import dataclass, field
 from enum import Enum
 import logging
 import random
-from typing import Iterator
+from typing import Iterator, Optional
+
+from matplotlib.pylab import f
 
 from lcp.src.problems import Problem
 from .chromosome import Chromosome, Gene, Improvement
@@ -33,6 +35,11 @@ class Population:
         return f"Population with {len(self)} individuals best: {self.best.get_fitness}"
 
     @property
+    def default_max(self) -> Optional[Chromosome]:
+        filtered = list(filter(lambda t: t.isMaxInitial, self.individuals))
+        return filtered[0] if filtered else None
+
+    @property
     def best(self) -> Chromosome:
         if not self.evaluated:
             self.evaluate()
@@ -46,7 +53,18 @@ class Population:
     def generate_random_individuals(self, count: int = 100) -> 'Population':
         self.individuals.clear()
 
-        for _ in range(count):
+        # Generar dos soluciones iniciales usando los valores mínimos y máximos propuestos
+
+        genes = [Gene(t, t.max_count, 0) for t in self.problem.box_types]
+        random.shuffle(genes)
+        self.individuals.append(Chromosome(
+            genes, self.problem.container, True))
+
+        genes = [Gene(t, t.min_count, 0) for t in self.problem.box_types]
+        random.shuffle(genes)
+        self.individuals.append(Chromosome(genes, self.problem.container))
+
+        for _ in range(count-2):  # Generar 2 menos
             genes = [Gene(t, random.randint(t.min_count, t.max_count),
                           random.randint(0, 1)) for t in self.problem.box_types]
             random.shuffle(genes)
@@ -94,12 +112,12 @@ class Population:
         max_item = max(t, key=lambda i: i.get_fitness)
         return max_item
 
-    def mutation(self, P_MUT: float = 0.05, P_MUT_GEN=0.05) -> 'Population':
+    def mutation(self, P_MUT: float = 0.05) -> 'Population':
         mutate_total = [0, 0, 0]
 
         for i in range(len(self.individuals)):
             if random.random() < P_MUT:
-                mutate_result, c = self.individuals[i].mutate(P_MUT_GEN)
+                mutate_result, c = self.individuals[i].mutate()
                 self.individuals[i] = c
                 mutate_total = [a + b for a,
                                 b in zip(mutate_total, mutate_result)]
