@@ -26,7 +26,7 @@ improvements = [GroupImprovement.none,
 
 def solve(args):
     problem, imp, num_types = args
-    # random.seed(100)
+    random.seed(100)
     population = Population(problem, imp)\
         .generate_random_individuals(100).evaluate()
     ga = GeneticAlgorithm(population=population,

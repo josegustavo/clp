@@ -1,4 +1,4 @@
-from copy import copy
+from copy import copy, deepcopy
 from dataclasses import dataclass, field
 from enum import Enum
 import logging
@@ -25,6 +25,29 @@ class Chromosome(list):
     occupied_vol: int = field(default=0, init=False)
     number_boxes: int = field(default=0, init=False)
     cost_value: int = field(default=0, init=False)
+
+    def __deepcopy__(self, memo):
+        # Create a new instance of the class
+        new_chromosome = Chromosome(
+            deepcopy(self.genes, memo),
+            self.container,
+            self.isMaxInitial)
+
+        # Copy the attributes
+        new_chromosome.result = deepcopy(self.result, memo)
+        new_chromosome.improved = self.improved
+        new_chromosome.evaluated = self.evaluated
+        new_chromosome.occupied_vol = self.occupied_vol
+        new_chromosome.number_boxes = self.number_boxes
+        new_chromosome.cost_value = self.cost_value
+
+        return new_chromosome
+
+    def __gt__(self, other: 'Chromosome') -> bool:
+        return self.get_fitness > other.get_fitness
+
+    def __lt__(self, other: 'Chromosome') -> bool:
+        return self.get_fitness < other.get_fitness
 
     @property
     def fitness(self):

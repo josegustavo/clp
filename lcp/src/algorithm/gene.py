@@ -21,6 +21,10 @@ class Gene:
     rotation: int
     size: Size = field(init=False, repr=False)
 
+    def __deepcopy__(self, memo):
+        new_gene = Gene(self.type, self.box_count, self.rotation)
+        return new_gene
+
     def __str__(self) -> str:
         return f"Gene of type {self.type} with {self.box_count} boxes and rotation {self.rotation}"
 

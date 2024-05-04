@@ -34,6 +34,11 @@ class Population:
     def __str__(self) -> str:
         return f"Population with {len(self)} individuals best: {self.best.get_fitness}"
 
+    def replace_worst(self, chromosome: Chromosome) -> 'Population':
+        self.individuals.insert(0, chromosome)
+        del self.individuals[-1]
+        return self
+
     @property
     def default_max(self) -> Optional[Chromosome]:
         filtered = list(filter(lambda t: t.isMaxInitial, self.individuals))

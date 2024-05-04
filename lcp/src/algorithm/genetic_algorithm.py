@@ -65,8 +65,6 @@ class GeneticAlgorithm:
         if default_max:
             default_max_fitness = default_max.fitness
         elite = deepcopy(self.population.best)
-        elite_fitness = elite.get_fitness
-        # print(elite)
         generations_not_improved = 0
         generation = 0
         best_values = [elite.get_fitness]
@@ -83,28 +81,21 @@ class GeneticAlgorithm:
             self.population.mutation(self.P_MUT)
 
             new_best = self.population.best
-            if new_best.get_fitness > elite_fitness:
-                # print("New elite: ", new_best.get_fitness,
-                #      "Old elite: ", elite_fitness)
+            if new_best > elite:  # Si el nuevo mejor es mejor que el elite, reemplazar
                 elite = deepcopy(new_best)
-                elite_fitness = elite.get_fitness
                 generations_not_improved = 0
-            # Si en la mutación se perdió el individuo de la elite, reemplazar el peor de la población
-            elif new_best.get_fitness < elite_fitness:
-                # print("El nuevo mejor individuo %d es peor que el elite %d" % (
-                #    new_best.get_fitness, elite_fitness))
-                del self.population.individuals[-1]
-                self.population.individuals.insert(0, deepcopy(elite))
-                # print("Se ha perdido el elite, reemplazado al peor de la población")
-                generations_not_improved += 1
             else:
+                if new_best < elite:
+                    del self.population.individuals[-1]
+                    new_best = deepcopy(elite)
+                    self.population.replace_worst(new_best)
                 generations_not_improved += 1
-            # print(self.population.best)
-            best_values.append(self.population.best.get_fitness)
 
+            best_values.append(new_best.get_fitness)
+
+            # if callable(onGeneration):
+            #    onGeneration(best_values, self.population)
             generation += 1
-            if callable(onGeneration):
-                onGeneration(best_values, self.population)
             time_end = time.time()
             generations_time.append(round(time_end-time_generation, 2))
             time_generation = time_end
