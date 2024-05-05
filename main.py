@@ -37,7 +37,7 @@ def solve(args):
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=multiprocessing.cpu_count()-1) as executor:
+    with ProcessPoolExecutor(max_workers=multiprocessing.cpu_count()) as executor:
         args = []
         for i in types_count:
             problems = Problems(file_path='problems/types_%d.json' %
