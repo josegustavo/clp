@@ -89,14 +89,17 @@ class Population:
         #    if individual.get_fitness > best_fit:
         #        best_fit = individual.get_fitness
         if self.group_improvement == GroupImprovement.none:
-            self.individuals.sort(
-                key=lambda i: i.evaluate().get_fitness, reverse=True)
+            self.individuals.sort(key=lambda i: i.evaluate().
+                                  get_fitness,
+                                  reverse=True)
         elif self.group_improvement == GroupImprovement.during:
-            self.individuals.sort(key=lambda i: i.evaluate(
-                Improvement.during).get_fitness, reverse=True)
+            self.individuals.sort(key=lambda i: i.evaluate(Improvement.during).
+                                  get_fitness,
+                                  reverse=True)
         elif self.group_improvement == GroupImprovement.late_all:
-            self.individuals.sort(key=lambda i: i.evaluate(
-                Improvement.late).get_fitness, reverse=True)
+            self.individuals.sort(key=lambda i: i.evaluate().
+                                  evaluate_with_improvement_late(),
+                                  reverse=True)
         else:
             self.individuals.sort(
                 key=lambda i: i.evaluate().get_fitness, reverse=True)
