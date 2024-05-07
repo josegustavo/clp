@@ -2,23 +2,60 @@
 
 \section{Revision de la literatura}
 
-\subsection{Problemas de optimización combinatoria}
+El problema de llenado de paquetes en contenedores es también conocido en la literatura como Container Loading Problem o CLP, ha sido ampliamente estudiado desde los años 60's (\textcite{barnett1967exact}), una de las definiciones más sencillas lo realiza \textcite{GEORGE1980147} quién lo define como encontrar posiciones adecuadas para colocar las cajas en el contenedor de tal manera que todas las cajas puedan ser colocadas en el contenedor sin superponerse de tal modo que se maximice la utilización del espacio. A continuación se presentan algunas revisiones de la literatura que se han realizado sobre el problema.
 
-    \begin{itemize}
-        \item{Knapsack Problem ...}
-        \item{Cutting Stock Problem ...}
-        \item{3D Bin Packing Problem ...}
-        \item{Container Loading Problem ...}
-    \end{itemize}
-    
-\subsection{Algoritmos heurísticos}
-    
-    \lipsum[2]
-    
-\subsection{Algoritmos metaheurísticos}
+\subsection{Origen del CLP}
 
-    \lipsum[2]
+El problema de llenado de contenedores tiene su origen en el campo del transporte y la logística. Surge de la necesidad de empacar eficientemente objetos en contenedores o vehículos mientras se optimiza la utilización del espacio. Aunque tiene un origen en la industria, el problema ha sido ampliamente objeto de investigación en la comunidad académica, debido a su complejidad, quienes también los clasifican como un problema de optimización combinatoria derivado de otros problemas de optimización como el problema de cortes y empacado de objetos \textcite{Alvarez-Valdes2018}, el problema de la mochila \textcite{DEQUEIROZ2012200} entre otros.
 
-\subsection{Estado del arte}
+Existen muchos tipo de problemas de llenado de contenedores, algunos de los más conocidos son:
 
-    \lipsum[2]
+\subsection{Formulaciones del CLP}
+
+Muchos de los tipos de problemas formulados en torno al CLP pueden categorizarse en dos tipo principales, los problemas de llenado con restricciones básicas y los problemas de llenado con restricciones prácticas o reales. Los problemas con restricciones básicas son aquellos que consideran restricciones simples, por ejemplo que los paquetes no pueden ser superpuestos y que deben ser colocados dentro de los límites del contenedor, también llamado restricciones de viabilidad del empaquetado \textcite{scheithauer2017introduction}. Los problemas con restricciones prácticas consideran restricciones más realistas como por ejemplo restricciones de estabilidad, restricciones de rotación, restricciones de contigüidad, restricciones de peso, entre otras. 
+
+\textcite{Bortfeldt20131} hizo una revisión de los distintos tipos de restricciones que se han considerado en la literatura, entre las que se encuentran:
+
+\subsubsection{CLP con múltiples contenedores}
+
+También conocido como el problema de llenado de contenedores múltiples, es una variante del CLP en la que se tienen varios contenedores y se busca llenarlos con un conjunto de paquetes. El objetivo es minimizar el número de contenedores utilizados, maximizando la utilización del espacio en los contenedores.
+
+Algunas de las subvariantes de este problema incluyen el uso de contenedores del mismo tamaño o de diferentes tamaños, por ejemplo Single Bin-Size Bin Packing Problem (SBSBPP) se enfoca en llenar un conjunto de contenedores de un solo tamaño con un conjunto de paquetes (\textcite{ren2011priority}), mientras que Multiple Bin-Size Bin Packing Problem (MBSBPP) se enfoca en llenar un conjunto de contenedores de diferentes tamaños con un conjunto de paquetes (\textcite{zhao2016comparative}).
+
+\subsubsection{CLP con restricciones de estabilidad}
+
+\subsubsection{CLP con restricciones de rotación}
+
+\subsubsection{CLP con paquetes heterogéneos}
+
+% Explicar la diferencia entre fuertemente heterogeneos y debilmente heterogeneos
+
+\subsection{Variantes del CLP}
+
+\subsection{Metodologías de solución}
+
+% Explicar las soluciones exactas y aproximadas que se han propuesto
+
+\subsubsection{Métodos exactos}
+
+\subsubsection{Métodos heurísticos}
+
+% Explicar las heurísticas y metaheurísticas que se han propuesto
+
+\subsubsection{Métodos metaheurísticos}
+
+\subsection{Software usado en la industria}
+
+\subsubsection{Cargo Manager}
+
+Según \textcite{zhao2017three}, Cargo Manager (CM) es un ejecutable independiente diseñado para empaquetar contenedores siguiendo un orden de prioridad específico, comenzando por la parte trasera del contenedor. El proceso de empaquetado utiliza una serie de reglas de colocación, probando cada artículo en el orden establecido; si un artículo no es adecuado, se pasa al siguiente, volviendo a considerar los artículos no adecuados en futuras colocaciones. Los artículos de mayor prioridad se empaquetan primero y es posible configurar el sistema para que se adhiera estrictamente a las prioridades de empaque, asegurando que todos los artículos de una prioridad actual se empaquen antes de comenzar con la siguiente.
+
+El proceso principal de empaquetado en CM utiliza diferentes métodos heurísticos constructivos que varían desde heurísticas básicas hasta métodos más complejos y consumidores de tiempo. El objetivo es maximizar el uso del espacio del contenedor formando "muros" con los artículos, donde cada bloque consiste en cajas del mismo tipo y orientación. A medida que se colocan los artículos, los espacios que ocupan ya no están disponibles, generándose nuevos espacios cúbicos que pueden fusionarse con espacios previos. Los métodos difieren en cómo seleccionan los espacios y las cajas, y las restricciones aplicadas al tamaño de los bloques.
+
+En una etapa adicional, CM utiliza la heurística más básica para intentar empaquetar tantos artículos restantes como sea posible. Esta etapa no es adecuada para problemas de múltiples destinos o donde se requiere nivelación de carga, y excluye artículos pesados o frágiles. La solución óptima se determina comparando el volumen y la longitud utilizados por diferentes métodos, seleccionando como mejor aquella solución que ocupe mayor volumen o, en caso de igual volumen, utilice menos longitud. Los usuarios pueden decidir cuántas heurísticas se evalúan, y en caso de seleccionar un solo método, su solución se convierte automáticamente en la solución final.
+
+\subsection{Aportaciones del trabajo}
+
+Este trabajo se enfoca en resolver el problema de llenado de contenedores considerando un único contenedor y paquetes debilmente heterogéneos, esta clasificación también es conocida como Three-dimensional Single Large Object Placement Problem (SLOPP) cuya clasificación fue propuesta por \textcite{wascher2007improved}, sin embargo muchos de los trabajos en la literatura que resuelven este problema no consideran todas restricciones prácticas que se presentan en la industria.
+
+Con esta falta de enfoques en la literatura con un conjunto realista de restricciones prácticas, nuestro objetivo es proponer un método metaheurístico de buen rendimiento que sea capaz de resolver problemas con un número razonable de número de paquetes y garantizar resultados consistentes de buena calidad. Consideramos las restricciones prácticas que tienen como origen del hecho de ser un llenado manual de los paquetes en el contenedor. El método de solución propuesto consiste en un enfoque de llenado priorizando el espacio más al fondo, más debajo y más a la izquierda, compuesto por un simulación de llenado por ordenador y unas propuestas de mejoras en los procesos de llenado. El método está estructurado de tal manera quede claro y facilite el procedimiento de carga para el operador humano.
