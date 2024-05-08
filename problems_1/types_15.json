@@ -1,6 +1,6 @@
 [
     {
-        "id": "mrlrmjkv",
+        "id": "lg6mm1zx",
         "container": [
             12010,
             2330,
@@ -11,1148 +11,188 @@
             {
                 "type": 0,
                 "size": [
-                    700,
-                    391,
-                    534
+                    604,
+                    385,
+                    562
                 ],
-                "value": 67,
-                "volume": 146155800,
-                "min_count": 30,
-                "max_count": 30
+                "value": 32,
+                "volume": 130687480,
+                "min_count": 27,
+                "max_count": 48
             },
             {
                 "type": 1,
                 "size": [
-                    735,
-                    347,
-                    293
+                    392,
+                    535,
+                    402
                 ],
-                "value": 93,
-                "volume": 74728185,
-                "min_count": 52,
+                "value": 99,
+                "volume": 84307440,
+                "min_count": 43,
                 "max_count": 59
             },
             {
                 "type": 2,
                 "size": [
-                    458,
-                    500,
-                    534
-                ],
-                "value": 89,
-                "volume": 122286000,
-                "min_count": 29,
-                "max_count": 36
-            },
-            {
-                "type": 3,
-                "size": [
-                    493,
-                    580,
-                    614
-                ],
-                "value": 58,
-                "volume": 175567160,
-                "min_count": 18,
-                "max_count": 25
-            },
-            {
-                "type": 4,
-                "size": [
-                    655,
-                    258,
-                    297
-                ],
-                "value": 29,
-                "volume": 50190030,
-                "min_count": 70,
-                "max_count": 88
-            },
-            {
-                "type": 5,
-                "size": [
-                    457,
-                    604,
-                    374
-                ],
-                "value": 85,
-                "volume": 103234472,
-                "min_count": 34,
-                "max_count": 43
-            },
-            {
-                "type": 6,
-                "size": [
-                    547,
-                    438,
-                    492
-                ],
-                "value": 68,
-                "volume": 117876312,
-                "min_count": 20,
-                "max_count": 37
-            },
-            {
-                "type": 7,
-                "size": [
-                    426,
-                    467,
-                    631
-                ],
-                "value": 43,
-                "volume": 125532402,
-                "min_count": 18,
-                "max_count": 35
-            },
-            {
-                "type": 8,
-                "size": [
-                    430,
-                    609,
-                    482
-                ],
-                "value": 40,
-                "volume": 126221340,
-                "min_count": 27,
-                "max_count": 35
-            },
-            {
-                "type": 9,
-                "size": [
-                    378,
-                    368,
-                    311
-                ],
-                "value": 25,
-                "volume": 43261344,
-                "min_count": 56,
-                "max_count": 102
-            },
-            {
-                "type": 10,
-                "size": [
-                    411,
-                    311,
-                    630
-                ],
-                "value": 98,
-                "volume": 80527230,
-                "min_count": 38,
-                "max_count": 55
-            },
-            {
-                "type": 11,
-                "size": [
-                    603,
-                    344,
-                    348
-                ],
-                "value": 95,
-                "volume": 72186336,
-                "min_count": 55,
-                "max_count": 61
-            },
-            {
-                "type": 12,
-                "size": [
-                    497,
-                    391,
-                    620
-                ],
-                "value": 98,
-                "volume": 120482740,
-                "min_count": 18,
-                "max_count": 36
-            },
-            {
-                "type": 13,
-                "size": [
-                    518,
-                    555,
-                    394
-                ],
-                "value": 25,
-                "volume": 113271060,
-                "min_count": 36,
-                "max_count": 39
-            },
-            {
-                "type": 14,
-                "size": [
-                    401,
-                    366,
-                    434
-                ],
-                "value": 39,
-                "volume": 63696444,
-                "min_count": 58,
-                "max_count": 69
-            }
-        ],
-        "types_count": 15
-    },
-    {
-        "id": "atj9tze5",
-        "container": [
-            12010,
-            2330,
-            2380
-        ],
-        "container_volume": 66600254000,
-        "box_types": [
-            {
-                "type": 0,
-                "size": [
-                    501,
-                    302,
-                    696
-                ],
-                "value": 74,
-                "volume": 105306192,
-                "min_count": 42,
-                "max_count": 42
-            },
-            {
-                "type": 1,
-                "size": [
-                    395,
-                    490,
-                    495
-                ],
-                "value": 44,
-                "volume": 95807250,
-                "min_count": 32,
-                "max_count": 46
-            },
-            {
-                "type": 2,
-                "size": [
-                    344,
-                    744,
-                    276
-                ],
-                "value": 62,
-                "volume": 70638336,
-                "min_count": 46,
-                "max_count": 62
-            },
-            {
-                "type": 3,
-                "size": [
-                    308,
-                    670,
-                    283
-                ],
-                "value": 63,
-                "volume": 58399880,
-                "min_count": 51,
-                "max_count": 76
-            },
-            {
-                "type": 4,
-                "size": [
-                    287,
-                    545,
-                    572
-                ],
-                "value": 7,
-                "volume": 89469380,
-                "min_count": 28,
-                "max_count": 49
-            },
-            {
-                "type": 5,
-                "size": [
-                    327,
-                    326,
-                    665
-                ],
-                "value": 11,
-                "volume": 70890330,
-                "min_count": 43,
-                "max_count": 62
-            },
-            {
-                "type": 6,
-                "size": [
-                    377,
-                    310,
-                    535
-                ],
-                "value": 78,
-                "volume": 62525450,
-                "min_count": 45,
-                "max_count": 71
-            },
-            {
-                "type": 7,
-                "size": [
-                    555,
-                    654,
-                    566
-                ],
-                "value": 100,
-                "volume": 205441020,
-                "min_count": 18,
-                "max_count": 21
-            },
-            {
-                "type": 8,
-                "size": [
-                    517,
-                    444,
-                    480
-                ],
-                "value": 39,
-                "volume": 110183040,
-                "min_count": 26,
-                "max_count": 40
-            },
-            {
-                "type": 9,
-                "size": [
-                    690,
-                    551,
-                    469
-                ],
-                "value": 73,
-                "volume": 178309110,
-                "min_count": 20,
-                "max_count": 24
-            },
-            {
-                "type": 10,
-                "size": [
-                    567,
-                    280,
-                    562
-                ],
-                "value": 13,
-                "volume": 89223120,
-                "min_count": 26,
-                "max_count": 49
-            },
-            {
-                "type": 11,
-                "size": [
-                    735,
-                    640,
+                    397,
+                    610,
                     356
                 ],
-                "value": 28,
-                "volume": 167462400,
-                "min_count": 16,
-                "max_count": 26
+                "value": 63,
+                "volume": 86212520,
+                "min_count": 29,
+                "max_count": 73
             },
             {
-                "type": 12,
+                "type": 3,
                 "size": [
-                    385,
-                    588,
-                    291
+                    412,
+                    495,
+                    428
                 ],
-                "value": 31,
-                "volume": 65876580,
-                "min_count": 57,
+                "value": 93,
+                "volume": 87286320,
+                "min_count": 25,
                 "max_count": 67
             },
             {
-                "type": 13,
-                "size": [
-                    338,
-                    532,
-                    288
-                ],
-                "value": 1,
-                "volume": 51787008,
-                "min_count": 75,
-                "max_count": 85
-            },
-            {
-                "type": 14,
-                "size": [
-                    459,
-                    480,
-                    602
-                ],
-                "value": 38,
-                "volume": 132632640,
-                "min_count": 18,
-                "max_count": 33
-            }
-        ],
-        "types_count": 15
-    },
-    {
-        "id": "bkk4cij2",
-        "container": [
-            12010,
-            2330,
-            2380
-        ],
-        "container_volume": 66600254000,
-        "box_types": [
-            {
-                "type": 0,
-                "size": [
-                    551,
-                    588,
-                    661
-                ],
-                "value": 55,
-                "volume": 214156068,
-                "min_count": 17,
-                "max_count": 20
-            },
-            {
-                "type": 1,
-                "size": [
-                    308,
-                    528,
-                    365
-                ],
-                "value": 35,
-                "volume": 59357760,
-                "min_count": 65,
-                "max_count": 74
-            },
-            {
-                "type": 2,
-                "size": [
-                    673,
-                    322,
-                    286
-                ],
-                "value": 22,
-                "volume": 61977916,
-                "min_count": 68,
-                "max_count": 71
-            },
-            {
-                "type": 3,
-                "size": [
-                    655,
-                    407,
-                    554
-                ],
-                "value": 57,
-                "volume": 147688090,
-                "min_count": 21,
-                "max_count": 30
-            },
-            {
                 "type": 4,
                 "size": [
-                    313,
-                    489,
-                    602
-                ],
-                "value": 90,
-                "volume": 92140314,
-                "min_count": 39,
-                "max_count": 48
-            },
-            {
-                "type": 5,
-                "size": [
-                    456,
-                    732,
-                    389
+                    390,
+                    397,
+                    312
                 ],
                 "value": 70,
-                "volume": 129845088,
-                "min_count": 18,
-                "max_count": 34
+                "volume": 48306960,
+                "min_count": 48,
+                "max_count": 127
             },
             {
-                "type": 6,
+                "type": 5,
                 "size": [
-                    502,
-                    474,
-                    291
+                    444,
+                    708,
+                    452
                 ],
-                "value": 56,
-                "volume": 69242868,
-                "min_count": 62,
-                "max_count": 64
-            },
-            {
-                "type": 7,
-                "size": [
-                    626,
-                    415,
-                    559
-                ],
-                "value": 4,
-                "volume": 145222610,
-                "min_count": 22,
-                "max_count": 30
-            },
-            {
-                "type": 8,
-                "size": [
-                    296,
-                    367,
-                    742
-                ],
-                "value": 74,
-                "volume": 80604944,
-                "min_count": 34,
-                "max_count": 55
-            },
-            {
-                "type": 9,
-                "size": [
-                    550,
-                    736,
-                    260
-                ],
-                "value": 35,
-                "volume": 105248000,
-                "min_count": 21,
+                "value": 38,
+                "volume": 142087104,
+                "min_count": 27,
                 "max_count": 42
             },
             {
-                "type": 10,
-                "size": [
-                    545,
-                    270,
-                    640
-                ],
-                "value": 61,
-                "volume": 94176000,
-                "min_count": 42,
-                "max_count": 47
-            },
-            {
-                "type": 11,
-                "size": [
-                    515,
-                    583,
-                    476
-                ],
-                "value": 24,
-                "volume": 142916620,
-                "min_count": 23,
-                "max_count": 31
-            },
-            {
-                "type": 12,
-                "size": [
-                    549,
-                    473,
-                    575
-                ],
-                "value": 63,
-                "volume": 149314275,
-                "min_count": 16,
-                "max_count": 29
-            },
-            {
-                "type": 13,
-                "size": [
-                    746,
-                    296,
-                    490
-                ],
-                "value": 53,
-                "volume": 108199840,
-                "min_count": 30,
-                "max_count": 41
-            },
-            {
-                "type": 14,
-                "size": [
-                    420,
-                    414,
-                    593
-                ],
-                "value": 21,
-                "volume": 103110840,
-                "min_count": 40,
-                "max_count": 43
-            }
-        ],
-        "types_count": 15
-    },
-    {
-        "id": "lyk83tql",
-        "container": [
-            12010,
-            2330,
-            2380
-        ],
-        "container_volume": 66600254000,
-        "box_types": [
-            {
-                "type": 0,
-                "size": [
-                    415,
-                    309,
-                    746
-                ],
-                "value": 66,
-                "volume": 95663310,
-                "min_count": 34,
-                "max_count": 46
-            },
-            {
-                "type": 1,
-                "size": [
-                    672,
-                    250,
-                    586
-                ],
-                "value": 60,
-                "volume": 98448000,
-                "min_count": 28,
-                "max_count": 45
-            },
-            {
-                "type": 2,
-                "size": [
-                    461,
-                    277,
-                    346
-                ],
-                "value": 47,
-                "volume": 44183162,
-                "min_count": 67,
-                "max_count": 100
-            },
-            {
-                "type": 3,
-                "size": [
-                    568,
-                    637,
-                    505
-                ],
-                "value": 57,
-                "volume": 182717080,
-                "min_count": 14,
-                "max_count": 24
-            },
-            {
-                "type": 4,
-                "size": [
-                    639,
-                    276,
-                    354
-                ],
-                "value": 71,
-                "volume": 62432856,
-                "min_count": 54,
-                "max_count": 71
-            },
-            {
-                "type": 5,
-                "size": [
-                    317,
-                    724,
-                    397
-                ],
-                "value": 90,
-                "volume": 91114676,
-                "min_count": 34,
-                "max_count": 48
-            },
-            {
                 "type": 6,
                 "size": [
-                    498,
-                    312,
-                    264
-                ],
-                "value": 78,
-                "volume": 41019264,
-                "min_count": 68,
-                "max_count": 108
-            },
-            {
-                "type": 7,
-                "size": [
-                    659,
-                    372,
-                    613
-                ],
-                "value": 40,
-                "volume": 150275724,
-                "min_count": 27,
-                "max_count": 29
-            },
-            {
-                "type": 8,
-                "size": [
-                    532,
-                    257,
-                    532
-                ],
-                "value": 12,
-                "volume": 72737168,
-                "min_count": 48,
-                "max_count": 61
-            },
-            {
-                "type": 9,
-                "size": [
-                    365,
-                    680,
-                    717
-                ],
-                "value": 60,
-                "volume": 177959400,
-                "min_count": 23,
-                "max_count": 24
-            },
-            {
-                "type": 10,
-                "size": [
-                    734,
-                    310,
-                    581
-                ],
-                "value": 64,
-                "volume": 132200740,
-                "min_count": 29,
-                "max_count": 33
-            },
-            {
-                "type": 11,
-                "size": [
-                    727,
-                    616,
-                    399
-                ],
-                "value": 91,
-                "volume": 178684968,
-                "min_count": 16,
-                "max_count": 24
-            },
-            {
-                "type": 12,
-                "size": [
-                    389,
-                    462,
-                    677
-                ],
-                "value": 61,
-                "volume": 121669086,
-                "min_count": 21,
-                "max_count": 36
-            },
-            {
-                "type": 13,
-                "size": [
-                    374,
-                    483,
-                    532
-                ],
-                "value": 50,
-                "volume": 96101544,
-                "min_count": 42,
-                "max_count": 46
-            },
-            {
-                "type": 14,
-                "size": [
-                    347,
-                    721,
-                    556
-                ],
-                "value": 9,
-                "volume": 139103972,
-                "min_count": 27,
-                "max_count": 31
-            }
-        ],
-        "types_count": 15
-    },
-    {
-        "id": "j2o7s3kk",
-        "container": [
-            12010,
-            2330,
-            2380
-        ],
-        "container_volume": 66600254000,
-        "box_types": [
-            {
-                "type": 0,
-                "size": [
-                    550,
-                    546,
-                    587
-                ],
-                "value": 20,
-                "volume": 176276100,
-                "min_count": 18,
-                "max_count": 25
-            },
-            {
-                "type": 1,
-                "size": [
-                    478,
-                    525,
-                    497
-                ],
-                "value": 43,
-                "volume": 124722150,
-                "min_count": 24,
-                "max_count": 35
-            },
-            {
-                "type": 2,
-                "size": [
-                    532,
-                    640,
-                    528
-                ],
-                "value": 59,
-                "volume": 179773440,
-                "min_count": 18,
-                "max_count": 24
-            },
-            {
-                "type": 3,
-                "size": [
-                    727,
-                    414,
-                    695
-                ],
-                "value": 90,
-                "volume": 209179710,
-                "min_count": 18,
-                "max_count": 21
-            },
-            {
-                "type": 4,
-                "size": [
-                    372,
-                    542,
-                    446
-                ],
-                "value": 100,
-                "volume": 89924304,
-                "min_count": 42,
-                "max_count": 49
-            },
-            {
-                "type": 5,
-                "size": [
-                    460,
-                    272,
-                    412
-                ],
-                "value": 91,
-                "volume": 51549440,
-                "min_count": 56,
-                "max_count": 86
-            },
-            {
-                "type": 6,
-                "size": [
-                    717,
-                    665,
-                    445
-                ],
-                "value": 85,
-                "volume": 212178225,
-                "min_count": 14,
-                "max_count": 20
-            },
-            {
-                "type": 7,
-                "size": [
-                    655,
-                    670,
-                    583
-                ],
-                "value": 64,
-                "volume": 255849550,
-                "min_count": 15,
-                "max_count": 17
-            },
-            {
-                "type": 8,
-                "size": [
-                    743,
-                    268,
-                    314
-                ],
-                "value": 76,
-                "volume": 62524936,
-                "min_count": 39,
-                "max_count": 71
-            },
-            {
-                "type": 9,
-                "size": [
-                    419,
-                    695,
-                    301
-                ],
-                "value": 13,
-                "volume": 87652705,
-                "min_count": 36,
-                "max_count": 50
-            },
-            {
-                "type": 10,
-                "size": [
-                    519,
-                    716,
-                    483
-                ],
-                "value": 93,
-                "volume": 179484732,
-                "min_count": 24,
-                "max_count": 24
-            },
-            {
-                "type": 11,
-                "size": [
-                    323,
-                    459,
-                    695
-                ],
-                "value": 20,
-                "volume": 103038615,
-                "min_count": 23,
-                "max_count": 43
-            },
-            {
-                "type": 12,
-                "size": [
-                    288,
-                    490,
-                    650
-                ],
-                "value": 44,
-                "volume": 91728000,
-                "min_count": 40,
-                "max_count": 48
-            },
-            {
-                "type": 13,
-                "size": [
-                    569,
-                    604,
-                    453
-                ],
-                "value": 11,
-                "volume": 155685228,
-                "min_count": 18,
-                "max_count": 28
-            },
-            {
-                "type": 14,
-                "size": [
-                    686,
-                    418,
-                    686
-                ],
-                "value": 69,
-                "volume": 196709128,
-                "min_count": 12,
-                "max_count": 22
-            }
-        ],
-        "types_count": 15
-    },
-    {
-        "id": "nlz15bcw",
-        "container": [
-            12010,
-            2330,
-            2380
-        ],
-        "container_volume": 66600254000,
-        "box_types": [
-            {
-                "type": 0,
-                "size": [
-                    721,
+                    271,
                     397,
-                    366
+                    739
                 ],
-                "value": 56,
-                "volume": 104762742,
-                "min_count": 40,
-                "max_count": 42
-            },
-            {
-                "type": 1,
-                "size": [
-                    750,
-                    300,
-                    639
-                ],
-                "value": 57,
-                "volume": 143775000,
-                "min_count": 27,
-                "max_count": 30
-            },
-            {
-                "type": 2,
-                "size": [
-                    335,
-                    605,
-                    403
-                ],
-                "value": 6,
-                "volume": 81678025,
-                "min_count": 54,
-                "max_count": 54
-            },
-            {
-                "type": 3,
-                "size": [
-                    416,
-                    657,
-                    278
-                ],
-                "value": 46,
-                "volume": 75980736,
-                "min_count": 49,
-                "max_count": 58
-            },
-            {
-                "type": 4,
-                "size": [
-                    441,
-                    470,
-                    324
-                ],
-                "value": 68,
-                "volume": 67155480,
-                "min_count": 51,
-                "max_count": 66
-            },
-            {
-                "type": 5,
-                "size": [
-                    460,
-                    539,
-                    599
-                ],
-                "value": 24,
-                "volume": 148516060,
-                "min_count": 17,
-                "max_count": 29
-            },
-            {
-                "type": 6,
-                "size": [
-                    337,
-                    339,
-                    290
-                ],
-                "value": 80,
-                "volume": 33130470,
-                "min_count": 86,
-                "max_count": 134
-            },
-            {
-                "type": 7,
-                "size": [
-                    599,
-                    373,
-                    504
-                ],
-                "value": 19,
-                "volume": 112607208,
-                "min_count": 21,
-                "max_count": 39
-            },
-            {
-                "type": 8,
-                "size": [
-                    368,
-                    486,
-                    576
-                ],
-                "value": 59,
-                "volume": 103016448,
-                "min_count": 35,
-                "max_count": 43
-            },
-            {
-                "type": 9,
-                "size": [
-                    380,
-                    591,
-                    254
-                ],
-                "value": 37,
-                "volume": 57043320,
-                "min_count": 48,
+                "value": 45,
+                "volume": 79506793,
+                "min_count": 53,
                 "max_count": 77
             },
             {
+                "type": 7,
+                "size": [
+                    723,
+                    476,
+                    585
+                ],
+                "value": 62,
+                "volume": 201326580,
+                "min_count": 11,
+                "max_count": 26
+            },
+            {
+                "type": 8,
+                "size": [
+                    359,
+                    353,
+                    673
+                ],
+                "value": 72,
+                "volume": 85287271,
+                "min_count": 44,
+                "max_count": 69
+            },
+            {
+                "type": 9,
+                "size": [
+                    606,
+                    389,
+                    320
+                ],
+                "value": 95,
+                "volume": 75434880,
+                "min_count": 39,
+                "max_count": 61
+            },
+            {
                 "type": 10,
                 "size": [
-                    596,
-                    529,
-                    330
+                    550,
+                    372,
+                    374
                 ],
-                "value": 57,
-                "volume": 104043720,
-                "min_count": 40,
-                "max_count": 42
+                "value": 68,
+                "volume": 76520400,
+                "min_count": 37,
+                "max_count": 59
             },
             {
                 "type": 11,
                 "size": [
-                    733,
-                    426,
-                    550
+                    365,
+                    576,
+                    369
                 ],
-                "value": 82,
-                "volume": 171741900,
-                "min_count": 21,
-                "max_count": 25
+                "value": 53,
+                "volume": 77578560,
+                "min_count": 54,
+                "max_count": 58
             },
             {
                 "type": 12,
                 "size": [
-                    742,
-                    467,
-                    603
+                    419,
+                    617,
+                    491
                 ],
-                "value": 59,
-                "volume": 208947942,
-                "min_count": 17,
-                "max_count": 21
+                "value": 1,
+                "volume": 126934793,
+                "min_count": 30,
+                "max_count": 37
             },
             {
                 "type": 13,
                 "size": [
-                    682,
-                    404,
-                    351
+                    743,
+                    531,
+                    750
                 ],
-                "value": 62,
-                "volume": 96710328,
-                "min_count": 33,
-                "max_count": 45
+                "value": 84,
+                "volume": 295899750,
+                "min_count": 9,
+                "max_count": 17
             },
             {
                 "type": 14,
                 "size": [
-                    304,
-                    371,
-                    445
+                    728,
+                    700,
+                    699
                 ],
-                "value": 46,
-                "volume": 50188880,
-                "min_count": 52,
-                "max_count": 88
+                "value": 84,
+                "volume": 356210400,
+                "min_count": 9,
+                "max_count": 15
             }
         ],
         "types_count": 15
     },
     {
-        "id": "u9k9xjuy",
+        "id": "h8lx6dut",
         "container": [
             12010,
             2330,
@@ -1163,188 +203,2108 @@
             {
                 "type": 0,
                 "size": [
-                    631,
-                    748,
-                    275
+                    620,
+                    685,
+                    729
                 ],
-                "value": 37,
-                "volume": 129796700,
-                "min_count": 19,
-                "max_count": 34
+                "value": 54,
+                "volume": 309606300,
+                "min_count": 12,
+                "max_count": 14
             },
             {
                 "type": 1,
                 "size": [
-                    647,
-                    659,
-                    367
+                    701,
+                    678,
+                    340
                 ],
-                "value": 46,
-                "volume": 156478891,
-                "min_count": 19,
-                "max_count": 28
+                "value": 51,
+                "volume": 161594520,
+                "min_count": 14,
+                "max_count": 27
             },
             {
                 "type": 2,
                 "size": [
-                    362,
-                    575,
-                    347
+                    653,
+                    503,
+                    345
                 ],
-                "value": 33,
-                "volume": 72228050,
-                "min_count": 42,
-                "max_count": 61
+                "value": 2,
+                "volume": 113318355,
+                "min_count": 38,
+                "max_count": 48
             },
             {
                 "type": 3,
                 "size": [
-                    597,
-                    636,
-                    619
+                    402,
+                    540,
+                    558
                 ],
-                "value": 81,
-                "volume": 235029348,
-                "min_count": 16,
-                "max_count": 18
+                "value": 37,
+                "volume": 121130640,
+                "min_count": 26,
+                "max_count": 39
             },
             {
                 "type": 4,
                 "size": [
-                    299,
-                    712,
-                    571
+                    482,
+                    578,
+                    528
                 ],
-                "value": 40,
-                "volume": 121559048,
-                "min_count": 35,
-                "max_count": 36
+                "value": 65,
+                "volume": 147098688,
+                "min_count": 26,
+                "max_count": 45
             },
             {
                 "type": 5,
                 "size": [
-                    653,
-                    475,
-                    267
+                    489,
+                    389,
+                    348
                 ],
-                "value": 47,
-                "volume": 82816725,
-                "min_count": 35,
-                "max_count": 53
+                "value": 21,
+                "volume": 66196908,
+                "min_count": 46,
+                "max_count": 74
             },
             {
                 "type": 6,
                 "size": [
                     624,
-                    317,
-                    296
+                    484,
+                    581
                 ],
-                "value": 42,
-                "volume": 58551168,
-                "min_count": 57,
-                "max_count": 75
+                "value": 24,
+                "volume": 175471296,
+                "min_count": 14,
+                "max_count": 29
             },
             {
                 "type": 7,
                 "size": [
-                    632,
-                    462,
-                    339
+                    257,
+                    627,
+                    422
                 ],
-                "value": 17,
-                "volume": 98982576,
-                "min_count": 38,
+                "value": 23,
+                "volume": 68000658,
+                "min_count": 53,
+                "max_count": 83
+            },
+            {
+                "type": 8,
+                "size": [
+                    562,
+                    688,
+                    577
+                ],
+                "value": 66,
+                "volume": 223100512,
+                "min_count": 13,
+                "max_count": 25
+            },
+            {
+                "type": 9,
+                "size": [
+                    417,
+                    294,
+                    455
+                ],
+                "value": 18,
+                "volume": 55782090,
+                "min_count": 68,
+                "max_count": 85
+            },
+            {
+                "type": 10,
+                "size": [
+                    494,
+                    415,
+                    729
+                ],
+                "value": 34,
+                "volume": 149452290,
+                "min_count": 29,
+                "max_count": 32
+            },
+            {
+                "type": 11,
+                "size": [
+                    446,
+                    370,
+                    478
+                ],
+                "value": 43,
+                "volume": 78879560,
+                "min_count": 48,
+                "max_count": 80
+            },
+            {
+                "type": 12,
+                "size": [
+                    404,
+                    548,
+                    620
+                ],
+                "value": 84,
+                "volume": 137263040,
+                "min_count": 24,
+                "max_count": 32
+            },
+            {
+                "type": 13,
+                "size": [
+                    434,
+                    604,
+                    370
+                ],
+                "value": 16,
+                "volume": 96990320,
+                "min_count": 24,
+                "max_count": 46
+            },
+            {
+                "type": 14,
+                "size": [
+                    488,
+                    407,
+                    331
+                ],
+                "value": 91,
+                "volume": 65741896,
+                "min_count": 35,
+                "max_count": 92
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "1yw7nh8r",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    482,
+                    632,
+                    560
+                ],
+                "value": 90,
+                "volume": 170589440,
+                "min_count": 20,
+                "max_count": 31
+            },
+            {
+                "type": 1,
+                "size": [
+                    531,
+                    717,
+                    491
+                ],
+                "value": 28,
+                "volume": 186936957,
+                "min_count": 13,
+                "max_count": 31
+            },
+            {
+                "type": 2,
+                "size": [
+                    640,
+                    376,
+                    598
+                ],
+                "value": 68,
+                "volume": 143902720,
+                "min_count": 16,
+                "max_count": 32
+            },
+            {
+                "type": 3,
+                "size": [
+                    610,
+                    435,
+                    289
+                ],
+                "value": 8,
+                "volume": 76686150,
+                "min_count": 54,
+                "max_count": 75
+            },
+            {
+                "type": 4,
+                "size": [
+                    674,
+                    530,
+                    712
+                ],
+                "value": 74,
+                "volume": 254340640,
+                "min_count": 14,
+                "max_count": 25
+            },
+            {
+                "type": 5,
+                "size": [
+                    524,
+                    326,
+                    334
+                ],
+                "value": 57,
+                "volume": 57055216,
+                "min_count": 44,
+                "max_count": 97
+            },
+            {
+                "type": 6,
+                "size": [
+                    309,
+                    598,
+                    355
+                ],
+                "value": 66,
+                "volume": 65597610,
+                "min_count": 62,
+                "max_count": 98
+            },
+            {
+                "type": 7,
+                "size": [
+                    478,
+                    664,
+                    278
+                ],
+                "value": 66,
+                "volume": 88234976,
+                "min_count": 46,
+                "max_count": 64
+            },
+            {
+                "type": 8,
+                "size": [
+                    462,
+                    483,
+                    538
+                ],
+                "value": 60,
+                "volume": 120052548,
+                "min_count": 19,
+                "max_count": 37
+            },
+            {
+                "type": 9,
+                "size": [
+                    594,
+                    663,
+                    407
+                ],
+                "value": 51,
+                "volume": 160285554,
+                "min_count": 27,
+                "max_count": 38
+            },
+            {
+                "type": 10,
+                "size": [
+                    380,
+                    668,
+                    251
+                ],
+                "value": 6,
+                "volume": 63713840,
+                "min_count": 65,
+                "max_count": 82
+            },
+            {
+                "type": 11,
+                "size": [
+                    466,
+                    426,
+                    608
+                ],
+                "value": 8,
+                "volume": 120697728,
+                "min_count": 19,
+                "max_count": 38
+            },
+            {
+                "type": 12,
+                "size": [
+                    728,
+                    707,
+                    285
+                ],
+                "value": 37,
+                "volume": 146688360,
+                "min_count": 29,
+                "max_count": 45
+            },
+            {
+                "type": 13,
+                "size": [
+                    459,
+                    342,
+                    643
+                ],
+                "value": 94,
+                "volume": 100936854,
+                "min_count": 23,
+                "max_count": 47
+            },
+            {
+                "type": 14,
+                "size": [
+                    580,
+                    743,
+                    465
+                ],
+                "value": 58,
+                "volume": 200387100,
+                "min_count": 16,
+                "max_count": 27
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "56nyxtxm",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    341,
+                    525,
+                    451
+                ],
+                "value": 94,
+                "volume": 80740275,
+                "min_count": 50,
+                "max_count": 70
+            },
+            {
+                "type": 1,
+                "size": [
+                    364,
+                    677,
+                    251
+                ],
+                "value": 60,
+                "volume": 61853428,
+                "min_count": 52,
+                "max_count": 72
+            },
+            {
+                "type": 2,
+                "size": [
+                    594,
+                    618,
+                    528
+                ],
+                "value": 49,
+                "volume": 193824576,
+                "min_count": 14,
+                "max_count": 28
+            },
+            {
+                "type": 3,
+                "size": [
+                    671,
+                    367,
+                    376
+                ],
+                "value": 20,
+                "volume": 92592632,
+                "min_count": 36,
+                "max_count": 61
+            },
+            {
+                "type": 4,
+                "size": [
+                    391,
+                    346,
+                    729
+                ],
+                "value": 85,
+                "volume": 98623494,
+                "min_count": 44,
+                "max_count": 48
+            },
+            {
+                "type": 5,
+                "size": [
+                    464,
+                    564,
+                    642
+                ],
+                "value": 27,
+                "volume": 168008832,
+                "min_count": 23,
+                "max_count": 26
+            },
+            {
+                "type": 6,
+                "size": [
+                    284,
+                    301,
+                    554
+                ],
+                "value": 77,
+                "volume": 47358136,
+                "min_count": 65,
+                "max_count": 95
+            },
+            {
+                "type": 7,
+                "size": [
+                    594,
+                    610,
+                    696
+                ],
+                "value": 95,
+                "volume": 252188640,
+                "min_count": 14,
+                "max_count": 17
+            },
+            {
+                "type": 8,
+                "size": [
+                    272,
+                    455,
+                    474
+                ],
+                "value": 28,
+                "volume": 58662240,
+                "min_count": 41,
+                "max_count": 89
+            },
+            {
+                "type": 9,
+                "size": [
+                    636,
+                    692,
+                    647
+                ],
+                "value": 65,
+                "volume": 284752464,
+                "min_count": 13,
+                "max_count": 15
+            },
+            {
+                "type": 10,
+                "size": [
+                    398,
+                    369,
+                    667
+                ],
+                "value": 74,
+                "volume": 97956954,
+                "min_count": 35,
+                "max_count": 63
+            },
+            {
+                "type": 11,
+                "size": [
+                    556,
+                    645,
+                    594
+                ],
+                "value": 39,
+                "volume": 213020280,
+                "min_count": 17,
+                "max_count": 25
+            },
+            {
+                "type": 12,
+                "size": [
+                    698,
+                    323,
+                    588
+                ],
+                "value": 53,
+                "volume": 132566952,
+                "min_count": 26,
+                "max_count": 49
+            },
+            {
+                "type": 13,
+                "size": [
+                    403,
+                    390,
+                    281
+                ],
+                "value": 95,
+                "volume": 44164770,
+                "min_count": 63,
+                "max_count": 135
+            },
+            {
+                "type": 14,
+                "size": [
+                    716,
+                    339,
+                    570
+                ],
+                "value": 7,
+                "volume": 138352680,
+                "min_count": 17,
+                "max_count": 45
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "97y2lofn",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    636,
+                    525,
+                    492
+                ],
+                "value": 29,
+                "volume": 164278800,
+                "min_count": 14,
+                "max_count": 30
+            },
+            {
+                "type": 1,
+                "size": [
+                    403,
+                    689,
+                    612
+                ],
+                "value": 60,
+                "volume": 169932204,
+                "min_count": 14,
+                "max_count": 28
+            },
+            {
+                "type": 2,
+                "size": [
+                    718,
+                    279,
+                    537
+                ],
+                "value": 72,
+                "volume": 107572914,
+                "min_count": 28,
+                "max_count": 54
+            },
+            {
+                "type": 3,
+                "size": [
+                    521,
+                    318,
+                    448
+                ],
+                "value": 27,
+                "volume": 74223744,
+                "min_count": 51,
+                "max_count": 66
+            },
+            {
+                "type": 4,
+                "size": [
+                    419,
+                    581,
+                    290
+                ],
+                "value": 12,
+                "volume": 70597310,
+                "min_count": 39,
+                "max_count": 90
+            },
+            {
+                "type": 5,
+                "size": [
+                    524,
+                    620,
+                    674
+                ],
+                "value": 35,
+                "volume": 218969120,
+                "min_count": 20,
+                "max_count": 23
+            },
+            {
+                "type": 6,
+                "size": [
+                    443,
+                    594,
+                    559
+                ],
+                "value": 25,
+                "volume": 147096378,
+                "min_count": 28,
+                "max_count": 31
+            },
+            {
+                "type": 7,
+                "size": [
+                    661,
+                    639,
+                    550
+                ],
+                "value": 62,
+                "volume": 232308450,
+                "min_count": 16,
+                "max_count": 27
+            },
+            {
+                "type": 8,
+                "size": [
+                    356,
+                    695,
+                    714
+                ],
+                "value": 2,
+                "volume": 176657880,
+                "min_count": 21,
+                "max_count": 30
+            },
+            {
+                "type": 9,
+                "size": [
+                    358,
+                    729,
+                    347
+                ],
+                "value": 96,
+                "volume": 90560754,
+                "min_count": 46,
+                "max_count": 72
+            },
+            {
+                "type": 10,
+                "size": [
+                    636,
+                    495,
+                    718
+                ],
+                "value": 91,
+                "volume": 226040760,
+                "min_count": 10,
+                "max_count": 22
+            },
+            {
+                "type": 11,
+                "size": [
+                    354,
+                    453,
+                    718
+                ],
+                "value": 42,
+                "volume": 115139916,
+                "min_count": 21,
+                "max_count": 45
+            },
+            {
+                "type": 12,
+                "size": [
+                    647,
+                    394,
+                    444
+                ],
+                "value": 84,
+                "volume": 113183592,
+                "min_count": 22,
+                "max_count": 53
+            },
+            {
+                "type": 13,
+                "size": [
+                    433,
+                    407,
+                    383
+                ],
+                "value": 64,
+                "volume": 67496473,
+                "min_count": 33,
+                "max_count": 88
+            },
+            {
+                "type": 14,
+                "size": [
+                    488,
+                    300,
+                    661
+                ],
+                "value": 27,
+                "volume": 96770400,
+                "min_count": 35,
+                "max_count": 60
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "nouhfj7u",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    463,
+                    401,
+                    328
+                ],
+                "value": 30,
+                "volume": 60897464,
+                "min_count": 51,
+                "max_count": 84
+            },
+            {
+                "type": 1,
+                "size": [
+                    444,
+                    541,
+                    676
+                ],
+                "value": 71,
+                "volume": 162377904,
+                "min_count": 20,
+                "max_count": 30
+            },
+            {
+                "type": 2,
+                "size": [
+                    585,
+                    733,
+                    600
+                ],
+                "value": 98,
+                "volume": 257283000,
+                "min_count": 13,
+                "max_count": 22
+            },
+            {
+                "type": 3,
+                "size": [
+                    670,
+                    500,
+                    744
+                ],
+                "value": 22,
+                "volume": 249240000,
+                "min_count": 10,
+                "max_count": 24
+            },
+            {
+                "type": 4,
+                "size": [
+                    625,
+                    657,
+                    430
+                ],
+                "value": 93,
+                "volume": 176568750,
+                "min_count": 23,
+                "max_count": 27
+            },
+            {
+                "type": 5,
+                "size": [
+                    529,
+                    500,
+                    344
+                ],
+                "value": 8,
+                "volume": 90988000,
+                "min_count": 28,
+                "max_count": 65
+            },
+            {
+                "type": 6,
+                "size": [
+                    518,
+                    267,
+                    679
+                ],
+                "value": 7,
+                "volume": 93909774,
+                "min_count": 26,
+                "max_count": 49
+            },
+            {
+                "type": 7,
+                "size": [
+                    641,
+                    253,
+                    461
+                ],
+                "value": 81,
+                "volume": 74761753,
+                "min_count": 33,
+                "max_count": 63
+            },
+            {
+                "type": 8,
+                "size": [
+                    368,
+                    284,
+                    612
+                ],
+                "value": 28,
+                "volume": 63961344,
+                "min_count": 69,
+                "max_count": 78
+            },
+            {
+                "type": 9,
+                "size": [
+                    508,
+                    483,
+                    441
+                ],
+                "value": 82,
+                "volume": 108205524,
+                "min_count": 22,
+                "max_count": 42
+            },
+            {
+                "type": 10,
+                "size": [
+                    591,
+                    728,
+                    565
+                ],
+                "value": 3,
+                "volume": 243090120,
+                "min_count": 11,
+                "max_count": 25
+            },
+            {
+                "type": 11,
+                "size": [
+                    253,
+                    522,
+                    532
+                ],
+                "value": 3,
+                "volume": 70259112,
+                "min_count": 63,
+                "max_count": 89
+            },
+            {
+                "type": 12,
+                "size": [
+                    521,
+                    619,
+                    390
+                ],
+                "value": 3,
+                "volume": 125774610,
+                "min_count": 26,
+                "max_count": 52
+            },
+            {
+                "type": 13,
+                "size": [
+                    507,
+                    666,
+                    607
+                ],
+                "value": 23,
+                "volume": 204960834,
+                "min_count": 15,
+                "max_count": 31
+            },
+            {
+                "type": 14,
+                "size": [
+                    304,
+                    720,
+                    299
+                ],
+                "value": 31,
+                "volume": 65445120,
+                "min_count": 58,
+                "max_count": 100
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "gs3jonou",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    606,
+                    365,
+                    403
+                ],
+                "value": 84,
+                "volume": 89139570,
+                "min_count": 47,
+                "max_count": 70
+            },
+            {
+                "type": 1,
+                "size": [
+                    689,
+                    582,
+                    638
+                ],
+                "value": 52,
+                "volume": 255836724,
+                "min_count": 16,
+                "max_count": 17
+            },
+            {
+                "type": 2,
+                "size": [
+                    444,
+                    443,
+                    532
+                ],
+                "value": 82,
+                "volume": 104640144,
+                "min_count": 41,
+                "max_count": 57
+            },
+            {
+                "type": 3,
+                "size": [
+                    254,
+                    609,
+                    337
+                ],
+                "value": 56,
+                "volume": 52129182,
+                "min_count": 54,
+                "max_count": 90
+            },
+            {
+                "type": 4,
+                "size": [
+                    580,
+                    651,
+                    419
+                ],
+                "value": 13,
+                "volume": 158206020,
+                "min_count": 15,
+                "max_count": 37
+            },
+            {
+                "type": 5,
+                "size": [
+                    708,
+                    520,
+                    720
+                ],
+                "value": 28,
+                "volume": 265075200,
+                "min_count": 13,
+                "max_count": 16
+            },
+            {
+                "type": 6,
+                "size": [
+                    711,
+                    694,
+                    604
+                ],
+                "value": 6,
+                "volume": 298034136,
+                "min_count": 10,
+                "max_count": 21
+            },
+            {
+                "type": 7,
+                "size": [
+                    723,
+                    288,
+                    600
+                ],
+                "value": 73,
+                "volume": 124934400,
+                "min_count": 18,
+                "max_count": 43
+            },
+            {
+                "type": 8,
+                "size": [
+                    586,
+                    266,
+                    341
+                ],
+                "value": 27,
+                "volume": 53153716,
+                "min_count": 82,
+                "max_count": 103
+            },
+            {
+                "type": 9,
+                "size": [
+                    550,
+                    323,
+                    635
+                ],
+                "value": 39,
+                "volume": 112807750,
+                "min_count": 37,
+                "max_count": 51
+            },
+            {
+                "type": 10,
+                "size": [
+                    333,
+                    538,
+                    373
+                ],
+                "value": 50,
+                "volume": 66824442,
+                "min_count": 45,
+                "max_count": 90
+            },
+            {
+                "type": 11,
+                "size": [
+                    636,
+                    628,
+                    321
+                ],
+                "value": 96,
+                "volume": 128209968,
+                "min_count": 18,
+                "max_count": 36
+            },
+            {
+                "type": 12,
+                "size": [
+                    748,
+                    427,
+                    277
+                ],
+                "value": 30,
+                "volume": 88472692,
+                "min_count": 37,
+                "max_count": 53
+            },
+            {
+                "type": 13,
+                "size": [
+                    679,
+                    288,
+                    424
+                ],
+                "value": 79,
+                "volume": 82914048,
+                "min_count": 29,
+                "max_count": 72
+            },
+            {
+                "type": 14,
+                "size": [
+                    738,
+                    554,
+                    453
+                ],
+                "value": 82,
+                "volume": 185209956,
+                "min_count": 23,
+                "max_count": 28
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "j9rm7pyx",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    293,
+                    645,
+                    566
+                ],
+                "value": 92,
+                "volume": 106965510,
+                "min_count": 34,
+                "max_count": 50
+            },
+            {
+                "type": 1,
+                "size": [
+                    287,
+                    292,
+                    387
+                ],
+                "value": 92,
+                "volume": 32432148,
+                "min_count": 88,
+                "max_count": 155
+            },
+            {
+                "type": 2,
+                "size": [
+                    651,
+                    574,
+                    328
+                ],
+                "value": 47,
+                "volume": 122565072,
+                "min_count": 26,
+                "max_count": 48
+            },
+            {
+                "type": 3,
+                "size": [
+                    304,
+                    296,
+                    252
+                ],
+                "value": 47,
+                "volume": 22675968,
+                "min_count": 139,
+                "max_count": 234
+            },
+            {
+                "type": 4,
+                "size": [
+                    639,
+                    388,
+                    302
+                ],
+                "value": 24,
+                "volume": 74875464,
+                "min_count": 57,
+                "max_count": 63
+            },
+            {
+                "type": 5,
+                "size": [
+                    470,
+                    479,
+                    535
+                ],
+                "value": 53,
+                "volume": 120444550,
+                "min_count": 20,
+                "max_count": 53
+            },
+            {
+                "type": 6,
+                "size": [
+                    302,
+                    263,
+                    295
+                ],
+                "value": 12,
+                "volume": 23430670,
+                "min_count": 119,
+                "max_count": 234
+            },
+            {
+                "type": 7,
+                "size": [
+                    555,
+                    556,
+                    651
+                ],
+                "value": 2,
+                "volume": 200885580,
+                "min_count": 16,
+                "max_count": 27
+            },
+            {
+                "type": 8,
+                "size": [
+                    399,
+                    461,
+                    448
+                ],
+                "value": 93,
+                "volume": 82404672,
+                "min_count": 51,
+                "max_count": 77
+            },
+            {
+                "type": 9,
+                "size": [
+                    711,
+                    536,
+                    713
+                ],
+                "value": 22,
+                "volume": 271721448,
+                "min_count": 8,
+                "max_count": 19
+            },
+            {
+                "type": 10,
+                "size": [
+                    600,
+                    444,
+                    336
+                ],
+                "value": 39,
+                "volume": 89510400,
+                "min_count": 41,
+                "max_count": 53
+            },
+            {
+                "type": 11,
+                "size": [
+                    387,
+                    502,
+                    324
+                ],
+                "value": 56,
+                "volume": 62944776,
+                "min_count": 60,
+                "max_count": 74
+            },
+            {
+                "type": 12,
+                "size": [
+                    391,
+                    465,
+                    403
+                ],
+                "value": 10,
+                "volume": 73271445,
+                "min_count": 35,
+                "max_count": 75
+            },
+            {
+                "type": 13,
+                "size": [
+                    434,
+                    378,
+                    733
+                ],
+                "value": 77,
+                "volume": 120250116,
+                "min_count": 21,
+                "max_count": 43
+            },
+            {
+                "type": 14,
+                "size": [
+                    565,
+                    350,
+                    484
+                ],
+                "value": 39,
+                "volume": 95711000,
+                "min_count": 42,
+                "max_count": 49
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "ao4n5pp3",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    583,
+                    748,
+                    554
+                ],
+                "value": 42,
+                "volume": 241590536,
+                "min_count": 14,
+                "max_count": 20
+            },
+            {
+                "type": 1,
+                "size": [
+                    558,
+                    735,
+                    605
+                ],
+                "value": 41,
+                "volume": 248128650,
+                "min_count": 10,
+                "max_count": 20
+            },
+            {
+                "type": 2,
+                "size": [
+                    340,
+                    743,
+                    453
+                ],
+                "value": 95,
+                "volume": 114436860,
+                "min_count": 29,
+                "max_count": 48
+            },
+            {
+                "type": 3,
+                "size": [
+                    605,
+                    574,
+                    501
+                ],
+                "value": 32,
+                "volume": 173982270,
+                "min_count": 13,
+                "max_count": 34
+            },
+            {
+                "type": 4,
+                "size": [
+                    416,
+                    442,
+                    393
+                ],
+                "value": 51,
+                "volume": 72261696,
+                "min_count": 36,
+                "max_count": 87
+            },
+            {
+                "type": 5,
+                "size": [
+                    436,
+                    308,
+                    727
+                ],
+                "value": 76,
+                "volume": 97627376,
+                "min_count": 39,
+                "max_count": 63
+            },
+            {
+                "type": 6,
+                "size": [
+                    529,
+                    342,
+                    599
+                ],
+                "value": 94,
+                "volume": 108369882,
+                "min_count": 40,
+                "max_count": 57
+            },
+            {
+                "type": 7,
+                "size": [
+                    486,
+                    732,
+                    612
+                ],
+                "value": 38,
+                "volume": 217720224,
+                "min_count": 13,
+                "max_count": 23
+            },
+            {
+                "type": 8,
+                "size": [
+                    675,
+                    604,
+                    285
+                ],
+                "value": 18,
+                "volume": 116194500,
+                "min_count": 23,
+                "max_count": 51
+            },
+            {
+                "type": 9,
+                "size": [
+                    574,
+                    405,
+                    373
+                ],
+                "value": 20,
+                "volume": 86711310,
+                "min_count": 30,
+                "max_count": 59
+            },
+            {
+                "type": 10,
+                "size": [
+                    616,
+                    466,
+                    654
+                ],
+                "value": 58,
+                "volume": 187734624,
+                "min_count": 22,
+                "max_count": 29
+            },
+            {
+                "type": 11,
+                "size": [
+                    556,
+                    495,
+                    548
+                ],
+                "value": 65,
+                "volume": 150820560,
+                "min_count": 21,
+                "max_count": 35
+            },
+            {
+                "type": 12,
+                "size": [
+                    722,
+                    721,
+                    695
+                ],
+                "value": 70,
+                "volume": 361790590,
+                "min_count": 9,
+                "max_count": 17
+            },
+            {
+                "type": 13,
+                "size": [
+                    268,
+                    654,
+                    745
+                ],
+                "value": 77,
+                "volume": 130577640,
+                "min_count": 17,
+                "max_count": 45
+            },
+            {
+                "type": 14,
+                "size": [
+                    576,
+                    718,
+                    293
+                ],
+                "value": 85,
+                "volume": 121175424,
+                "min_count": 29,
+                "max_count": 39
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "xfwuxx8l",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    657,
+                    470,
+                    304
+                ],
+                "value": 34,
+                "volume": 93872160,
+                "min_count": 44,
+                "max_count": 47
+            },
+            {
+                "type": 1,
+                "size": [
+                    363,
+                    511,
+                    632
+                ],
+                "value": 75,
+                "volume": 117231576,
+                "min_count": 20,
+                "max_count": 53
+            },
+            {
+                "type": 2,
+                "size": [
+                    602,
+                    544,
+                    363
+                ],
+                "value": 51,
+                "volume": 118878144,
+                "min_count": 26,
+                "max_count": 51
+            },
+            {
+                "type": 3,
+                "size": [
+                    487,
+                    645,
+                    597
+                ],
+                "value": 65,
+                "volume": 187526655,
+                "min_count": 12,
+                "max_count": 32
+            },
+            {
+                "type": 4,
+                "size": [
+                    327,
+                    426,
+                    262
+                ],
+                "value": 38,
+                "volume": 36497124,
+                "min_count": 115,
+                "max_count": 151
+            },
+            {
+                "type": 5,
+                "size": [
+                    462,
+                    721,
+                    742
+                ],
+                "value": 94,
+                "volume": 247161684,
+                "min_count": 16,
+                "max_count": 18
+            },
+            {
+                "type": 6,
+                "size": [
+                    322,
+                    428,
+                    409
+                ],
+                "value": 27,
+                "volume": 56366744,
+                "min_count": 49,
+                "max_count": 99
+            },
+            {
+                "type": 7,
+                "size": [
+                    516,
+                    497,
+                    428
+                ],
+                "value": 57,
+                "volume": 109761456,
+                "min_count": 37,
+                "max_count": 55
+            },
+            {
+                "type": 8,
+                "size": [
+                    619,
+                    606,
+                    481
+                ],
+                "value": 39,
+                "volume": 180429834,
+                "min_count": 23,
+                "max_count": 29
+            },
+            {
+                "type": 9,
+                "size": [
+                    272,
+                    664,
+                    613
+                ],
+                "value": 44,
+                "volume": 110712704,
+                "min_count": 40,
+                "max_count": 43
+            },
+            {
+                "type": 10,
+                "size": [
+                    581,
+                    305,
+                    596
+                ],
+                "value": 67,
+                "volume": 105614180,
+                "min_count": 35,
+                "max_count": 47
+            },
+            {
+                "type": 11,
+                "size": [
+                    339,
+                    532,
+                    331
+                ],
+                "value": 55,
+                "volume": 59695188,
+                "min_count": 39,
+                "max_count": 95
+            },
+            {
+                "type": 12,
+                "size": [
+                    740,
+                    486,
+                    368
+                ],
+                "value": 24,
+                "volume": 132347520,
+                "min_count": 28,
+                "max_count": 45
+            },
+            {
+                "type": 13,
+                "size": [
+                    577,
+                    586,
+                    471
+                ],
+                "value": 95,
+                "volume": 159255462,
+                "min_count": 27,
+                "max_count": 33
+            },
+            {
+                "type": 14,
+                "size": [
+                    564,
+                    702,
+                    351
+                ],
+                "value": 50,
+                "volume": 138970728,
+                "min_count": 18,
+                "max_count": 45
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "ahkz2u2t",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    437,
+                    416,
+                    350
+                ],
+                "value": 34,
+                "volume": 63627200,
+                "min_count": 62,
+                "max_count": 98
+            },
+            {
+                "type": 1,
+                "size": [
+                    593,
+                    691,
+                    500
+                ],
+                "value": 41,
+                "volume": 204881500,
+                "min_count": 11,
+                "max_count": 29
+            },
+            {
+                "type": 2,
+                "size": [
+                    555,
+                    448,
+                    562
+                ],
+                "value": 45,
+                "volume": 139735680,
+                "min_count": 28,
+                "max_count": 43
+            },
+            {
+                "type": 3,
+                "size": [
+                    430,
+                    682,
+                    484
+                ],
+                "value": 79,
+                "volume": 141937840,
+                "min_count": 22,
+                "max_count": 36
+            },
+            {
+                "type": 4,
+                "size": [
+                    552,
+                    293,
+                    594
+                ],
+                "value": 16,
+                "volume": 96071184,
+                "min_count": 36,
+                "max_count": 50
+            },
+            {
+                "type": 5,
+                "size": [
+                    372,
+                    406,
+                    309
+                ],
+                "value": 89,
+                "volume": 46668888,
+                "min_count": 72,
+                "max_count": 106
+            },
+            {
+                "type": 6,
+                "size": [
+                    322,
+                    511,
+                    448
+                ],
+                "value": 18,
+                "volume": 73714816,
+                "min_count": 41,
+                "max_count": 73
+            },
+            {
+                "type": 7,
+                "size": [
+                    544,
+                    446,
+                    466
+                ],
+                "value": 82,
+                "volume": 113062784,
+                "min_count": 24,
                 "max_count": 44
             },
             {
                 "type": 8,
                 "size": [
-                    652,
-                    526,
-                    698
+                    525,
+                    605,
+                    720
                 ],
-                "value": 68,
-                "volume": 239380496,
-                "min_count": 13,
-                "max_count": 18
+                "value": 22,
+                "volume": 228690000,
+                "min_count": 11,
+                "max_count": 21
             },
             {
                 "type": 9,
                 "size": [
-                    506,
-                    717,
-                    389
+                    500,
+                    397,
+                    321
                 ],
-                "value": 33,
-                "volume": 141129978,
-                "min_count": 26,
-                "max_count": 31
+                "value": 58,
+                "volume": 63718500,
+                "min_count": 49,
+                "max_count": 80
             },
             {
                 "type": 10,
                 "size": [
-                    717,
-                    672,
-                    733
+                    567,
+                    277,
+                    693
                 ],
-                "value": 38,
-                "volume": 353176992,
-                "min_count": 9,
-                "max_count": 12
+                "value": 63,
+                "volume": 108841887,
+                "min_count": 40,
+                "max_count": 51
             },
             {
                 "type": 11,
                 "size": [
-                    632,
-                    695,
-                    423
+                    319,
+                    349,
+                    667
                 ],
-                "value": 60,
-                "volume": 185798520,
-                "min_count": 22,
-                "max_count": 23
+                "value": 65,
+                "volume": 74257777,
+                "min_count": 42,
+                "max_count": 71
             },
             {
                 "type": 12,
                 "size": [
-                    743,
-                    288,
-                    322
+                    584,
+                    503,
+                    459
                 ],
-                "value": 87,
-                "volume": 68902848,
-                "min_count": 50,
-                "max_count": 64
+                "value": 91,
+                "volume": 134832168,
+                "min_count": 19,
+                "max_count": 47
             },
             {
                 "type": 13,
                 "size": [
-                    620,
-                    595,
-                    453
+                    680,
+                    477,
+                    500
                 ],
-                "value": 72,
-                "volume": 167111700,
-                "min_count": 13,
-                "max_count": 26
+                "value": 73,
+                "volume": 162180000,
+                "min_count": 26,
+                "max_count": 29
             },
             {
                 "type": 14,
                 "size": [
-                    437,
-                    296,
-                    654
+                    265,
+                    657,
+                    639
                 ],
-                "value": 2,
-                "volume": 84596208,
-                "min_count": 40,
+                "value": 5,
+                "volume": 111253095,
+                "min_count": 30,
+                "max_count": 46
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "jtgq01te",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    308,
+                    387,
+                    646
+                ],
+                "value": 47,
+                "volume": 77000616,
+                "min_count": 31,
+                "max_count": 74
+            },
+            {
+                "type": 1,
+                "size": [
+                    527,
+                    671,
+                    637
+                ],
+                "value": 70,
+                "volume": 225254029,
+                "min_count": 12,
+                "max_count": 19
+            },
+            {
+                "type": 2,
+                "size": [
+                    361,
+                    467,
+                    302
+                ],
+                "value": 39,
+                "volume": 50913274,
+                "min_count": 72,
+                "max_count": 128
+            },
+            {
+                "type": 3,
+                "size": [
+                    697,
+                    266,
+                    480
+                ],
+                "value": 12,
+                "volume": 88992960,
+                "min_count": 38,
+                "max_count": 57
+            },
+            {
+                "type": 4,
+                "size": [
+                    474,
+                    693,
+                    310
+                ],
+                "value": 95,
+                "volume": 101829420,
+                "min_count": 37,
+                "max_count": 50
+            },
+            {
+                "type": 5,
+                "size": [
+                    551,
+                    602,
+                    429
+                ],
+                "value": 79,
+                "volume": 142300158,
+                "min_count": 26,
+                "max_count": 44
+            },
+            {
+                "type": 6,
+                "size": [
+                    321,
+                    651,
+                    355
+                ],
+                "value": 8,
+                "volume": 74184705,
+                "min_count": 53,
+                "max_count": 85
+            },
+            {
+                "type": 7,
+                "size": [
+                    541,
+                    429,
+                    522
+                ],
+                "value": 22,
+                "volume": 121150458,
+                "min_count": 19,
+                "max_count": 44
+            },
+            {
+                "type": 8,
+                "size": [
+                    415,
+                    610,
+                    399
+                ],
+                "value": 35,
+                "volume": 101006850,
+                "min_count": 25,
+                "max_count": 52
+            },
+            {
+                "type": 9,
+                "size": [
+                    737,
+                    689,
+                    513
+                ],
+                "value": 97,
+                "volume": 260497809,
+                "min_count": 15,
+                "max_count": 18
+            },
+            {
+                "type": 10,
+                "size": [
+                    652,
+                    460,
+                    720
+                ],
+                "value": 84,
+                "volume": 215942400,
+                "min_count": 16,
+                "max_count": 20
+            },
+            {
+                "type": 11,
+                "size": [
+                    314,
+                    609,
+                    693
+                ],
+                "value": 19,
+                "volume": 132519618,
+                "min_count": 26,
+                "max_count": 37
+            },
+            {
+                "type": 12,
+                "size": [
+                    614,
+                    414,
+                    674
+                ],
+                "value": 87,
+                "volume": 171328104,
+                "min_count": 13,
+                "max_count": 28
+            },
+            {
+                "type": 13,
+                "size": [
+                    451,
+                    500,
+                    322
+                ],
+                "value": 35,
+                "volume": 72611000,
+                "min_count": 41,
+                "max_count": 79
+            },
+            {
+                "type": 14,
+                "size": [
+                    571,
+                    462,
+                    442
+                ],
+                "value": 82,
+                "volume": 116600484,
+                "min_count": 36,
                 "max_count": 52
             }
         ],
         "types_count": 15
     },
     {
-        "id": "jen0jnwn",
+        "id": "21o0z5qr",
         "container": [
             12010,
             2330,
@@ -1355,188 +2315,572 @@
             {
                 "type": 0,
                 "size": [
-                    595,
-                    369,
-                    491
+                    547,
+                    251,
+                    694
                 ],
-                "value": 80,
-                "volume": 107801505,
-                "min_count": 41,
+                "value": 94,
+                "volume": 95284118,
+                "min_count": 44,
+                "max_count": 69
+            },
+            {
+                "type": 1,
+                "size": [
+                    747,
+                    484,
+                    575
+                ],
+                "value": 9,
+                "volume": 207890100,
+                "min_count": 16,
+                "max_count": 31
+            },
+            {
+                "type": 2,
+                "size": [
+                    657,
+                    523,
+                    453
+                ],
+                "value": 28,
+                "volume": 155655783,
+                "min_count": 22,
+                "max_count": 31
+            },
+            {
+                "type": 3,
+                "size": [
+                    503,
+                    387,
+                    415
+                ],
+                "value": 44,
+                "volume": 80784315,
+                "min_count": 45,
+                "max_count": 80
+            },
+            {
+                "type": 4,
+                "size": [
+                    530,
+                    545,
+                    316
+                ],
+                "value": 44,
+                "volume": 91276600,
+                "min_count": 33,
+                "max_count": 66
+            },
+            {
+                "type": 5,
+                "size": [
+                    707,
+                    599,
+                    640
+                ],
+                "value": 13,
+                "volume": 271035520,
+                "min_count": 16,
+                "max_count": 16
+            },
+            {
+                "type": 6,
+                "size": [
+                    570,
+                    651,
+                    678
+                ],
+                "value": 16,
+                "volume": 251585460,
+                "min_count": 17,
+                "max_count": 24
+            },
+            {
+                "type": 7,
+                "size": [
+                    725,
+                    689,
+                    330
+                ],
+                "value": 1,
+                "volume": 164843250,
+                "min_count": 19,
+                "max_count": 33
+            },
+            {
+                "type": 8,
+                "size": [
+                    740,
+                    469,
+                    353
+                ],
+                "value": 21,
+                "volume": 122512180,
+                "min_count": 27,
+                "max_count": 40
+            },
+            {
+                "type": 9,
+                "size": [
+                    697,
+                    727,
+                    698
+                ],
+                "value": 84,
+                "volume": 353689862,
+                "min_count": 12,
+                "max_count": 14
+            },
+            {
+                "type": 10,
+                "size": [
+                    434,
+                    378,
+                    292
+                ],
+                "value": 84,
+                "volume": 47903184,
+                "min_count": 50,
+                "max_count": 115
+            },
+            {
+                "type": 11,
+                "size": [
+                    334,
+                    276,
+                    452
+                ],
+                "value": 93,
+                "volume": 41667168,
+                "min_count": 87,
+                "max_count": 146
+            },
+            {
+                "type": 12,
+                "size": [
+                    608,
+                    636,
+                    369
+                ],
+                "value": 91,
+                "volume": 142687872,
+                "min_count": 29,
+                "max_count": 44
+            },
+            {
+                "type": 13,
+                "size": [
+                    298,
+                    250,
+                    359
+                ],
+                "value": 17,
+                "volume": 26745500,
+                "min_count": 157,
+                "max_count": 227
+            },
+            {
+                "type": 14,
+                "size": [
+                    553,
+                    365,
+                    515
+                ],
+                "value": 2,
+                "volume": 103950175,
+                "min_count": 28,
+                "max_count": 63
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "ame4yrid",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    662,
+                    302,
+                    302
+                ],
+                "value": 39,
+                "volume": 60377048,
+                "min_count": 50,
+                "max_count": 93
+            },
+            {
+                "type": 1,
+                "size": [
+                    320,
+                    445,
+                    646
+                ],
+                "value": 83,
+                "volume": 91990400,
+                "min_count": 44,
+                "max_count": 72
+            },
+            {
+                "type": 2,
+                "size": [
+                    596,
+                    323,
+                    285
+                ],
+                "value": 2,
+                "volume": 54864780,
+                "min_count": 44,
+                "max_count": 113
+            },
+            {
+                "type": 3,
+                "size": [
+                    562,
+                    582,
+                    334
+                ],
+                "value": 93,
+                "volume": 109246056,
+                "min_count": 29,
+                "max_count": 54
+            },
+            {
+                "type": 4,
+                "size": [
+                    359,
+                    571,
+                    633
+                ],
+                "value": 79,
+                "volume": 129758037,
+                "min_count": 21,
+                "max_count": 38
+            },
+            {
+                "type": 5,
+                "size": [
+                    601,
+                    476,
+                    690
+                ],
+                "value": 13,
+                "volume": 197392440,
+                "min_count": 21,
+                "max_count": 25
+            },
+            {
+                "type": 6,
+                "size": [
+                    321,
+                    635,
+                    313
+                ],
+                "value": 55,
+                "volume": 63800355,
+                "min_count": 47,
+                "max_count": 93
+            },
+            {
+                "type": 7,
+                "size": [
+                    411,
+                    655,
+                    321
+                ],
+                "value": 83,
+                "volume": 86414805,
+                "min_count": 43,
+                "max_count": 58
+            },
+            {
+                "type": 8,
+                "size": [
+                    293,
+                    377,
+                    533
+                ],
+                "value": 85,
+                "volume": 58875713,
+                "min_count": 74,
+                "max_count": 93
+            },
+            {
+                "type": 9,
+                "size": [
+                    698,
+                    404,
+                    355
+                ],
+                "value": 66,
+                "volume": 100107160,
+                "min_count": 25,
+                "max_count": 60
+            },
+            {
+                "type": 10,
+                "size": [
+                    346,
+                    632,
+                    450
+                ],
+                "value": 7,
+                "volume": 98402400,
+                "min_count": 25,
+                "max_count": 54
+            },
+            {
+                "type": 11,
+                "size": [
+                    651,
+                    709,
+                    656
+                ],
+                "value": 50,
+                "volume": 302782704,
+                "min_count": 7,
+                "max_count": 17
+            },
+            {
+                "type": 12,
+                "size": [
+                    307,
+                    373,
+                    505
+                ],
+                "value": 68,
+                "volume": 57828055,
+                "min_count": 72,
+                "max_count": 114
+            },
+            {
+                "type": 13,
+                "size": [
+                    705,
+                    750,
+                    256
+                ],
+                "value": 17,
+                "volume": 135360000,
+                "min_count": 22,
+                "max_count": 43
+            },
+            {
+                "type": 14,
+                "size": [
+                    448,
+                    690,
+                    679
+                ],
+                "value": 47,
+                "volume": 209892480,
+                "min_count": 15,
+                "max_count": 30
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "tgq9cvah",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    722,
+                    280,
+                    735
+                ],
+                "value": 65,
+                "volume": 148587600,
+                "min_count": 23,
                 "max_count": 41
             },
             {
                 "type": 1,
                 "size": [
-                    702,
-                    732,
-                    537
+                    396,
+                    571,
+                    614
                 ],
-                "value": 79,
-                "volume": 275944968,
-                "min_count": 11,
-                "max_count": 16
+                "value": 90,
+                "volume": 138835224,
+                "min_count": 18,
+                "max_count": 44
             },
             {
                 "type": 2,
                 "size": [
-                    363,
-                    581,
-                    282
+                    455,
+                    292,
+                    577
                 ],
-                "value": 90,
-                "volume": 59474646,
-                "min_count": 45,
+                "value": 79,
+                "volume": 76660220,
+                "min_count": 40,
                 "max_count": 74
             },
             {
                 "type": 3,
                 "size": [
-                    404,
-                    582,
-                    459
+                    328,
+                    392,
+                    292
                 ],
-                "value": 18,
-                "volume": 107923752,
-                "min_count": 38,
-                "max_count": 41
+                "value": 66,
+                "volume": 37544192,
+                "min_count": 113,
+                "max_count": 137
             },
             {
                 "type": 4,
                 "size": [
-                    273,
-                    734,
-                    269
+                    721,
+                    354,
+                    748
                 ],
-                "value": 64,
-                "volume": 53902758,
-                "min_count": 63,
-                "max_count": 82
+                "value": 42,
+                "volume": 190915032,
+                "min_count": 15,
+                "max_count": 25
             },
             {
                 "type": 5,
                 "size": [
-                    309,
-                    299,
-                    370
+                    450,
+                    550,
+                    574
                 ],
-                "value": 50,
-                "volume": 34184670,
-                "min_count": 112,
-                "max_count": 129
+                "value": 90,
+                "volume": 142065000,
+                "min_count": 22,
+                "max_count": 33
             },
             {
                 "type": 6,
                 "size": [
-                    482,
-                    439,
-                    593
+                    473,
+                    623,
+                    738
                 ],
-                "value": 54,
-                "volume": 125477614,
-                "min_count": 18,
-                "max_count": 35
+                "value": 32,
+                "volume": 217473102,
+                "min_count": 20,
+                "max_count": 23
             },
             {
                 "type": 7,
                 "size": [
-                    550,
-                    630,
-                    622
+                    294,
+                    723,
+                    472
                 ],
-                "value": 54,
-                "volume": 215523000,
-                "min_count": 18,
-                "max_count": 20
+                "value": 79,
+                "volume": 100329264,
+                "min_count": 30,
+                "max_count": 47
             },
             {
                 "type": 8,
                 "size": [
-                    585,
-                    300,
-                    676
+                    561,
+                    278,
+                    408
                 ],
-                "value": 79,
-                "volume": 118638000,
-                "min_count": 22,
-                "max_count": 37
+                "value": 2,
+                "volume": 63630864,
+                "min_count": 62,
+                "max_count": 80
             },
             {
                 "type": 9,
                 "size": [
-                    458,
-                    730,
-                    737
+                    612,
+                    320,
+                    609
                 ],
-                "value": 5,
-                "volume": 246408580,
-                "min_count": 14,
-                "max_count": 18
+                "value": 64,
+                "volume": 119266560,
+                "min_count": 32,
+                "max_count": 37
             },
             {
                 "type": 10,
                 "size": [
-                    603,
-                    439,
-                    361
+                    737,
+                    427,
+                    517
                 ],
-                "value": 57,
-                "volume": 95562837,
-                "min_count": 32,
-                "max_count": 46
+                "value": 93,
+                "volume": 162699383,
+                "min_count": 15,
+                "max_count": 35
             },
             {
                 "type": 11,
                 "size": [
-                    736,
-                    370,
-                    687
+                    382,
+                    335,
+                    440
                 ],
-                "value": 13,
-                "volume": 187083840,
-                "min_count": 18,
-                "max_count": 23
+                "value": 94,
+                "volume": 56306800,
+                "min_count": 61,
+                "max_count": 86
             },
             {
                 "type": 12,
                 "size": [
-                    601,
-                    438,
-                    528
+                    703,
+                    310,
+                    644
                 ],
-                "value": 8,
-                "volume": 138989664,
-                "min_count": 20,
+                "value": 55,
+                "volume": 140346920,
+                "min_count": 21,
                 "max_count": 31
             },
             {
                 "type": 13,
                 "size": [
-                    453,
-                    391,
-                    347
+                    389,
+                    518,
+                    282
                 ],
-                "value": 59,
-                "volume": 61461681,
-                "min_count": 65,
-                "max_count": 72
+                "value": 81,
+                "volume": 56823564,
+                "min_count": 42,
+                "max_count": 94
             },
             {
                 "type": 14,
                 "size": [
-                    296,
-                    589,
-                    358
+                    289,
+                    504,
+                    483
                 ],
-                "value": 7,
-                "volume": 62415152,
-                "min_count": 70,
-                "max_count": 71
+                "value": 64,
+                "volume": 70351848,
+                "min_count": 60,
+                "max_count": 86
             }
         ],
         "types_count": 15
     },
     {
-        "id": "2ieuc1hh",
+        "id": "4gf16ye0",
         "container": [
             12010,
             2330,
@@ -1547,188 +2891,1724 @@
             {
                 "type": 0,
                 "size": [
-                    695,
-                    369,
-                    418
+                    251,
+                    272,
+                    689
                 ],
-                "value": 77,
-                "volume": 107198190,
-                "min_count": 37,
-                "max_count": 41
+                "value": 6,
+                "volume": 47039408,
+                "min_count": 79,
+                "max_count": 94
             },
             {
                 "type": 1,
                 "size": [
-                    251,
-                    391,
-                    689
+                    491,
+                    436,
+                    446
+                ],
+                "value": 5,
+                "volume": 95477896,
+                "min_count": 41,
+                "max_count": 50
+            },
+            {
+                "type": 2,
+                "size": [
+                    533,
+                    661,
+                    717
+                ],
+                "value": 42,
+                "volume": 252608421,
+                "min_count": 14,
+                "max_count": 23
+            },
+            {
+                "type": 3,
+                "size": [
+                    377,
+                    463,
+                    718
+                ],
+                "value": 10,
+                "volume": 125327618,
+                "min_count": 27,
+                "max_count": 45
+            },
+            {
+                "type": 4,
+                "size": [
+                    542,
+                    440,
+                    311
+                ],
+                "value": 7,
+                "volume": 74167280,
+                "min_count": 38,
+                "max_count": 75
+            },
+            {
+                "type": 5,
+                "size": [
+                    341,
+                    364,
+                    661
+                ],
+                "value": 52,
+                "volume": 82045964,
+                "min_count": 53,
+                "max_count": 70
+            },
+            {
+                "type": 6,
+                "size": [
+                    285,
+                    699,
+                    488
+                ],
+                "value": 42,
+                "volume": 97216920,
+                "min_count": 36,
+                "max_count": 54
+            },
+            {
+                "type": 7,
+                "size": [
+                    294,
+                    533,
+                    483
+                ],
+                "value": 26,
+                "volume": 75687066,
+                "min_count": 47,
+                "max_count": 58
+            },
+            {
+                "type": 8,
+                "size": [
+                    399,
+                    538,
+                    651
+                ],
+                "value": 60,
+                "volume": 139744962,
+                "min_count": 24,
+                "max_count": 40
+            },
+            {
+                "type": 9,
+                "size": [
+                    438,
+                    552,
+                    747
+                ],
+                "value": 100,
+                "volume": 180606672,
+                "min_count": 12,
+                "max_count": 31
+            },
+            {
+                "type": 10,
+                "size": [
+                    350,
+                    625,
+                    711
+                ],
+                "value": 32,
+                "volume": 155531250,
+                "min_count": 16,
+                "max_count": 36
+            },
+            {
+                "type": 11,
+                "size": [
+                    327,
+                    253,
+                    727
+                ],
+                "value": 30,
+                "volume": 60145437,
+                "min_count": 72,
+                "max_count": 99
+            },
+            {
+                "type": 12,
+                "size": [
+                    527,
+                    427,
+                    575
+                ],
+                "value": 1,
+                "volume": 129391675,
+                "min_count": 24,
+                "max_count": 34
+            },
+            {
+                "type": 13,
+                "size": [
+                    638,
+                    586,
+                    442
+                ],
+                "value": 94,
+                "volume": 165249656,
+                "min_count": 15,
+                "max_count": 39
+            },
+            {
+                "type": 14,
+                "size": [
+                    407,
+                    303,
+                    355
+                ],
+                "value": 54,
+                "volume": 43778955,
+                "min_count": 86,
+                "max_count": 134
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "rc9zd76s",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    608,
+                    708,
+                    440
+                ],
+                "value": 11,
+                "volume": 189404160,
+                "min_count": 12,
+                "max_count": 30
+            },
+            {
+                "type": 1,
+                "size": [
+                    547,
+                    298,
+                    508
+                ],
+                "value": 51,
+                "volume": 82807048,
+                "min_count": 33,
+                "max_count": 57
+            },
+            {
+                "type": 2,
+                "size": [
+                    288,
+                    553,
+                    540
+                ],
+                "value": 85,
+                "volume": 86002560,
+                "min_count": 38,
+                "max_count": 52
+            },
+            {
+                "type": 3,
+                "size": [
+                    743,
+                    316,
+                    371
+                ],
+                "value": 41,
+                "volume": 87106348,
+                "min_count": 42,
+                "max_count": 59
+            },
+            {
+                "type": 4,
+                "size": [
+                    724,
+                    660,
+                    451
+                ],
+                "value": 58,
+                "volume": 215505840,
+                "min_count": 15,
+                "max_count": 25
+            },
+            {
+                "type": 5,
+                "size": [
+                    389,
+                    369,
+                    288
+                ],
+                "value": 100,
+                "volume": 41339808,
+                "min_count": 99,
+                "max_count": 119
+            },
+            {
+                "type": 6,
+                "size": [
+                    644,
+                    549,
+                    305
+                ],
+                "value": 22,
+                "volume": 107834580,
+                "min_count": 38,
+                "max_count": 45
+            },
+            {
+                "type": 7,
+                "size": [
+                    480,
+                    488,
+                    410
+                ],
+                "value": 69,
+                "volume": 96038400,
+                "min_count": 43,
+                "max_count": 59
+            },
+            {
+                "type": 8,
+                "size": [
+                    433,
+                    743,
+                    644
+                ],
+                "value": 40,
+                "volume": 207187036,
+                "min_count": 14,
+                "max_count": 24
+            },
+            {
+                "type": 9,
+                "size": [
+                    487,
+                    385,
+                    686
+                ],
+                "value": 21,
+                "volume": 128621570,
+                "min_count": 32,
+                "max_count": 37
+            },
+            {
+                "type": 10,
+                "size": [
+                    663,
+                    601,
+                    405
+                ],
+                "value": 90,
+                "volume": 161377515,
+                "min_count": 16,
+                "max_count": 40
+            },
+            {
+                "type": 11,
+                "size": [
+                    558,
+                    270,
+                    360
+                ],
+                "value": 12,
+                "volume": 54237600,
+                "min_count": 72,
+                "max_count": 101
+            },
+            {
+                "type": 12,
+                "size": [
+                    614,
+                    377,
+                    745
+                ],
+                "value": 66,
+                "volume": 172451110,
+                "min_count": 19,
+                "max_count": 30
+            },
+            {
+                "type": 13,
+                "size": [
+                    275,
+                    596,
+                    403
+                ],
+                "value": 4,
+                "volume": 66051700,
+                "min_count": 56,
+                "max_count": 83
+            },
+            {
+                "type": 14,
+                "size": [
+                    737,
+                    457,
+                    687
+                ],
+                "value": 96,
+                "volume": 231387783,
+                "min_count": 11,
+                "max_count": 26
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "tdd2ec2i",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    351,
+                    671,
+                    455
+                ],
+                "value": 83,
+                "volume": 107162055,
+                "min_count": 21,
+                "max_count": 52
+            },
+            {
+                "type": 1,
+                "size": [
+                    293,
+                    548,
+                    550
+                ],
+                "value": 3,
+                "volume": 88310200,
+                "min_count": 48,
+                "max_count": 58
+            },
+            {
+                "type": 2,
+                "size": [
+                    283,
+                    351,
+                    712
+                ],
+                "value": 12,
+                "volume": 70725096,
+                "min_count": 54,
+                "max_count": 90
+            },
+            {
+                "type": 3,
+                "size": [
+                    713,
+                    683,
+                    674
+                ],
+                "value": 16,
+                "volume": 328223846,
+                "min_count": 11,
+                "max_count": 19
+            },
+            {
+                "type": 4,
+                "size": [
+                    271,
+                    732,
+                    486
+                ],
+                "value": 74,
+                "volume": 96408792,
+                "min_count": 41,
+                "max_count": 47
+            },
+            {
+                "type": 5,
+                "size": [
+                    471,
+                    670,
+                    620
+                ],
+                "value": 4,
+                "volume": 195653400,
+                "min_count": 15,
+                "max_count": 28
+            },
+            {
+                "type": 6,
+                "size": [
+                    445,
+                    599,
+                    468
+                ],
+                "value": 28,
+                "volume": 124747740,
+                "min_count": 24,
+                "max_count": 40
+            },
+            {
+                "type": 7,
+                "size": [
+                    715,
+                    345,
+                    390
+                ],
+                "value": 20,
+                "volume": 96203250,
+                "min_count": 32,
+                "max_count": 54
+            },
+            {
+                "type": 8,
+                "size": [
+                    267,
+                    564,
+                    567
+                ],
+                "value": 83,
+                "volume": 85383396,
+                "min_count": 45,
+                "max_count": 71
+            },
+            {
+                "type": 9,
+                "size": [
+                    401,
+                    505,
+                    460
+                ],
+                "value": 8,
+                "volume": 93152300,
+                "min_count": 32,
+                "max_count": 64
+            },
+            {
+                "type": 10,
+                "size": [
+                    294,
+                    393,
+                    446
+                ],
+                "value": 26,
+                "volume": 51531732,
+                "min_count": 60,
+                "max_count": 94
+            },
+            {
+                "type": 11,
+                "size": [
+                    579,
+                    702,
+                    658
+                ],
+                "value": 81,
+                "volume": 267449364,
+                "min_count": 13,
+                "max_count": 24
+            },
+            {
+                "type": 12,
+                "size": [
+                    660,
+                    528,
+                    656
+                ],
+                "value": 92,
+                "volume": 228602880,
+                "min_count": 13,
+                "max_count": 19
+            },
+            {
+                "type": 13,
+                "size": [
+                    433,
+                    495,
+                    528
+                ],
+                "value": 73,
+                "volume": 113168880,
+                "min_count": 28,
+                "max_count": 54
+            },
+            {
+                "type": 14,
+                "size": [
+                    507,
+                    414,
+                    448
+                ],
+                "value": 4,
+                "volume": 94034304,
+                "min_count": 42,
+                "max_count": 55
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "lh62c9t1",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    369,
+                    748,
+                    331
+                ],
+                "value": 85,
+                "volume": 91359972,
+                "min_count": 41,
+                "max_count": 51
+            },
+            {
+                "type": 1,
+                "size": [
+                    373,
+                    386,
+                    523
+                ],
+                "value": 95,
+                "volume": 75300494,
+                "min_count": 33,
+                "max_count": 84
+            },
+            {
+                "type": 2,
+                "size": [
+                    278,
+                    641,
+                    735
+                ],
+                "value": 46,
+                "volume": 130975530,
+                "min_count": 21,
+                "max_count": 40
+            },
+            {
+                "type": 3,
+                "size": [
+                    728,
+                    679,
+                    682
+                ],
+                "value": 31,
+                "volume": 337120784,
+                "min_count": 12,
+                "max_count": 14
+            },
+            {
+                "type": 4,
+                "size": [
+                    553,
+                    412,
+                    662
+                ],
+                "value": 46,
+                "volume": 150827432,
+                "min_count": 18,
+                "max_count": 40
+            },
+            {
+                "type": 5,
+                "size": [
+                    717,
+                    552,
+                    264
+                ],
+                "value": 73,
+                "volume": 104486976,
+                "min_count": 24,
+                "max_count": 53
+            },
+            {
+                "type": 6,
+                "size": [
+                    322,
+                    538,
+                    735
+                ],
+                "value": 70,
+                "volume": 127328460,
+                "min_count": 19,
+                "max_count": 40
+            },
+            {
+                "type": 7,
+                "size": [
+                    408,
+                    339,
+                    501
+                ],
+                "value": 8,
+                "volume": 69294312,
+                "min_count": 59,
+                "max_count": 66
+            },
+            {
+                "type": 8,
+                "size": [
+                    369,
+                    558,
+                    362
+                ],
+                "value": 62,
+                "volume": 74536524,
+                "min_count": 43,
+                "max_count": 59
+            },
+            {
+                "type": 9,
+                "size": [
+                    250,
+                    419,
+                    719
                 ],
                 "value": 17,
-                "volume": 67619149,
+                "volume": 75315250,
+                "min_count": 52,
+                "max_count": 77
+            },
+            {
+                "type": 10,
+                "size": [
+                    424,
+                    617,
+                    340
+                ],
+                "value": 3,
+                "volume": 88946720,
+                "min_count": 48,
+                "max_count": 59
+            },
+            {
+                "type": 11,
+                "size": [
+                    325,
+                    550,
+                    610
+                ],
+                "value": 68,
+                "volume": 109037500,
+                "min_count": 37,
+                "max_count": 44
+            },
+            {
+                "type": 12,
+                "size": [
+                    690,
+                    436,
+                    741
+                ],
+                "value": 91,
+                "volume": 222922440,
+                "min_count": 14,
+                "max_count": 20
+            },
+            {
+                "type": 13,
+                "size": [
+                    732,
+                    589,
+                    452
+                ],
+                "value": 44,
+                "volume": 194878896,
+                "min_count": 21,
+                "max_count": 31
+            },
+            {
+                "type": 14,
+                "size": [
+                    404,
+                    415,
+                    319
+                ],
+                "value": 82,
+                "volume": 53483540,
                 "min_count": 56,
+                "max_count": 93
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "8xg8y72i",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    551,
+                    667,
+                    339
+                ],
+                "value": 94,
+                "volume": 124588263,
+                "min_count": 26,
+                "max_count": 47
+            },
+            {
+                "type": 1,
+                "size": [
+                    602,
+                    400,
+                    315
+                ],
+                "value": 1,
+                "volume": 75852000,
+                "min_count": 35,
+                "max_count": 63
+            },
+            {
+                "type": 2,
+                "size": [
+                    735,
+                    609,
+                    735
+                ],
+                "value": 99,
+                "volume": 328997025,
+                "min_count": 10,
+                "max_count": 17
+            },
+            {
+                "type": 3,
+                "size": [
+                    744,
+                    540,
+                    266
+                ],
+                "value": 41,
+                "volume": 106868160,
+                "min_count": 22,
+                "max_count": 46
+            },
+            {
+                "type": 4,
+                "size": [
+                    721,
+                    664,
+                    745
+                ],
+                "value": 82,
+                "volume": 356664280,
+                "min_count": 11,
+                "max_count": 16
+            },
+            {
+                "type": 5,
+                "size": [
+                    539,
+                    303,
+                    729
+                ],
+                "value": 43,
+                "volume": 119058093,
+                "min_count": 33,
+                "max_count": 52
+            },
+            {
+                "type": 6,
+                "size": [
+                    631,
+                    289,
+                    371
+                ],
+                "value": 22,
+                "volume": 67655189,
+                "min_count": 45,
+                "max_count": 87
+            },
+            {
+                "type": 7,
+                "size": [
+                    575,
+                    703,
+                    743
+                ],
+                "value": 58,
+                "volume": 300339175,
+                "min_count": 9,
+                "max_count": 15
+            },
+            {
+                "type": 8,
+                "size": [
+                    255,
+                    385,
+                    357
+                ],
+                "value": 45,
+                "volume": 35048475,
+                "min_count": 118,
+                "max_count": 157
+            },
+            {
+                "type": 9,
+                "size": [
+                    381,
+                    652,
+                    305
+                ],
+                "value": 7,
+                "volume": 75765660,
+                "min_count": 58,
+                "max_count": 81
+            },
+            {
+                "type": 10,
+                "size": [
+                    447,
+                    474,
+                    625
+                ],
+                "value": 53,
+                "volume": 132423750,
+                "min_count": 28,
+                "max_count": 46
+            },
+            {
+                "type": 11,
+                "size": [
+                    502,
+                    701,
+                    443
+                ],
+                "value": 49,
+                "volume": 155892586,
+                "min_count": 20,
+                "max_count": 33
+            },
+            {
+                "type": 12,
+                "size": [
+                    301,
+                    674,
+                    495
+                ],
+                "value": 98,
+                "volume": 100422630,
+                "min_count": 24,
+                "max_count": 62
+            },
+            {
+                "type": 13,
+                "size": [
+                    601,
+                    365,
+                    333
+                ],
+                "value": 5,
+                "volume": 73048545,
+                "min_count": 58,
+                "max_count": 74
+            },
+            {
+                "type": 14,
+                "size": [
+                    400,
+                    260,
+                    413
+                ],
+                "value": 10,
+                "volume": 42952000,
+                "min_count": 97,
+                "max_count": 119
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "m5fc79m9",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    707,
+                    497,
+                    610
+                ],
+                "value": 84,
+                "volume": 214341190,
+                "min_count": 14,
+                "max_count": 20
+            },
+            {
+                "type": 1,
+                "size": [
+                    334,
+                    560,
+                    705
+                ],
+                "value": 7,
+                "volume": 131863200,
+                "min_count": 28,
+                "max_count": 46
+            },
+            {
+                "type": 2,
+                "size": [
+                    301,
+                    419,
+                    355
+                ],
+                "value": 90,
+                "volume": 44772245,
+                "min_count": 73,
+                "max_count": 111
+            },
+            {
+                "type": 3,
+                "size": [
+                    533,
+                    619,
+                    723
+                ],
+                "value": 85,
+                "volume": 238537221,
+                "min_count": 14,
+                "max_count": 26
+            },
+            {
+                "type": 4,
+                "size": [
+                    394,
+                    402,
+                    371
+                ],
+                "value": 51,
+                "volume": 58761948,
+                "min_count": 72,
+                "max_count": 81
+            },
+            {
+                "type": 5,
+                "size": [
+                    542,
+                    531,
+                    680
+                ],
+                "value": 7,
+                "volume": 195705360,
+                "min_count": 20,
+                "max_count": 29
+            },
+            {
+                "type": 6,
+                "size": [
+                    434,
+                    251,
+                    468
+                ],
+                "value": 85,
+                "volume": 50981112,
+                "min_count": 69,
+                "max_count": 92
+            },
+            {
+                "type": 7,
+                "size": [
+                    570,
+                    557,
+                    495
+                ],
+                "value": 4,
+                "volume": 157157550,
+                "min_count": 27,
+                "max_count": 31
+            },
+            {
+                "type": 8,
+                "size": [
+                    355,
+                    337,
+                    576
+                ],
+                "value": 61,
+                "volume": 68909760,
+                "min_count": 59,
+                "max_count": 82
+            },
+            {
+                "type": 9,
+                "size": [
+                    682,
+                    309,
+                    407
+                ],
+                "value": 61,
+                "volume": 85770366,
+                "min_count": 39,
+                "max_count": 76
+            },
+            {
+                "type": 10,
+                "size": [
+                    500,
+                    708,
+                    588
+                ],
+                "value": 83,
+                "volume": 208152000,
+                "min_count": 20,
+                "max_count": 25
+            },
+            {
+                "type": 11,
+                "size": [
+                    528,
+                    448,
+                    344
+                ],
+                "value": 48,
+                "volume": 81371136,
+                "min_count": 42,
+                "max_count": 65
+            },
+            {
+                "type": 12,
+                "size": [
+                    345,
+                    478,
+                    272
+                ],
+                "value": 60,
+                "volume": 44855520,
+                "min_count": 70,
+                "max_count": 114
+            },
+            {
+                "type": 13,
+                "size": [
+                    384,
+                    365,
+                    678
+                ],
+                "value": 8,
+                "volume": 95028480,
+                "min_count": 28,
+                "max_count": 54
+            },
+            {
+                "type": 14,
+                "size": [
+                    327,
+                    635,
+                    606
+                ],
+                "value": 86,
+                "volume": 125832870,
+                "min_count": 33,
+                "max_count": 38
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "mt8vt43p",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    524,
+                    601,
+                    693
+                ],
+                "value": 31,
+                "volume": 218242332,
+                "min_count": 11,
+                "max_count": 27
+            },
+            {
+                "type": 1,
+                "size": [
+                    493,
+                    403,
+                    290
+                ],
+                "value": 65,
+                "volume": 57616910,
+                "min_count": 75,
+                "max_count": 102
+            },
+            {
+                "type": 2,
+                "size": [
+                    542,
+                    711,
+                    514
+                ],
+                "value": 80,
+                "volume": 198076068,
+                "min_count": 12,
+                "max_count": 31
+            },
+            {
+                "type": 3,
+                "size": [
+                    325,
+                    311,
+                    736
+                ],
+                "value": 23,
+                "volume": 74391200,
+                "min_count": 45,
+                "max_count": 83
+            },
+            {
+                "type": 4,
+                "size": [
+                    735,
+                    335,
+                    747
+                ],
+                "value": 25,
+                "volume": 183930075,
+                "min_count": 12,
+                "max_count": 27
+            },
+            {
+                "type": 5,
+                "size": [
+                    314,
+                    271,
+                    466
+                ],
+                "value": 56,
+                "volume": 39653804,
+                "min_count": 68,
+                "max_count": 116
+            },
+            {
+                "type": 6,
+                "size": [
+                    353,
+                    671,
+                    571
+                ],
+                "value": 41,
+                "volume": 135248773,
+                "min_count": 24,
+                "max_count": 36
+            },
+            {
+                "type": 7,
+                "size": [
+                    716,
+                    622,
+                    718
+                ],
+                "value": 12,
+                "volume": 319762736,
+                "min_count": 13,
+                "max_count": 19
+            },
+            {
+                "type": 8,
+                "size": [
+                    448,
+                    534,
+                    453
+                ],
+                "value": 36,
+                "volume": 108372096,
+                "min_count": 30,
+                "max_count": 57
+            },
+            {
+                "type": 9,
+                "size": [
+                    516,
+                    484,
+                    719
+                ],
+                "value": 90,
+                "volume": 179565936,
+                "min_count": 12,
+                "max_count": 24
+            },
+            {
+                "type": 10,
+                "size": [
+                    569,
+                    550,
+                    517
+                ],
+                "value": 15,
+                "volume": 161795150,
+                "min_count": 21,
+                "max_count": 39
+            },
+            {
+                "type": 11,
+                "size": [
+                    462,
+                    326,
+                    325
+                ],
+                "value": 75,
+                "volume": 48948900,
+                "min_count": 53,
+                "max_count": 126
+            },
+            {
+                "type": 12,
+                "size": [
+                    638,
+                    743,
+                    731
+                ],
+                "value": 73,
+                "volume": 346518854,
+                "min_count": 12,
+                "max_count": 12
+            },
+            {
+                "type": 13,
+                "size": [
+                    649,
+                    301,
+                    652
+                ],
+                "value": 45,
+                "volume": 127367548,
+                "min_count": 17,
+                "max_count": 43
+            },
+            {
+                "type": 14,
+                "size": [
+                    699,
+                    460,
+                    385
+                ],
+                "value": 74,
+                "volume": 123792900,
+                "min_count": 20,
+                "max_count": 47
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "vbjfvyb6",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    419,
+                    603,
+                    371
+                ],
+                "value": 61,
+                "volume": 93735747,
+                "min_count": 24,
+                "max_count": 48
+            },
+            {
+                "type": 1,
+                "size": [
+                    721,
+                    387,
+                    709
+                ],
+                "value": 44,
+                "volume": 197830143,
+                "min_count": 22,
+                "max_count": 27
+            },
+            {
+                "type": 2,
+                "size": [
+                    668,
+                    656,
+                    405
+                ],
+                "value": 63,
+                "volume": 177474240,
+                "min_count": 21,
+                "max_count": 29
+            },
+            {
+                "type": 3,
+                "size": [
+                    689,
+                    606,
+                    600
+                ],
+                "value": 18,
+                "volume": 250520400,
+                "min_count": 14,
+                "max_count": 18
+            },
+            {
+                "type": 4,
+                "size": [
+                    403,
+                    748,
+                    630
+                ],
+                "value": 35,
+                "volume": 189909720,
+                "min_count": 18,
+                "max_count": 30
+            },
+            {
+                "type": 5,
+                "size": [
+                    623,
+                    463,
+                    559
+                ],
+                "value": 25,
+                "volume": 161242991,
+                "min_count": 26,
+                "max_count": 37
+            },
+            {
+                "type": 6,
+                "size": [
+                    476,
+                    358,
+                    717
+                ],
+                "value": 98,
+                "volume": 122182536,
+                "min_count": 21,
+                "max_count": 49
+            },
+            {
+                "type": 7,
+                "size": [
+                    514,
+                    694,
+                    441
+                ],
+                "value": 66,
+                "volume": 157311756,
+                "min_count": 28,
+                "max_count": 41
+            },
+            {
+                "type": 8,
+                "size": [
+                    655,
+                    331,
+                    283
+                ],
+                "value": 52,
+                "volume": 61355815,
+                "min_count": 40,
+                "max_count": 91
+            },
+            {
+                "type": 9,
+                "size": [
+                    319,
+                    649,
+                    685
+                ],
+                "value": 25,
+                "volume": 141816235,
+                "min_count": 26,
+                "max_count": 31
+            },
+            {
+                "type": 10,
+                "size": [
+                    698,
+                    676,
+                    352
+                ],
+                "value": 32,
+                "volume": 166090496,
+                "min_count": 26,
+                "max_count": 39
+            },
+            {
+                "type": 11,
+                "size": [
+                    266,
+                    483,
+                    275
+                ],
+                "value": 91,
+                "volume": 35331450,
+                "min_count": 102,
+                "max_count": 183
+            },
+            {
+                "type": 12,
+                "size": [
+                    351,
+                    390,
+                    438
+                ],
+                "value": 51,
+                "volume": 59957820,
+                "min_count": 42,
+                "max_count": 103
+            },
+            {
+                "type": 13,
+                "size": [
+                    575,
+                    722,
+                    313
+                ],
+                "value": 48,
+                "volume": 129941950,
+                "min_count": 27,
+                "max_count": 34
+            },
+            {
+                "type": 14,
+                "size": [
+                    500,
+                    554,
+                    478
+                ],
+                "value": 76,
+                "volume": 132406000,
+                "min_count": 18,
+                "max_count": 38
+            }
+        ],
+        "types_count": 15
+    },
+    {
+        "id": "tm4j3dab",
+        "container": [
+            12010,
+            2330,
+            2380
+        ],
+        "container_volume": 66600254000,
+        "box_types": [
+            {
+                "type": 0,
+                "size": [
+                    687,
+                    542,
+                    649
+                ],
+                "value": 83,
+                "volume": 241657746,
+                "min_count": 15,
+                "max_count": 21
+            },
+            {
+                "type": 1,
+                "size": [
+                    365,
+                    596,
+                    355
+                ],
+                "value": 53,
+                "volume": 77226700,
+                "min_count": 37,
                 "max_count": 65
             },
             {
                 "type": 2,
                 "size": [
-                    526,
-                    378,
-                    658
+                    512,
+                    260,
+                    692
                 ],
-                "value": 15,
-                "volume": 130828824,
-                "min_count": 28,
-                "max_count": 33
+                "value": 88,
+                "volume": 92119040,
+                "min_count": 24,
+                "max_count": 72
             },
             {
                 "type": 3,
                 "size": [
-                    588,
-                    693,
-                    263
+                    254,
+                    492,
+                    716
                 ],
-                "value": 2,
-                "volume": 107168292,
-                "min_count": 37,
-                "max_count": 41
+                "value": 23,
+                "volume": 89477088,
+                "min_count": 29,
+                "max_count": 53
             },
             {
                 "type": 4,
                 "size": [
-                    433,
-                    654,
-                    653
+                    557,
+                    660,
+                    254
                 ],
-                "value": 76,
-                "volume": 184917846,
-                "min_count": 21,
-                "max_count": 24
+                "value": 78,
+                "volume": 93375480,
+                "min_count": 39,
+                "max_count": 54
             },
             {
                 "type": 5,
                 "size": [
-                    415,
-                    258,
-                    339
+                    662,
+                    732,
+                    406
                 ],
-                "value": 7,
-                "volume": 36296730,
-                "min_count": 106,
-                "max_count": 122
+                "value": 83,
+                "volume": 196741104,
+                "min_count": 11,
+                "max_count": 33
             },
             {
                 "type": 6,
                 "size": [
-                    314,
-                    629,
-                    465
+                    390,
+                    466,
+                    708
                 ],
-                "value": 15,
-                "volume": 91840290,
-                "min_count": 32,
-                "max_count": 48
+                "value": 59,
+                "volume": 128671920,
+                "min_count": 23,
+                "max_count": 46
             },
             {
                 "type": 7,
                 "size": [
-                    631,
-                    282,
-                    493
+                    379,
+                    361,
+                    488
                 ],
-                "value": 100,
-                "volume": 87725406,
-                "min_count": 36,
-                "max_count": 50
+                "value": 80,
+                "volume": 66767672,
+                "min_count": 33,
+                "max_count": 85
             },
             {
                 "type": 8,
                 "size": [
-                    435,
-                    512,
-                    553
+                    453,
+                    549,
+                    302
                 ],
-                "value": 58,
-                "volume": 123164160,
-                "min_count": 33,
-                "max_count": 36
+                "value": 85,
+                "volume": 75106494,
+                "min_count": 43,
+                "max_count": 59
             },
             {
                 "type": 9,
                 "size": [
-                    507,
-                    363,
-                    734
+                    744,
+                    681,
+                    679
                 ],
-                "value": 94,
-                "volume": 135086094,
-                "min_count": 31,
-                "max_count": 32
+                "value": 83,
+                "volume": 344024856,
+                "min_count": 8,
+                "max_count": 14
             },
             {
                 "type": 10,
                 "size": [
-                    651,
-                    715,
-                    693
+                    554,
+                    561,
+                    394
                 ],
-                "value": 67,
-                "volume": 322567245,
-                "min_count": 8,
-                "max_count": 13
+                "value": 62,
+                "volume": 122452836,
+                "min_count": 33,
+                "max_count": 45
             },
             {
                 "type": 11,
                 "size": [
-                    404,
-                    484,
-                    579
+                    282,
+                    422,
+                    391
                 ],
-                "value": 8,
-                "volume": 113215344,
-                "min_count": 39,
-                "max_count": 39
+                "value": 36,
+                "volume": 46530564,
+                "min_count": 75,
+                "max_count": 135
             },
             {
                 "type": 12,
                 "size": [
-                    495,
-                    683,
-                    455
+                    383,
+                    585,
+                    614
                 ],
-                "value": 88,
-                "volume": 153828675,
-                "min_count": 22,
-                "max_count": 28
+                "value": 20,
+                "volume": 137569770,
+                "min_count": 26,
+                "max_count": 41
             },
             {
                 "type": 13,
                 "size": [
-                    305,
-                    501,
-                    614
+                    514,
+                    641,
+                    373
                 ],
-                "value": 10,
-                "volume": 93822270,
-                "min_count": 33,
-                "max_count": 47
+                "value": 85,
+                "volume": 122893802,
+                "min_count": 24,
+                "max_count": 37
             },
             {
                 "type": 14,
                 "size": [
-                    710,
-                    291,
-                    414
+                    413,
+                    598,
+                    321
                 ],
-                "value": 19,
-                "volume": 85536540,
-                "min_count": 32,
-                "max_count": 51
+                "value": 84,
+                "volume": 79278654,
+                "min_count": 56,
+                "max_count": 79
             }
         ],
         "types_count": 15
     },
     {
-        "id": "cjwtl9tq",
+        "id": "rk6o0u93",
         "container": [
             12010,
             2330,
@@ -1739,182 +4619,182 @@
             {
                 "type": 0,
                 "size": [
-                    559,
-                    470,
-                    300
+                    425,
+                    621,
+                    615
                 ],
-                "value": 90,
-                "volume": 78819000,
-                "min_count": 31,
-                "max_count": 56
+                "value": 69,
+                "volume": 162313875,
+                "min_count": 17,
+                "max_count": 30
             },
             {
                 "type": 1,
                 "size": [
-                    308,
-                    686,
-                    585
+                    576,
+                    651,
+                    493
                 ],
-                "value": 93,
-                "volume": 123603480,
-                "min_count": 18,
-                "max_count": 35
+                "value": 65,
+                "volume": 184863168,
+                "min_count": 19,
+                "max_count": 34
             },
             {
                 "type": 2,
                 "size": [
-                    693,
-                    360,
-                    470
+                    403,
+                    682,
+                    337
                 ],
-                "value": 30,
-                "volume": 117255600,
-                "min_count": 23,
-                "max_count": 37
+                "value": 24,
+                "volume": 92623102,
+                "min_count": 30,
+                "max_count": 68
             },
             {
                 "type": 3,
                 "size": [
-                    461,
-                    423,
-                    673
+                    400,
+                    299,
+                    491
                 ],
-                "value": 52,
-                "volume": 131237019,
-                "min_count": 19,
-                "max_count": 33
+                "value": 93,
+                "volume": 58723600,
+                "min_count": 59,
+                "max_count": 83
             },
             {
                 "type": 4,
                 "size": [
-                    462,
-                    623,
-                    298
+                    663,
+                    536,
+                    640
                 ],
-                "value": 55,
-                "volume": 85772148,
-                "min_count": 41,
-                "max_count": 51
+                "value": 84,
+                "volume": 227435520,
+                "min_count": 14,
+                "max_count": 21
             },
             {
                 "type": 5,
                 "size": [
-                    410,
-                    590,
-                    380
+                    295,
+                    363,
+                    431
                 ],
-                "value": 20,
-                "volume": 91922000,
-                "min_count": 37,
-                "max_count": 48
+                "value": 40,
+                "volume": 46153635,
+                "min_count": 49,
+                "max_count": 110
             },
             {
                 "type": 6,
                 "size": [
-                    601,
-                    722,
-                    492
+                    465,
+                    653,
+                    704
                 ],
-                "value": 12,
-                "volume": 213489624,
-                "min_count": 19,
-                "max_count": 20
+                "value": 34,
+                "volume": 213766080,
+                "min_count": 15,
+                "max_count": 25
             },
             {
                 "type": 7,
                 "size": [
-                    675,
-                    293,
-                    297
+                    549,
+                    400,
+                    487
                 ],
-                "value": 13,
-                "volume": 58739175,
-                "min_count": 48,
-                "max_count": 75
+                "value": 7,
+                "volume": 106945200,
+                "min_count": 26,
+                "max_count": 44
             },
             {
                 "type": 8,
                 "size": [
-                    631,
-                    628,
-                    440
+                    693,
+                    574,
+                    548
                 ],
-                "value": 17,
-                "volume": 174357920,
-                "min_count": 13,
-                "max_count": 25
+                "value": 10,
+                "volume": 217984536,
+                "min_count": 11,
+                "max_count": 29
             },
             {
                 "type": 9,
                 "size": [
-                    534,
-                    280,
-                    550
+                    491,
+                    705,
+                    349
                 ],
-                "value": 72,
-                "volume": 82236000,
-                "min_count": 36,
-                "max_count": 53
+                "value": 88,
+                "volume": 120808095,
+                "min_count": 33,
+                "max_count": 52
             },
             {
                 "type": 10,
                 "size": [
-                    418,
-                    593,
-                    312
+                    445,
+                    521,
+                    402
                 ],
-                "value": 46,
-                "volume": 77336688,
-                "min_count": 44,
-                "max_count": 57
+                "value": 20,
+                "volume": 93201690,
+                "min_count": 46,
+                "max_count": 60
             },
             {
                 "type": 11,
                 "size": [
-                    697,
-                    590,
-                    731
+                    320,
+                    352,
+                    425
                 ],
-                "value": 93,
-                "volume": 300609130,
-                "min_count": 8,
-                "max_count": 14
+                "value": 59,
+                "volume": 47872000,
+                "min_count": 56,
+                "max_count": 118
             },
             {
                 "type": 12,
                 "size": [
-                    276,
-                    745,
-                    397
+                    323,
+                    411,
+                    691
                 ],
-                "value": 40,
-                "volume": 81631140,
-                "min_count": 35,
-                "max_count": 54
+                "value": 100,
+                "volume": 91732323,
+                "min_count": 43,
+                "max_count": 70
             },
             {
                 "type": 13,
                 "size": [
-                    430,
-                    303,
-                    545
+                    291,
+                    499,
+                    420
                 ],
-                "value": 20,
-                "volume": 71008050,
-                "min_count": 49,
-                "max_count": 62
+                "value": 82,
+                "volume": 60987780,
+                "min_count": 52,
+                "max_count": 83
             },
             {
                 "type": 14,
                 "size": [
-                    586,
-                    496,
-                    364
+                    279,
+                    252,
+                    481
                 ],
-                "value": 45,
-                "volume": 105798784,
-                "min_count": 38,
-                "max_count": 41
+                "value": 98,
+                "volume": 33818148,
+                "min_count": 105,
+                "max_count": 166
             }
         ],
         "types_count": 15
