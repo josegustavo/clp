@@ -1,11 +1,8 @@
-from copy import deepcopy
 from dataclasses import dataclass, field
 from enum import Enum
-import logging
 import random
 from typing import Iterator, Optional
 
-from matplotlib.pylab import f
 
 from lcp.src.problems import Problem
 from .chromosome import Chromosome, Gene, Improvement

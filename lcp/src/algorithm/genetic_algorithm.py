@@ -1,13 +1,9 @@
 from copy import deepcopy
-from enum import Enum
-from hmac import new
 import random
 import sys
 import time
-from tracemalloc import stop
 from typing import Callable, Optional
 from dataclasses import dataclass, field
-from lcp.src.algorithm.chromosome import Chromosome
 from .population import Population
 
 inf = sys.maxsize
@@ -97,7 +93,7 @@ class GeneticAlgorithm:
             #    onGeneration(best_values, self.population)
             generation += 1
             time_end = time.time()
-            generations_time.append(round(time_end-time_generation, 2))
+            generations_time.append(time_end-time_generation)
             time_generation = time_end
         self.stats = {
             'best_value': self.population.best.fitness,
@@ -107,9 +103,9 @@ class GeneticAlgorithm:
             'generations': generation,
             'best_values': best_values,
             'timings': {
-                'start_time': int(time_start),
-                'end_time': int(time_end),
-                'duration': round(time_end-time_start, 2),
+                'start_time': time_start,
+                'end_time': time_end,
+                'duration': time_end-time_start,
                 'generations_time': generations_time,
             },
             'default_max_fitness': default_max_fitness,

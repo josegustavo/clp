@@ -5,14 +5,13 @@ from lcp.src.problems.problems import Problems
 from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
-from tqdm import tqdm
-import multiprocessing
 
-random.seed(42)
+import multiprocessing
 
 types_count = [5, 10, 15, 20]
 
 for i in types_count:
+    random.seed(100)
     Problems(file_path='problems/types_%d.json' % i)\
         .generate(25, N_TYPES=i, BOX_SIDE_MIN=250, BOX_SIDE_MAX=750)
 
@@ -22,6 +21,8 @@ improvements = [GroupImprovement.none,
                 GroupImprovement.late_best,
                 GroupImprovement.late_some]
 
+random.seed(42)
+
 
 def solve(args):
     problem, imp, num_types = args
@@ -29,7 +30,7 @@ def solve(args):
     population = Population(problem, imp)\
         .generate_random_individuals(100).evaluate()
     ga = GeneticAlgorithm(population=population,
-                          MAX_DURATION=300,
+                          MAX_DURATION=60,
                           P_MUT_GEN=1/num_types,
                           )
     ga.start()
@@ -37,7 +38,7 @@ def solve(args):
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=multiprocessing.cpu_count()) as executor:
+    with ProcessPoolExecutor(max_workers=8) as executor:
         args = []
         for i in types_count:
             problems = Problems(file_path='problems/types_%d.json' %
@@ -48,12 +49,11 @@ def main():
         # print("Cantidad de problemas a resolver: %s" % len(args))
         results = executor.map(solve, args)
 
-        with tqdm(total=len(args)) as pbar:
-            for result in results:
-                with open('results.txt', 'a') as outfile:
-                    json.dump(result, outfile)
-                    outfile.write('\n')
-                pbar.update()
+        for result in results:
+            with open('results.txt', 'a') as outfile:
+                json.dump(result, outfile)
+                outfile.write('\n')
+            print("\rProblema resuelto: %s" % result['problem_id'])
 
 
 if __name__ == "__main__":

@@ -29,9 +29,12 @@ class ProblemMaker:
         }
         box_types = []
         min_volume, max_volume = 0, 0
+        box_sizes = [[random.randint(
+            self.BOX_SIDE_MIN, self.BOX_SIDE_MAX) for _ in range(3)]
+            + [random.randint(1, 100)]
+            for _ in range(self.N_TYPES)]
         for i in range(self.N_TYPES):
-            l, w, h = [random.randint(self.BOX_SIDE_MIN, self.BOX_SIDE_MAX)
-                       for _ in range(3)]
+            l, w, h, value = box_sizes[i]
             vol = l*w*h
             mean_count = int((container_volume/self.N_TYPES) // vol)
             max_count = mean_count + random.randint(0, mean_count//2)
@@ -39,7 +42,7 @@ class ProblemMaker:
             box_type = {
                 'type': i,
                 'size': (l, w, h),
-                'value':  random.randint(1, 100),
+                'value':  value,
                 'volume': vol,
                 'min_count': min_count,
                 'max_count': max_count,

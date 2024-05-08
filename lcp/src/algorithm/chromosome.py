@@ -51,7 +51,7 @@ class Chromosome(list):
 
     @property
     def fitness(self):
-        return (round((self.occupied_vol / self.container.volume), 2),
+        return (self.occupied_vol / self.container.volume,
                 self.number_boxes,
                 self.cost_value)
 
