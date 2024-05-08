@@ -55,11 +55,7 @@ class GeneticAlgorithm:
         self.population = new_population
         return self
 
-    def start(self, onGeneration: Optional[Callable] = None) -> 'GeneticAlgorithm':
-        default_max = self.population.best
-        default_max_fitness = None
-        if default_max:
-            default_max_fitness = default_max.fitness
+    def start(self, default_max_fitness: tuple[float, int, int], onGeneration: Optional[Callable] = None) -> 'GeneticAlgorithm':
         elite = deepcopy(self.population.best)
         generations_not_improved = 0
         generation = 0
@@ -70,6 +66,8 @@ class GeneticAlgorithm:
         generations_time = []
         time_generation = time_start
         time_end = time_start
+        best_time = 0
+        best_generation = 0
         # Iterar hasta que no se mejore en M generaciones o se alcance la generación N
         while (time_end - time_start) < self.MAX_DURATION and generations_not_improved < self.STOP_UNIMPROVED and generation < self.MAX_GENERATIONS:
             # print("-> Generation %d best value: %d" % (
@@ -82,6 +80,8 @@ class GeneticAlgorithm:
             if new_best > elite:  # Si el nuevo mejor es mejor que el elite, reemplazar
                 elite = deepcopy(new_best)
                 generations_not_improved = 0
+                best_time = time.time() - time_start
+                best_generation = generation
             else:
                 if new_best < elite:
                     del self.population.individuals[-1]
@@ -104,8 +104,12 @@ class GeneticAlgorithm:
             'types_count': len(self.population.problem.box_types),
             'group_improvement': self.population.group_improvement.name,
             'generations': generation,
+            'best': {
+                'best_time': best_time,
+                'best_generation': best_generation,
+                'best_boxes': best_boxes,
+            },
             'best_values': best_values,
-            'best_boxes': best_boxes,
             'timings': {
                 'start_time': time_start,
                 'end_time': time_end,

@@ -52,27 +52,26 @@ class Population:
     def best_fitness(self) -> float:
         return self.best.get_fitness
 
-    def generate_random_individuals(self, count: int = 100) -> 'Population':
-        self.individuals.clear()
-
+    def generate_random_individuals(self, count: int = 100) -> list[Chromosome]:
+        individuals: list[Chromosome] = []
         # Generar dos soluciones iniciales usando los valores mínimos y máximos propuestos
 
         genes = [Gene(t, t.max_count, 0) for t in self.problem.box_types]
         random.shuffle(genes)
-        self.individuals.append(Chromosome(
+        individuals.append(Chromosome(
             genes, self.problem.container, True))
 
         genes = [Gene(t, t.min_count, 0) for t in self.problem.box_types]
         random.shuffle(genes)
-        self.individuals.append(Chromosome(genes, self.problem.container))
+        individuals.append(Chromosome(genes, self.problem.container))
 
         for _ in range(count-2):  # Generar 2 menos
             genes = [Gene(t, random.randint(t.min_count, t.max_count),
                           random.randint(0, 1)) for t in self.problem.box_types]
             random.shuffle(genes)
-            self.individuals.append(Chromosome(genes, self.problem.container))
+            individuals.append(Chromosome(genes, self.problem.container))
 
-        return self
+        return individuals
 
     def append(self, chromosome: Chromosome) -> 'Population':
         self.individuals.append(chromosome)

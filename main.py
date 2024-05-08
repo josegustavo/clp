@@ -26,19 +26,29 @@ random.seed(42)
 
 def solve(args):
     problem, imp, num_types = args
-    random.seed(100)
-    population = Population(problem, imp)\
-        .generate_random_individuals(100).evaluate()
+    random.seed(problem.id)  # usar la misma semilla para cada problema
+
+    population = Population(problem)
+    individuals = population.generate_random_individuals(100)
+    population.individuals = individuals
+    population.evaluate()
+    first_best_fitness = population.best.fitness
+
+    if imp != GroupImprovement.none:
+        population = Population(problem, imp)
+        population.individuals = individuals
+        population.evaluate()
+
     ga = GeneticAlgorithm(population=population,
-                          MAX_DURATION=60,
+                          MAX_DURATION=150,
                           P_MUT_GEN=1/num_types,
                           )
-    ga.start()
+    ga.start(first_best_fitness)
     return ga.stats
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=5) as executor:
+    with ProcessPoolExecutor(max_workers=4) as executor:
         args = []
         for i in types_count:
             problems = Problems(file_path='problems/types_%d.json' %
