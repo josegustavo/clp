@@ -1,18 +1,12 @@
 \section{Formulación del problema}
 
-El siguiente problema está basado en una situación real de una empresa que se dedica a la venta de productos y al envío de los mismos a sus compradores o clientes a través de contenedores marítimos.
+El desafío presentado se basa en una situación real relacionada con una empresa que gestiona un elevado volumen de pedidos de cajas de diferentes tipos. Cada semana, la empresa busca determinar cuántas cajas de cada tipo debe enviar en un contenedor para maximizar el beneficio total de dicho envío.
 
-El desafío principal al que se enfrenta la empresa es optimizar el proceso de envío de productos a sus clientes, maximizando el uso del espacio en los contenedores. Los clientes suelen hacer pedidos de varios productos en cantidades estimadas, pero generalmente no están familiarizados con las dimensiones de las cajas de cada tipo de producto. Esto dificulta determinar si un pedido puede llenar completamente un contenedor. Por su parte, la empresa maneja productos de diferentes tamaños, pesos y valores, y cada pedido se embala en cajas que varían según estas características. La empresa se encarga de llenar un contenedor con los productos solicitados para un cliente específico. No obstante, si el contenedor no se llena por completo, se produce un desperdicio de espacio. Este desperdicio no solo representa una pérdida financiera para el cliente, quien paga la tarifa completa de envío independientemente del llenado del contenedor, sino también para la empresa, que no maximiza el valor de la carga transportada. Además, el espacio no utilizado tiene un impacto negativo en el medio ambiente, dado que cada viaje consume combustible y genera emisiones contaminantes, independientemente de la eficiencia de carga del contenedor.
+El desafío principal al que se enfrenta la empresa es optimizar el proceso de envío de cajas, donde cada una proporciona un ingreso específico. El objetivo es maximizar el uso del espacio en los contenedores para obtener el mayor beneficio posible. Dado que las cajas tienen distintos tamaños, pesos y valores, se plantea una dificultad para estimar de manera eficaz cómo llenar completamente un contenedor sin desperdiciar espacio. Este desperdicio no solo implica una pérdida financiera, sino que también tiene un impacto ambiental negativo, ya que cada viaje consume combustible y genera emisiones contaminantes.
 
-Para contrarrestar este inconveniente, la empresa puede sugerir al cliente incrementar la cantidad de productos en su pedido, aprovechando que el costo de envío del contenedor es fijo, es decir el costo es el mismo independientemente de si el contenedor está lleno o no, de este modo, también lograría aumentar la venta de productos manteniendo el mismo costo de envío. En situaciones donde el pedido excede la capacidad de un contenedor, se hace necesario utilizar dos o más contenedores, multiplicando los costos de envío. Ante este escenario, la empresa puede proponer dos alternativas: aumentar la cantidad de productos solicitada inicialmente para justificar el uso de más contenedores completamente llenos, o bien, reducir la cantidad de productos para ajustar el pedido a un solo contenedor, eliminando preferentemente los productos de menor valor. Esta estrategia busca maximizar tanto el valor de la carga como la utilización del espacio disponible en los contenedores.
+Para abordar este desafío, es crucial considerar el proceso manual de carga del contenedor. El procedimiento actual de carga no está optimizado y no considera la disposición óptima de las cajas, lo que lleva a una carga subóptima y un desperdicio de espacio. Por tanto, es necesario revisar y mejorar este procedimiento para asegurar que se aproveche al máximo el espacio disponible en los contenedores.
 
-Las variaciones en las cantidades de productos pedidos son justificables, dado que los clientes, usualmente distribuidores, no tienen urgencia en recibir los productos. Esto les permite esperar hasta que un contenedor esté completamente lleno para proceder con el envío. Adicionalmente, la empresa puede incentivar a los clientes a incrementar las cantidades de sus pedidos mediante descuentos o promociones. Esta estrategia resulta beneficiosa tanto para la empresa, que optimiza el uso del espacio en los contenedores, como para los clientes, que pueden reducir sus costos de envío.
-
-Por otro lado, la empresa enfrenta la limitación de realizar pocos envíos en un periodo de tiempo determinado debido a un proceso logístico previo que complica la previsión de disponibilidad de los productos. Generalmente, la empresa opta por aprovechar aquellos productos que se disponen más rápidamente para preparar los envíos. Los clientes, por su parte, no presentan inconvenientes en postergar el envío de productos cuyo tiempo de fabricación es más prolongado.
-
-Debido a esta situación específica, la empresa opta por llenar los contenedores de forma manual. Esto implica que los operarios son responsables de cargar los paquetes en el contenedor de manera eficiente, para esto, la empresa ha establecido un procedimiento específico que guía a los operadores en la colocación de los paquetes. Sin embargo, este procedimiento no está optimizado y no considera la disposición óptima de los paquetes en el contenedor, lo que resulta en una carga subóptima y un desperdicio de espacio.
-
-Este procedimiento manual de carga forma una barrera para la optimización de la carga, por un lado, la empresa tiene que proponer a los clientes incrementar la cantidad de productos en sus pedidos para llenar completamente un contenedor, y por otro lado, los operarios tienen que lograr acomodar los paquetes de tal modo que todas las cantidades propuestas por la empresa puedan ser cargadas en el contenedor. Entonces es necesario que antes de proponer a los clientes incrementar la cantidad de productos en sus pedidos, la empresa pueda optimizar la carga considerando las restricciones del llenado manual.
+El procedimiento de carga manual debe ser meticulosamente evaluado y optimizado. Este aspecto es crucial porque los operarios son los responsables de organizar físicamente las cajas en el contenedor. Un procedimiento manual de carga bien diseñado garantizaría que se aproveche cada centímetro disponible del contenedor, reduciendo así el espacio vacío y aumentando la rentabilidad del envío.
 
 Respecto a las restricciones que se generan debido a la carga manual, se consideran las siguientes:
 
@@ -38,7 +32,7 @@ Para asegurar la estabilidad de la carga, por ejemplo un paquete más grande no 
     \label{fig:paquetes_mal_apilados}
 \end{figure}
 
-Para facilitar la carga manual se considera de que todos los paquetes de un mismo tipo deben mantener la misma orientación, es decir que no se pueden colocar paquetes de un mismo tipo en diferentes orientaciones, por ejemplo en la Figura \ref{fig:paquetes_mal_orientados} se muestra un ejemplo de cómo no se deben colocar los paquetes, ya que dificultaría al operador humano seguir dicho procedimiento, además que aumentaría el riesgo de desperdiciar espacio o de que la carga sea inestable.
+Para facilitar la carga manual se considera de que todos los paquetes de un mismo tipo deben mantener la misma orientación, es decir que no se pueden colocar paquetes de un mismo tipo en diferentes orientaciones, por ejemplo en la Figura \ref{fig:paquetes_mal_orientados} se muestra un ejemplo de cómo no se deben colocar los paquetes, ya que dificultaría al operario seguir dicho procedimiento, además que aumentaría el riesgo de desperdiciar espacio o de que la carga sea inestable.
 
 \begin{figure}[H]
     \centering
@@ -56,11 +50,11 @@ Muchas de las cajas están diseñadas para ser apiladas y soportar un gran peso 
     \label{fig:paquetes_girados}
 \end{figure}
 
-Para evitar la fatiga del operador de levantar los paquetes, la empresa suele usar cintas o bandas transportadoras, para aprovechar su uso, esto implica que los paquetes deben ser colocados en primer lugar lo más profundo posible del contenedor, es decir que los paquetes que están siendo cargados, deben ser colocados en la parte más alejada de la puerta del contenedor, de este modo también se evita que los paquetes obstruyan el ingreso del operador humano al contenedor. En la Figura \ref{fig:cinta_transportadora} se muestra un ejemplo de cómo se puede hacer uso de una cinta transportadora que desliza los paquetes hacia el fondo del contenedor, mientras el contenedor se va llenando la cinta se va moviendo en sentido contrario.
+Para evitar la fatiga del operador de levantar los paquetes, la empresa suele usar cintas o bandas transportadoras, para aprovechar su uso, esto implica que los paquetes deben ser colocados en primer lugar lo más profundo posible del contenedor, es decir que los paquetes que están siendo cargados, deben ser colocados en la parte más alejada de la puerta del contenedor, de este modo también se evita que los paquetes obstruyan el ingreso del personal de carga al contenedor. En la Figura \ref{fig:cinta_transportadora} se muestra un ejemplo de cómo se puede hacer uso de una cinta transportadora que desliza los paquetes hacia el fondo del contenedor, mientras el contenedor se va llenando la cinta se va moviendo en sentido contrario.
 
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.5\textwidth]{Figures/cinta_transportadora.svg}
+    \includegraphics[width=0.5\textwidth]{Figures/cinta_transportadora.eps}
     \caption{Ejemplo del uso de una cinta transportadora.}
     \label{fig:cinta_transportadora}
 \end{figure}
@@ -86,7 +80,7 @@ En este problema, consideramos que $W$, $L$, $H$ y $P$ , $w_t$, $l_t$, $h_t$, $p
 
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.5\textwidth]{Figures/rotation.svg}
+    \includesvg[width=0.5\textwidth]{Figures/rotacion.svg}
     \caption{Rotación de un paquete en el eje $x$}
     \label{fig:rotation}
 \end{figure}
@@ -96,3 +90,36 @@ Se tienen restricciones de rotación debido al enfoque de carga manual, en el cu
 Por otro lado para facilitar la carga manual, se debe disponer de un orden de carga $o_t$ para cada tipo $t$, donde $o_t \in O = \{0, 1, 2, \ldots, n\}$, que indica el orden en el que se debe cargar cada tipo de paquete en el contenedor.
 
 El problema consiste en determinar la cantidad de paquetes por cada tipo a cargar $\tilde{q}_t$ (la cual se encuentra en torno a la cantidad deseada por tipo, $\tilde{q}_t ~ q_t$) y el orden de carga de cada tipo $o_t$ con determinada rotación $r_t$, de tal modo que se pueda obtener la disposición óptima de los paquetes en el contenedor, asegurando el cumplimiento de las restricciones relacionadas al espacio disponible. Además, se busca maximizar el costo de la carga y al mismo tiempo la utilización del espacio del contenedor.
+
+
+\subsection{Procedimiento de carga manual}
+
+Para estandarizar la carga manual y facilitar el modelado por ordenador, así como simplificar la labor del operador, se han establecido una serie de supuestos, restricciones y normas que deben seguirse para optimizar la carga de paquetes en el contenedor.
+
+En relación con la definición del problema, se establecen las siguientes suposiciones acerca de los paquetes:
+
+\begin{itemize}
+    \item Los paquetes son cajas de forma rectangular.
+    \item Los paquetes pueden variar en tamaño, peso y valor.
+    \item Los paquetes presentan tamaños y pesos razonables para ser cargados manualmente.
+    \item Los paquetes que comparten el mismo tamaño, peso y valor estrictamente se consideran del mismo tipo.
+    \item Dos paquetes pueden tener el mismo tamaño y peso pero distinto valor, lo que los convierte en tipos diferentes.
+    \item El valor de un paquete no depende de su tamaño o peso, es decir que un paquete sea más grande y pesado que otro no implica que sea de mayor valor y viceversa.
+    \item Los paquetes llegan al contenedor agrupados por tipo y en un orden específico.
+    \item Los paquetes pueden apilarse unos sobre otros, independientemente de su tipo, pero se debe asegurar la estabilidad de la carga.
+    \item Cada tipo de paquete tiene una cantidad fija deseada que debe ser cargada en el contenedor.
+    \item Todos los paquetes de un mismo tipo deben mantener la misma orientación.
+    \item Los grupos de paquetes llegan en bloques del mismo tipo o de forma secuencial, por ejemplo, a través de cintas transportadoras.
+\end{itemize}
+
+Las suposiciones relacionadas con el operario son las siguientes:
+
+\begin{itemize}
+    \item Uno o varios operarios realizan la carga de los paquetes en el contenedor de forma manual.
+    \item El operario recibe indicaciones previas sobre cómo cargar los paquetes en el contenedor, incluyendo el orden, la cantidad y la orientación de cada tipo de paquete.
+    \item Las indicaciones también podrían especificar los espacios que deberán quedar vacíos en el contenedor, los cuales pueden ser llenados con material de relleno para evitar que los paquetes se muevan durante el transporte.
+    \item Las indicaciones previas proporcionadas al operario son el resultado de la solución del problema de optimización de la carga.
+    \item El objetivo del operario es seguir las indicaciones previas de manera eficiente y precisa, sin necesidad de tomar decisiones adicionales sobre la disposición de los paquetes.
+\end{itemize}
+
+El procedimiento de carga manual se basa en la combinación de las suposiciones, restricciones y reglas mencionadas anteriormente, con el objetivo de lograr una carga eficiente y organizada de los paquetes en el contenedor. Este procedimiento se implementa siguiendo una metodología específica que guía al operario en la colocación de los paquetes, asegurando que se cumplan todas las condiciones establecidas.

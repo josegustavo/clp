@@ -6,9 +6,7 @@ from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
-import multiprocessing
-
-types_count = [5, 10, 15, 20]
+types_count = [5, 10, 15, 20, 25]
 
 for i in types_count:
     random.seed(100)
