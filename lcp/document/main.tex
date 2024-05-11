@@ -1,7 +1,6 @@
 \documentclass[openany]{article}
 %\usepackage[english]{babel}
 \usepackage[spanish, activeacute]{babel}
-\usepackage[utf8]{inputenc}
 \usepackage{commands}
 \usepackage{xcolor}
 
@@ -26,7 +25,7 @@
 \makeatletter
 \renewcommand{\ALG@name}{Algoritmo}
 \makeatother
-    
+
 \begin{document}
 
 \counterwithout{equation}{section}
@@ -44,35 +43,33 @@
     {\flushleft \LARGE \bfseries TRABAJO DE FIN DE MÁSTER\par}\vspace{2cm}
 
     % Thesis title
-    {\flushright \LARGE \bfseries Optimización de la carga manual de contenedores con paquetes heterogéneos  \par}\vspace{2cm}
+    {\flushright \LARGE \bfseries Optimización del llenado manual de contenedores con paquetes heterogéneos  \par}\vspace{2cm}
 
     {\flushleft \LARGE \bfseries Jose Gustavo Quilca Vilcapoma \par}\vspace{1.5cm}
 
     {\flushleft \bfseries Máster Universitario en Estadística Computacional y Ciencia de Datos para la Toma de Decisiones\par}\vspace{0.cm}
-    {\flushleft \bfseries (Specialization/Pathway in XXXX)\par}\vspace{0.cm}
-    {\flushleft \bfseries Instituto de investigación operativa\par}\vspace{1cm}
+    {\flushleft \bfseries Instituto Centro de Investigación Operativa\par}\vspace{1cm}
 
     {\flushleft \small \bfseries Curso 2023-2024\par}\vspace{2cm}
 
     \newpage\thispagestyle{empty}
 
     % Thesis title
-    {\flushleft \LARGE \bfseries Optimización de la carga manual de contenedores con paquetes heterogéneos \par} \vspace{1.5cm}
+    {\flushleft \LARGE \bfseries Optimización del llenado manual de contenedores con paquetes heterogéneos \par} \vspace{1.5cm}
 
     {\flushleft \LARGE \bfseries Jose Gustavo Quilca Vilcapoma \par}\vspace{1.5cm}
 
     {\flushleft \Large \bfseries Máster Universitario en Estadística Computacional y Ciencia de Datos para la Toma de Decisiones\par}\vspace{0.cm}
-    {\flushleft \Large \bfseries Instituto de investigación operativa\par}\vspace{0.cm}
+    {\flushleft \Large \bfseries Instituto Centro de Investigación Operativa\par}\vspace{0.cm}
     {\flushleft \Large \bfseries Universidad Miguel Hernández de Elche\par}\vspace{0.cm}
-    {\flushleft \small \bfseries Academic Year XXXX/YYYY\par}\vspace{1.5cm}
+    {\flushleft \small \bfseries Curso 2023/2024\par}\vspace{1.5cm}
 
     {\flushleft \normalsize Palabras clave:\par}\vspace{0cm}
 
-    {XXXX, YYYY, ZZZZ \par}
+    {Optimización, Problema de llenado de contenedores, Algoritmo Genético \par}
     \vspace{1.5cm}
 
-    {\flushleft \normalsize \textit{Thesis Supervisor’s Name: }\\}\vspace{0cm}
-    {\flushleft \normalsize \textit{Thesis Supervisor’s Name: }\\}\vspace{0cm}
+    {\flushleft \normalsize \textit{Tutor: Javier Alcaraz Soria}\\}\vspace{0cm}
 
 \end{titlepage}
 
@@ -93,7 +90,7 @@
 
 \newpage
 \thispagestyle{plain}
-\section*{Acknowledgements}
+\section*{Agradecimientos}
 
 \lipsum[1]
 
@@ -101,7 +98,7 @@
 \vspace{0.5cm}
 
 \begin{flushright}
-    \textit{Author signature}
+    \textit{Jose Gustavo Quilca Vilcapoma}
 \end{flushright}
 
 
@@ -112,11 +109,13 @@
 
 \section*{Abstract}
 
+The transportation of goods in international trade commonly utilizes containers, where efficient usage is crucial to minimize costs and carbon emissions. This paper addresses the combinatorial optimization problem of packing containers with packages of various sizes and shapes, known for its NP-hard complexity, through a metaheuristic based on genetic algorithms. The focus is on manual loading by operators, considering realistic constraints such as package rotation and contiguity. The study proposes improvements in the loading process that enhance the effectiveness of the metaheuristic, allowing for high-quality solutions in reduced times. The method's validity is demonstrated through computational experiments, highlighting its ability to handle complex configurations and offering an efficient and effective framework for the logistical challenge of container loading.
+
 \vspace{2cm}
 
 \section*{Resumen}
 
-\lipsum[1]
+El transporte de mercancías en el comercio internacional se realiza comúnmente mediante contenedores, cuyo uso eficiente es crucial para minimizar costos y emisiones de carbono. Este trabajo aborda el problema de optimización combinatoria de llenar contenedores con paquetes de diferentes tamaños y formas, conocido por su complejidad NP-dura, mediante el uso de una metaheurística basada en algoritmos genéticos. Se enfoca en el llenado manual por operarios, considerando restricciones realistas como la rotación y contigüidad de los paquetes. El estudio propone mejoras en el proceso de llenado que potencian la eficacia de la metaheurística, permitiendo obtener soluciones de alta calidad en tiempos reducidos. La validación del método se demuestra a través de experimentos computacionales, destacando su capacidad para manejar configuraciones complejas y ofreciendo un marco eficiente y efectivo para el desafío logístico del llenado de contenedores.
 
 \addcontentsline{toc}{section}{\protect\numberline{}Abstract}%
 

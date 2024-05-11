@@ -4,6 +4,7 @@
 
 # Inkscape metadata for SVG files
 **/svg-inkscape/*
+**/*-SAVE-ERROR
 
 # LaTeX temporary files
 *.aux
