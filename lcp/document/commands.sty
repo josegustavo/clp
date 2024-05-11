@@ -28,7 +28,7 @@
 \usepackage{arydshln}
 
 %REFERENCES
-\usepackage[backend=biber,style=phys,sorting=none, url=false, hyperref=true, eprint=false, maxcitenames=2, maxbibnames=10, abbreviate=false]{biblatex}
+\usepackage[backend=biber,style=authoryear,sorting=none, url=false, hyperref=true, eprint=false, maxcitenames=2, maxbibnames=10, abbreviate=false]{biblatex}
 
 \AtEveryBibitem{\clearfield{issn}} %no issn
 \AtEveryBibitem{\clearfield{number}} %no number (issue)
@@ -38,11 +38,11 @@
 
 %remove "In" in articles
 \renewbibmacro{in:}{%
-  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-  
- %Bold volume
+	\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+%Bold volume
 \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
-  
+
 \numberwithin{equation}{section}
 \usepackage[capitalise, nameinlink]{cleveref}
 
@@ -52,25 +52,36 @@
 %\usepackage[bf]{subfigure} %bold figure captions
 %\usepackage[labelfont=bf]{caption} %bold subfigure captions
 
-\hypersetup{colorlinks={true},linkcolor={red},citecolor=blue}
+%\hypersetup{colorlinks={true},linkcolor={red},citecolor=blue}
+\hypersetup{%
+	colorlinks    = true,%  Color text instead of boxes
+	linkcolor     = black,% Color of internal links
+	citecolor     = blue,% Color of citations
+	urlcolor      = blue,%  Color of external urls
+	pdfstartview  = Fit,%
+	pdfmenubar    = true,%
+	pdftoolbar    = true,%
+	bookmarksopen = false,%
+	%bookmarksopenlevel = 1,%
+}
 
-\setlength{\parindent}{0cm}	
+\setlength{\parindent}{0cm}
 \captionsetup[table]{skip=2pt}
 
 \def\arraystretch{1.4}%  1 is the default, change whatever you need
 
-\usepackage[a4paper, 
+\usepackage[a4paper,
 	left=30mm,
 	right=30mm,
 	top=30mm,
 	bottom=30mm]{geometry}
 
-\usepackage{fancyhdr}	
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 \addto\captionscatalan{%
 	\renewcommand{\figurename}{Figura}%
-}	
+}
 
 \newcommand{\listfl}[2]{#1,\dots,#2}
 
