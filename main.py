@@ -46,7 +46,7 @@ def solve(args):
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=4) as executor:
+    with ProcessPoolExecutor(max_workers=8) as executor:
         args = []
         for i in types_count:
             problems = Problems(file_path='problems/types_%d.json' %
