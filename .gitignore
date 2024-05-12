@@ -7,8 +7,7 @@
 **/*-SAVE-ERROR
 
 # python cache
-__pycache__/
-*.pyc
+**/__pycache__/
 
 # LaTeX temporary files
 *.aux
