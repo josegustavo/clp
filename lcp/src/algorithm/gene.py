@@ -52,8 +52,12 @@ class Gene:
         Returns:
             Gene: The mutated gene.
         """
-        new_box_count = int(
-            self.box_count * (1 + random.uniform(-variation, variation)))
+        if self.box_count == 0:
+            new_box_count = int(random.uniform(self.type.min_count,
+                                               self.type.max_count))
+        else:
+            new_box_count = int(
+                self.box_count * (1 + random.uniform(-variation, variation)))
         # Ensure the box count is within the allowed range
         self.box_count = min(max(new_box_count, self.type.min_count),
                              self.type.max_count)

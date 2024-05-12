@@ -1,6 +1,7 @@
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 
 from lcp.src.container import Box, Container
 # %matplotlib qt
@@ -16,8 +17,21 @@ plt.style.use('ggplot')
 # rcParams['figure.figsize'] = 8, 5
 
 
-pallete = sns.color_palette(
-    "Paired", 10) + sns.color_palette("Accent", 10) + sns.color_palette("bright", 10)
+# pallete = sns.color_palette(
+#    "Paired", 10) + sns.color_palette("Accent", 10) + sns.color_palette("bright", 10)
+
+# Obtén una paleta de colores 'tab20' con 20 colores distintos
+colors_tab20 = cm.get_cmap('tab20', 20)
+# Obtén una paleta de colores 'Set3' con 10 colores distintos
+colors_set3 = cm.get_cmap('Set3', 10)
+
+pallete = []
+
+for i in range(30):
+    if i < 20:
+        pallete.append(colors_tab20(i))
+    else:
+        pallete.append(colors_set3(i - 20))
 
 
 def cuboid_data(o, size=(1, 1, 1)):
@@ -66,7 +80,7 @@ def draw(pieces: list[Box], title="", container_dimension: Container = None):
     for p, s, c in cuboids:
         color = pallete[c]
         plotcuboid(pos=p, size=s, ax=ax,
-                   alpha=0.8 if c < 21 else 0.1,
+                   alpha=0.8,
                    color=color, antialiased=1,
                    # ligther border color
                    edgecolor=[min(1., c + 0.1) for c in color]

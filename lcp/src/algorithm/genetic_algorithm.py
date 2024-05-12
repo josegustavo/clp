@@ -55,7 +55,7 @@ class GeneticAlgorithm:
         self.population = new_population
         return self
 
-    def start(self, default_max_fitness: tuple[float, int, int], onGeneration: Optional[Callable] = None) -> 'GeneticAlgorithm':
+    def start(self, default_max_fitness: tuple[int, int, float, int], onGeneration: Optional[Callable] = None) -> 'GeneticAlgorithm':
         elite = deepcopy(self.population.best)
         generations_not_improved = 0
         generation = 0

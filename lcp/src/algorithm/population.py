@@ -61,12 +61,12 @@ class Population:
         individuals.append(Chromosome(
             genes, self.problem.container, True))
 
-        genes = [Gene(t, t.min_count, 0) for t in self.problem.box_types]
-        random.shuffle(genes)
-        individuals.append(Chromosome(genes, self.problem.container))
+        # genes = [Gene(t, t.min_count, 0) for t in self.problem.box_types]
+        # random.shuffle(genes)
+        # individuals.append(Chromosome(genes, self.problem.container))
 
-        for _ in range(count-2):  # Generar 2 menos
-            genes = [Gene(t, random.randint(t.min_count, t.max_count),
+        for _ in range(count-1):  # Generar 2 menos
+            genes = [Gene(t, random.randint(t.min_count, t.max_count),  # t.min_count
                           random.randint(0, 1)) for t in self.problem.box_types]
             random.shuffle(genes)
             individuals.append(Chromosome(genes, self.problem.container))
@@ -78,19 +78,13 @@ class Population:
         return self
 
     def evaluate(self) -> 'Population':
-        # for individual in self.individuals:
-        #    if individual.get_fitness == 0:
-        #        individual.evaluate(
-        #            )
-        #    if individual.get_fitness > best_fit:
-        #        best_fit = individual.get_fitness
         if self.group_improvement == GroupImprovement.none:
             self.individuals.sort(key=lambda i: i.evaluate().
-                                  get_fitness,
+                                  fitness,
                                   reverse=True)
         elif self.group_improvement == GroupImprovement.during:
             self.individuals.sort(key=lambda i: i.evaluate(Improvement.during).
-                                  get_fitness,
+                                  fitness,
                                   reverse=True)
         elif self.group_improvement == GroupImprovement.late_all:
             self.individuals.sort(key=lambda i: i.evaluate().
@@ -98,14 +92,14 @@ class Population:
                                   reverse=True)
         else:
             self.individuals.sort(
-                key=lambda i: i.evaluate().get_fitness, reverse=True)
+                key=lambda i: i.evaluate().fitness, reverse=True)
             if self.group_improvement == GroupImprovement.late_some:
                 for i in self.individuals[:5]:
                     i.evaluate_with_improvement_late()
             elif self.group_improvement == GroupImprovement.late_best:
                 self.individuals[0].evaluate_with_improvement_late()
             self.individuals.sort(
-                key=lambda i: i.get_fitness, reverse=True)
+                key=lambda i: i.fitness, reverse=True)
         # print(f"Best fitness: {best_fit}")
         self.evaluated = True
         return self
@@ -113,7 +107,7 @@ class Population:
     def tournament(self, TOURNAMENT_SIZE=2) -> Chromosome:
         t = random.sample(self.individuals,
                           k=TOURNAMENT_SIZE)
-        max_item = max(t, key=lambda i: i.get_fitness)
+        max_item = max(t, key=lambda i: i.fitness)
         return max_item
 
     def mutation(self, P_MUT: float = 0.05) -> 'Population':

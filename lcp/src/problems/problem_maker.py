@@ -12,10 +12,10 @@ class ProblemMaker:
     CONTAINER_DIM: tuple = (12010, 2330, 2380)  # Contenedor de 40 pies
     BOX_SIDE_MIN: int = 300
     BOX_SIDE_MAX: int = 600
-    id: str = field(default='')
+    id: int = field(default=0)
 
-    def __post_init__(self):
-        self.id = ''.join(random.choices(alphabet, k=8))
+    # def __post_init__(self):
+    # self.id = ''.join(random.choices(alphabet, k=8))
 
     result: dict = field(init=False, repr=False)
 
@@ -44,10 +44,10 @@ class ProblemMaker:
                 'size': (l, w, h),
                 'value':  value,
                 'volume': vol,
-                'min_count': min_count,
+                'min_count': 0,  # min_count,
                 'max_count': max_count,
             }
-            min_volume += box_type['min_count']*box_type['volume']
+            # min_volume += box_type['min_count']*box_type['volume']
             max_volume += box_type['max_count']*box_type['volume']
 
             box_types.append(box_type)

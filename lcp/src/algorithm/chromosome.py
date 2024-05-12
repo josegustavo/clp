@@ -44,16 +44,21 @@ class Chromosome(list):
         return new_chromosome
 
     def __gt__(self, other: 'Chromosome') -> bool:
-        return self.get_fitness > other.get_fitness
+        return self.fitness > other.fitness
 
     def __lt__(self, other: 'Chromosome') -> bool:
-        return self.get_fitness < other.get_fitness
+        return self.fitness < other.fitness
 
     @property
     def fitness(self):
-        return (self.occupied_vol / self.container.volume,
-                self.number_boxes,
-                self.cost_value)
+        return (
+            # Número de tipos de cajas usados
+            self.cost_value,  # Valor de la carga
+            len([g for g in self.genes if g.box_count > 0]),
+            # Porcentaje de ocupación del contenedor
+            self.occupied_vol / self.container.volume,
+            self.number_boxes,  # Número de cajas usadas
+        )
 
     @property
     def get_fitness(self):
@@ -255,22 +260,6 @@ Fitness: {self.fitness}"""
             gene = random.choice(new_genes)
             gene.mutate_rotation()
             mutated[2] += 1
-
-        # if random.random() < P_MUT_GEN:  # Intercambiar el tipo de caja con otro
-        #     i, j = random.sample(range(len(new_genes)), k=2)
-        #     # Intercambiar dos genes
-        #     new_genes[i], new_genes[j] = new_genes[j], new_genes[i]
-        #     mutated[0] += 1
-
-        # # Recorrer los genes y mutar la cantidad y la rotación
-        # for gene in new_genes:
-        #     if random.random() < P_MUT_GEN:  # Incrementar o decrementar el número de cajas en un porcentaje
-        #         # Incrementar o decrementar hasta un 10%
-        #         gene.mutate_quantity(0.1)
-        #         mutated[1] += 1
-        #     if random.random() < P_MUT_GEN:  # Mutación not de la rotación
-        #         gene.mutate_rotation()
-        #         mutated[2] += 1
 
         # Verificar si todos los tipos están presentes
         if len(set([g.type.type for g in new_genes])) != len(new_genes):

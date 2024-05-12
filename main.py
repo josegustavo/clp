@@ -6,18 +6,20 @@ from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
-types_count = [5, 10, 15, 20, 25]
+types_count = [5, 10, 20, 30]
 
-for i in types_count:
+for i, n in enumerate(types_count):
     random.seed(100)
-    Problems(file_path='problems/types_%d.json' % i)\
-        .generate(25, N_TYPES=i, BOX_SIDE_MIN=250, BOX_SIDE_MAX=750)
+    Problems(file_path='problems/types_%d.json' % n)\
+        .generate(id=i, count=25, N_TYPES=n, BOX_SIDE_MIN=250, BOX_SIDE_MAX=750)
 
 improvements = [GroupImprovement.none,
                 GroupImprovement.during,
                 GroupImprovement.late_all,
                 GroupImprovement.late_best,
                 GroupImprovement.late_some]
+
+MAX_DURATION = 300
 
 random.seed(42)
 
@@ -38,7 +40,7 @@ def solve(args):
         population.evaluate()
 
     ga = GeneticAlgorithm(population=population,
-                          MAX_DURATION=150,
+                          MAX_DURATION=MAX_DURATION,
                           P_MUT_GEN=1/num_types,
                           )
     ga.start(first_best_fitness)
@@ -46,7 +48,7 @@ def solve(args):
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=8) as executor:
+    with ProcessPoolExecutor(max_workers=4) as executor:
         args = []
         for i in types_count:
             problems = Problems(file_path='problems/types_%d.json' %

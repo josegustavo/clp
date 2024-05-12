@@ -23,7 +23,7 @@ class Problems:
 
     file_path: str = field(default="problems.json")
 
-    def generate(self, count=10, **kwargs):
+    def generate(self, id=0, count=10, **kwargs):
         """
         Generate and save a specified number of problems to a JSON file.
 
@@ -35,7 +35,8 @@ class Problems:
             None
         """
 
-        problems = [ProblemMaker(**kwargs).random_boxes for _ in range(count)]
+        problems = [ProblemMaker(id=(id*count)+i+1,
+                                 **kwargs).random_boxes for i in range(count)]
         # Make sure folder exists or create
         makedirs(os.path.dirname(self.file_path), exist_ok=True)
 
@@ -56,7 +57,7 @@ class Problems:
                                  width=t['size'][1],
                                  height=t['size'][2],
                                  type=i,
-                                 min_count=t['min_count'],
+                                 min_count=0,  # t['min_count'],
                                  max_count=t['max_count'],
                                  value_individual=t['value'],
                                  weight=t['value']) for i, t in enumerate(problem_data['box_types'])]
@@ -69,4 +70,36 @@ class Problems:
         logging.info("%d problems loaded from '%s'",
                      len(problems), self.file_path)
 
+        return problems
+
+    def load_literature_problems(self) -> list[Problem]:
+        problems = []
+        file_url = "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/%s" % self.file_path
+        import requests
+        response = requests.get(file_url)
+        lines = response.iter_lines(decode_unicode=True)
+        count_problems = int(next(lines))
+        problems = []
+        for i in range(count_problems):
+            problem_number, seed_number = map(int, next(lines).split())
+            container_length, container_width, container_height = map(
+                int, next(lines).split())
+            box_types_count = int(next(lines))
+            box_types: list[BoxType] = []
+            for _ in range(box_types_count):
+                box_type, box_length, box_length_indicator, box_width, box_width_indicator, box_height, box_height_indicator, box_count = map(
+                    int, next(lines).split())
+                box_types.append(BoxType(box_length,
+                                         box_width,
+                                         box_height,
+                                         box_type,
+                                         0,
+                                         box_count,
+                                         box_length*box_width*box_height,
+                                         box_length*box_width*box_height))
+            container = Container(length=container_length,
+                                  width=container_width,
+                                  height=container_height)
+            problem = Problem(str(problem_number), container, box_types)
+            problems.append(problem)
         return problems
