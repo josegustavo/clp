@@ -6,6 +6,10 @@
 **/svg-inkscape/*
 **/*-SAVE-ERROR
 
+# python cache
+__pycache__/
+*.pyc
+
 # LaTeX temporary files
 *.aux
 *.bbl

@@ -13,6 +13,7 @@ class ProblemMaker:
     BOX_SIDE_MIN: int = 300
     BOX_SIDE_MAX: int = 600
     id: int = field(default=0)
+    number_problems: int = field(default=10)
 
     # def __post_init__(self):
     # self.id = ''.join(random.choices(alphabet, k=8))
@@ -29,16 +30,30 @@ class ProblemMaker:
         }
         box_types = []
         min_volume, max_volume = 0, 0
-        box_sizes = [[random.randint(
-            self.BOX_SIDE_MIN, self.BOX_SIDE_MAX) for _ in range(3)]
-            + [random.randint(1, 100)]
-            for _ in range(self.N_TYPES)]
+
+        # box_sizes = [[random.randint(
+        #    self.BOX_SIDE_MIN, self.BOX_SIDE_MAX) for _ in range(3)]
+        #    + [random.randint(1, 100)]
+        #    for _ in range(self.N_TYPES)]
+        seed = (int(self.id) - 1) % self.number_problems
+        random.seed(seed)
+        box_sizes = []
+        box_sizes_set = set()
+        while len(box_sizes) < self.N_TYPES:
+            box_dimensions = tuple(random.randint(self.BOX_SIDE_MIN, self.BOX_SIDE_MAX)
+                                   for _ in range(3))
+            if box_dimensions in box_sizes_set:
+                continue
+            box_sizes_set.add(box_dimensions)
+            box_size = list(box_dimensions) + [random.randint(1, 100)]
+            box_sizes.append(box_size)
+
         for i in range(self.N_TYPES):
             l, w, h, value = box_sizes[i]
             vol = l*w*h
             mean_count = int((container_volume/self.N_TYPES) // vol)
             max_count = mean_count  # + random.randint(0, mean_count//2)
-            min_count = max(0, mean_count - random.randint(0, mean_count//2))
+            # min_count = max(0, mean_count - random.randint(0, mean_count//2))
             box_type = {
                 'type': i,
                 'size': (l, w, h),
@@ -57,7 +72,7 @@ class ProblemMaker:
         self.result = result
         return result
 
-    @property
+    @ property
     def exact_boxes(self):
         """
         Generate a dictionary containing information about the generated boxes.

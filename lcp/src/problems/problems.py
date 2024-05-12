@@ -36,6 +36,7 @@ class Problems:
         """
 
         problems = [ProblemMaker(id=(id*count)+i+1,
+                                 number_problems=count,
                                  **kwargs).random_boxes for i in range(count)]
         # Make sure folder exists or create
         makedirs(os.path.dirname(self.file_path), exist_ok=True)
