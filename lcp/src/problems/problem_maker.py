@@ -37,7 +37,7 @@ class ProblemMaker:
             l, w, h, value = box_sizes[i]
             vol = l*w*h
             mean_count = int((container_volume/self.N_TYPES) // vol)
-            max_count = mean_count + random.randint(0, mean_count//2)
+            max_count = mean_count  # + random.randint(0, mean_count//2)
             min_count = max(0, mean_count - random.randint(0, mean_count//2))
             box_type = {
                 'type': i,
