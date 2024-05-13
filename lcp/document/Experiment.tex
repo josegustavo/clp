@@ -1,0 +1,118 @@
+\section{Estudio experimental}
+
+En este capítulo se presenta el diseño y los resultados de un experimento computacional que se realizó para evaluar el rendimiento de los algoritmos propuestos en el capítulo anterior. El objetivo principal de este experimento es comparar la eficacia de los algoritmos genéticos con y sin las mejoras propuestas, en términos de calidad de las soluciones obtenidas y tiempo de ejecución. Para ello, se utilizaron instancias de prueba generadas aleatoriamente. Se analizan los resultados obtenidos y se discuten las implicancias de los mismos en el contexto del problema de llenado de contenedor.
+
+\subsection{Datos de prueba}
+
+En la literatura, se han propuesto diferentes conjuntos de instancias de prueba para evaluar algoritmos de llenado de contenedores, por ejemplo \textcite{BISCHOFF1995377} establecieron un método de generación de instancias de prueba que se ha utilizado en varios estudios posteriores, con la finalidad de comparar los resultados obtenidos. Sin embargo, debido a las restricciones de llenado manual de contenedores, las instancias públicas de prueba no son adecuadas para ser usadas en un experimento computacional. La principal diferencia radica en que al usar el procedimiento manual de llenado definido en la sección \ref{sec:problem}, las soluciones obtenidas siempre serán menos optimas que las generadas por otros algoritmos que no consideran restricciones reales de llenado. Por lo tanto, se decidió generar instancias de prueba aleatorias, siguiendo un enfoque más realista, que permita evaluar el rendimiento de los algoritmos propuestos en un escenario más cercano a la realidad.
+
+Para generar las instancias de prueba, se consideraron las siguientes restricciones:
+
+\begin{itemize}
+    \item Se define que las unidades de distancias usadas son los milímetros y siempre se redondean al entero más cercano.
+    \item Se establece que se tiene un solo contenedor de tamaño fijo, cuyas dimensiones interiores son $L \times W \times H = 12010 \times 2330 \times 2380$.
+    \item Cada instancias tiene un número fijo de tipos de cajas a llenar, que son 5, 10, 20 y 30, los cuales son denominados como 5T, 10T, 20T y 30T respectivamente.
+    \item Las cajas de tipo 5T están contenidas también en las cajas de tipo 10T, las cajas de tipo 10T están contenidas en las cajas de tipo 20T y las cajas de tipo 20T están contenidas en las cajas de tipo 30T.
+    \item Las dimensiones de las cajas a llenar son generadas aleatoriamente, siguiendo una distribución uniforme en el rango $[250, 750]$ para todas las dimensiones.
+    \item Los valores de las cajas son generados aleatoriamente, siguiendo una distribución uniforme en el rango $[1, 100]$, es importante resaltar que los valores tienen dependencia del tamaño.
+\end{itemize}
+
+Para aumentar la diversidad de las instancias de prueba, se establece que en cada instancia se debe cumplir que la dimensiones de las cajas a generar no se repitan. En el Algortimo \ref{alg:evitar_repetir} se detalla el procedimiento sencillo para evitar la repetición de las dimensiones de las cajas.
+
+\begin{algorithm}[H]
+    \caption{Evitar repetir dimensiones}
+    \label{alg:evitar_repetir}
+    \begin{algorithmic}[1]
+        \Require $|T|$, cantidad de cajas a generar.
+        \Require $RangoDimensiones$, rango de dimensiones.
+        \Ensure $D$, lista de dimensiones.
+        \State $D \gets \emptyset$
+        \For{$i \gets 1$ \textbf{to} $|T|$}
+        \State $d \gets \text{Aleatorio}(RangoDimensiones)$
+        \While{$d \in D$}
+        \State $d \gets \text{Aleatorio}(RangoDimensiones)$
+        \EndWhile
+        \State $D \gets D \cup d$
+        \EndFor
+        \State \textbf{return} $D$
+    \end{algorithmic}
+\end{algorithm}
+
+En el Algoritmo \ref{alg:evitar_repetir}, $|T|$ es la cantidad de cajas a generar, en la línea 1 se inicializa la lista $D$ de dimensiones, en las líneas 2 a 8 se itera sobre la cantidad de cajas a generar, en la línea 3 se genera una dimensión aleatoria, en la línea 4 se verifica si la dimensión generada ya existe en la lista $D$. Si la dimensión generada ya existe, se vuelve a generar una dimensión aleatoria en la línea 5 y se vuelve a verificar si la dimensión generada ya existe en la lista $D$. Si la dimensión generada no existe en la lista $D$, se añade a la lista $D$ en la línea 7. Finalmente, en la línea 9 se retorna la lista $D$ con las dimensiones generadas.
+
+Para determinar la cantidad máxima de cajas de cada tipo que se puede almacenar en un contenedor, se adopta el siguiente enfoque. Primero, se divide el volumen total del contenedor por el número de tipos de cajas especificadas, por ejemplo, cinco tipos de cajas resultarían en dividir el contenedor en cinco partes iguales ("5T"). Luego, se calcula cuántas cajas de cada tipo caben exactamente en la fracción del volumen asignada a ese tipo. Para añadir un nivel adicional de desafío y realismo, se incorpora un porcentaje aleatorio de cajas adicionales a cada tipo, complicando así la planificación del espacio. Este procedimiento se detalla en el Algoritmo \ref{alg:generate}, el cual ilustra paso a paso cómo generar las instancias de prueba.
+
+\begin{algorithm}[H]
+    \caption{Generación de instancias de pruebas}
+    \label{alg:generate}
+    \begin{algorithmic}[1]
+        \Require $V_{\text{total}}$, volumen total del contenedor; $T$, tipos de cajas.
+        \Ensure $Q$, lista de cantidades por tipo.
+        \State $Q \gets \emptyset$
+        \State $v_{\text{fraccion}} \gets V_{\text{total}} / |T|$ \Comment{Dividir el volumen total en partes iguales}
+        \For{$t_{i} \in $ $T$}
+        \State $v_i \gets w_i*l_i*h_i$ \Comment{Volumen de un tipo $t_i$}
+        \State $q_i \gets \lceil v_{\text{fraccion}} / v_i \rceil $
+        \State $q_i^{\text{ajustado}} \gets n_i + \text{Aleatorio}(\% \text{adicional})$ \Comment{Añadir un porcentaje aleatorio}
+        \State $Q \gets Q \cup q_i^{\text{ajustado}}$
+        \EndFor
+        \State \textbf{return} $Q$
+    \end{algorithmic}
+\end{algorithm}
+
+En el Algoritmo \ref{alg:generate}, $V_{\text{total}}$ es el volumen total del contenedor, $T$ es el conjunto de tipos de cajas. En la línea 1, se inicializa la lista $Q$ de cantidades por tipo. En la línea 2, se calcula la fracción del volumen total asignada a cada tipo de caja. En las líneas 3 se iteran sobre la cantidad de tipos de cajas, en la línea 4 se calcula el volumen de un tipo de caja, en la línea 5 se calcula la cantidad aproximada de cajas de un tipo que caben en la fracción del volumen asignada a ese tipo, en la línea 6 se ajusta la cantidad de cajas de un tipo añadiendo un porcentaje aleatorio, en la línea 7 se añade la cantidad ajustada a la lista $Q$. Finalmente, en la línea 8 se retorna la lista $Q$ con las cantidades ajustadas por tipo.
+
+De este modo se evita el riesgo de que las cantidades de cajas generadas sean muy pocas como para llenar un contenedor pero tampoco demasiadas como para que se necesiten varios contenedores. Además, se garantiza que las cajas generadas no se repitan, lo que aumenta la diversidad de las instancias de prueba.
+
+Por lo tanto, el procedimiento para generar las instancias de prueba es el siguiente:
+
+\begin{enumerate}
+    \item Se genera un conjunto de dimensiones únicas de cajas para cada tipo de caja según el Algoritmo \ref{alg:evitar_repetir}.
+    \item Se asigna un valor aleatorio a cada caja.
+    \item Se genera un conjunto de cantidades de cajas para cada tipo de caja, según el Algoritmo \ref{alg:generate}.
+\end{enumerate}
+
+El procedimiento anterior se puede resumir en el Algoritmo \ref{alg:generate_instances}, el cual ilustra paso a paso cómo generar las instancias de prueba.
+
+\begin{algorithm}[H]
+    \caption{Generación de instancias de pruebas}
+    \label{alg:generate_instances}
+    \begin{algorithmic}[1]
+        \Require $V_{\text{total}}$, volumen total del contenedor; $C$ \text{Cantidad de problemas por tipo} $T$, tipos de cajas.
+        \Ensure $P$, lista de instancias de problemas.
+        \State $P \gets \emptyset$
+        \For{$t_i \in T$}
+        \For{$c \gets 1$ \textbf{to} $C$}
+        \State $D \gets \text{EvitarRepetirDimensiones}(|T|, RangoDimensiones)$
+        \State $V \gets \text{Aleatorio}(|T|, RangoValores)$
+        \State $Q \gets \text{GenerarCantidades}(V_{\text{total}}, T)$
+        \State $P \gets P \cup (D, V, Q)$
+        \EndFor
+        \EndFor
+        \State \textbf{return} $P$
+    \end{algorithmic}
+\end{algorithm}
+
+En el Algoritmo \ref{alg:generate_instances}, $V_{\text{total}}$ es el volumen total del contenedor, $C$ es la cantidad de problemas por tipo de caja, $T$ es el conjunto de tipos de cajas. En la línea 1, se inicializa la lista vacía $P$ de instancias de problemas. En las líneas 2 a 8 se itera sobre la cantidad de tipos de cajas, en las líneas 3 a 7 se itera sobre la cantidad de problemas por tipo de caja, en la línea 4 se genera un conjunto de dimensiones únicas de cajas para cada tipo de caja, en la línea 5 se asigna un valor aleatorio a cada caja, en la línea 6 se genera un conjunto de cantidades de cajas para cada tipo de caja, en la línea 7 se añade la instancia de problema a la lista $P$. Finalmente, en la línea 9 se retorna la lista $P$ con las instancias de problemas generadas. De esta manera, por ejemplo, si cuenta con 4 tipos de cajas (5T, 10T, 20T, 30T) y se desea generar 10 problemas por tipo, se obtendrán 40 instancias de problemas en total.
+
+\subsection{Diseño del experimento}
+
+Para evaluar el rendimiento de los algoritmos genéticos propuestos, se diseñó un experimento computacional que consiste en comparar los resultados obtenidos con y sin las mejoras propuestas. Se consideraron cuatro mejoras, denominadas M1, M2, M3 y M4, que se describen a continuación:
+
+\begin{itemize}
+    \item M0: Versión sin mejoras del algoritmo genético propuesto.
+    \item M1: Se realiza la mejora de \textit{llenado adicional inmediato} definido en el Algoritmo \ref{alg:dblf_adaptado_mejoras_m1}, que consiste en completar cuando sea posible espacios restantes durante el proceso de llenado.
+    \item M2: Se implementa la mejora \textit{llenado adicional final} definido en el Algoritmo \ref{alg:dblf_adaptado_mejoras_m2}, que consiste en completar los espacios restantes al final del proceso de llenado, para este caso se realiza la mejora en toda la población.
+    \item M3: Esta mejora es una extensión de M2. Se dirige a la mitad superior de los individuos según su desempeño, optimizando así los recursos al concentrar los esfuerzos de mejora en aquellos que ya muestran un mayor potencial.
+    \item M4: Esta mejora también sigue el principio de M2, pero se focaliza exclusivamente en el mejor individuo de la población. Al centrar todos los recursos de mejora en la solución más prometedora, se busca potenciar al máximo el rendimiento del líder del grupo, optimizando así el impacto general de la mejora.
+\end{itemize}
+
+Los algoritmos desarrollados se implementaron en Python v3.10 y están disponibles públicamente en un repositorio de GitHub\footnote{\url{https://github.com/josegustavo/lcp}}.
+
+Para su ejecución, se utilizó un equipo con un procesador Apple M1 de 8 núcleos, que cuenta con 4 núcleos de eficiencia y 4 núcleos de rendimiento, además de contar con 8 GB de memoria RAM. Con el objetivo de optimizar el uso de los recursos del procesador, se paralelizó la ejecución de los algoritmos genéticos para explotar específicamente los 4 núcleos de rendimiento. Para mejorar aún más el rendimiento de estos algoritmos, se empleó la librería Pypy como intérprete de Python.
+
+En el marco de las pruebas, se crearon 25 instancias para cada tipo de caja, identificadas como 5T, 10T, 20T y 30T, sumando un total de 100 instancias de prueba. Cada instancia de prueba se ejecutó con las mejoras propuestas M1, M2, M3 y M4, además de la versión sin mejora M0, para comparar los resultados obtenidos.
+
+Cada algoritmo genético se configuró para operar con una misma población inicial de 100 individuos. Se estableció como condición de parada un límite de tiempo de ejecución de 5 minutos, garantizando así condiciones uniformes para la evaluación comparativa de cada mejora implementada en diversos escenarios con distintos tipos de cajas. La probabilidad de cruce, denotada como $P_{CROSS}$, se fijó en 0.05, mientras que la probabilidad de mutación, expresada como $P_{MUT}$, se definió en 0.01. Estos parámetros fueron seleccionados para promover un equilibrio entre exploración y explotación a lo largo del proceso evolutivo de los algoritmos.
+
+\subsection{Resultados y análisis}
