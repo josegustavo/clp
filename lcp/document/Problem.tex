@@ -61,7 +61,7 @@ Para evitar la fatiga del operador de levantar los paquetes, la empresa suele us
 
 La empresa ha implementado un procedimiento específico para guiar a los operadores en la colocación de paquetes dentro del contenedor, con el objetivo de cumplir con todas las condiciones preestablecidas. No obstante, este procedimiento aún no está optimizado y no garantiza la disposición óptima de los paquetes, lo que conduce a una carga subóptima y al desperdicio de espacio.
 
-El desafío que se enfrenta es conocer con anticipación la cantidad de paquetes por tipo que deben cargarse en el contenedor para poder proponer a los clientes incrementar la cantidad de productos en sus pedidos, así como definir el orden de carga y la rotación de cada tipo de paquete. El objetivo es lograr una disposición que no solo cumpla con las restricciones de espacio y los requerimientos del llenado manual, sino que también maximice la eficiencia en el uso del espacio y el valor económico de la carga transportada.
+El desafío que se enfrenta es conocer con anticipación la cantidad de paquetes por tipo que deben cargarse en el contenedor, así como definir el orden de carga y la rotación de cada tipo de paquete. El objetivo es lograr una disposición que no solo cumpla con las restricciones de espacio y los requerimientos del llenado manual, sino que también maximice el valor económico de la carga transportada y la eficiencia en el uso del espacio .
 
 \subsection{Definición formal del problema}
 
@@ -74,9 +74,9 @@ El problema de la carga manual de paquetes en un contenedor se define formalment
     \label{fig:container}
 \end{figure}
 
-Siendo un contenedor una caja de forma rectangular, de ancho $W$, largo $L$, alto $H$, en la figura \ref{fig:container} se muestra un contenedor con sus dimensiones, y una capacidad de carga $P$, se tiene definido unos tipos de paquetes también de formas rectangulares $t \in T = \{0, 1, 2, \ldots, n\}$, donde cada tipo $t$ posee ciertas dimensiones de ancho $w_t$, largo $l_t$, alto $h_t$, también posee un peso $p_t$ y un valor $v_t$, además se conoce la cantidad deseada por un cliente de paquetes por cada tipo $q_t$ que un contenedor puede tener.
+Siendo un contenedor una caja de forma rectangular, de ancho $W$, largo $L$, alto $H$, en la figura \ref{fig:container} se muestra un contenedor con sus dimensiones, y una capacidad de carga $P$, se tiene definido unos tipos de paquetes también de formas rectangulares $t \in T = \{0, 1, 2, \ldots, n\}$, donde cada tipo $t$ posee ciertas dimensiones de ancho $w_t$, largo $l_t$, alto $h_t$, también posee un peso $p_t$ y un valor $v_t$, además se conoce la cantidad máxima $q^{max}_t$ de paquetes que dispone la empresa por cada tipo.
 
-En este problema, consideramos que $W$, $L$, $H$ y $P$ , $w_t$, $l_t$, $h_t$, $p_t$, $q_t$ son enteros positivos, los cuales podrían ser representados en unidades de medida centímetros, milímetros, kilogramos, litros, entre otros.
+En este problema, consideramos que $W$, $L$, $H$ y $P$ , $w_t$, $l_t$, $h_t$, $p_t$, $q^{max}_t$ son enteros positivos, los cuales podrían ser representados en unidades de medida centímetros, milímetros, kilogramos, litros, entre otros.
 
 \begin{figure}[H]
     \centering
@@ -89,7 +89,7 @@ Se tienen restricciones de rotación debido al enfoque de carga manual, en el cu
 
 Por otro lado para facilitar la carga manual, se debe disponer de un orden de carga $o_t$ para cada tipo $t$, donde $o_t \in O = \{0, 1, 2, \ldots, n\}$, que indica el orden en el que se debe cargar cada tipo de paquete en el contenedor.
 
-El problema consiste en determinar la cantidad de paquetes por cada tipo a cargar $\tilde{q}_t$ (la cual se encuentra en torno a la cantidad deseada por tipo, $\tilde{q}_t ~ q_t$) y el orden de carga de cada tipo $o_t$ con determinada rotación $r_t$, de tal modo que se pueda obtener la disposición óptima de los paquetes en el contenedor, asegurando el cumplimiento de las restricciones relacionadas al espacio disponible. Además, se busca maximizar el costo de la carga y al mismo tiempo la utilización del espacio del contenedor.
+El problema consiste en determinar la cantidad de paquetes por cada tipo a cargar $\tilde{q}_t$ (la cual se encuentra en torno a la cantidad máxima por tipo, $0 \leq \tilde{q}_t \leq q^{max}_t$) y el orden de carga de cada tipo $o_t$ con determinada rotación $r_t$, de tal modo que se pueda obtener la disposición óptima de los paquetes en el contenedor, asegurando el cumplimiento de las restricciones relacionadas al espacio disponible. Además, se busca maximizar en primer lugar el costo total de la carga ($\max \sum_{t \in T} v_t \cdot \tilde{q}_t$) y en segundo lugar maximizar la utilización del espacio del contenedor ($\max \sum_{t \in T} w_t \cdot l_t \cdot h_t \cdot \tilde{q}_t$).
 
 
 \subsection{Procedimiento de carga manual}
@@ -123,3 +123,5 @@ Las suposiciones relacionadas con el operario son las siguientes:
 \end{itemize}
 
 El procedimiento de carga manual se basa en la combinación de las suposiciones, restricciones y reglas mencionadas anteriormente, con el objetivo de lograr una carga eficiente y organizada de los paquetes en el contenedor. Este procedimiento se implementa siguiendo una metodología específica que guía al operario en la colocación de los paquetes, asegurando que se cumplan todas las condiciones establecidas.
+
+En el siguiente capítulo se presentará un algoritmo metaheurístico para resolver el problema de optimización de la carga manual de paquetes en un contenedor, considerando las restricciones de espacio del contenedor, así como las restricciones de rotación y orientación de los paquetes.

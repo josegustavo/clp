@@ -82,7 +82,7 @@ Para resolver esta primera parte problema, se propone un algoritmo de llenado ma
 
 El algoritmo de llenado propuesto está basado en el método Deepest Bottom Left with Fill (DBLF) propuesto por Karabulut y otros \ref{karabulut2004hybrid}, cuyo uso se ha extendido y varios autores han realizado propuestas para mejorarlo o adaptarlo a determinados contextos por ejemplo Wang y otros \ref{wang2010hybrid}, Kang y otros. \ref{kang2012hybrid}. El algoritmo propuesto en el presente trabajo está enfocado en cumplir las restricciones y adaptarse al contexto de una carga manual de paquetes en un contenedor.
 
-La idea básica del algoritmo DBLF es que los paquetes comienzan a ser cargados en el contenedor de forma secuencial, se prioriza que el paquete se coloque en las siguientes posiciones: 
+La idea básica del algoritmo DBLF es que los paquetes comienzan a ser cargados en el contenedor de forma secuencial, se prioriza que el paquete se coloque en las siguientes posiciones:
 
 \begin{itemize}
     \item La posición más profunda del contenedor, que ayuda a llenar primero los espacios más alejados de la puerta y evitar obstaculizar el ingreso del operador humano al contenedor.
@@ -131,25 +131,25 @@ Este procedimiento se repite hasta que se hayan colocado todos los paquetes en e
 El Algoritmo \ref{alg:dblf} muestra el procedimiento de llenado manual de paquetes en un contenedor basado en el algoritmo DBLF.
 
 \begin{algorithm}[H]
-\caption{Algoritmo de llenado manual de paquetes en un contenedor}
-\label{alg:dblf}
-\begin{algorithmic}[1]
-    \State $Paquetes \gets \text{lista de paquetes ordenados por tamaño}$
-    \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
-    \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
-    \For{$paquete \in Paquetes$}
+    \caption{Algoritmo de llenado manual de paquetes en un contenedor}
+    \label{alg:dblf}
+    \begin{algorithmic}[1]
+        \State $Paquetes \gets \text{lista de paquetes ordenados por tamaño}$
+        \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
+        \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
+        \For{$paquete \in Paquetes$}
         \State $SubespacioOptimo \gets \text{buscar el subespacio más adecuado en } dblf$
         \If{$SubespacioOptimo \neq \text{null}$}
-            \State $Contenedor.\text{add}( \text{colocar}(paquete, SubespacioOptimo) )$
-            \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, paquete)$
-            \State $dblf.\text{remove}(SubespacioOptimo)$
-            \State $dblf.\text{extend}(NuevosSubespacios)$
+        \State $Contenedor.\text{add}( \text{colocar}(paquete, SubespacioOptimo) )$
+        \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, paquete)$
+        \State $dblf.\text{remove}(SubespacioOptimo)$
+        \State $dblf.\text{extend}(NuevosSubespacios)$
         \Else
-            \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
+        \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
         \EndIf
-    \EndFor
-    \State \Return $Contenedor$
-\end{algorithmic}
+        \EndFor
+        \State \Return $Contenedor$
+    \end{algorithmic}
 \end{algorithm}
 
 El el Algoritmo \ref{alg:dblf}, en la línea 1: se inicializa una lista llamada $Paquetes$ que contiene los paquetes ordenados. Este orden será determinado previamente por el algoritmo de optimización genético, el cual se detallará en la próxima sección. En la línea 2: Se inicializa una lista llamada $dblf$, que representa los subespacios libres en el $Contenedor$. Inicialmente, esta lista contiene un único subespacio que es el contenedor entero. En la línea 3: Se crea una lista vacía llamada $Contenedor$ donde se almacenarán la posición y tamaños de los paquetes que se vayan colocando. Para la parte del proceso de llenado, en la líneas 4: El ciclo for recorre cada paquete en la lista de paquetes.
@@ -171,20 +171,20 @@ El primer cambio a considerar es la posibilidad que un paquete pueda ser colocad
 Para realizar la unión de subespacios superiores, se propone un algoritmo de unión de subespacios que se detalla en el Algoritmo \ref{alg:union_subespacios}. Este algoritmo recibe como entrada la lista de subespacios disponibles y recorre dicha lista de atrás hacia adelante, buscando subespacios contiguos y similares para unirlos en un solo subespacio. El algoritmo se detiene cuando no se encuentran más subespacios para unir.
 
 \begin{algorithm}[H]
-\caption{Algoritmo de unión de subespacios}
-\label{alg:union_subespacios}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
+    \caption{Algoritmo de unión de subespacios}
+    \label{alg:union_subespacios}
+    \begin{algorithmic}[1]
+        \State $Subespacios \gets \text{lista de subespacios disponibles}$
+        \State $i \gets \text{longitud de } Subespacios - 1$
+        \While{$i > 0$}
         \If{$Subespacios[i].\text{esSimilar}(Subespacios[i-1])$}
-            \State $Subespacios[i-1].\text{unir}(Subespacios[i])$
-            \State $Subespacios.\text{remove}(Subespacios[i])$
+        \State $Subespacios[i-1].\text{unir}(Subespacios[i])$
+        \State $Subespacios.\text{remove}(Subespacios[i])$
         \EndIf
         \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
+        \EndWhile
+        \State \Return $Subespacios$
+    \end{algorithmic}
 \end{algorithm}
 
 En el Algoritmo \ref{alg:union_subespacios}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre el último con el anterior. En la línea 3: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 4: Se verifica si el subespacio actual y el subespacio anterior son similares, es decir si comparten ciertas características de posición en el contenedor y tamaño. En la línea 5: Si los subespacios son similares, se unen en un solo subespacio y se elimina el subespacio actual de la lista. En la línea 6: Se decrementa el valor de $i$ en uno. En la línea 8: Se retorna la lista de subespacios actualizada.
@@ -205,21 +205,21 @@ La figura \ref{fig:subespacio_inaccesible} muestra desde una perspectiva superio
 Para evitar que un subespacio inaccesible sea considerado en el proceso de llenado, se propone un algoritmo de eliminación de subespacios inaccesibles que se detalla en el Algoritmo \ref{alg:eliminacion_subespacios}. Este algoritmo recibe como entrada la lista de subespacios disponibles y recorre dicha lista desde el último hacia el primero, eliminando o recortando los subespacios inaccesibles.
 
 \begin{algorithm}[H]
-\caption{Algoritmo de eliminación de subespacios inaccesibles}
-\label{alg:eliminacion_subespacios}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
+    \caption{Algoritmo de eliminación de subespacios inaccesibles}
+    \label{alg:eliminacion_subespacios}
+    \begin{algorithmic}[1]
+        \State $Subespacios \gets \text{lista de subespacios disponibles}$
+        \State $i \gets \text{longitud de } Subespacios - 1$
+        \While{$i > 0$}
         \If{$Subespacios[i].\text{esInaccesibleParcialmente}()$}
-            \State $Subespacios[i].\text{recortar}()$
+        \State $Subespacios[i].\text{recortar}()$
         \ElsIf{$Subespacios[i].\text{esInaccesibleTotalmente}()$}
-            \State $Subespacios.\text{remove}(Subespacios[i])$
+        \State $Subespacios.\text{remove}(Subespacios[i])$
         \EndIf
         \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
+        \EndWhile
+        \State \Return $Subespacios$
+    \end{algorithmic}
 \end{algorithm}
 
 En el Algoritmo \ref{alg:eliminacion_subespacios}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre desde el último ya que la lista podría ser modificada durante la ejecución del bucle. En la línea 3: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 4: Se verifica si el subespacio actual es inaccesible parcialmente, es decir si un paquete bloquea parcialmente el subespacio. En la línea 5: Si el subespacio es inaccesible parcialmente, se recorta el subespacio para eliminar la parte inaccesible. En la línea 6: Se verifica si el subespacio actual es inaccesible totalmente, es decir si un paquete bloquea completamente el subespacio. En la línea 7: Si el subespacio es inaccesible totalmente, se elimina el subespacio de la lista. En la línea 8: Se decrementa el valor de $i$ en uno. En la línea 10: Se retorna la lista de subespacios actualizada.
@@ -240,23 +240,23 @@ La figura \ref{fig:subespacio_profundo} muestra desde una perspectiva lateral de
 Para evitar que un subespacio profundo sea considerado en el proceso de llenado, se propone un algoritmo que se detalla en el Algoritmo \ref{alg:eliminacion_subespacios_profundos}. Este algoritmo recibe como entrada la posición de la caja más cercana a la puerta del contenedor para calcular la posición máxima que un operador puede alcanzar con sus manos, y también recibe la lista de subespacios disponibles, recorre dicha lista desde el último hacia el primero, eliminando o recortando los subespacios profundos.
 
 \begin{algorithm}[H]
-\caption{Algoritmo de eliminación de subespacios profundos}
-\label{alg:eliminacion_subespacios_profundos}
-\begin{algorithmic}[1]
-    \State $Subespacios \gets \text{lista de subespacios disponibles}$
-    \State $PosicionCajaMasCercana \gets \text{posición de la caja más cercana a la puerta}$
-    \State $PosicionMaxima \gets \text{posición máxima que un operador puede alcanzar}$
-    \State $i \gets \text{longitud de } Subespacios - 1$
-    \While{$i > 0$}
+    \caption{Algoritmo de eliminación de subespacios profundos}
+    \label{alg:eliminacion_subespacios_profundos}
+    \begin{algorithmic}[1]
+        \State $Subespacios \gets \text{lista de subespacios disponibles}$
+        \State $PosicionCajaMasCercana \gets \text{posición de la caja más cercana a la puerta}$
+        \State $PosicionMaxima \gets \text{posición máxima que un operador puede alcanzar}$
+        \State $i \gets \text{longitud de } Subespacios - 1$
+        \While{$i > 0$}
         \If{$Subespacios[i].\text{esProfundoParcialmente}(PosicionMaxima)$}
-            \State $Subespacios[i].\text{recortar}()$
+        \State $Subespacios[i].\text{recortar}()$
         \ElsIf{$Subespacios[i].\text{esProfundoTotalmente}(PosicionMaxima)$}
-            \State $Subespacios.\text{remove}(Subespacios[i])$
+        \State $Subespacios.\text{remove}(Subespacios[i])$
         \EndIf
         \State $i \gets i - 1$
-    \EndWhile
-    \State \Return $Subespacios$
-\end{algorithmic}
+        \EndWhile
+        \State \Return $Subespacios$
+    \end{algorithmic}
 \end{algorithm}
 
 En el Algoritmo \ref{alg:eliminacion_subespacios_profundos}, en la línea 1: se inicializa una lista llamada $Subespacios$ que contiene los subespacios disponibles en el contenedor. En la línea 2: se inicializa una variable $PosicionCajaMasCercana$ con la posición de la caja más cercana a la puerta del contenedor contando el largo de la caja, el cuál daría el punto más cercano a la puerta del contenedor. En la línea 3: se inicializa una variable $PosicionMaxima$ con la posición máxima que un operador puede alcanzar con sus brazos, se calcula usando el punto más cercano a la puerta del contenedor menos la distancia establecida que los brazos de un operador puede alcanzar. En la línea 4: se inicializa una variable $i$ con la longitud de la lista de subespacios menos uno, esto para iterar siempre desde el último ya que la lista podría ser modificada durante la ejecución del bucle. En la línea 5: Se inicia un ciclo while que recorre la lista de subespacios desde el último hasta el primero. En la línea 6: Se verifica si el subespacio actual es profundo parcialmente. En la línea 7: Si el subespacio es profundo parcialmente, se recorta el subespacio para eliminar la parte profunda y se mantiene la parte más frontal accesible. En la línea 8: Se verifica si el subespacio actual es profundo totalmente. En la línea 9: Si el subespacio es profundo totalmente, se elimina el subespacio completamente de la lista. En la línea 10: Se decrementa el valor de $i$ en uno. En la línea 12: Se retorna la lista de subespacios actualizada.
@@ -266,30 +266,30 @@ En el Algoritmo \ref{alg:eliminacion_subespacios_profundos}, en la línea 1: se 
 El Algoritmo \ref{alg:dblf_adaptado} muestra el procedimiento de llenado manual de paquetes en un contenedor considerando que los paquetes se reciben por tipos además usando las estrategias de unión de subespacios, eliminación de subespacios inaccesibles y eliminación de subespacios profundos.
 
 \begin{algorithm}[H]
-\caption{Algoritmo de llenado manual de paquetes en un contenedor adaptado}
-\label{alg:dblf_adaptado}
-\begin{algorithmic}[1]
-    \State \textbf{Parámetros:} $Tipos \gets \text{lista de tipos de paquetes}$
-    \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
-    \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
-    \For{$tipo \in Tipos$}
+    \caption{Algoritmo de llenado manual de paquetes en un contenedor adaptado}
+    \label{alg:dblf_adaptado}
+    \begin{algorithmic}[1]
+        \State \textbf{Parámetros:} $Tipos \gets \text{lista de tipos de paquetes}$
+        \State \textbf{Inicialización:} $dblf \gets \text{lista inicializada con el espacio total del contenedor}$
+        \State $Contenedor \gets \text{lista vacía para almacenar los paquetes colocados}$
+        \For{$tipo \in Tipos$}
         \For{$i \gets 1 \text{ to } tipo.cantidad$}
-            \State $SubespacioOptimo \gets \text{buscar el subespacio más adecuado en } dblf$
-            \If{$SubespacioOptimo \neq \text{null}$}
-                \State $Contenedor.\text{add}( \text{colocar}(tipo, SubespacioOptimo) )$
-                \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, tipo)$
-                \State $dblf.\text{remove}(SubespacioOptimo)$
-                \State $dblf.\text{extend}(NuevosSubespacios)$
-            \Else
-                \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
-            \EndIf
+        \State $SubespacioOptimo \gets \text{buscar el subespacio más adecuado en } dblf$
+        \If{$SubespacioOptimo \neq \text{null}$}
+        \State $Contenedor.\text{add}( \text{colocar}(tipo, SubespacioOptimo) )$
+        \State $NuevosSubespacios \gets \text{dividir}(SubespacioOptimo, tipo)$
+        \State $dblf.\text{remove}(SubespacioOptimo)$
+        \State $dblf.\text{extend}(NuevosSubespacios)$
+        \Else
+        \State \textbf{print} $\text{"No se encontró espacio para el paquete."}$
+        \EndIf
         \EndFor
         \State $dblf \gets \text{unirSubespacios}(dblf)$
         \State $dblf \gets \text{eliminarSubespaciosInaccesibles}(dblf)$
         \State $dblf \gets \text{eliminarSubespaciosProfundos}(dblf)$
-    \EndFor
-    \State \Return $Contenedor$
-\end{algorithmic}
+        \EndFor
+        \State \Return $Contenedor$
+    \end{algorithmic}
 \end{algorithm}
 
 En el Algoritmo \ref{alg:dblf_adaptado}, en la línea 1: se recibe una lista llamada $Tipos$ que contiene los tipos de paquetes cuya información incluye el tamaño, rotación y cantidad de paquetes. En la línea 2: Se inicializa una lista llamada $dblf$, que representa los subespacios libres en el $Contenedor$. Inicialmente, esta lista contiene un único subespacio que es el contenedor entero. En la línea 3: Se crea una lista vacía llamada $Contenedor$ donde se almacenarán la posición y tamaños de los paquetes que se vayan colocando. Para la parte del proceso de llenado, en la línea 4: El ciclo for recorre cada tipo de paquete en la lista de tipos. En la línea 5: Se inicia un ciclo for que recorre la cantidad de paquetes por tipo. En la línea 6: Se busca en $dblf$ el primer subespacio disponible que sea suficientemente grande para el paquete. La búsqueda tiene en cuenta que el subespacio debe ser el más profundo, más bajo y más a la izquierda posible donde el paquete pueda caber. En la línea 7: Si tiene una condicional por si se encuentra o no un subespacio adecuado. De continuar con el procedimiento En la línea 8: La función $colocar$ ubica el $tipo$ en la posición más profunda, más baja y más a la izquierda del $SubespacioOptimo$ y devuelve la posición del paquete en el $Contenedor$, la función $add$ agrega el valor devuelto a la lista $Contenedor$. En la línea 9: El subespacio original $SubespacioOptimo$ donde se colocó el paquete se divide hasta en tres nuevos subespacios menores usando la función $dividir$. En la línea 10: se elimina el subespacio original $SubespacioOptimo$ de $dblf$ y en la línea 11: se agregan los nuevos subespacios a la lista $dblf$. En la línea 16: Se unen los subespacios similares en $dblf$ usando la función $unirSubespacios$. En la línea 17: Se eliminan los subespacios inaccesibles en $dblf$ usando la función $eliminarSubespaciosInaccesibles$. En la línea 18: Se eliminan los subespacios profundos en $dblf$ usando la función $eliminarSubespaciosProfundos$. En la línea 20: Se retorna la lista $Contenedor$ con los paquetes colocados.
