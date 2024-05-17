@@ -6,7 +6,7 @@ from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
-types_count = [5, 10, 20, 30]
+types_count = [30, 40]
 
 for i, n in enumerate(types_count):
     random.seed(100)
@@ -16,8 +16,9 @@ for i, n in enumerate(types_count):
 improvements = [GroupImprovement.none,
                 GroupImprovement.during,
                 GroupImprovement.late_all,
+                GroupImprovement.late_some,
                 GroupImprovement.late_best,
-                GroupImprovement.late_some]
+                ]
 
 MAX_DURATION = 300
 

@@ -2,9 +2,9 @@
 
 En este capítulo se presenta el diseño y los resultados de un experimento computacional que se realizó para evaluar el rendimiento de los algoritmos propuestos en el capítulo anterior. El objetivo principal de este experimento es comparar la eficacia de los algoritmos genéticos con y sin las mejoras propuestas, en términos de calidad de las soluciones obtenidas y tiempo de ejecución. Para ello, se utilizaron instancias de prueba generadas aleatoriamente. Se analizan los resultados obtenidos y se discuten las implicancias de los mismos en el contexto del problema de llenado de contenedor.
 
-\subsection{Datos de prueba}
+\subsection{Generación de datos de prueba}
 
-En la literatura, se han propuesto diferentes conjuntos de instancias de prueba para evaluar algoritmos de llenado de contenedores, por ejemplo \textcite{BISCHOFF1995377} establecieron un método de generación de instancias de prueba que se ha utilizado en varios estudios posteriores, con la finalidad de comparar los resultados obtenidos. Sin embargo, debido a las restricciones de llenado manual de contenedores, las instancias públicas de prueba no son adecuadas para ser usadas en un experimento computacional. La principal diferencia radica en que al usar el procedimiento manual de llenado definido en la sección \ref{sec:problem}, las soluciones obtenidas siempre serán menos optimas que las generadas por otros algoritmos que no consideran restricciones reales de llenado. Por lo tanto, se decidió generar instancias de prueba aleatorias, siguiendo un enfoque más realista, que permita evaluar el rendimiento de los algoritmos propuestos en un escenario más cercano a la realidad.
+En la literatura, se han propuesto diferentes conjuntos de instancias de prueba para evaluar algoritmos de llenado de contenedores, por ejemplo, \textcite{BISCHOFF1995377} establecieron un método de generación de instancias de prueba que se ha utilizado en varios estudios posteriores, con la finalidad de comparar los resultados obtenidos. Sin embargo, debido a las restricciones de llenado manual de contenedores, las instancias públicas de prueba no son adecuadas para ser usadas en un experimento computacional. La principal diferencia radica en que al usar el procedimiento manual de llenado definido en la sección \ref{sec:problem}, las soluciones obtenidas siempre serán menos óptimas que las generadas por otros algoritmos que no consideran restricciones reales de llenado. Por lo tanto, se decidió generar instancias de prueba aleatorias, siguiendo un enfoque más realista, que permita evaluar el rendimiento de los algoritmos propuestos en un escenario más cercano a la realidad.
 
 Para generar las instancias de prueba, se consideraron las siguientes restricciones:
 
@@ -17,7 +17,7 @@ Para generar las instancias de prueba, se consideraron las siguientes restriccio
     \item Los valores de las cajas son generados aleatoriamente, siguiendo una distribución uniforme en el rango $[1, 100]$, es importante resaltar que los valores tienen dependencia del tamaño.
 \end{itemize}
 
-Para aumentar la diversidad de las instancias de prueba, se establece que en cada instancia se debe cumplir que la dimensiones de las cajas a generar no se repitan. En el Algortimo \ref{alg:evitar_repetir} se detalla el procedimiento sencillo para evitar la repetición de las dimensiones de las cajas.
+Para aumentar la diversidad de las instancias de prueba, se establece que en cada instancia se debe cumplir que la dimensiones de las cajas a generar no se repitan. En el Algoritmo \ref{alg:evitar_repetir} se detalla el procedimiento sencillo para evitar la repetición de las dimensiones de las cajas.
 
 \begin{algorithm}[H]
     \caption{Evitar repetir dimensiones}
@@ -97,7 +97,7 @@ En el Algoritmo \ref{alg:generate_instances}, $V_{\text{total}}$ es el volumen t
 
 \subsection{Diseño del experimento}
 
-Para evaluar el rendimiento de los algoritmos genéticos propuestos, se diseñó un experimento computacional que consiste en comparar los resultados obtenidos con y sin las mejoras propuestas. Se consideraron cuatro mejoras, denominadas M1, M2, M3 y M4, que se describen a continuación:
+Para evaluar el rendimiento de los algoritmos genéticos propuestos, se diseñó un experimento computacional que consiste en comparar los resultados obtenidos con y sin las mejoras propuestas. Se considera una versión sin mejora llamada M0 y otras cuatro mejoras, denominadas M1, M2, M3 y M4, que se describen a continuación:
 
 \begin{itemize}
     \item M0: Versión sin mejoras del algoritmo genético propuesto.
@@ -111,77 +111,96 @@ Los algoritmos desarrollados se implementaron en Python v3.10 y están disponibl
 
 Para su ejecución, se utilizó un equipo con un procesador Apple M1 de 8 núcleos, que cuenta con 4 núcleos de eficiencia y 4 núcleos de rendimiento, además de contar con 8 GB de memoria RAM. Con el objetivo de optimizar el uso de los recursos del procesador, se paralelizó la ejecución de los algoritmos genéticos para explotar específicamente los 4 núcleos de rendimiento. Para mejorar aún más el rendimiento de estos algoritmos, se empleó la librería Pypy como intérprete de Python.
 
-En el marco de las pruebas, se crearon 25 instancias para cada tipo de caja, identificadas como 5T, 10T, 20T y 30T, sumando un total de 100 instancias de prueba. Cada instancia de prueba se ejecutó con las mejoras propuestas M1, M2, M3 y M4, además de la versión sin mejora M0, para comparar los resultados obtenidos.
+En el marco de las pruebas, se crearon 25 instancias para cada tipo de caja, identificadas como 5T, 10T, 20T y 30T, sumando un total de 100 instancias de prueba. Cada instancia de prueba se ejecutó con las mejoras propuestas M0, M1, M2, M3 y M4, además de la versión sin mejora M0, para comparar los resultados obtenidos.
 
 Cada algoritmo genético se configuró para operar con una misma población inicial de 100 individuos. Se estableció como condición de parada un límite de tiempo de ejecución de 5 minutos, garantizando así condiciones uniformes para la evaluación comparativa de cada mejora implementada en diversos escenarios con distintos tipos de cajas. La probabilidad de cruce, denotada como $P_{CROSS}$, se fijó en 0.05, mientras que la probabilidad de mutación, expresada como $P_{MUT}$, se definió en 0.01. Estos parámetros fueron seleccionados para promover un equilibrio entre exploración y explotación a lo largo del proceso evolutivo de los algoritmos.
 
 \subsection{Resultados y análisis}
 
-En esta sección se presentan y analizan los resultados obtenidos del experimento computacional. Los resultados se agrupan en función de las mejoras implementadas (M0, M1, M2, M3 y M4) y el tipo de instancia (5T, 10T, 20T, 30T). Se evalúan dos métricas principales: la calidad de las soluciones obtenidas y el tiempo de ejecución.
+En esta sección se presentan y analizan los resultados obtenidos del experimento computacional. Los resultados se agrupan en función de las mejoras implementadas (M0, M1, M2, M3 y M4) y el tipo de instancia (5T, 10T, 20T, 30T). Se evalúan dos métricas principales: el valor aportado por las soluciones obtenidas y el tiempo de ejecución.
 
-\subsubsection{Calidad de las soluciones}
+\subsubsection{Valor aportado por las soluciones}
 
-La calidad de las soluciones se mide mediante el volumen utilizado del contenedor y la suma de valores de las cajas acomodadas. Los resultados obtenidos se promedian sobre las 25 instancias de prueba para cada tipo de caja y se muestran en la Tabla \ref{tab:calidad}. Se presenta el promedio y la desviación estándar para cada mejora.
+Debido a que en las distintas instancias de problemas, los valores de las cajas tienen valores aleatorios independientes, no es posible comparar directamente las soluciones obtenidas, por ello se utiliza una métrica relativa que indica en cuanto por ciento ha mejorado una estrategia desde su población inicial. Para esto se toma el mejor valor obtenido al final y se calcula el porcentaje en base al mejor valor de la población inicial, ya que todas las estrategias de mejora comienzan con la misma población inicial, esta métrica se considera justa para todas las estrategias.
+
+Entonces se calcula el porcentaje de mejora por Tipo de Caja y Mejora propuesta, luego los resultados obtenidos se promedian sobre las 25 instancias y se muestran en la Tabla \ref{tab:valor_aportado}. Se presenta el promedio y la desviación estándar para cada mejora.
 
 \begin{table}[H]
     \centering
-    \caption{Calidad de las soluciones obtenidas}
-    \label{tab:calidad}
-    \begin{tabular}{|c|c|c|c|c|c|}
+    \caption{Valor aportado por las soluciones obtenidas}
+    \label{tab:valor_aportado}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Tipo de Caja} & \textbf{M0}      & \textbf{M1}      & \textbf{M2}      & \textbf{M3}      & \textbf{M4}      \\ \hline
-        5T                    & 82.34 $\pm$ 2.51 & 84.67 $\pm$ 2.23 & 86.89 $\pm$ 1.97 & 88.45 $\pm$ 1.65 & 89.12 $\pm$ 1.45 \\ \hline
-        10T                   & 79.56 $\pm$ 2.73 & 81.12 $\pm$ 2.35 & 83.78 $\pm$ 2.05 & 85.23 $\pm$ 1.78 & 86.67 $\pm$ 1.58 \\ \hline
-        20T                   & 76.89 $\pm$ 3.01 & 79.34 $\pm$ 2.64 & 81.45 $\pm$ 2.34 & 83.12 $\pm$ 2.01 & 84.45 $\pm$ 1.84 \\ \hline
-        30T                   & 74.23 $\pm$ 3.34 & 77.56 $\pm$ 2.95 & 79.89 $\pm$ 2.67 & 81.45 $\pm$ 2.34 & 83.01 $\pm$ 2.12 \\ \hline
+        \multirow{2}{*}{\textbf{Tipo de Caja}} & \multicolumn{2}{c|}{\textbf{M0}} & \multicolumn{2}{c|}{\textbf{M1}} & \multicolumn{2}{c|}{\textbf{M2}} & \multicolumn{2}{c|}{\textbf{M3}} & \multicolumn{2}{c|}{\textbf{M4}}                                                                             \\ \cline{2-11}
+                                               & \textbf{media}                   & \textbf{sd}                      & \textbf{media}                   & \textbf{sd}                      & \textbf{media}                   & \textbf{sd} & \textbf{media} & \textbf{sd} & \textbf{media} & \textbf{sd} \\ \hline
+        T5                                     & 12.8\%                           & 5.9                              & 13.3\%                           & 5.8                              & 13.4\%                           & 5.8         & 12.9\%         & 5.9         & 13.0\%         & 5.8         \\ \hline
+        T10                                    & 17.1\%                           & 8.2                              & 19.9\%                           & 8.7                              & 19.5\%                           & 8.5         & 17.5\%         & 8.2         & 18.2\%         & 8.0         \\ \hline
+        T20                                    & 26.2\%                           & 7.7                              & 33.1\%                           & 7.6                              & 32.0\%                           & 7.0         & 27.8\%         & 7.8         & 29.0\%         & 6.9         \\ \hline
+        T30                                    & 28.4\%                           & 9.3                              & 39.0\%                           & 8.8                              & 38.5\%                           & 8.8         & 36.8\%         & 9.0         & 31.8\%         & 9.0         \\ \hline
+        T40                                    & 34.9\%                           & 9.9                              & 50.0\%                           & 9.6                              & 48.5\%                           & 10.4        & 47.4\%         & 10.0        & 41.0\%         & 10.1        \\ \hline
     \end{tabular}
 \end{table}
 
-Como se observa en la Tabla \ref{tab:calidad}, todas las mejoras propuestas (M1, M2, M3 y M4) superan consistentemente a la versión sin mejoras (M0) en términos de la calidad de las soluciones obtenidas. La mejora M4, que se centra exclusivamente en el mejor individuo, muestra los mejores resultados en todos los casos, aumentando la calidad de las soluciones en comparación con las demás versiones.
+Como se observa en la Tabla \ref{tab:valor_aportado}, todas las mejoras propuestas (M1, M2, M3 y M4) superan a la versión sin mejoras (M0) en términos de valor aportado por las soluciones obtenidas. La mejoras M1 y M2, que se centran en ser aplicadas en toda la población, muestra los mejores resultados en todos los casos, aumentando la calidad de las soluciones en comparación con las demás versiones de mejora.
 
 \subsubsection{Tiempo de ejecución}
 
-El tiempo de ejecución es una métrica crucial para evaluar la eficiencia de los algoritmos genéticos mejorados. En la Tabla \ref{tab:tiempo}, se muestra el tiempo promedio de ejecución (en segundos) para cada mejora y tipo de instancia.
+El tiempo de ejecución es una métrica crucial para evaluar la eficiencia de los algoritmos genéticos. En este experimento, se midió el tiempo de ejecución de cada mejora y tipo de instancia, con el objetivo de evaluar el impacto de las mejoras en el rendimiento de los algoritmos.
+
+Cada ejecución se realiza con un tipo de caja y una implementación específica (M0, M1, M2, M3 y M4). Como se estableció un límite de tiempo de 5 minutos para cada instancia, se registra el tiempo que cada evaluación tarda en encontrar su mejor solución, es decir, cuando el algoritmo ha llegado al mejor resultado dentro del tiempo permitido.
+
+En la Tabla \ref{tab:tiempo}, se muestra el tiempo promedio que tardo en encontrar su mejor solución (en segundos), junto a la desviación estándar, para cada mejora y tipo de instancia.
 
 \begin{table}[H]
     \centering
-    \caption{Tiempo de ejecución de los algoritmos}
+    \caption{Tiempo promedio en encontrar la mejor solución}
     \label{tab:tiempo}
-    \begin{tabular}{|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Tipo de Caja} & \textbf{M0}       & \textbf{M1}       & \textbf{M2}       & \textbf{M3}       & \textbf{M4}       \\ \hline
-        5T                    & 287.34 $\pm$ 5.45 & 290.56 $\pm$ 5.12 & 293.67 $\pm$ 4.78 & 296.12 $\pm$ 4.34 & 298.45 $\pm$ 4.12 \\ \hline
-        10T                   & 290.12 $\pm$ 5.78 & 293.23 $\pm$ 5.34 & 296.45 $\pm$ 5.01 & 299.12 $\pm$ 4.67 & 301.34 $\pm$ 4.45 \\ \hline
-        20T                   & 293.45 $\pm$ 6.12 & 296.67 $\pm$ 5.78 & 299.34 $\pm$ 5.45 & 302.12 $\pm$ 5.12 & 304.45 $\pm$ 4.89 \\ \hline
-        30T                   & 296.89 $\pm$ 6.45 & 300.12 $\pm$ 6.01 & 303.34 $\pm$ 5.67 & 306.12 $\pm$ 5.34 & 308.45 $\pm$ 5.12 \\ \hline
+        \multirow{2}{*}{\textbf{Tipo de Caja}} & \multicolumn{2}{c|}{\textbf{M0}} & \multicolumn{2}{c|}{\textbf{M1}} & \multicolumn{2}{c|}{\textbf{M2}} & \multicolumn{2}{c|}{\textbf{M3}} & \multicolumn{2}{c|}{\textbf{M4}}                                                                             \\ \cline{2-11}
+                                               & \textbf{media}                   & \textbf{sd}                      & \textbf{media}                   & \textbf{sd}                      & \textbf{media}                   & \textbf{sd} & \textbf{media} & \textbf{sd} & \textbf{media} & \textbf{sd} \\ \hline
+        T5                                     & 71.4                             & 65.4                             & 25.6                             & 48.5                             & 50.4                             & 55.8        & 48.4           & 41.9        & 56.6           & 65.9        \\ \hline
+        T10                                    & 126.5                            & 73.1                             & 48.3                             & 58.9                             & 87.1                             & 90.7        & 96.3           & 78.9        & 96.5           & 70.3        \\ \hline
+        T20                                    & 217.7                            & 71.8                             & 127.6                            & 64.9                             & 148.5                            & 77.7        & 213.8          & 71.6        & 191.1          & 74.4        \\ \hline
+        T30                                    & 248.8                            & 48.8                             & 179.3                            & 71.1                             & 219.1                            & 59.3        & 198.1          & 68.3        & 222.5          & 52.9        \\ \hline
+        T40                                    & 267.6                            & 23.2                             & 218.7                            & 73.7                             & 230.3                            & 49.2        & 236.0          & 61.5        & 234.3          & 48.4        \\ \hline
     \end{tabular}
 \end{table}
 
-La Tabla \ref{tab:tiempo} indica que las mejoras introducidas (M1, M2, M3 y M4) incrementan ligeramente el tiempo de ejecución en comparación con M0. Esto se debe a que las mejoras implican operaciones adicionales para optimizar las soluciones. Sin embargo, el incremento en el tiempo de ejecución es marginal y se considera aceptable dado el aumento significativo en la calidad de las soluciones.
-
-\subsubsection{Análisis comparativo}
-
-Para proporcionar una visión clara del impacto de las mejoras, se presenta un análisis comparativo del incremento porcentual en la calidad de las soluciones y el incremento porcentual en el tiempo de ejecución. Los resultados se muestran en la Figura \ref{fig:comparativo}.
+La Tabla \ref{tab:tiempo} muestra que las mejoras introducidas (M1, M2, M3 y M4) reducen ligeramente el tiempo necesario para encontrar la mejor solución en comparación con M0. Esto se debe a que las mejoras permiten que el algoritmo genético converja más rápidamente. No obstante, también se observa una tendencia al aumento del tiempo de convergencia a medida que se incrementa el número de tipos de cajas a llenar. Esto también se puede observar en la Figura \ref{fig:tiempos}.
 
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=0.8\textwidth]{comparativo_calidad_tiempo.png}
-    \caption{Comparativo del incremento porcentual en calidad de las soluciones y tiempo de ejecución}
-    \label{fig:comparativo}
+    \includesvg[width=0.8\textwidth]{Figures/tiempos.svg}
+    \caption{Tiempo promedio en encontrar la mejor solución}
+    \label{fig:tiempos}
 \end{figure}
 
-La Figura \ref{fig:comparativo} muestra que, aunque las mejoras M1, M2, M3 y M4 incrementan ligeramente el tiempo de ejecución, el aumento en la calidad de las soluciones es considerablemente mayor. Esto sugiere que las mejoras implementadas son efectivas y proporcionan un balance favorable entre la calidad de las soluciones y el tiempo de ejecución.
+En la figura \ref{fig:tiempos} se destaca que la mejora M1 presenta el menor tiempo de convergencia en comparación con los otros casos, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un tiempo de convergencia significativamente mayor en comparación con las versiones mejoradas, es decir que las mejoras propuestas permiten que el algoritmo genético converja más rápidamente.
 
-\subsubsection{Implicancias y discusión}
+\subsubsection{Rendimiento}
 
-Los resultados obtenidos demuestran que las mejoras propuestas (M1, M2, M3 y M4) en los algoritmos genéticos incrementan significativamente la calidad de las soluciones obtenidas en el problema de llenado de contenedores, a costa de un aumento marginal en el tiempo de ejecución. La mejora M4, que se enfoca en optimizar el mejor individuo de la población, resultó ser la más eficaz en términos de calidad de las soluciones.
+Para proporcionar una visión clara del impacto de las mejoras, se presenta un análisis comparativo del rendimiento que puede ser definido como el incremento porcentual en la calidad de las soluciones por cada unidad tiempo que tarda en encontrar la mejor solución. La Figura \ref{fig:rendimiento} muestra el rendimiento de las mejoras propuestas en términos de calidad de las soluciones y tiempo de ejecución.
 
-Estos resultados tienen varias implicancias importantes en el contexto del problema de llenado de contenedores:
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.8\textwidth]{Figures/rendimiento.svg}
+    \caption{Rendimiento de las mejoras propuestas}
+    \label{fig:rendimiento}
+\end{figure}
 
-\begin{itemize}
-    \item La implementación de mejoras específicas puede aumentar significativamente la eficacia de los algoritmos genéticos, haciendo que sean más adecuados para aplicaciones prácticas donde la calidad de las soluciones es crítica.
-    \item El incremento en el tiempo de ejecución es marginal y manejable, especialmente cuando se utilizan técnicas de paralelización y optimización de recursos.
-    \item Los enfoques que focalizan los recursos en los mejores individuos (como M3 y M4) muestran un gran potencial para mejorar la calidad de las soluciones sin requerir un aumento considerable en el tiempo de ejecución.
-\end{itemize}
+La Figura \ref{fig:rendimiento} muestra que, la mejora M1 es la que un mayor incremento porcentual en la calidad de las soluciones por cada unidad de tiempo, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un rendimiento significativamente menor en comparación con las versiones mejoradas. Tambien es importante resaltar que cuando se usa 40 tipos de cajas (40T), los rendimientos tienden a aumentar en todas las estrategias de mejora,
 
-En resumen, los algoritmos genéticos mejorados propuestos en este estudio ofrecen una solución eficaz y eficiente para el problema de llenado de contenedores, demostrando que es posible mejorar significativamente la calidad de las soluciones con un incremento mínimo en el tiempo de ejecución.
+También podemos evaluar el rendimiento según el timpo que le toma a cada método de mejora en evaluar una generación, para ello se calcula el tiempo total de ejecución dividido por la cantidad de generaciones realizadas, esto nos da una idea de cuánto tiempo le toma a cada método de mejora evaluar cada generación. En la Figura \ref{fig:tiempo_generacion} se muestra el tiempo promedio que le toma a cada método de mejora en evaluar una generación.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.8\textwidth]{Figures/tiempo_generacion.svg}
+    \caption{Tiempo promedio en evaluar una población}
+    \label{fig:tiempo_generacion}
+
+\end{figure}
+
+La Figura \ref{fig:tiempo_generacion} muestra que la mejora M1, M2, M3 y M4 necesitan un mayor tiempo para evaluar una generación en comparación con la versión sin mejoras M0. Esto se debe a que las mejoras propuestas requieren un tiempo adicional para realizar las operaciones de mejora en cada generación. Sin embargo, como se ha podido ver en los gráficos anteriores, las mejoras propuestas también permiten que el algoritmo genético converja más rápidamente, lo que se traduce en un menor tiempo total de ejecución, a pesar de que cada generación requiera un tiempo adicional para ser evaluada.
+
+Por último es importante resaltar que la mejora M1 es la que mejor rendimiento tiene en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas. Luego M2 y M3 presentan un rendimiento similar en algunas situaciones, M2 es mejor en términos de calidad de las soluciones y M3 en términos de tiempo de ejecución. M4 es la que presenta el peor rendimiento en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas.

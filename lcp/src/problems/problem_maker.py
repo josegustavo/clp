@@ -45,7 +45,7 @@ class ProblemMaker:
             if box_dimensions in box_sizes_set:
                 continue
             box_sizes_set.add(box_dimensions)
-            box_size = list(box_dimensions) + [random.randint(1, 100)]
+            box_size = list(box_dimensions) + [random.randint(10, 100)]
             box_sizes.append(box_size)
 
         for i in range(self.N_TYPES):

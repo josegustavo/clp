@@ -94,7 +94,8 @@ class Population:
             self.individuals.sort(
                 key=lambda i: i.evaluate().fitness, reverse=True)
             if self.group_improvement == GroupImprovement.late_some:
-                for i in self.individuals[:5]:
+                # Mejorar el 50% de la población superior
+                for i in self.individuals[:len(self.individuals)//2]:
                     i.evaluate_with_improvement_late()
             elif self.group_improvement == GroupImprovement.late_best:
                 self.individuals[0].evaluate_with_improvement_late()
