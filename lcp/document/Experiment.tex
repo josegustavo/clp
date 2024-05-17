@@ -1,23 +1,23 @@
 \section{Estudio experimental}
 
-En este capítulo se presenta el diseño y los resultados de un experimento computacional que se realizó para evaluar el rendimiento de los algoritmos propuestos en el capítulo anterior. El objetivo principal de este experimento es comparar la eficacia de los algoritmos genéticos con y sin las mejoras propuestas, en términos de calidad de las soluciones obtenidas y tiempo de ejecución. Para ello, se utilizaron instancias de prueba generadas aleatoriamente. Se analizan los resultados obtenidos y se discuten las implicancias de los mismos en el contexto del problema de llenado de contenedor.
+Este capítulo describe el diseño y los resultados de un experimento computacional realizado para evaluar el rendimiento de los algoritmos presentados en el capítulo anterior. El objetivo principal es comparar la eficacia de los algoritmos genéticos con y sin las mejoras propuestas, en términos de calidad de las soluciones y tiempo de ejecución. Para ello, se generaron instancias de prueba aleatorias. Los resultados se analizan y discuten en el contexto del problema de llenado de contenedores.
 
 \subsection{Generación de datos de prueba}
 
-En la literatura, se han propuesto diferentes conjuntos de instancias de prueba para evaluar algoritmos de llenado de contenedores, por ejemplo, \textcite{BISCHOFF1995377} establecieron un método de generación de instancias de prueba que se ha utilizado en varios estudios posteriores, con la finalidad de comparar los resultados obtenidos. Sin embargo, debido a las restricciones de llenado manual de contenedores, las instancias públicas de prueba no son adecuadas para ser usadas en un experimento computacional. La principal diferencia radica en que al usar el procedimiento manual de llenado definido en la sección \ref{sec:problem}, las soluciones obtenidas siempre serán menos óptimas que las generadas por otros algoritmos que no consideran restricciones reales de llenado. Por lo tanto, se decidió generar instancias de prueba aleatorias, siguiendo un enfoque más realista, que permita evaluar el rendimiento de los algoritmos propuestos en un escenario más cercano a la realidad.
+En la literatura, se han propuesto diversos conjuntos de instancias de prueba para evaluar algoritmos de llenado de contenedores. Por ejemplo, \textcite{BISCHOFF1995377} establecieron un método de generación de instancias que se ha utilizado ampliamente en estudios posteriores. Sin embargo, debido a las restricciones del llenado manual, las instancias públicas no son adecuadas para experimentos computacionales. Esto se debe a que, al usar el procedimiento manual descrito en la sección \ref{sec:problem}, las soluciones son menos óptimas en comparación con los algoritmos que no consideran estas restricciones. Por tanto, se decidió generar instancias aleatorias siguiendo un enfoque más realista.
 
-Para generar las instancias de prueba, se consideraron las siguientes restricciones:
+Las siguientes restricciones se consideraron para generar las instancias de prueba:
 
 \begin{itemize}
-    \item Se define que las unidades de distancias usadas son los milímetros y siempre se redondean al entero más cercano.
-    \item Se establece que se tiene un solo contenedor de tamaño fijo, cuyas dimensiones interiores son $L \times W \times H = 12010 \times 2330 \times 2380$.
-    \item Cada instancias tiene un número fijo de tipos de cajas a llenar, que son 5, 10, 20 y 30, los cuales son denominados como 5T, 10T, 20T y 30T respectivamente.
-    \item Las cajas de tipo 5T están contenidas también en las cajas de tipo 10T, las cajas de tipo 10T están contenidas en las cajas de tipo 20T y las cajas de tipo 20T están contenidas en las cajas de tipo 30T.
-    \item Las dimensiones de las cajas a llenar son generadas aleatoriamente, siguiendo una distribución uniforme en el rango $[250, 750]$ para todas las dimensiones.
-    \item Los valores de las cajas son generados aleatoriamente, siguiendo una distribución uniforme en el rango $[1, 100]$, es importante resaltar que los valores tienen dependencia del tamaño.
+    \item Las unidades de medida son milímetros, redondeadas al entero más cercano.
+    \item El contenedor tiene dimensiones interiores fijas: $L \times W \times H = 12010 \times 2330 \times 2380$ mm.
+    \item Cada instancia incluye un número fijo de tipos de cajas: 5, 10, 20 y 30, denominadas 5T, 10T, 20T y 30T, respectivamente.
+    \item Las cajas de tipo 5T están contenidas en las de tipo 10T, las de 10T en las de 20T y las de 20T en las de 30T.
+    \item Las dimensiones de las cajas se generan aleatoriamente siguiendo una distribución uniforme en el rango $[250, 750]$ mm.
+    \item Los valores de las cajas se generan aleatoriamente siguiendo una distribución uniforme en el rango $[1, 100]$, dependiendo del tamaño.
 \end{itemize}
 
-Para aumentar la diversidad de las instancias de prueba, se establece que en cada instancia se debe cumplir que la dimensiones de las cajas a generar no se repitan. En el Algoritmo \ref{alg:evitar_repetir} se detalla el procedimiento sencillo para evitar la repetición de las dimensiones de las cajas.
+Para aumentar la diversidad, se asegura que las dimensiones de las cajas no se repitan dentro de cada instancia. El Algoritmo \ref{alg:evitar_repetir} detalla el procedimiento para evitar la repetición de dimensiones.
 
 \begin{algorithm}[H]
     \caption{Evitar repetir dimensiones}
@@ -38,47 +38,51 @@ Para aumentar la diversidad de las instancias de prueba, se establece que en cad
     \end{algorithmic}
 \end{algorithm}
 
-En el Algoritmo \ref{alg:evitar_repetir}, $|T|$ es la cantidad de cajas a generar, en la línea 1 se inicializa la lista $D$ de dimensiones, en las líneas 2 a 8 se itera sobre la cantidad de cajas a generar, en la línea 3 se genera una dimensión aleatoria, en la línea 4 se verifica si la dimensión generada ya existe en la lista $D$. Si la dimensión generada ya existe, se vuelve a generar una dimensión aleatoria en la línea 5 y se vuelve a verificar si la dimensión generada ya existe en la lista $D$. Si la dimensión generada no existe en la lista $D$, se añade a la lista $D$ en la línea 7. Finalmente, en la línea 9 se retorna la lista $D$ con las dimensiones generadas.
+En el Algoritmo \ref{alg:evitar_repetir}, $|T|$ es la cantidad de cajas a generar. En la línea 1, se inicializa la lista $D$ de dimensiones. En las líneas 2 a 8, se itera sobre la cantidad de cajas a generar. En la línea 3, se genera una dimensión aleatoria y en la línea 4, se verifica si la dimensión ya existe en la lista $D$. Si es así, se vuelve a generar una dimensión aleatoria (línea 5) hasta que se obtenga una dimensión única. Finalmente, en la línea 9, se retorna la lista $D$ con las dimensiones generadas.
 
-Para determinar la cantidad máxima de cajas de cada tipo que se puede almacenar en un contenedor, se adopta el siguiente enfoque. Primero, se divide el volumen total del contenedor por el número de tipos de cajas especificadas, por ejemplo, cinco tipos de cajas resultarían en dividir el contenedor en cinco partes iguales ("5T"). Luego, se calcula cuántas cajas de cada tipo caben exactamente en la fracción del volumen asignada a ese tipo. Para añadir un nivel adicional de desafío y realismo, se incorpora un porcentaje aleatorio de cajas adicionales a cada tipo, complicando así la planificación del espacio. Este procedimiento se detalla en el Algoritmo \ref{alg:generate}, el cual ilustra paso a paso cómo generar las instancias de prueba.
+Para determinar la cantidad máxima de cajas de cada tipo que se puede almacenar en un contenedor, se sigue el siguiente enfoque:
+
+1. Dividir el volumen total del contenedor por el número de tipos de cajas especificados. Por ejemplo, cinco tipos de cajas resultan en dividir el contenedor en cinco partes iguales ("5T").
+2. Calcular cuántas cajas de cada tipo caben exactamente en la fracción del volumen asignada a ese tipo.
+3. Añadir un porcentaje aleatorio de cajas adicionales a cada tipo para aumentar el desafío y realismo.
+
+Este procedimiento se detalla en el Algoritmo \ref{alg:generate}.
 
 \begin{algorithm}[H]
-    \caption{Generación de instancias de pruebas}
+    \caption{Generación de cantidades de cajas}
     \label{alg:generate}
     \begin{algorithmic}[1]
         \Require $V_{\text{total}}$, volumen total del contenedor; $T$, tipos de cajas.
         \Ensure $Q$, lista de cantidades por tipo.
         \State $Q \gets \emptyset$
         \State $v_{\text{fraccion}} \gets V_{\text{total}} / |T|$ \Comment{Dividir el volumen total en partes iguales}
-        \For{$t_{i} \in $ $T$}
-        \State $v_i \gets w_i*l_i*h_i$ \Comment{Volumen de un tipo $t_i$}
-        \State $q_i \gets \lceil v_{\text{fraccion}} / v_i \rceil $
-        \State $q_i^{\text{ajustado}} \gets n_i + \text{Aleatorio}(\% \text{adicional})$ \Comment{Añadir un porcentaje aleatorio}
+        \For{$t_i \in T$}
+        \State $v_i \gets w_i \times l_i \times h_i$ \Comment{Volumen de un tipo $t_i$}
+        \State $q_i \gets \lceil v_{\text{fraccion}} / v_i \rceil$
+        \State $q_i^{\text{ajustado}} \gets q_i + \text{Aleatorio}(\% \text{adicional})$ \Comment{Añadir un porcentaje aleatorio}
         \State $Q \gets Q \cup q_i^{\text{ajustado}}$
         \EndFor
         \State \textbf{return} $Q$
     \end{algorithmic}
 \end{algorithm}
 
-En el Algoritmo \ref{alg:generate}, $V_{\text{total}}$ es el volumen total del contenedor, $T$ es el conjunto de tipos de cajas. En la línea 1, se inicializa la lista $Q$ de cantidades por tipo. En la línea 2, se calcula la fracción del volumen total asignada a cada tipo de caja. En las líneas 3 se iteran sobre la cantidad de tipos de cajas, en la línea 4 se calcula el volumen de un tipo de caja, en la línea 5 se calcula la cantidad aproximada de cajas de un tipo que caben en la fracción del volumen asignada a ese tipo, en la línea 6 se ajusta la cantidad de cajas de un tipo añadiendo un porcentaje aleatorio, en la línea 7 se añade la cantidad ajustada a la lista $Q$. Finalmente, en la línea 8 se retorna la lista $Q$ con las cantidades ajustadas por tipo.
+En el Algoritmo \ref{alg:generate}, $V_{\text{total}}$ es el volumen total del contenedor, y $T$ es el conjunto de tipos de cajas. Primero, se inicializa la lista $Q$ de cantidades por tipo (línea 1). Luego, se calcula la fracción del volumen total asignada a cada tipo de caja (línea 2). En las líneas 3 a 8, se calcula el volumen de cada tipo de caja, la cantidad aproximada de cajas que caben en la fracción del volumen asignada y se ajusta esta cantidad añadiendo un porcentaje aleatorio. Finalmente, se retorna la lista $Q$ con las cantidades ajustadas por tipo (línea 9).
 
-De este modo se evita el riesgo de que las cantidades de cajas generadas sean muy pocas como para llenar un contenedor pero tampoco demasiadas como para que se necesiten varios contenedores. Además, se garantiza que las cajas generadas no se repitan, lo que aumenta la diversidad de las instancias de prueba.
-
-Por lo tanto, el procedimiento para generar las instancias de prueba es el siguiente:
+El procedimiento completo para generar las instancias de prueba es:
 
 \begin{enumerate}
-    \item Se genera un conjunto de dimensiones únicas de cajas para cada tipo de caja según el Algoritmo \ref{alg:evitar_repetir}.
-    \item Se asigna un valor aleatorio a cada caja.
-    \item Se genera un conjunto de cantidades de cajas para cada tipo de caja, según el Algoritmo \ref{alg:generate}.
+    \item Generar un conjunto de dimensiones únicas de cajas para cada tipo de caja según el Algoritmo \ref{alg:evitar_repetir}.
+    \item Asignar un valor aleatorio a cada caja.
+    \item Generar un conjunto de cantidades de cajas para cada tipo de caja, según el Algoritmo \ref{alg:generate}.
 \end{enumerate}
 
-El procedimiento anterior se puede resumir en el Algoritmo \ref{alg:generate_instances}, el cual ilustra paso a paso cómo generar las instancias de prueba.
+Este procedimiento se resume en el Algoritmo \ref{alg:generate_instances}.
 
 \begin{algorithm}[H]
-    \caption{Generación de instancias de pruebas}
+    \caption{Generación de instancias de prueba}
     \label{alg:generate_instances}
     \begin{algorithmic}[1]
-        \Require $V_{\text{total}}$, volumen total del contenedor; $C$ \text{Cantidad de problemas por tipo} $T$, tipos de cajas.
+        \Require $V_{\text{total}}$, volumen total del contenedor; $C$, cantidad de problemas por tipo; $T$, tipos de cajas.
         \Ensure $P$, lista de instancias de problemas.
         \State $P \gets \emptyset$
         \For{$t_i \in T$}
@@ -93,27 +97,27 @@ El procedimiento anterior se puede resumir en el Algoritmo \ref{alg:generate_ins
     \end{algorithmic}
 \end{algorithm}
 
-En el Algoritmo \ref{alg:generate_instances}, $V_{\text{total}}$ es el volumen total del contenedor, $C$ es la cantidad de problemas por tipo de caja, $T$ es el conjunto de tipos de cajas. En la línea 1, se inicializa la lista vacía $P$ de instancias de problemas. En las líneas 2 a 8 se itera sobre la cantidad de tipos de cajas, en las líneas 3 a 7 se itera sobre la cantidad de problemas por tipo de caja, en la línea 4 se genera un conjunto de dimensiones únicas de cajas para cada tipo de caja, en la línea 5 se asigna un valor aleatorio a cada caja, en la línea 6 se genera un conjunto de cantidades de cajas para cada tipo de caja, en la línea 7 se añade la instancia de problema a la lista $P$. Finalmente, en la línea 9 se retorna la lista $P$ con las instancias de problemas generadas. De esta manera, por ejemplo, si cuenta con 4 tipos de cajas (5T, 10T, 20T, 30T) y se desea generar 10 problemas por tipo, se obtendrán 40 instancias de problemas en total.
+En el Algoritmo \ref{alg:generate_instances}, $V_{\text{total}}$ es el volumen total del contenedor, $C$ es la cantidad de problemas por tipo de caja, y $T$ es el conjunto de tipos de cajas. Primero, se inicializa la lista vacía $P$ de instancias de problemas (línea 1). Luego, se itera sobre la cantidad de tipos de cajas y la cantidad de problemas por tipo de caja. Para cada iteración, se genera un conjunto de dimensiones únicas de cajas, se asignan valores aleatorios y se genera un conjunto de cantidades de cajas para cada tipo de caja. Finalmente, se retorna la lista $P$ con las instancias de problemas generadas (línea 9). Por ejemplo, si hay 4 tipos de cajas (5T, 10T, 20T, 30T) y se desean generar 10 problemas por tipo, se obtendrán 40 instancias de problemas en total.
 
 \subsection{Diseño del experimento}
 
-Para evaluar el rendimiento de los algoritmos genéticos propuestos, se diseñó un experimento computacional que consiste en comparar los resultados obtenidos con y sin las mejoras propuestas. Se considera una versión sin mejora llamada M0 y otras cuatro mejoras, denominadas M1, M2, M3 y M4, que se describen a continuación:
+Para evaluar el rendimiento de los algoritmos genéticos propuestos, se diseñó un experimento computacional que compara los resultados obtenidos con y sin las mejoras propuestas. Se considera una versión sin mejora llamada M0 y cuatro mejoras denominadas M1, M2, M3 y M4, descritas a continuación:
 
 \begin{itemize}
-    \item M0: Versión sin mejoras del algoritmo genético propuesto.
-    \item M1: Se realiza la mejora de \textit{llenado adicional inmediato} definido en el Algoritmo \ref{alg:dblf_adaptado_mejoras_m1}, que consiste en completar cuando sea posible espacios restantes durante el proceso de llenado.
-    \item M2: Se implementa la mejora \textit{llenado adicional final} definido en el Algoritmo \ref{alg:dblf_adaptado_mejoras_m2}, que consiste en completar los espacios restantes al final del proceso de llenado, para este caso se realiza la mejora en toda la población.
-    \item M3: Esta mejora es una extensión de M2. Se dirige a la mitad superior de los individuos según su desempeño, optimizando así los recursos al concentrar los esfuerzos de mejora en aquellos que ya muestran un mayor potencial.
-    \item M4: Esta mejora también sigue el principio de M2, pero se focaliza exclusivamente en el mejor individuo de la población. Al centrar todos los recursos de mejora en la solución más prometedora, se busca potenciar al máximo el rendimiento del líder del grupo, optimizando así el impacto general de la mejora.
+    \item M0: Versión sin mejoras del algoritmo genético.
+    \item M1: Mejora de \textit{llenado adicional inmediato}, completando espacios restantes durante el proceso de llenado (Algoritmo \ref{alg:dblf_adaptado_mejoras_m1}).
+    \item M2: Mejora de \textit{llenado adicional al final}, completando los espacios restantes al final del proceso de llenado en toda la población (Algoritmo \ref{alg:dblf_adaptado_mejoras_m2}).
+    \item M3: Extensión de M2, aplicada a la mitad superior de los individuos según su desempeño.
+    \item M4: Mejora de M2, aplicada exclusivamente al mejor individuo de la población.
 \end{itemize}
 
-Los algoritmos desarrollados se implementaron en Python v3.10 y están disponibles públicamente en un repositorio de GitHub\footnote{\url{https://github.com/josegustavo/lcp}}.
+Los algoritmos se implementaron en Python v3.10 y están disponibles en un repositorio de GitHub\footnote{\url{https://github.com/josegustavo/lcp}}.
 
-Para su ejecución, se utilizó un equipo con un procesador Apple M1 de 8 núcleos, que cuenta con 4 núcleos de eficiencia y 4 núcleos de rendimiento, además de contar con 8 GB de memoria RAM. Con el objetivo de optimizar el uso de los recursos del procesador, se paralelizó la ejecución de los algoritmos genéticos para explotar específicamente los 4 núcleos de rendimiento. Para mejorar aún más el rendimiento de estos algoritmos, se empleó la librería Pypy como intérprete de Python.
+El experimento se ejecutó en un equipo con un procesador Apple M1 de 8 núcleos (4 núcleos de eficiencia y 4 de rendimiento) y 8 GB de RAM. Para optimizar el uso de los recursos, se paralelizó la ejecución de los algoritmos genéticos para utilizar los 4 núcleos de rendimiento, y se empleó la librería Pypy como intérprete de Python.
 
-En el marco de las pruebas, se crearon 25 instancias para cada tipo de caja, identificadas como 5T, 10T, 20T y 30T, sumando un total de 100 instancias de prueba. Cada instancia de prueba se ejecutó con las mejoras propuestas M0, M1, M2, M3 y M4, además de la versión sin mejora M0, para comparar los resultados obtenidos.
+Se crearon 25 instancias para cada tipo de caja (5T, 10T, 20T y 30T), sumando un total de 100 instancias de prueba. Cada instancia se ejecutó con las mejoras propuestas M0, M1, M2, M3 y M4 para comparar los resultados.
 
-Cada algoritmo genético se configuró para operar con una misma población inicial de 100 individuos. Se estableció como condición de parada un límite de tiempo de ejecución de 5 minutos, garantizando así condiciones uniformes para la evaluación comparativa de cada mejora implementada en diversos escenarios con distintos tipos de cajas. La probabilidad de cruce, denotada como $P_{CROSS}$, se fijó en 0.05, mientras que la probabilidad de mutación, expresada como $P_{MUT}$, se definió en 0.01. Estos parámetros fueron seleccionados para promover un equilibrio entre exploración y explotación a lo largo del proceso evolutivo de los algoritmos.
+Cada algoritmo genético se configuró con una población inicial de 100 individuos y un tiempo de ejecución límite de 5 minutos, asegurando condiciones uniformes para la evaluación comparativa. La probabilidad de cruce ($P_{CROSS}$) se estableció en 0.05 y la probabilidad de mutación ($P_{MUT}$) en 0.01. Estos valores fueron seleccionados después de experimentaciones previas que demostraron su eficacia al promover un equilibrio adecuado entre exploración y explotación durante el proceso evolutivo.
 
 \subsection{Resultados y análisis}
 
@@ -121,9 +125,9 @@ En esta sección se presentan y analizan los resultados obtenidos del experiment
 
 \subsubsection{Valor aportado por las soluciones}
 
-Debido a que en las distintas instancias de problemas, los valores de las cajas tienen valores aleatorios independientes, no es posible comparar directamente las soluciones obtenidas, por ello se utiliza una métrica relativa que indica en cuanto por ciento ha mejorado una estrategia desde su población inicial. Para esto se toma el mejor valor obtenido al final y se calcula el porcentaje en base al mejor valor de la población inicial, ya que todas las estrategias de mejora comienzan con la misma población inicial, esta métrica se considera justa para todas las estrategias.
+Dado que los valores de las cajas en las diferentes instancias son aleatorios, no es posible comparar directamente las soluciones obtenidas. Por ello, se utiliza una métrica relativa que indica el porcentaje de mejora desde la población inicial. Se toma el mejor valor obtenido al final y se calcula el porcentaje en base al mejor valor de la población inicial, que es común para todas las estrategias de mejora.
 
-Entonces se calcula el porcentaje de mejora por Tipo de Caja y Mejora propuesta, luego los resultados obtenidos se promedian sobre las 25 instancias y se muestran en la Tabla \ref{tab:valor_aportado}. Se presenta el promedio y la desviación estándar para cada mejora.
+El porcentaje de mejora se calcula por tipo de caja y mejora propuesta. Los resultados promediados sobre las 25 instancias se muestran en la Tabla \ref{tab:valor_aportado}, presentando el promedio y la desviación estándar para cada mejora.
 
 \begin{table}[H]
     \centering
@@ -141,15 +145,15 @@ Entonces se calcula el porcentaje de mejora por Tipo de Caja y Mejora propuesta,
     \end{tabular}
 \end{table}
 
-Como se observa en la Tabla \ref{tab:valor_aportado}, todas las mejoras propuestas (M1, M2, M3 y M4) superan a la versión sin mejoras (M0) en términos de valor aportado por las soluciones obtenidas. La mejoras M1 y M2, que se centran en ser aplicadas en toda la población, muestra los mejores resultados en todos los casos, aumentando la calidad de las soluciones en comparación con las demás versiones de mejora.
+Como se observa en la Tabla \ref{tab:valor_aportado}, todas las mejoras propuestas (M1, M2, M3 y M4) superan a la versión sin mejoras (M0) en términos de valor aportado por las soluciones obtenidas. Las mejoras M1 y M2, que se aplican a toda la población, muestran los mejores resultados en todos los casos, aumentando la calidad de las soluciones en comparación con las demás versiones de mejora.
 
 \subsubsection{Tiempo de ejecución}
 
 El tiempo de ejecución es una métrica crucial para evaluar la eficiencia de los algoritmos genéticos. En este experimento, se midió el tiempo de ejecución de cada mejora y tipo de instancia, con el objetivo de evaluar el impacto de las mejoras en el rendimiento de los algoritmos.
 
-Cada ejecución se realiza con un tipo de caja y una implementación específica (M0, M1, M2, M3 y M4). Como se estableció un límite de tiempo de 5 minutos para cada instancia, se registra el tiempo que cada evaluación tarda en encontrar su mejor solución, es decir, cuando el algoritmo ha llegado al mejor resultado dentro del tiempo permitido.
+Cada ejecución se realiza con un tipo de caja y una implementación específica (M0, M1, M2, M3 y M4). Como se estableció un límite de tiempo de 5 minutos para cada instancia, se registra el tiempo que cada evaluación tarda en encontrar su mejor solución.
 
-En la Tabla \ref{tab:tiempo}, se muestra el tiempo promedio que tardo en encontrar su mejor solución (en segundos), junto a la desviación estándar, para cada mejora y tipo de instancia.
+En la Tabla \ref{tab:tiempo}, se muestra el tiempo promedio en encontrar la mejor solución (en segundos), junto a la desviación estándar, para cada mejora y tipo de instancia.
 
 \begin{table}[H]
     \centering
@@ -167,7 +171,7 @@ En la Tabla \ref{tab:tiempo}, se muestra el tiempo promedio que tardo en encontr
     \end{tabular}
 \end{table}
 
-La Tabla \ref{tab:tiempo} muestra que las mejoras introducidas (M1, M2, M3 y M4) reducen ligeramente el tiempo necesario para encontrar la mejor solución en comparación con M0. Esto se debe a que las mejoras permiten que el algoritmo genético converja más rápidamente. No obstante, también se observa una tendencia al aumento del tiempo de convergencia a medida que se incrementa el número de tipos de cajas a llenar. Esto también se puede observar en la Figura \ref{fig:tiempos}.
+La Tabla \ref{tab:tiempo} muestra que las mejoras introducidas (M1, M2, M3 y M4) reducen ligeramente el tiempo necesario para encontrar la mejor solución en comparación con M0. Esto se debe a que las mejoras permiten que el algoritmo genético converja más rápidamente. Sin embargo, también se observa una tendencia al aumento del tiempo de convergencia a medida que se incrementa el número de tipos de cajas a llenar. Esto se puede observar en la Figura \ref{fig:tiempos}.
 
 \begin{figure}[H]
     \centering
@@ -176,11 +180,11 @@ La Tabla \ref{tab:tiempo} muestra que las mejoras introducidas (M1, M2, M3 y M4)
     \label{fig:tiempos}
 \end{figure}
 
-En la figura \ref{fig:tiempos} se destaca que la mejora M1 presenta el menor tiempo de convergencia en comparación con los otros casos, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un tiempo de convergencia significativamente mayor en comparación con las versiones mejoradas, es decir que las mejoras propuestas permiten que el algoritmo genético converja más rápidamente.
+La Figura \ref{fig:tiempos} destaca que la mejora M1 presenta el menor tiempo de convergencia en comparación con los otros casos, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un tiempo de convergencia significativamente mayor en comparación con las versiones mejoradas. Esto indica que las mejoras propuestas permiten que el algoritmo genético converja más rápidamente.
 
 \subsubsection{Rendimiento}
 
-Para proporcionar una visión clara del impacto de las mejoras, se presenta un análisis comparativo del rendimiento que puede ser definido como el incremento porcentual en la calidad de las soluciones por cada unidad tiempo que tarda en encontrar la mejor solución. La Figura \ref{fig:rendimiento} muestra el rendimiento de las mejoras propuestas en términos de calidad de las soluciones y tiempo de ejecución.
+Para proporcionar una visión clara del impacto de las mejoras, se presenta un análisis comparativo del rendimiento, definido como el incremento porcentual en la calidad de las soluciones por cada unidad de tiempo. La Figura \ref{fig:rendimiento} muestra el rendimiento de las mejoras propuestas en términos de calidad de las soluciones y tiempo de ejecución.
 
 \begin{figure}[H]
     \centering
@@ -189,18 +193,17 @@ Para proporcionar una visión clara del impacto de las mejoras, se presenta un a
     \label{fig:rendimiento}
 \end{figure}
 
-La Figura \ref{fig:rendimiento} muestra que, la mejora M1 es la que un mayor incremento porcentual en la calidad de las soluciones por cada unidad de tiempo, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un rendimiento significativamente menor en comparación con las versiones mejoradas. Tambien es importante resaltar que cuando se usa 40 tipos de cajas (40T), los rendimientos tienden a aumentar en todas las estrategias de mejora,
+La Figura \ref{fig:rendimiento} muestra que la mejora M1 proporciona el mayor incremento porcentual en la calidad de las soluciones por cada unidad de tiempo, seguida de M2 y M3 en algunas situaciones. La versión sin mejoras, M0, muestra un rendimiento significativamente menor en comparación con las versiones mejoradas. Es importante resaltar que cuando se utilizan 40 tipos de cajas (40T), los rendimientos tienden a aumentar en todas las estrategias de mejora.
 
-También podemos evaluar el rendimiento según el timpo que le toma a cada método de mejora en evaluar una generación, para ello se calcula el tiempo total de ejecución dividido por la cantidad de generaciones realizadas, esto nos da una idea de cuánto tiempo le toma a cada método de mejora evaluar cada generación. En la Figura \ref{fig:tiempo_generacion} se muestra el tiempo promedio que le toma a cada método de mejora en evaluar una generación.
+También podemos evaluar el rendimiento según el tiempo que toma cada método de mejora en evaluar una generación. Esto se calcula dividiendo el tiempo total de ejecución por la cantidad de generaciones realizadas, lo que proporciona una idea del tiempo que cada método de mejora necesita para evaluar cada generación. En la Figura \ref{fig:tiempo_generacion} se muestra el tiempo promedio que toma cada método de mejora en evaluar una generación.
 
 \begin{figure}[H]
     \centering
     \includesvg[width=0.8\textwidth]{Figures/tiempo_generacion.svg}
     \caption{Tiempo promedio en evaluar una población}
     \label{fig:tiempo_generacion}
-
 \end{figure}
 
-La Figura \ref{fig:tiempo_generacion} muestra que la mejora M1, M2, M3 y M4 necesitan un mayor tiempo para evaluar una generación en comparación con la versión sin mejoras M0. Esto se debe a que las mejoras propuestas requieren un tiempo adicional para realizar las operaciones de mejora en cada generación. Sin embargo, como se ha podido ver en los gráficos anteriores, las mejoras propuestas también permiten que el algoritmo genético converja más rápidamente, lo que se traduce en un menor tiempo total de ejecución, a pesar de que cada generación requiera un tiempo adicional para ser evaluada.
+La Figura \ref{fig:tiempo_generacion} muestra que las mejoras M1, M2, M3 y M4 necesitan más tiempo para evaluar una generación en comparación con la versión sin mejoras M0. Esto se debe a que las mejoras requieren tiempo adicional para realizar las operaciones de mejora en cada generación. Sin embargo, como se ha mostrado en los gráficos anteriores, las mejoras también permiten que el algoritmo genético converja más rápidamente, lo que resulta en un menor tiempo total de ejecución a pesar del tiempo adicional necesario para evaluar cada generación.
 
-Por último es importante resaltar que la mejora M1 es la que mejor rendimiento tiene en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas. Luego M2 y M3 presentan un rendimiento similar en algunas situaciones, M2 es mejor en términos de calidad de las soluciones y M3 en términos de tiempo de ejecución. M4 es la que presenta el peor rendimiento en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas.
+Por último, es importante resaltar que la mejora M1 es la que muestra mejor rendimiento en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas. M2 y M3 presentan un rendimiento similar en algunas situaciones, con M2 destacando en términos de calidad de las soluciones y M3 en términos de tiempo de ejecución. M4 presenta el peor rendimiento en términos de calidad de las soluciones y tiempo de ejecución en la mayoría de evaluaciones con diferentes tipos de cajas.
