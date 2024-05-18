@@ -119,6 +119,15 @@ Se crearon 25 instancias para cada tipo de caja (5T, 10T, 20T y 30T), sumando un
 
 Cada algoritmo genético se configuró con una población inicial de 100 individuos y un tiempo de ejecución límite de 5 minutos, asegurando condiciones uniformes para la evaluación comparativa. La probabilidad de cruce ($P_{CROSS}$) se estableció en 0.05 y la probabilidad de mutación ($P_{MUT}$) en 0.01. Estos valores fueron seleccionados después de experimentaciones previas que demostraron su eficacia al promover un equilibrio adecuado entre exploración y explotación durante el proceso evolutivo.
 
+Los resultados fueron almacenados en archivos CSV para su posterior análisis. Se evaluaron dos métricas principales: el valor aportado por las soluciones obtenidas y el tiempo de ejecución. También se inspeccionaron aleatoriamente algunas soluciones generadas para verificar su validez y coherencia con las restricciones del problema. Se utilizó la librería Matplotlib para visualizar los resultados y verificar visualmente la calidad de las soluciones obtenidas. Por ejemplo en la Figura \ref{fig:ejemplo_solucion}, se muestra una solución óptima encontrada por el algoritmo genético.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/ejemplo_solucion.eps}
+    \caption{Ejemplo de una solución final generada por el algoritmo genético}
+    \label{fig:ejemplo_solucion}
+\end{figure}
+
 \subsection{Resultados y análisis}
 
 En esta sección se presentan y analizan los resultados obtenidos del experimento computacional. Los resultados se agrupan en función de las mejoras implementadas (M0, M1, M2, M3 y M4) y el tipo de instancia (5T, 10T, 20T, 30T). Se evalúan dos métricas principales: el valor aportado por las soluciones obtenidas y el tiempo de ejecución.

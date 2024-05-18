@@ -3,9 +3,9 @@
 \subsection{Codificación de soluciones}
 \label{sec:codificacion}
 
-Existen diferentes maneras de codificar las soluciones para el problema de llenado de contenedores. Algunos de los más interesantes son por ejemplo Bortfeldt y otros \cite{GEHRING1997401} que propusieron una codificación basada dobles o simplemente dos listas de igual longitud, la primera representa la secuencia de llenado de los paquetes y la segunda indica la rotación de cada paquete. De manera similar Xianbo y otros [2] propusieron el uso de la primera lista como la secuencia de llenado de cada tipo de paquete y la segunda como la rotación de cada tipo de paquete.
+Existen diferentes maneras de codificar las soluciones para el problema de llenado de contenedores. Algunos de los más interesantes son por ejemplo Bortfeldt y otros \cite{GEHRING1997401} que propusieron una codificación basada en listas dobles o simplemente dos listas de igual longitud, la primera representa la secuencia de llenado de los paquetes y la segunda indica la rotación de cada paquete.
 
-Sin embargo, para las restricciones en nuestro problema, esta codificaciones no son adecuadas ya que necesitamos considerar que las cantidades de un tipo de paquete no son fijas sino que pueden variar de un rango mínimo a un máximo. Por lo tanto, proponemos una codificación basada en 3 listas de igual longitud, la primera lista representa la secuencia de llenado de cada tipo de paquete, la segunda lista indica la rotación de cada tipo de paquete y la tercera lista indica la cantidad de paquetes de cada tipo que se llenan en el contenedor.
+Sin embargo, para las restricciones en nuestro problema, esta codificaciones no son adecuadas ya que necesitamos considerar que las cantidades de un tipo de paquete no son fijas sino que pueden variar de un rango mínimo a un máximo. Por lo tanto, proponemos una codificación basada en tres listas de igual longitud, la primera lista representa la secuencia de llenado de cada tipo de paquete, la segunda lista indica la rotación de cada tipo de paquete y la tercera lista indica la cantidad de paquetes de cada tipo que se llenan en el contenedor.
 
 
 Por ejemplo, si tenemos 4 tipos de paquetes $T=\{1,2,3,4\}$, todos los tipos con un mínimo de 0 paquetes y el tipo 1 con un máximo de 10 paquetes $q_1 \in [0,10]$, el tipo 2 con un máximo de 30 paquetes $q_1 \in [0,30]$, el tipo 3 con un máximo de 20 paquetes $q_1 \in [0,20]$ y el tipo 4 con un máximo de 22 paquetes $q_4 \in [0,22]$, una solución factible para el problema de llenado de contenedores podría ser la siguiente:
@@ -33,7 +33,7 @@ Un paso previo importante antes de calcular el valor total de la carga es verifi
 
 \subsubsection{Algoritmo de llenado manual}
 
-El algoritmo de llenado propuesto está basado en el método Deepest Bottom Left with Fill (DBLF) propuesto por Karabulut y otros \cite{karabulut2004hybrid}, cuyo uso se ha extendido y varios autores han realizado propuestas para mejorarlo o adaptarlo a determinados contextos por ejemplo Wang y otros \cite{wang2010hybrid}, Kang y otros. \cite{kang2012hybrid}. El algoritmo propuesto en el presente trabajo está enfocado en cumplir las restricciones y adaptarse al contexto de un llenado manual de paquetes en un contenedor.
+El algoritmo de llenado propuesto está basado en el método Deepest Bottom Left with Fill (DBLF) propuesto por \cite{karabulut2004hybrid}, cuyo uso se ha extendido y varios autores han realizado propuestas para mejorarlo o adaptarlo a determinados contextos por ejemplo Wang y otros \cite{wang2010hybrid}, Kang y otros. \cite{kang2012hybrid}. El algoritmo propuesto en el presente trabajo está enfocado en cumplir las restricciones y adaptarse al contexto de un llenado manual de paquetes en un contenedor.
 
 La idea básica del algoritmo DBLF es que los paquetes comienzan a ser llenados en el contenedor de forma secuencial, se prioriza que el paquete se coloque en las siguientes posiciones:
 
