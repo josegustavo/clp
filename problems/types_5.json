@@ -15,7 +15,7 @@
                     447,
                     638
                 ],
-                "value": 54,
+                "value": 63,
                 "volume": 194496852,
                 "min_count": 0,
                 "max_count": 68
@@ -27,7 +27,7 @@
                     382,
                     744
                 ],
-                "value": 66,
+                "value": 75,
                 "volume": 76736160,
                 "min_count": 0,
                 "max_count": 173
@@ -39,7 +39,7 @@
                     457,
                     720
                 ],
-                "value": 39,
+                "value": 48,
                 "volume": 163861920,
                 "min_count": 0,
                 "max_count": 81
@@ -51,7 +51,7 @@
                     494,
                     433
                 ],
-                "value": 75,
+                "value": 84,
                 "volume": 159356990,
                 "min_count": 0,
                 "max_count": 83
@@ -63,7 +63,7 @@
                     714,
                     361
                 ],
-                "value": 65,
+                "value": 74,
                 "volume": 181974324,
                 "min_count": 0,
                 "max_count": 73
@@ -87,7 +87,7 @@
                     541,
                     683
                 ],
-                "value": 98,
+                "value": 18,
                 "volume": 117501954,
                 "min_count": 0,
                 "max_count": 113
@@ -95,50 +95,50 @@
             {
                 "type": 1,
                 "size": [
-                    282,
                     380,
-                    310
+                    310,
+                    503
                 ],
-                "value": 64,
-                "volume": 33219600,
+                "value": 67,
+                "volume": 59253400,
                 "min_count": 0,
-                "max_count": 400
+                "max_count": 224
             },
             {
                 "type": 2,
                 "size": [
-                    639,
-                    480,
-                    491
+                    491,
+                    583,
+                    444
                 ],
-                "value": 84,
-                "volume": 150599520,
+                "value": 36,
+                "volume": 127096332,
                 "min_count": 0,
-                "max_count": 88
+                "max_count": 104
             },
             {
                 "type": 3,
                 "size": [
-                    444,
-                    653,
-                    357
+                    298,
+                    499,
+                    264
                 ],
-                "value": 13,
-                "volume": 103505724,
+                "value": 59,
+                "volume": 39257328,
                 "min_count": 0,
-                "max_count": 128
+                "max_count": 339
             },
             {
                 "type": 4,
                 "size": [
-                    499,
-                    264,
-                    707
+                    471,
+                    561,
+                    640
                 ],
-                "value": 50,
-                "volume": 93137352,
+                "value": 10,
+                "volume": 169107840,
                 "min_count": 0,
-                "max_count": 143
+                "max_count": 78
             }
         ],
         "types_count": 5
@@ -159,7 +159,7 @@
                     691,
                     735
                 ],
-                "value": 8,
+                "value": 17,
                 "volume": 375327015,
                 "min_count": 0,
                 "max_count": 35
@@ -171,7 +171,7 @@
                     293,
                     434
                 ],
-                "value": 22,
+                "value": 31,
                 "volume": 37639952,
                 "min_count": 0,
                 "max_count": 353
@@ -183,7 +183,7 @@
                     664,
                     592
                 ],
-                "value": 40,
+                "value": 49,
                 "volume": 246073088,
                 "min_count": 0,
                 "max_count": 54
@@ -195,7 +195,7 @@
                     560,
                     358
                 ],
-                "value": 78,
+                "value": 87,
                 "volume": 75781440,
                 "min_count": 0,
                 "max_count": 175
@@ -207,7 +207,7 @@
                     547,
                     598
                 ],
-                "value": 21,
+                "value": 30,
                 "volume": 87664408,
                 "min_count": 0,
                 "max_count": 151
@@ -231,7 +231,7 @@
                     553,
                     528
                 ],
-                "value": 17,
+                "value": 26,
                 "volume": 108326064,
                 "min_count": 0,
                 "max_count": 122
@@ -243,7 +243,7 @@
                     718,
                     559
                 ],
-                "value": 61,
+                "value": 70,
                 "volume": 176197918,
                 "min_count": 0,
                 "max_count": 75
@@ -255,7 +255,7 @@
                     547,
                     283
                 ],
-                "value": 78,
+                "value": 87,
                 "volume": 88236570,
                 "min_count": 0,
                 "max_count": 150
@@ -267,7 +267,7 @@
                     715,
                     678
                 ],
-                "value": 61,
+                "value": 70,
                 "volume": 124101120,
                 "min_count": 0,
                 "max_count": 107
@@ -279,7 +279,7 @@
                     532,
                     369
                 ],
-                "value": 25,
+                "value": 34,
                 "volume": 74989656,
                 "min_count": 0,
                 "max_count": 177
@@ -303,7 +303,7 @@
                     405,
                     302
                 ],
-                "value": 93,
+                "value": 60,
                 "volume": 45254700,
                 "min_count": 0,
                 "max_count": 294
@@ -311,50 +311,50 @@
             {
                 "type": 1,
                 "size": [
-                    452,
                     495,
-                    329
+                    329,
+                    296
                 ],
-                "value": 12,
-                "volume": 73610460,
+                "value": 18,
+                "volume": 48205080,
                 "min_count": 0,
-                "max_count": 180
+                "max_count": 276
             },
             {
                 "type": 2,
                 "size": [
-                    284,
                     260,
-                    455
+                    455,
+                    531
                 ],
-                "value": 71,
-                "volume": 33597200,
+                "value": 47,
+                "volume": 62817300,
                 "min_count": 0,
-                "max_count": 396
+                "max_count": 212
             },
             {
                 "type": 3,
                 "size": [
-                    719,
-                    398,
-                    659
+                    659,
+                    641,
+                    280
                 ],
-                "value": 98,
-                "volume": 188580758,
+                "value": 38,
+                "volume": 118277320,
                 "min_count": 0,
-                "max_count": 70
+                "max_count": 112
             },
             {
                 "type": 4,
                 "size": [
-                    280,
-                    363,
-                    516
+                    516,
+                    524,
+                    434
                 ],
-                "value": 69,
-                "volume": 52446240,
+                "value": 45,
+                "volume": 117346656,
                 "min_count": 0,
-                "max_count": 253
+                "max_count": 113
             }
         ],
         "types_count": 5
@@ -375,7 +375,7 @@
                     380,
                     629
                 ],
-                "value": 46,
+                "value": 55,
                 "volume": 135763360,
                 "min_count": 0,
                 "max_count": 98
@@ -387,7 +387,7 @@
                     603,
                     732
                 ],
-                "value": 95,
+                "value": 93,
                 "volume": 289997172,
                 "min_count": 0,
                 "max_count": 45
@@ -395,38 +395,38 @@
             {
                 "type": 2,
                 "size": [
-                    583,
                     722,
-                    521
+                    521,
+                    264
                 ],
-                "value": 4,
-                "volume": 219302446,
+                "value": 69,
+                "volume": 99306768,
                 "min_count": 0,
-                "max_count": 60
+                "max_count": 134
             },
             {
                 "type": 3,
                 "size": [
-                    680,
-                    488,
-                    647
+                    647,
+                    732,
+                    377
                 ],
-                "value": 32,
-                "volume": 214700480,
+                "value": 93,
+                "volume": 178548708,
                 "min_count": 0,
-                "max_count": 62
+                "max_count": 74
             },
             {
                 "type": 4,
                 "size": [
-                    582,
                     276,
-                    711
+                    711,
+                    330
                 ],
-                "value": 21,
-                "volume": 114209352,
+                "value": 24,
+                "volume": 64757880,
                 "min_count": 0,
-                "max_count": 116
+                "max_count": 205
             }
         ],
         "types_count": 5
@@ -447,7 +447,7 @@
                     543,
                     670
                 ],
-                "value": 11,
+                "value": 20,
                 "volume": 238659360,
                 "min_count": 0,
                 "max_count": 55
@@ -459,7 +459,7 @@
                     640,
                     383
                 ],
-                "value": 5,
+                "value": 14,
                 "volume": 122069760,
                 "min_count": 0,
                 "max_count": 109
@@ -471,7 +471,7 @@
                     324,
                     589
                 ],
-                "value": 76,
+                "value": 85,
                 "volume": 47709000,
                 "min_count": 0,
                 "max_count": 279
@@ -483,7 +483,7 @@
                     744,
                     638
                 ],
-                "value": 95,
+                "value": 57,
                 "volume": 232589280,
                 "min_count": 0,
                 "max_count": 57
@@ -491,14 +491,14 @@
             {
                 "type": 4,
                 "size": [
-                    441,
                     413,
-                    644
+                    644,
+                    261
                 ],
-                "value": 3,
-                "volume": 117293652,
+                "value": 44,
+                "volume": 69418692,
                 "min_count": 0,
-                "max_count": 113
+                "max_count": 191
             }
         ],
         "types_count": 5
@@ -519,7 +519,7 @@
                     735,
                     327
                 ],
-                "value": 51,
+                "value": 60,
                 "volume": 99743175,
                 "min_count": 0,
                 "max_count": 133
@@ -531,7 +531,7 @@
                     274,
                     287
                 ],
-                "value": 69,
+                "value": 78,
                 "volume": 45845954,
                 "min_count": 0,
                 "max_count": 290
@@ -543,7 +543,7 @@
                     437,
                     548
                 ],
-                "value": 8,
+                "value": 17,
                 "volume": 71363848,
                 "min_count": 0,
                 "max_count": 186
@@ -555,7 +555,7 @@
                     509,
                     359
                 ],
-                "value": 5,
+                "value": 14,
                 "volume": 130652665,
                 "min_count": 0,
                 "max_count": 101
@@ -567,7 +567,7 @@
                     472,
                     464
                 ],
-                "value": 9,
+                "value": 18,
                 "volume": 64388352,
                 "min_count": 0,
                 "max_count": 206
@@ -591,7 +591,7 @@
                     439,
                     742
                 ],
-                "value": 49,
+                "value": 58,
                 "volume": 119220108,
                 "min_count": 0,
                 "max_count": 111
@@ -603,7 +603,7 @@
                     348,
                     610
                 ],
-                "value": 6,
+                "value": 15,
                 "volume": 66655920,
                 "min_count": 0,
                 "max_count": 199
@@ -615,7 +615,7 @@
                     320,
                     376
                 ],
-                "value": 65,
+                "value": 74,
                 "volume": 35253760,
                 "min_count": 0,
                 "max_count": 377
@@ -627,7 +627,7 @@
                     455,
                     578
                 ],
-                "value": 4,
+                "value": 13,
                 "volume": 93887430,
                 "min_count": 0,
                 "max_count": 141
@@ -639,7 +639,7 @@
                     499,
                     482
                 ],
-                "value": 50,
+                "value": 59,
                 "volume": 116651230,
                 "min_count": 0,
                 "max_count": 114
@@ -663,7 +663,7 @@
                     563,
                     441
                 ],
-                "value": 35,
+                "value": 44,
                 "volume": 120913821,
                 "min_count": 0,
                 "max_count": 110
@@ -675,7 +675,7 @@
                     345,
                     693
                 ],
-                "value": 87,
+                "value": 96,
                 "volume": 76507200,
                 "min_count": 0,
                 "max_count": 174
@@ -687,7 +687,7 @@
                     423,
                     507
                 ],
-                "value": 60,
+                "value": 69,
                 "volume": 54258633,
                 "min_count": 0,
                 "max_count": 245
@@ -699,7 +699,7 @@
                     559,
                     291
                 ],
-                "value": 43,
+                "value": 52,
                 "volume": 115332321,
                 "min_count": 0,
                 "max_count": 115
@@ -711,7 +711,7 @@
                     729,
                     565
                 ],
-                "value": 90,
+                "value": 99,
                 "volume": 219534705,
                 "min_count": 0,
                 "max_count": 60
@@ -735,7 +735,7 @@
                     266,
                     469
                 ],
-                "value": 62,
+                "value": 71,
                 "volume": 67616668,
                 "min_count": 0,
                 "max_count": 196
@@ -747,7 +747,7 @@
                     257,
                     355
                 ],
-                "value": 60,
+                "value": 69,
                 "volume": 49723075,
                 "min_count": 0,
                 "max_count": 267
@@ -759,7 +759,7 @@
                     501,
                     671
                 ],
-                "value": 36,
+                "value": 45,
                 "volume": 223889886,
                 "min_count": 0,
                 "max_count": 59
@@ -771,7 +771,7 @@
                     665,
                     332
                 ],
-                "value": 5,
+                "value": 14,
                 "volume": 128935520,
                 "min_count": 0,
                 "max_count": 103
@@ -783,7 +783,7 @@
                     500,
                     417
                 ],
-                "value": 10,
+                "value": 19,
                 "volume": 107586000,
                 "min_count": 0,
                 "max_count": 123
@@ -807,7 +807,7 @@
                     693,
                     536
                 ],
-                "value": 100,
+                "value": 69,
                 "volume": 178666488,
                 "min_count": 0,
                 "max_count": 74
@@ -815,14 +815,14 @@
             {
                 "type": 1,
                 "size": [
-                    488,
                     481,
-                    510
+                    510,
+                    687
                 ],
-                "value": 76,
-                "volume": 119711280,
+                "value": 85,
+                "volume": 168527970,
                 "min_count": 0,
-                "max_count": 111
+                "max_count": 79
             },
             {
                 "type": 2,
@@ -831,7 +831,7 @@
                     344,
                     661
                 ],
-                "value": 66,
+                "value": 75,
                 "volume": 78902248,
                 "min_count": 0,
                 "max_count": 168
@@ -843,7 +843,7 @@
                     572,
                     564
                 ],
-                "value": 24,
+                "value": 33,
                 "volume": 159045744,
                 "min_count": 0,
                 "max_count": 83
@@ -855,7 +855,7 @@
                     478,
                     405
                 ],
-                "value": 19,
+                "value": 28,
                 "volume": 57689820,
                 "min_count": 0,
                 "max_count": 230
@@ -879,7 +879,7 @@
                     387,
                     586
                 ],
-                "value": 68,
+                "value": 77,
                 "volume": 111576744,
                 "min_count": 0,
                 "max_count": 119
@@ -891,7 +891,7 @@
                     429,
                     323
                 ],
-                "value": 49,
+                "value": 58,
                 "volume": 81893097,
                 "min_count": 0,
                 "max_count": 162
@@ -903,7 +903,7 @@
                     441,
                     497
                 ],
-                "value": 36,
+                "value": 45,
                 "volume": 55890135,
                 "min_count": 0,
                 "max_count": 238
@@ -915,7 +915,7 @@
                     664,
                     485
                 ],
-                "value": 89,
+                "value": 98,
                 "volume": 186461160,
                 "min_count": 0,
                 "max_count": 71
@@ -927,7 +927,7 @@
                     557,
                     366
                 ],
-                "value": 72,
+                "value": 81,
                 "volume": 141072504,
                 "min_count": 0,
                 "max_count": 94
@@ -951,7 +951,7 @@
                     398,
                     600
                 ],
-                "value": 88,
+                "value": 97,
                 "volume": 91221600,
                 "min_count": 0,
                 "max_count": 146
@@ -963,7 +963,7 @@
                     684,
                     705
                 ],
-                "value": 24,
+                "value": 33,
                 "volume": 318265200,
                 "min_count": 0,
                 "max_count": 41
@@ -975,7 +975,7 @@
                     368,
                     591
                 ],
-                "value": 19,
+                "value": 28,
                 "volume": 126795504,
                 "min_count": 0,
                 "max_count": 105
@@ -987,7 +987,7 @@
                     365,
                     578
                 ],
-                "value": 94,
+                "value": 33,
                 "volume": 146624150,
                 "min_count": 0,
                 "max_count": 90
@@ -995,14 +995,14 @@
             {
                 "type": 4,
                 "size": [
-                    345,
                     316,
-                    286
+                    286,
+                    522
                 ],
-                "value": 69,
-                "volume": 31179720,
+                "value": 37,
+                "volume": 47176272,
                 "min_count": 0,
-                "max_count": 427
+                "max_count": 282
             }
         ],
         "types_count": 5
@@ -1023,7 +1023,7 @@
                     565,
                     609
                 ],
-                "value": 97,
+                "value": 93,
                 "volume": 104601840,
                 "min_count": 0,
                 "max_count": 127
@@ -1031,50 +1031,50 @@
             {
                 "type": 1,
                 "size": [
-                    583,
                     519,
-                    731
+                    731,
+                    376
                 ],
-                "value": 32,
-                "volume": 221183787,
+                "value": 44,
+                "volume": 142650264,
                 "min_count": 0,
-                "max_count": 60
+                "max_count": 93
             },
             {
                 "type": 2,
                 "size": [
-                    388,
                     626,
-                    380
+                    380,
+                    399
                 ],
-                "value": 38,
-                "volume": 92297440,
+                "value": 19,
+                "volume": 94914120,
                 "min_count": 0,
-                "max_count": 144
+                "max_count": 140
             },
             {
                 "type": 3,
                 "size": [
-                    625,
-                    287,
-                    587
+                    587,
+                    480,
+                    405
                 ],
-                "value": 58,
-                "volume": 105293125,
+                "value": 69,
+                "volume": 114112800,
                 "min_count": 0,
-                "max_count": 126
+                "max_count": 116
             },
             {
                 "type": 4,
                 "size": [
-                    405,
-                    488,
-                    600
+                    600,
+                    696,
+                    453
                 ],
-                "value": 51,
-                "volume": 118584000,
+                "value": 60,
+                "volume": 189172800,
                 "min_count": 0,
-                "max_count": 112
+                "max_count": 70
             }
         ],
         "types_count": 5
@@ -1095,7 +1095,7 @@
                     356,
                     255
                 ],
-                "value": 67,
+                "value": 76,
                 "volume": 67540320,
                 "min_count": 0,
                 "max_count": 197
@@ -1107,7 +1107,7 @@
                     268,
                     330
                 ],
-                "value": 31,
+                "value": 40,
                 "volume": 55363440,
                 "min_count": 0,
                 "max_count": 240
@@ -1119,7 +1119,7 @@
                     278,
                     700
                 ],
-                "value": 88,
+                "value": 97,
                 "volume": 50206800,
                 "min_count": 0,
                 "max_count": 265
@@ -1131,7 +1131,7 @@
                     688,
                     605
                 ],
-                "value": 48,
+                "value": 57,
                 "volume": 135278000,
                 "min_count": 0,
                 "max_count": 98
@@ -1143,7 +1143,7 @@
                     309,
                     423
                 ],
-                "value": 60,
+                "value": 69,
                 "volume": 48623004,
                 "min_count": 0,
                 "max_count": 273
@@ -1167,7 +1167,7 @@
                     490,
                     496
                 ],
-                "value": 37,
+                "value": 46,
                 "volume": 105722400,
                 "min_count": 0,
                 "max_count": 125
@@ -1179,7 +1179,7 @@
                     366,
                     478
                 ],
-                "value": 1,
+                "value": 10,
                 "volume": 81000924,
                 "min_count": 0,
                 "max_count": 164
@@ -1191,7 +1191,7 @@
                     687,
                     586
                 ],
-                "value": 92,
+                "value": 43,
                 "volume": 184785138,
                 "min_count": 0,
                 "max_count": 72
@@ -1199,26 +1199,26 @@
             {
                 "type": 3,
                 "size": [
-                    382,
                     371,
-                    575
+                    575,
+                    363
                 ],
-                "value": 29,
-                "volume": 81490150,
+                "value": 11,
+                "volume": 77436975,
                 "min_count": 0,
-                "max_count": 163
+                "max_count": 172
             },
             {
                 "type": 4,
                 "size": [
-                    255,
                     401,
-                    404
+                    404,
+                    667
                 ],
-                "value": 43,
-                "volume": 41311020,
+                "value": 52,
+                "volume": 108056668,
                 "min_count": 0,
-                "max_count": 322
+                "max_count": 123
             }
         ],
         "types_count": 5
@@ -1239,7 +1239,7 @@
                     462,
                     663
                 ],
-                "value": 39,
+                "value": 48,
                 "volume": 158360202,
                 "min_count": 0,
                 "max_count": 84
@@ -1251,7 +1251,7 @@
                     437,
                     398
                 ],
-                "value": 23,
+                "value": 32,
                 "volume": 128879166,
                 "min_count": 0,
                 "max_count": 103
@@ -1263,7 +1263,7 @@
                     611,
                     610
                 ],
-                "value": 70,
+                "value": 79,
                 "volume": 239279820,
                 "min_count": 0,
                 "max_count": 55
@@ -1275,7 +1275,7 @@
                     392,
                     306
                 ],
-                "value": 4,
+                "value": 13,
                 "volume": 70531776,
                 "min_count": 0,
                 "max_count": 188
@@ -1287,7 +1287,7 @@
                     446,
                     667
                 ],
-                "value": 96,
+                "value": 63,
                 "volume": 112150714,
                 "min_count": 0,
                 "max_count": 118
@@ -1311,7 +1311,7 @@
                     312,
                     588
                 ],
-                "value": 58,
+                "value": 67,
                 "volume": 62741952,
                 "min_count": 0,
                 "max_count": 212
@@ -1323,7 +1323,7 @@
                     372,
                     351
                 ],
-                "value": 63,
+                "value": 72,
                 "volume": 54970812,
                 "min_count": 0,
                 "max_count": 242
@@ -1335,7 +1335,7 @@
                     502,
                     343
                 ],
-                "value": 62,
+                "value": 71,
                 "volume": 98318206,
                 "min_count": 0,
                 "max_count": 135
@@ -1347,7 +1347,7 @@
                     484,
                     704
                 ],
-                "value": 34,
+                "value": 43,
                 "volume": 136635136,
                 "min_count": 0,
                 "max_count": 97
@@ -1359,7 +1359,7 @@
                     379,
                     710
                 ],
-                "value": 89,
+                "value": 98,
                 "volume": 94181500,
                 "min_count": 0,
                 "max_count": 141
@@ -1383,7 +1383,7 @@
                     272,
                     651
                 ],
-                "value": 67,
+                "value": 76,
                 "volume": 105534912,
                 "min_count": 0,
                 "max_count": 126
@@ -1395,7 +1395,7 @@
                     511,
                     352
                 ],
-                "value": 51,
+                "value": 60,
                 "volume": 55940192,
                 "min_count": 0,
                 "max_count": 238
@@ -1407,7 +1407,7 @@
                     520,
                     398
                 ],
-                "value": 75,
+                "value": 84,
                 "volume": 88371920,
                 "min_count": 0,
                 "max_count": 150
@@ -1419,7 +1419,7 @@
                     554,
                     383
                 ],
-                "value": 14,
+                "value": 23,
                 "volume": 68959150,
                 "min_count": 0,
                 "max_count": 193
@@ -1431,7 +1431,7 @@
                     460,
                     417
                 ],
-                "value": 35,
+                "value": 44,
                 "volume": 73467060,
                 "min_count": 0,
                 "max_count": 181
@@ -1455,7 +1455,7 @@
                     620,
                     601
                 ],
-                "value": 99,
+                "value": 29,
                 "volume": 265678060,
                 "min_count": 0,
                 "max_count": 50
@@ -1463,50 +1463,50 @@
             {
                 "type": 1,
                 "size": [
-                    700,
-                    713,
-                    327
+                    383,
+                    595,
+                    575
                 ],
-                "value": 34,
-                "volume": 163205700,
+                "value": 22,
+                "volume": 131033875,
                 "min_count": 0,
-                "max_count": 81
+                "max_count": 101
             },
             {
                 "type": 2,
-                "size": [
-                    595,
-                    575,
-                    684
-                ],
-                "value": 13,
-                "volume": 234013500,
-                "min_count": 0,
-                "max_count": 56
-            },
-            {
-                "type": 3,
                 "size": [
                     696,
                     417,
                     543
                 ],
-                "value": 22,
+                "value": 31,
                 "volume": 157595976,
                 "min_count": 0,
                 "max_count": 84
             },
             {
-                "type": 4,
+                "type": 3,
                 "size": [
                     263,
                     460,
                     458
                 ],
-                "value": 10,
+                "value": 19,
                 "volume": 55408840,
                 "min_count": 0,
                 "max_count": 240
+            },
+            {
+                "type": 4,
+                "size": [
+                    302,
+                    314,
+                    413
+                ],
+                "value": 70,
+                "volume": 39163964,
+                "min_count": 0,
+                "max_count": 340
             }
         ],
         "types_count": 5
@@ -1527,7 +1527,7 @@
                     464,
                     603
                 ],
-                "value": 54,
+                "value": 63,
                 "volume": 93450528,
                 "min_count": 0,
                 "max_count": 142
@@ -1539,7 +1539,7 @@
                     394,
                     495
                 ],
-                "value": 28,
+                "value": 37,
                 "volume": 112142250,
                 "min_count": 0,
                 "max_count": 118
@@ -1551,7 +1551,7 @@
                     493,
                     663
                 ],
-                "value": 66,
+                "value": 75,
                 "volume": 214092645,
                 "min_count": 0,
                 "max_count": 62
@@ -1563,7 +1563,7 @@
                     508,
                     520
                 ],
-                "value": 31,
+                "value": 40,
                 "volume": 90606880,
                 "min_count": 0,
                 "max_count": 147
@@ -1575,7 +1575,7 @@
                     251,
                     257
                 ],
-                "value": 48,
+                "value": 57,
                 "volume": 42123071,
                 "min_count": 0,
                 "max_count": 316
@@ -1599,7 +1599,7 @@
                     714,
                     321
                 ],
-                "value": 32,
+                "value": 41,
                 "volume": 169603560,
                 "min_count": 0,
                 "max_count": 78
@@ -1611,7 +1611,7 @@
                     563,
                     478
                 ],
-                "value": 24,
+                "value": 33,
                 "volume": 70507868,
                 "min_count": 0,
                 "max_count": 188
@@ -1623,7 +1623,7 @@
                     311,
                     628
                 ],
-                "value": 84,
+                "value": 93,
                 "volume": 118942572,
                 "min_count": 0,
                 "max_count": 111
@@ -1635,7 +1635,7 @@
                     426,
                     655
                 ],
-                "value": 11,
+                "value": 20,
                 "volume": 195041970,
                 "min_count": 0,
                 "max_count": 68
@@ -1647,7 +1647,7 @@
                     387,
                     741
                 ],
-                "value": 7,
+                "value": 16,
                 "volume": 105530256,
                 "min_count": 0,
                 "max_count": 126
@@ -1671,7 +1671,7 @@
                     649,
                     735
                 ],
-                "value": 38,
+                "value": 47,
                 "volume": 344881845,
                 "min_count": 0,
                 "max_count": 38
@@ -1683,7 +1683,7 @@
                     674,
                     292
                 ],
-                "value": 3,
+                "value": 12,
                 "volume": 138946448,
                 "min_count": 0,
                 "max_count": 95
@@ -1695,7 +1695,7 @@
                     407,
                     466
                 ],
-                "value": 49,
+                "value": 58,
                 "volume": 104883086,
                 "min_count": 0,
                 "max_count": 126
@@ -1707,7 +1707,7 @@
                     433,
                     316
                 ],
-                "value": 93,
+                "value": 34,
                 "volume": 71287388,
                 "min_count": 0,
                 "max_count": 186
@@ -1715,14 +1715,14 @@
             {
                 "type": 4,
                 "size": [
-                    348,
                     386,
-                    477
+                    477,
+                    257
                 ],
-                "value": 2,
-                "volume": 64074456,
+                "value": 38,
+                "volume": 47319354,
                 "min_count": 0,
-                "max_count": 207
+                "max_count": 281
             }
         ],
         "types_count": 5
@@ -1743,7 +1743,7 @@
                     446,
                     679
                 ],
-                "value": 75,
+                "value": 84,
                 "volume": 185940076,
                 "min_count": 0,
                 "max_count": 71
@@ -1755,7 +1755,7 @@
                     361,
                     335
                 ],
-                "value": 25,
+                "value": 34,
                 "volume": 41480705,
                 "min_count": 0,
                 "max_count": 321
@@ -1767,7 +1767,7 @@
                     593,
                     599
                 ],
-                "value": 12,
+                "value": 21,
                 "volume": 119349552,
                 "min_count": 0,
                 "max_count": 111
@@ -1779,7 +1779,7 @@
                     637,
                     327
                 ],
-                "value": 91,
+                "value": 100,
                 "volume": 127270689,
                 "min_count": 0,
                 "max_count": 104
@@ -1791,7 +1791,7 @@
                     620,
                     722
                 ],
-                "value": 99,
+                "value": 11,
                 "volume": 176817800,
                 "min_count": 0,
                 "max_count": 75
