@@ -1,5 +1,5 @@
 from copy import deepcopy
-from math import pi
+from math import ceil, floor, pi
 from pathlib import Path
 import asyncio
 import random
@@ -64,20 +64,9 @@ app_ui = ui.page_sidebar(
     ui.layout_columns(
         ui.navset_tab(
             ui.nav_panel("Configuración",
-                         [ui.layout_columns(
-                             ui.input_numeric(
-                                 "t%s_l" % i, "Length (mm)" if i == 0 else None, value=random.randint(250, 700)),
-                             ui.input_numeric(
-                                 "t%s_w" % i, "Width (mm)" if i == 0 else None, value=random.randint(250, 700)),
-                             ui.input_numeric(
-                                 "t%s_h" % i, "Height (mm)" if i == 0 else None, value=random.randint(250, 700)),
-                             ui.input_numeric(
-                                 "t%s_weight" % i, "Peso (kg)" if i == 0 else None, value=round(random.uniform(5, 10), 2)),
-                             ui.input_numeric(
-                                 "t%s_value" % i, "Valor ($)" if i == 0 else None, value=random.randint(10, 100)),
-                             ui.input_numeric(
-                                 "t%s_max_count" % i, "Cant     Máx" if i == 0 else None, value=random.randint(0, 30)),
-                         ) for i in range(30)]
+                         ui.div(id="main-content"),
+                         ui.input_action_button(
+                             "btn_add_box_type", "Agregar nuevo")
                          ),
             ui.nav_panel("Evolución de mejora",
                          ui.card(
@@ -94,13 +83,13 @@ app_ui = ui.page_sidebar(
         ),
 
         ui.card(
-            ui.card_header("Disposición Final"),
+            ui.card_header("Orden Final"),
             ui.output_data_frame("latest_data"),
         ),
         col_widths=[9, 3],
     ),
     ui.include_css(app_dir / "styles.css"),
-    title="Container Loader",
+    title="DSS Cargo",
     fillable=True,
 )
 
@@ -109,6 +98,7 @@ def server(input: Inputs, output: Outputs, session: Session):
 
     result_algorithm = reactive.value([])
     result_improvement = reactive.value([])
+    row_count = reactive.value(0)
 
     @reactive.calc
     def get_change():
@@ -131,12 +121,17 @@ def server(input: Inputs, output: Outputs, session: Session):
     @reactive.calc
     def get_result_algorithm():
         res = []
+        b = input.btn_add_box_type()
 
         if result_algorithm.get():
             res = result_algorithm.get()
         else:
             box_types = []
-            for i in range(30):
+
+            for i in range(1, b+1):
+                if not input["t%s_l" % i]():
+                    print(['NO L', i])
+                    continue
                 l = input["t%s_l" % i]()
                 h = input["t%s_h" % i]()
                 w = input["t%s_w" % i]()
@@ -145,6 +140,7 @@ def server(input: Inputs, output: Outputs, session: Session):
                 max_count = input["t%s_max_count" % i]()
                 box = BoxType(l, w, h, i, 0, max_count, value, weight)
                 box_types.append(box)
+            print(['GENES', box_types])
             genes = [Gene(type=b, box_count=b.max_count, rotation=0)
                      for b in box_types if b]
             container = Container(
@@ -152,6 +148,7 @@ def server(input: Inputs, output: Outputs, session: Session):
             c = Chromosome(genes=genes, container=container)
             c.evaluate(Improvement.during)
             res = [c]
+
         return res
 
     @render.ui
@@ -201,7 +198,7 @@ def server(input: Inputs, output: Outputs, session: Session):
     def latest_data():
         genes = []
         if get_result_algorithm():
-            genes = [('T%s' % (g.type.type+1), g.box_count, 'Sí' if g.rotation else 'No')
+            genes = [('T%s' % (g.type.type), g.box_count, 'Sí' if g.rotation else 'No')
                      for g in get_result_algorithm()[-1].genes if g.box_count > 0]
             genes += [('Total', sum([g.box_count for g in get_result_algorithm()[-1].genes]), '')]
         result = pd.DataFrame(genes, columns=["Tipo", "Cantidad", "Rotación"])
@@ -235,7 +232,11 @@ def server(input: Inputs, output: Outputs, session: Session):
                               input.width(),
                               input.height())
         box_types = []
-        for i in range(30):
+        b = input.btn_add_box_type()
+        print(['BBBBBBBBBBB', b])
+        for i in range(1, b+1):
+            if not input["t%s_l" % i]():
+                continue
             l = input["t%s_l" % i]()
             h = input["t%s_h" % i]()
             w = input["t%s_w" % i]()
@@ -265,11 +266,49 @@ def server(input: Inputs, output: Outputs, session: Session):
         selected = input.container()
         l, w, h, v, weight = containers[selected][:5]
         result = [
-            ui.input_numeric("length", "Length (mm)", value=round(l*1000)),
-            ui.input_numeric("width", "Width (mm)", value=round(w*1000)),
-            ui.input_numeric("height", "Height (mm)", value=round(h*1000)),
+            ui.input_numeric("length", "Largo (mm)", value=round(l*1000)),
+            ui.input_numeric("width", "Ancho (mm)", value=round(w*1000)),
+            ui.input_numeric("height", "Alto (mm)", value=round(h*1000)),
             ui.input_numeric("max_weight", "Peso máximo (kg)", value=round(1000*weight, 1))]
         return result
+
+    @reactive.effect
+    def _():
+        i = input.btn_add_box_type()
+        with reactive.isolate():
+            container_l, container_w, container_h = input.length(), input.width(), input.height()
+            ml = (container_l//random.randint(250, 600))
+            mw = (container_w//random.randint(250, 600))
+            l = floor(container_l/ml)
+            w = floor(container_w/mw)
+            if random.randint(0, 1):
+                l, w = w, l
+            h = floor(container_h/(container_h//random.randint(250, 600)))
+            v_box = l*w*h
+            v_container = container_l*container_w*container_h/10
+            count_box = ceil(v_container/v_box)
+            row = ui.layout_columns(
+                ui.input_numeric(
+                    "t%s_l" % i, "Largo (mm)" if i == 1 else None, value=l),
+                ui.input_numeric(
+                    "t%s_w" % i, "Ancho (mm)" if i == 1 else None, value=w),
+                ui.input_numeric(
+                    "t%s_h" % i, "Alto (mm)" if i == 1 else None, value=h),
+                ui.input_numeric(
+                    "t%s_weight" % i, "Peso (kg)" if i == 1 else None, value=round(random.uniform(5, 10), 2)),
+                ui.input_numeric(
+                    "t%s_value" % i, "Valor ($)" if i == 1 else None, value=random.randint(10, 100)),
+                ui.input_numeric(
+                    "t%s_max_count" % i, "Cant     Máx" if i == 1 else None, value=count_box),
+            )
+            ui.insert_ui(
+                ui.div({"id": "inserted-row-%s" % i}, row),
+                selector="#main-content",
+                where="beforeEnd",
+            )
+        row_count.set(i)
+        # elif btn > 0:
+        #    ui.remove_ui("#inserted-slider")
 
 
 app = App(app_ui, server, debug=True)
