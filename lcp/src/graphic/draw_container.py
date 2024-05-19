@@ -1,5 +1,6 @@
 import seaborn as sns
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
@@ -11,7 +12,8 @@ from lcp.src.container import Box, Container
 # matplotlib_inline.backend_inline.set_matplotlib_formats('svg')
 
 # %config InlineBackend.figure_format = 'retina'
-plt.style.use('ggplot')
+# plt.style.use('ggplot')
+matplotlib.use("agg")
 # plt.style.use('fast')
 # from pylab import rcParams
 # rcParams['figure.figsize'] = 8, 5
@@ -73,7 +75,7 @@ def draw(pieces: list[Box], title="", container_dimension: Container = None):
         colors.append(each.type)
     cuboids = zip(positions, sizes, colors)
 
-    fig = plt.figure(dpi=300)
+    fig = plt.figure(dpi=100)
     # fig.canvas.layout.width = '100%'
     # fig.canvas.layout.height = '900px'
     ax = fig.add_subplot(111, projection='3d')
@@ -98,5 +100,6 @@ def draw(pieces: list[Box], title="", container_dimension: Container = None):
 
     plt.axis('off')
     ax.set_aspect('equal')
-    plt.savefig('lcp/document/Figures/ejemplo_solucion.svg', format='svg')
-    plt.draw()  # show()
+    # plt.savefig('lcp/document/Figures/ejemplo_solucion.svg', format='svg')
+    # plt.draw()  # show()
+    return fig

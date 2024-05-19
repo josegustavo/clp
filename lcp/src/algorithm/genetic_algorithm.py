@@ -91,8 +91,8 @@ class GeneticAlgorithm:
 
             best_values.append(new_best.get_fitness)
             best_boxes.append(len(new_best.result))
-            # if callable(onGeneration):
-            #    onGeneration(best_values, self.population)
+            if callable(onGeneration):
+                onGeneration(best_values, self.population)
             generation += 1
             time_end = time.time()
             generations_duration.append(time_end-time_generation)

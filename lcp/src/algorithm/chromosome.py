@@ -50,6 +50,10 @@ class Chromosome(list):
         return self.fitness < other.fitness
 
     @property
+    def occupation_ratio(self):
+        return self.occupied_vol / self.container.volume
+
+    @property
     def fitness(self):
         return (
             # Número de tipos de cajas usados
