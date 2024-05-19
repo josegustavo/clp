@@ -6,7 +6,7 @@ from lcp.src.algorithm import Population, GeneticAlgorithm
 from lcp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
-types_count = [30, 40]
+types_count = [5, 10, 20, 30, 40, 50]
 
 for i, n in enumerate(types_count):
     random.seed(100)
