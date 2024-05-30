@@ -24,7 +24,8 @@
 \usepackage[spanish]{babel} % Configuración del idioma
 \usepackage{csquotes}       % Recomendado para idiomas que usan comillas
 \usepackage{rhoenvs}
-
+\setlength{\parskip}{3mm}
+\setlength{\parindent}{0pt}
 %----------------------------------------------------------
 % TITLE
 %----------------------------------------------------------
@@ -87,7 +88,7 @@
 
 \section{Entorno de aplicación del DSS}
 
-Para la dinamización del comercio internacional, las estrategias logísticas y de transporte juegan un papel crucial en el éxito operacional y financiero de las empresas que distribuyen sus productos a nivel global. Según \textcite{rushton2017international}, un aspecto fundamental en este ámbito es la eficiencia en el llenado y transporte de contenedores. La optimización de espacios dentro de estos contenedores puede significar ahorros significativos o pérdidas considerables en términos de costos y satisfacción del servicio al cliente, como indican \textcite{bortfeldt2013container}.
+\rhostart{P}ara la dinamización del comercio internacional, las estrategias logísticas y de transporte juegan un papel crucial en el éxito operacional y financiero de las empresas que distribuyen sus productos a nivel global. Según \textcite{rushton2017international}, un aspecto fundamental en este ámbito es la eficiencia en el llenado y transporte de contenedores. La optimización de espacios dentro de estos contenedores puede significar ahorros significativos o pérdidas considerables en términos de costos y satisfacción del servicio al cliente, como indican \textcite{bortfeldt2013container}.
 
 El presente documento detalla el desarrollo de un Sistema de Apoyo a la Decisión \cite{jao2010decision}, cuyo objetivo es proporcionar soporte a una empresa que tiene entre sus operaciones críticas el envío de productos en contenedores buscando la mejor manera de completar contenedores con cajas y paquetes, con el fin de optimizar tanto la carga como el valor de los productos enviados. Este sistema no solo busca maximizar el uso del espacio dentro de los contenedores, sino también priorizar la carga según la importancia económica de los productos. Al utilizar el DSS elaborado, se pretende proporcionar soluciones basadas en datos que mejoren las decisiones de carga y envío, reduciendo los costos operacionales y aumentando la eficiencia general del proceso logístico \cite{simchi2003logistics}.
 
@@ -154,7 +155,7 @@ A continuación se presenta un diagrama de componentes que ilustra la interacci�
 
 El diagrama de componentes del Sistema de Soporte de Decisiones (DSS) muestra cómo interactúan entre sí los diferentes elementos del sistema para optimizar el llenado de contenedores marítimos.
 
-\begin{itemize}
+\begin{itemize}[itemsep=.5em]
     \item \textbf{Usuario:} El usuario, representado como "Planificador de Carga", interactúa con el sistema a través de la Interfaz de Usuario (Shiny para Python \cite{shiny_intro}). El usuario ingresa las dimensiones y el peso máximo del contenedor, así como las dimensiones, pesos, valores y cantidades disponibles de los paquetes. También configura los parámetros del algoritmo de optimización.
     \item \textbf{Interfaz de Usuario (Shiny):} Este componente permite al usuario interactuar con el sistema. La interfaz se utiliza para ingresar datos, configurar el algoritmo, monitorear la optimización y recibir los resultados finales. La interfaz envía los datos ingresados al Algoritmo Genético y recibe los resultados finales de optimización.
     \item \textbf{Algoritmo Genético:} Este componente es el motor principal de optimización. Toma los datos de entrada proporcionados por el usuario y busca la mejor solución de llenado del contenedor dentro de un tiempo definido. El algoritmo genético interactúa con el Motor de Simulación de Llenado Manual para validar y evaluar las soluciones generadas. Además, el algoritmo genético accede a la Base de Datos para leer y escribir datos relevantes.
@@ -171,6 +172,10 @@ El sistema puede utilizar una base de datos \cite{elmasri2021fundamentals} Relac
 \subsection{Motores a Incorporar}
 
 El DSS propuesto incorpora dos motores principales. El primero es el algoritmo genético, que toma los datos de entrada, busca la mejor solución dentro de un tiempo definido y devuelve el mejor resultado encontrado. Este motor es responsable de generar diversas combinaciones y evaluar su eficiencia. El segundo es el motor de simulación de llenado manual, que simula el proceso de llenado manual del contenedor, considerando limitaciones prácticas y operativas. Este motor evalúa la validez y el valor de las soluciones propuestas por el algoritmo genético. La interacción entre estos motores es fundamental: el algoritmo genético es el motor principal y utiliza el motor de simulación para validar y valorar las soluciones generadas. El motor de simulación proporciona feedback continuo al algoritmo genético para mejorar la optimización en cada iteración.
+
+\textbf{Algoritmo Genético:} El algoritmo genético es un método de optimización basado en la evolución biológica, que utiliza conceptos como selección, cruce y mutación para encontrar soluciones óptimas a problemas complejos. En el contexto del DSS propuesto, el algoritmo genético busca la mejor disposición de los paquetes dentro del contenedor, maximizando el uso del espacio y el valor total de la carga. El algoritmo genético recibe los datos de entrada del usuario y los parámetros de configuración, y devuelve la disposición optimizada de los paquetes.
+
+\textbf{Motor de Simulación de Llenado Manual:} El motor de simulación de llenado manual simula el proceso de llenado manual del contenedor, considerando las limitaciones prácticas y operativas del proceso. Este motor proporciona feedback continuo al algoritmo genético, validando y evaluando las soluciones generadas. La simulación de llenado manual es esencial para garantizar que las soluciones propuestas sean viables y eficientes en un entorno operativo real, además de que servirá como guía para que el operario realice el llenado del contenedor.
 
 \subsection{Diseño Gráfico del Front-End}
 
@@ -215,7 +220,7 @@ A continuación se presenta un diagrama de casos de uso que ilustra las interacc
 El diagrama de casos de uso muestra las interacciones entre los diferentes actores y las funcionalidades del sistema de soporte de decisiones (DSS) propuesto.
 
 \textbf{Planificador de Carga:} Este usuario interactúa principalmente con el sistema para realizar las siguientes tareas:
-\begin{itemize}
+\begin{itemize}[itemsep=.5em]
     \item \textbf{Ingreso de Datos y Configuración Inicial:} El planificador de carga ingresa las dimensiones del contenedor, el peso máximo permitido, y las características de los paquetes (dimensiones, peso, valor y cantidades disponibles). También configura los parámetros del algoritmo genético.
     \item \textbf{Ejecución de la Optimización:} Después de configurar los parámetros, el planificador de carga inicia el proceso de optimización, donde el algoritmo genético busca la mejor disposición de los paquetes dentro del contenedor.
     \item \textbf{Monitoreo en Tiempo Real:} Durante la optimización, el planificador de carga monitorea el progreso del algoritmo a través de gráficos en tiempo real que muestran la evolución de cada iteración y las mejoras en la optimización.
@@ -228,14 +233,16 @@ El diagrama de casos de uso muestra las interacciones entre los diferentes actor
 \end{itemize}
 
 \textbf{Posibles Formatos y Utilidades de Entrada de Datos:}
-\begin{itemize}
+\begin{itemize}[itemsep=.5em]
     \item \textbf{Formularios Web:} Los datos se ingresan a través de formularios web estructurados que permiten la entrada de dimensiones, peso, valor y cantidades disponibles de los paquetes, así como las características del contenedor.
     \item \textbf{Importación de Archivos:} Se permite la importación de datos desde archivos CSV o Excel, facilitando la integración con otros sistemas de gestión y evitando la entrada manual de grandes volúmenes de datos.
     \item \textbf{Conexión a Bases de Datos:} Integración con sistemas de gestión de inventarios para obtener datos actualizados sobre la disponibilidad y características de los paquetes.
 \end{itemize}
 
+\newpage
+
 \textbf{Salidas Gráficas Disponibles:}
-\begin{itemize}
+\begin{itemize}[itemsep=.5em]
     \item \textbf{Gráficos en Tiempo Real:} Visualización del progreso del algoritmo genético en tiempo real, mostrando la mejora continua en la optimización del llenado. Por ejemplo, en la Figura \ref{fig:ag_tiempo_real} se muestra un gráfico de evolución de la función objetivo a lo largo de las generaciones del algoritmo genético en este caso usando distintos métodos de mejora.
     \item \textbf{Visualización en 3D:} Representación en 3D de la disposición optimizada de los paquetes dentro del contenedor, ayudando a los usuarios a visualizar cómo se vería el contenedor una vez lleno. Por ejemplo, en la Figura \ref{fig:3d_visualization} se muestra una visualización en 3D del llenado del contenedor.
     \item \textbf{Reportes Detallados:} Generación de reportes en PDF y Excel con gráficos y visualizaciones claras, incluyendo un manual de llenado con instrucciones paso a paso.
@@ -286,7 +293,7 @@ A continuación se detalla en las siguientes imágenes la interfaz de usuario de
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.2\textwidth]{prototipo_interfaz_1.png}
+    \includegraphics[width=0.18\textwidth]{prototipo_interfaz_1.png}
     \caption{Opciones de selección y configuración del contenedor en el prototipo.}
     \label{fig:prototipo_interfaz_1}
 \end{figure}
@@ -342,7 +349,13 @@ En la figura \ref{fig:prototipo_interfaz_6} se muestran las tarjetas de resumen 
 El prototipo se considerará exitoso si logra demostrar la aplicación del DSS al problema de optimización del llenado de contenedores. Los criterios específicos de éxito \cite{newman2000success} incluyen la demostración clara de cómo el DSS ayuda a los usuarios a tomar mejores decisiones y la visualización de una mejora en el porcentaje de llenado comparado con una disposición inicial no optimizada.
 
 \subsection{Pruebas y Validación}
+
 Las pruebas del prototipo se realizarán de manera manual. Primero, se ingresarán manualmente las dimensiones del contenedor y los tamaños, pesos y valores de los paquetes. Se observará el valor y el porcentaje de llenado del contenedor antes de la optimización y luego se ejecutará el algoritmo genético para optimizar el llenado. Se evaluará la mejora en el porcentaje de llenado y se visualizará la simulación del llenado en un gráfico estático en 3D. Finalmente, se generará y revisará la tabla que detalla las cantidades de paquetes por tipo y el orden de llenado. Estas pruebas permitirán validar el funcionamiento del prototipo y su capacidad para mejorar el llenado del contenedor.
+
+\begin{rhoenv}[frametitle=Prueba con datos aleatorios]
+    Se ha realizado una prueba con datos aleatorios para validar la funcionalidad del prototipo. Los resultados de la prueba han demostrado que el prototipo es capaz de optimizar el llenado del contenedor y mejorar el porcentaje de llenado.
+\end{rhoenv}
+
 
 \section{Posibles Barreras de Entrada para su Implantación Real}
 
