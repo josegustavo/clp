@@ -60,9 +60,9 @@ class GeneticAlgorithm:
         generations_not_improved = 0
         generation = 0
         best_values = [elite.get_fitness]
-        best_boxes = [len(elite.result)]
+        # best_boxes = [len(elite.result)]
         time_start = time.time()
-        generations_duration = []
+        # generations_duration = []
         generations_time = []
         time_generation = time_start
         time_end = time_start
@@ -90,12 +90,12 @@ class GeneticAlgorithm:
                 generations_not_improved += 1
 
             best_values.append(new_best.get_fitness)
-            best_boxes.append(len(new_best.result))
+            # best_boxes.append(len(new_best.result))
             if callable(onGeneration):
                 onGeneration(best_values, self.population)
             generation += 1
             time_end = time.time()
-            generations_duration.append(time_end-time_generation)
+            # generations_duration.append(time_end-time_generation)
             generations_time.append(time_end-time_start)
             time_generation = time_end
         self.stats = {
@@ -107,14 +107,14 @@ class GeneticAlgorithm:
             'best': {
                 'best_time': best_time,
                 'best_generation': best_generation,
-                'best_boxes': best_boxes,
+                # 'best_boxes': best_boxes,
             },
             'best_values': best_values,
             'timings': {
                 'start_time': time_start,
                 'end_time': time_end,
                 'duration': time_end-time_start,
-                'generations_duration': generations_time,
+                # 'generations_duration': generations_duration,
                 'generations_time': generations_time,
             },
             'default_max_fitness': default_max_fitness,

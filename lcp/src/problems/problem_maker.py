@@ -54,10 +54,12 @@ class ProblemMaker:
             mean_count = int((container_volume/self.N_TYPES) // vol)
             max_count = mean_count  # + random.randint(0, mean_count//2)
             # min_count = max(0, mean_count - random.randint(0, mean_count//2))
+            value = 10000 * prod([l, w, h])/container_volume
+            # print(value, prod([l, w, h]), container_volume)
             box_type = {
                 'type': i,
                 'size': (l, w, h),
-                'value':  value,
+                'value': value,
                 'volume': vol,
                 'min_count': 0,  # min_count,
                 'max_count': max_count,

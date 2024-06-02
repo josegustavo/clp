@@ -52,12 +52,12 @@ def main():
     with ProcessPoolExecutor(max_workers=8) as executor:
         args = []
         for i in types_count:
-            if i in [40, 50]:
-                problems = Problems(file_path='problems/types_%d.json' %
-                                    i).load_problems()
-                for problem in problems:
-                    num_types = len(problem.box_types)
-                    args += [(problem, imp, num_types) for imp in improvements]
+            # if i in [40, 50]:
+            problems = Problems(file_path='problems/types_%d.json' %
+                                i).load_problems()
+            for problem in problems:
+                num_types = len(problem.box_types)
+                args += [(problem, imp, num_types) for imp in improvements]
         # print("Cantidad de problemas a resolver: %s" % len(args))
         results = executor.map(solve, args)
 
