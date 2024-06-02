@@ -20,7 +20,7 @@ improvements = [GroupImprovement.none,
                 GroupImprovement.late_best,
                 ]
 
-MAX_DURATION = 300
+MAX_DURATION = 600
 
 random.seed(42)
 
@@ -49,7 +49,7 @@ def solve(args):
 
 
 def main():
-    with ProcessPoolExecutor(max_workers=4) as executor:
+    with ProcessPoolExecutor(max_workers=8) as executor:
         args = []
         for i in types_count:
             if i in [40, 50]:
