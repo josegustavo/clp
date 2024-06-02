@@ -1,9 +1,8 @@
 from copy import copy, deepcopy
 from dataclasses import dataclass, field
 from enum import Enum
-import logging
+# import logging
 import random
-from types import NoneType
 
 from lcp.src.location import Position
 from lcp.src.container import Box, Container, FreeSpace
