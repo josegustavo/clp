@@ -6,13 +6,13 @@ El problema de llenado de paquetes en contenedores es también conocido en la li
 
 \subsection{Origen del CLP}
 
-El problema de llenado de contenedores tiene su origen en el campo del transporte y la logística. Surge de la necesidad de empacar eficientemente objetos en contenedores o vehículos mientras se optimiza la utilización del espacio. Aunque tiene un origen en la industria, el problema ha sido ampliamente objeto de investigación en la comunidad académica, debido a su complejidad, quienes también los clasifican como un problema de optimización combinatoria derivado de otros problemas de optimización como el problema de cortes y empacado de objetos \textcite{Alvarez-Valdes2018}, el problema de la mochila \textcite{DEQUEIROZ2012200} entre otros.
+El problema de llenado de contenedores tiene su origen en el campo del transporte y la logística. Surge de la necesidad de empacar eficientemente objetos en contenedores o vehículos mientras se optimiza la utilización del espacio. Aunque tiene un origen en la industria, el problema ha sido ampliamente objeto de investigación en la comunidad académica, debido a su complejidad, quienes también los clasifican como un problema de optimización combinatoria derivado de otros problemas de optimización como el problema de cortes y empacado de objetos \parencite{Alvarez-Valdes2018}, el problema de la mochila \textcite{DEQUEIROZ2012200} entre otros.
 
-Existen muchos tipo de problemas de llenado de contenedore, presentaremos a continuación algunas de las clasificaciones más comunes que se han propuesto en la literatura.
+Existen muchos tipos de problemas de llenado de contenedores, presentaremos a continuación algunas de las clasificaciones más comunes que se han propuesto en la literatura.
 
 \subsection{Formulaciones del CLP}
 
-Muchos de los tipos de problemas formulados en torno al CLP pueden categorizarse en dos tipo principales, los problemas de llenado con restricciones básicas y los problemas de llenado con restricciones prácticas o reales. Los problemas con restricciones básicas son aquellos que consideran restricciones simples, por ejemplo que los paquetes no pueden ser superpuestos y que deben ser colocados dentro de los límites del contenedor, también llamado restricciones de viabilidad del empaquetado \textcite{scheithauer2017introduction}. Los problemas con restricciones prácticas consideran restricciones más realistas como por ejemplo restricciones de estabilidad, restricciones de rotación, restricciones de contigüidad, restricciones de peso, entre otras.
+Muchos de los tipos de problemas formulados en torno al CLP pueden categorizarse en dos tipo principales, los problemas de llenado con restricciones básicas y los problemas de llenado con restricciones prácticas o reales. Los problemas con restricciones básicas son aquellos que consideran restricciones simples, por ejemplo que los paquetes no pueden ser superpuestos y que deben ser colocados dentro de los límites del contenedor, también llamado restricciones de viabilidad del empaquetado \parencite{scheithauer2017introduction}. Los problemas con restricciones prácticas consideran restricciones más realistas como por ejemplo restricciones de estabilidad, restricciones de rotación, restricciones de contigüidad, restricciones de peso, entre otras \parencite{KURPEL202087}.
 
 \textcite{Bortfeldt20131} hizo una revisión de los distintos tipos de restricciones que se han considerado en la literatura, entre las que se encuentran:
 
@@ -24,7 +24,7 @@ Algunas de las subvariantes de este problema incluyen el uso de contenedores del
 
 \textcite{Bortfeldt20131} identifican dos tipos de restricciones de estabilidad: estática y dinámica, señalando que la mayoría de los estudios se concentran en la primera y pocos en la estabilidad dinámica. Critican las métricas de estabilidad existentes por ser insuficientes y no reflejar adecuadamente la estabilidad dinámica real, lo que puede llevar a evaluaciones incorrectas.
 
-\textcite{RAMOS2015480} propone un enfoque para determinar métricas de estabilidad más realistas y aborda la importancia de la estabilidad en las operaciones de carga de contenedores, destacando su impacto en la satisfacción del cliente, la eficiencia operacional y la seguridad de los paquetes y de los operarios.
+\textcite{RAMOS2015480} propone un enfoque para determinar métricas de estabilidad más realistas y aborda la importancia de la estabilidad en las operaciones de carga de contenedores, destacando su impacto en la satisfacción del cliente, la eficiencia operacional y la seguridad de los paquetes junto a la de los operarios.
 
 
 \textbf{CLP con restricciones de rotación}: Las restricciones de rotación se refieren a la capacidad de los paquetes de ser rotados en diferentes direcciones, lo que puede aumentar la utilización del espacio y mejorar la estabilidad de la carga. \textcite{Bortfeldt20131} señalan que es un tipo de restricción común en la literatura y que se ha investigado ampliamente, categorizando las restricciones de rotación en 6 tipos:
