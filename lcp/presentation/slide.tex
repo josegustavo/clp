@@ -12,19 +12,22 @@
 % LPPL Licensed.                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 \usepackage{hyperref}
+\usepackage{lmodern}
 \usepackage[T1]{fontenc}
 
 % other packages
 \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
 \usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{wrapfig}
 \usepackage{caption}
+\usepackage{animate}
 
-% dummy text; remove it when working on this template
-\usepackage{lipsum}
+\author[Gustavo Quilca]{Jose Gustavo Quilca Vilcapoma
+\\
+\small Tutor: Javier Alcaraz Soria}
 
-\author[Gustavo Quilca]{Jose Gustavo Quilca Vilcapoma}
 \title{Optimización del Llenado Manual de Contenedores con Paquetes Heterogéneos}
 \subtitle{Máster Universitario en Estadística Computacional y Ciencia de Datos para la Toma de Decisiones}
 \institute[CIO - UMH]{
@@ -78,9 +81,9 @@
     \begin{itemize}[<+-| alert@+>] % stepwise alerts
         \item El problema del llenado de contenedores (CLP) es un
               problema clásico en la optimización combinatoria.
-        \item Consiste en encontrar la mejor manera de llenar un contenedor con cajas de diferentes tamaños y pesos, maximizando la utilización del espacio.
-        \item Este problema tiene aplicaciones en logística, transporte y
-              almacenamiento.
+        \item Consiste en encontrar la mejor manera de llenar un contenedor con cajas de diferentes tamaños y pesos, optimizando la utilización del espacio.
+        \item Este problema tiene aplicaciones en logística, transporte,
+              almacenamiento, entre otros.
     \end{itemize}
 \end{frame}
 
@@ -123,9 +126,9 @@
 
 \begin{frame}{Contexto del Problema}
     \begin{itemize}[<+-| alert@+>]
-        \item Empresa en el rubro de envío de paquetes en contenedores marítimos.
+        \item Empresa en el sector de envío de paquetes en contenedores marítimos.
         \item No tiene control sobre las medidas de los paquetes.
-        \item Cuenta con una cantidad disponible máxima de tipos de paquetes a enviar.
+        \item Cuenta con una cantidad máxima de paquetes de cada tipo.
         \item Envía un solo contenedor a la vez.
         \item Usan procedimientos establecidos de llenado manual.
     \end{itemize}
@@ -133,7 +136,7 @@
 
 \begin{frame}{Definición del Problema}
     \begin{itemize}[<+-| alert@+>]
-        \item Maximizar el valor de la carga en un contenedor, con los paquetes disponibles.
+        \item Maximizar el beneficio de la carga en un contenedor, con los paquetes disponibles.
         \item Los paquetes apilados deben mantener su estabilidad durante la carga.
         \item Todos los paquetes del mismo tipo son cargados de forma contigua.
         \item Los paquetes pueden ser rotados en una sola dirección.
@@ -141,9 +144,21 @@
 \end{frame}
 
 \begin{frame}{Definición Formal}
-    \begin{center}
-        Optimizar la carga de un contenedor, determinando el \textbf{\textcolor{ritsumeikan}{orden}}, la \textbf{\textcolor{ritsumeikan}{cantidad}} y  \textbf{\textcolor{ritsumeikan}{rotación}} de los tipos de paquetes, cumpliendo con las restricciones prácticas del \textbf{\textcolor{ritsumeikan}{llenado manual}}. El objetivo principal es maximizar el valor total de la carga junto a la utilización del espacio del contenedor.
-    \end{center}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+            \begin{center}
+                Optimizar la carga de un contenedor, determinando el \textbf{\textcolor{ritsumeikan}{orden}}, la \textbf{\textcolor{ritsumeikan}{cantidad}} y  \textbf{\textcolor{ritsumeikan}{rotación}} de los tipos de paquetes, cumpliendo con las restricciones prácticas del \textbf{\textcolor{ritsumeikan}{llenado manual}}. El objetivo principal es maximizar el beneficio total de la carga junto a la utilización del espacio del contenedor.
+            \end{center}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{pic/cinta-transportadora.png}
+                \label{fig:cinta-transportadora}
+            \end{figure}
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 \section{Algoritmo Genético}
@@ -196,10 +211,9 @@
 \begin{frame}{Algoritmo Genético}
     \begin{exampleblock}{Función de evaluación:}
         \begin{itemize}[<+-| alert@+>]
-            \item Calcula el valor total de la carga.
-            \item Es necesario el desarrollo de un algoritmo que \textbf{simula el llenado manual}.
-            \item Corregir soluciones no factibles.
-            \item Punto de aplicación de \textbf{mejoras} al llenado.
+            \item Calcula el beneficio total de la carga.
+            \item Es necesario el desarrollo de un algoritmo que \textbf{imita el procedimiento de llenado manual}.
+            \item Verificar la factibilidad de la soluciones.
         \end{itemize}
     \end{exampleblock}
 \end{frame}
@@ -212,6 +226,18 @@
             \includegraphics[width=1\textwidth]{pic/dblf.png}
             \caption*{División del espacio restante en el contenedor luego de colocar un paquete}
             \label{fig:dblf}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Llenado Manual}
+    \begin{exampleblock}{Ejemplo de llenado manual}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.85\textwidth]{pic/contenedor-lleno.png}
+            \caption*{Ejemplo del llenado de un contenedor con 20 tipos de paquetes}
+            \label{fig:contenedor-lleno}
         \end{figure}
     \end{exampleblock}
 \end{frame}
@@ -248,28 +274,6 @@
                     \end{figure}
                 }
             \end{overlayarea}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Algoritmo Genético: Función de evaluación}
-    \begin{columns}
-        \begin{column}{0.6\textwidth}
-            \begin{exampleblock}{Mejoras del Algoritmo DBLF:}
-                \begin{itemize}[<+-| alert@+>]
-                    \item Ayuda a completar espacios vacíos si aún hay paquetes disponibles.
-                    \item Aplicarla durante el llenado podría empeorar una solución.
-                    \item Aplicarla luego del llenado garantiza que la solución no sea peor.
-                    \item Agregan tiempo adicional de cómputo.
-                \end{itemize}
-            \end{exampleblock}
-        \end{column}
-        \begin{column}{0.4\textwidth}
-            \begin{figure}
-                \centering
-                \includegraphics[width=1\textwidth]{pic/dblf-mejora.png}
-                \label{fig:dblf-mejora}
-            \end{figure}
         \end{column}
     \end{columns}
 \end{frame}
@@ -313,9 +317,31 @@
     \end{exampleblock}
 \end{frame}
 
-\section[Experimentación]{Estudio Experimental}
+\begin{frame}{Algoritmo de Mejora}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Mejoras del Algoritmo DBLF:}
+                \begin{itemize}[<+-| alert@+>]
+                    \item Ayuda a completar espacios vacíos si aún hay paquetes disponibles.
+                    \item Aplicarla durante el llenado podría empeorar una solución.
+                    \item Aplicarla luego del llenado garantiza que la solución no sea peor.
+                    \item Agregan tiempo adicional de cómputo.
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=1\textwidth]{pic/dblf-mejora.png}
+                \label{fig:dblf-mejora}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-\begin{frame}{Experimentación}
+\section[Experimentación]{Estudio Computacional}
+
+\begin{frame}{Estudio Computacional}
     \begin{exampleblock}{Generación de Datos de Prueba}
         \begin{itemize}[<+-| alert@+>]
             \item Un contenedor con dimensiones fijas $12010 \times 2330 \times 2380 mm$.
@@ -326,9 +352,20 @@
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación}
-    \begin{exampleblock}{Diseño del Experimento}
-        Evaluar las mejoras propuestas
+\begin{frame}{Estudio Computacional}
+    \begin{exampleblock}{Configuración del Algoritmo}
+        \begin{itemize}[<+-| alert@+>]
+            \item Algoritmos implementados en Python 3.10.
+            \item $P_{cross}=0.8$
+            \item $P_{mut}=0.05$.
+            \item Población inicial de 100 individuos, generados aleatoriamente.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Estudio Computacional}
+    \begin{exampleblock}{Variantes del algoritmo}
+        Comparar las mejoras propuestas
         \begin{itemize}[<+-| alert@+>]
             \item \textbf{M0}: Sin mejora del algoritmo en el llenado.
             \item \textbf{M1}: Mejora de llenado adicional inmediato.
@@ -339,65 +376,87 @@
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación}
+\begin{frame}{Estudio Computacional}
     \begin{exampleblock}{Configuración del Experimento}
         \begin{itemize}[<+-| alert@+>]
-            \item Algoritmos implementados en Python 3.10.
             \item 25 instancias para cada tipo de caja (5T, 10T, 20T, 30T, 40T y 50T), total 150 instancias.
-            \item Población inicial de 100 individuos, $P_{cross}=0.05$, $P_{mut}=0.01$.
             \item Tiempo fijo de 5 minutos para cada problema.
-            \item Tiempo de ejecución total de 62.5 horas.
+            \item Tiempo de ejecución total de 62.5 horas (2.6 días).
+            \item Se recolectaron datos en csv para su análisis.
         \end{itemize}
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación: Resultados}
-    \begin{exampleblock}{Valor aportado por las soluciones}
-
+\begin{frame}{Estudio Computacional: Resultados}
+    \begin{exampleblock}{Beneficio aportado por las soluciones}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/exp-valor-aportado.png}
+            \label{fig:valor-aportado}
+        \end{figure}
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación: Resultados}
-    \begin{exampleblock}{Tiempo de ejecución}
-
+\begin{frame}{Estudio Computacional: Resultados}
+    \begin{exampleblock}{Tiempo promedio en encontrar la mejor solución}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/exp-tiempo-mejor-solucion.png}
+            \label{fig:tiempo-mejor-solucion}
+        \end{figure}
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación: Resultados}
-    \begin{exampleblock}{Valor aportado por las soluciones}
-
+\begin{frame}{Estudio Computacional: Resultados}
+    \begin{exampleblock}{Tiempo promedio por generación}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/exp-tiempo-por-generacion.png}
+        \end{figure}
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación: Resultados}
-    \begin{exampleblock}{Rendimiento}
-
+\begin{frame}{Estudio Computacional: Resultados}
+    \begin{exampleblock}{Rendimiento por método de mejora}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/exp-rendimiento.png}
+        \end{figure}
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Experimentación: Resultados}
-    \begin{exampleblock}{Progreso de las soluciones}
-
+\begin{frame}{Estudio Computacional: Resultados}
+    \begin{exampleblock}{Progreso de las soluciones del mejor método elegido: M1}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/exp-progreso-soluciones.png}
+        \end{figure}
     \end{exampleblock}
 \end{frame}
 
 \section[Conclusiones]{Conclusiones y Trabajos Futuros}
 
 \begin{frame}{Conclusiones}
-    \begin{exampleblock}{Conclusiones}
-
-    \end{exampleblock}
+    \begin{itemize}[<+-| alert@+>]
+        \item El algoritmo ha demostrado ser un método eficiente para determinar la carga del contenedor y la forma de llenarlo.
+        \item Los métodos de mejoras consiguen reducir el tiempo necesario para encontrar la mejor solución.
+        \item También consiguen mejorar la calidad de las soluciones.
+        \item Elevado número de tipos de cajas necesitan más tiempo para converger.
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Conclusiones}
-    \begin{exampleblock}{Trabajos Futuros}
-
-    \end{exampleblock}
+\begin{frame}{Trabajos Futuros}
+    \begin{itemize}[<+-| alert@+>]
+        \item Diseñar otros tipos de operadores de cruce y mutación.
+        \item Considerar otras restricciones prácticas.
+        \item Probar el algoritmo con datos reales.
+        \item Incluir e  algoritmo en un DSS utilizado en tiempo real.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \begin{center}
-        {\Huge Gracias}
+        {\Huge \textit{\fontfamily{pzc}\selectfont Gracias}}
     \end{center}
 \end{frame}
 

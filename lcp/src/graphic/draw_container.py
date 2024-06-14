@@ -75,7 +75,7 @@ def draw(pieces: list[Box], title="", container_dimension: Container = None):
         colors.append(each.type)
     cuboids = zip(positions, sizes, colors)
 
-    fig = plt.figure(dpi=100)
+    fig = plt.figure(dpi=300)
     # fig.canvas.layout.width = '100%'
     # fig.canvas.layout.height = '900px'
     ax = fig.add_subplot(111, projection='3d')
