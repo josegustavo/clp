@@ -100,6 +100,4 @@ def draw(pieces: list[Box], title="", container_dimension: Container = None):
 
     plt.axis('off')
     ax.set_aspect('equal')
-    # plt.savefig('lcp/document/Figures/ejemplo_solucion.svg', format='svg')
-    # plt.draw()  # show()
     return fig
