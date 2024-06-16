@@ -1,0 +1,37 @@
+\section{Conclusiones}
+
+En este trabajo, se abordó el problema del llenado de contenedores con paquetes heterogéneos bajo restricciones prácticas derivadas de un caso de uso real en el contexto de carga manual. A continuación, se resumen las conclusiones más relevantes:
+
+\begin{itemize}
+    \item \textbf{Método de solución basado en una metaheurística:} Se propuso un algoritmo genético que considera las restricciones prácticas del llenado manual de contenedores. La codificación de soluciones incluye la secuencia de llenado, el tipo de caja, la rotación y la cantidad de paquetes por cada tipo, lo cual facilita la generación de soluciones factibles y la evaluación de su calidad.
+    \item \textbf{Mejoras en el proceso de llenado:} Se nombró M0 a la versión original del algoritmo genético. Se implementaron dos mejoras en el algoritmo de llenado manual: \textit{llenado adicional inmediato} (M1) y \textit{llenado adicional al final} (M2). La variante M2 se aplicó de diferentes maneras dentro de la población, resultando en tres versiones: M2 para toda la población, M3 para la mejor mitad de la población, y M4 para el mejor individuo de la población. Todas estas mejoras demostraron ser efectivas para aumentar la calidad de las soluciones y reducir el tiempo de convergencia del algoritmo genético.
+
+    \item \textbf{Rendimiento del algoritmo genético:} Los experimentos computacionales mostraron que las mejoras propuestas (M1 y M2) permiten al algoritmo genético converger más rápidamente hacia soluciones de mejor calidad en comparación con la versión sin mejoras (M0). En particular, M1 resultó ser la más efectiva en términos de rendimiento y tiempo de ejecución, destacando en instancias con mayor número de tipos de cajas (20T, 40T).
+
+    \item \textbf{Impacto en el tiempo de ejecución:} Aunque las mejoras introducidas aumentan ligeramente el tiempo necesario para evaluar cada generación, el tiempo total de ejecución se reduce debido a una convergencia más rápida hacia soluciones de alta calidad. Esto hace que las mejoras sean eficientes tanto en términos de calidad de soluciones como de tiempo de ejecución.
+
+    \item \textbf{Evaluación con diferentes tipos de cajas:} Se generaron instancias de prueba con diferentes números de tipos de cajas (5T, 10T, 20T, 40T) para evaluar el rendimiento del algoritmo genético. Los resultados demostraron que el algoritmo genético mejorado es capaz de manejar eficientemente instancias con diferentes grados de complejidad y diversidad.
+\end{itemize}
+
+En conclusión, el algoritmo genético mejorado presentado en este trabajo proporciona una solución efectiva y eficiente para el problema del llenado de contenedores con paquetes heterogéneos bajo restricciones prácticas. Las mejoras introducidas permiten obtener soluciones de alta calidad en menor tiempo, lo cual es crucial en contextos industriales donde la eficiencia y la reducción de costos son primordiales.
+
+\subsection{Futuras líneas de investigación}
+
+A partir de los resultados obtenidos y las limitaciones observadas, se identifican varias futuras líneas de investigación:
+
+\begin{itemize}
+    \item \textbf{Extensión a múltiples contenedores:} Aunque este trabajo se centró en un único contenedor, una extensión natural sería abordar el problema de llenado de múltiples contenedores, lo cual es común en aplicaciones reales de logística y transporte.
+
+    \item \textbf{Consideración de más restricciones prácticas:} Incluir restricciones adicionales, como imponer un mínimo de cantidad para ciertos tipos de paquetes, agregar una dimensión de prioridad entre los tipos, o considerar el balanceo del peso dentro del contenedor, podría aumentar la aplicabilidad del algoritmo propuesto en escenarios más complejos.
+
+    \item \textbf{Optimización de hiperparámetros:} Realizar un estudio más detallado de los hiperparámetros del algoritmo genético, como la probabilidad de mutación y cruce, el tamaño de la población, y el número de generaciones, para determinar su impacto en el rendimiento y la calidad de las soluciones obtenidas.
+
+    \item \textbf{Comparación con otros enfoques metaheurísticos:} Aunque se empleó un algoritmo genético, sería interesante comparar su rendimiento con otros enfoques metaheurísticos como algoritmos de enjambre de partículas (PSO), algoritmos de recocido simulado o técnicas híbridas que combinen varias metodologías, ya que en la literatura se ha encontrado aplicaciones exitosas de estos enfoques para el problema de llenado de contenedores.
+
+    \item \textbf{Implementación en sistemas reales:} Probar e implementar el algoritmo en sistemas de soporte de decisiones logísticas y de transporte a escala real permitiría validar su efectividad y eficiencia en situaciones prácticas, proporcionando además retroalimentación valiosa para futuras mejoras.
+    \item \textbf{Estudio de mejora reales:} Realizar un estudio de mejora en una empresa de logística real con datos pasados para evaluar la eficacia del algoritmo genético propuesto en un entorno de producción real.
+
+    \item \textbf{Optimización en tiempo real:} Desarrollar versiones optimizadas del algoritmo que puedan operar en tiempo real, ajustándose dinámicamente a cambios en las condiciones de carga y disponibilidad de paquetes, podría mejorar aún más su utilidad práctica en entornos de logística en tiempo real.
+\end{itemize}
+
+En resumen, el problema del llenado de contenedores con paquetes heterogéneos es un desafío logístico complejo debido a las restricciones prácticas. El algoritmo genético propuesto en este trabajo ofrece una solución efectiva y eficiente para abordar este problema, y las mejoras introducidas permiten obtener soluciones de alta calidad en tiempos reducidos. Las futuras líneas de investigación identificadas apuntan a mejorar y extender el alcance del algoritmo, así como a explorar su aplicabilidad en contextos industriales y de transporte reales.

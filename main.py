@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import random
 import json
-from lcp.src.problems.problems import Problems
-from lcp.src.algorithm import Population, GeneticAlgorithm
-from lcp.src.algorithm.population import GroupImprovement
+from clp.src.problems.problems import Problems
+from clp.src.algorithm import Population, GeneticAlgorithm
+from clp.src.algorithm.population import GroupImprovement
 from concurrent.futures import ProcessPoolExecutor
 
 types_count = [5, 10, 20, 30, 40, 50]

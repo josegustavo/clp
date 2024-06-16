@@ -1,0 +1,105 @@
+\documentclass{beamer}
+
+\title{Optimización del Problema de Carga Manual de Contenedores con Paquetes Heterogéneos}
+\author{Jose G. Quilca y Javier Alcaraz}
+\institute{Centro de Investigación Operativa, Universidad Miguel Hernández}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Introducción}
+    \begin{itemize}
+        \item Importancia del uso eficiente de contenedores en el comercio internacional.
+        \item El problema de carga de contenedores es un desafío de optimización combinatoria NP-difícil.
+        \item Enfoque en la carga manual por operadores, considerando restricciones realistas.
+        \item Metaheurística basada en algoritmos genéticos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Objetivo}
+    \begin{itemize}
+        \item Mejorar el proceso de carga manual de contenedores.
+        \item Desarrollar un algoritmo genético que optimice la configuración de carga.
+        \item Validar la eficacia del método a través de experimentos computacionales.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Revisión de Literatura}
+    \begin{itemize}
+        \item Historia y evolución del Problema de Carga de Contenedores (CLP).
+        \item Clasificación de CLP: restricciones básicas y prácticas.
+        \item Métodos de solución: heurísticos y metaheurísticos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Formulación del Problema}
+    \begin{itemize}
+        \item Contenedor con dimensiones y capacidad de carga fijas.
+        \item Paquetes rectangulares de diferentes tamaños, pesos y valores.
+        \item Restricciones de estabilidad, rotación y contigüidad.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Procedimiento de Carga Manual}
+    \begin{itemize}
+        \item Secuencia de llenado: desde la parte trasera, inferior e izquierda del contenedor.
+        \item Uso de algoritmos de metaheurística para simular el proceso de carga.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Metaheurística Propuesta}
+    \begin{itemize}
+        \item Codificación de la solución con listas de secuencia de empaquetado, rotación y cantidad.
+        \item Algoritmo genético: selección, cruce, mutación y elitismo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Estudio Experimental}
+    \begin{itemize}
+        \item Generación de datos de prueba: diferentes tipos de cajas y dimensiones.
+        \item Implementación en Python y evaluación en múltiples instancias.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resultados y Análisis}
+    \begin{itemize}
+        \item Comparación de versiones mejoradas del algoritmo genético.
+        \item Evaluación de calidad de solución y tiempo de ejecución.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusiones}
+    \begin{itemize}
+        \item Algoritmo genético eficiente para la carga de contenedores con paquetes heterogéneos.
+        \item Mejoras significativas en calidad de solución y tiempo de convergencia.
+        \item Futuras líneas de investigación: múltiples contenedores, más restricciones y optimización en tiempo real.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Agradecimientos}
+    \begin{itemize}
+        \item Agradecimientos a Javier Alcaraz y al Instituto CIO por su apoyo.
+        \item Agradecimientos a las familias y amigos por su constante apoyo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Preguntas y Discusión}
+    \begin{center}
+        \large{¿Preguntas?}
+    \end{center}
+\end{frame}
+
+\end{document}
