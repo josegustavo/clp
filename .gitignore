@@ -15,6 +15,8 @@
 *.blg
 *.log
 *.out
+*.nav
+*.snm
 *.toc
 *.lof
 *.lot
