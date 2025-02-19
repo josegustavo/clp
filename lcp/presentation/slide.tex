@@ -1,0 +1,404 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thanks to Xu Minghao's work                        %
+% I modify it into uchicago version                  %
+% to not make new bug, I don't alter "Ritsumeikan"   %
+% keywords in file. Pls feel free to use             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A Beamer template for Ritsumeikan University       %
+% Author: Ming-Hao Xu (Xu Minghao)                   %
+% Date:   April 2022.                                %
+% LPPL Licensed.                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{beamer}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{caption}
+
+% dummy text; remove it when working on this template
+\usepackage{lipsum}
+
+\author[Gustavo Quilca]{Jose Gustavo Quilca Vilcapoma}
+\title{Optimización del Llenado Manual de Contenedores con Paquetes Heterogéneos}
+\subtitle{Máster Universitario en Estadística Computacional y Ciencia de Datos para la Toma de Decisiones}
+\institute[CIO - UMH]{
+    Instituto Centro de Investigación Operativa \\
+    Universidad Miguel Hernández
+}
+\date{\small 17 Junio 2024}
+\usepackage{Ritsumeikan}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{RGB}{160,58,56}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \vspace*{-0.6cm}
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[keepaspectratio, scale=0.04]{pic/logos.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,
+        subsectionstyle=show/shaded/hide,
+        subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\section{Introducción}
+
+\begin{frame}{Introducción}
+    \begin{itemize}[<+-| alert@+>] % stepwise alerts
+        \item El problema del llenado de contenedores (CLP) es un
+              problema clásico en la optimización combinatoria.
+        \item Consiste en encontrar la mejor manera de llenar un contenedor con cajas de diferentes tamaños y pesos, maximizando la utilización del espacio.
+        \item Este problema tiene aplicaciones en logística, transporte y
+              almacenamiento.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Restricciones}
+    \begin{itemize}[<+-| alert@+>]
+        \item Restricciones Básicas
+              \begin{itemize}
+                  \item No superposición de paquetes.
+                  \item No superar el peso máximo del contenedor.
+                  \item Colocación dentro de los límites del contenedor.
+              \end{itemize}
+        \item Restricciones Prácticas
+              \begin{itemize}
+                  \item Estabilidad de los paquetes.
+                  \item Centro de gravedad del contenedor.
+                  \item Prioridad de carga.
+                  \item Restricción de contigüidad de tipos.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Métodos de Solución}
+    \begin{itemize}[<+-| alert@+>]
+        \item \textbf{Métodos exactos}:
+              \begin{itemize}
+                  \item Garantizan la solución óptima, pero son computacionalmente costosos.
+              \end{itemize}
+        \item \textbf{Métodos heurísticos}:
+              \begin{itemize}
+                  \item Proporcionan soluciones de buena calidad en un tiempo razonable.
+              \end{itemize}
+        \item \textbf{Métodos metaheurísticos}:
+              \begin{itemize}
+                  \item Estrategias flexibles de alto nivel para desarrollar algoritmos que resuelven problemas específicos.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Problema}
+
+\begin{frame}{Contexto del Problema}
+    \begin{itemize}[<+-| alert@+>]
+        \item Empresa en el rubro de envío de paquetes en contenedores marítimos.
+        \item No tiene control sobre las medidas de los paquetes.
+        \item Cuenta con una cantidad disponible máxima de tipos de paquetes a enviar.
+        \item Envía un solo contenedor a la vez.
+        \item Usan procedimientos establecidos de llenado manual.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Definición del Problema}
+    \begin{itemize}[<+-| alert@+>]
+        \item Maximizar el valor de la carga en un contenedor, con los paquetes disponibles.
+        \item Los paquetes apilados deben mantener su estabilidad durante la carga.
+        \item Todos los paquetes del mismo tipo son cargados de forma contigua.
+        \item Los paquetes pueden ser rotados en una sola dirección.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Definición Formal}
+    \begin{center}
+        Optimizar la carga de un contenedor, determinando el \textbf{\textcolor{ritsumeikan}{orden}}, la \textbf{\textcolor{ritsumeikan}{cantidad}} y  \textbf{\textcolor{ritsumeikan}{rotación}} de los tipos de paquetes, cumpliendo con las restricciones prácticas del \textbf{\textcolor{ritsumeikan}{llenado manual}}. El objetivo principal es maximizar el valor total de la carga junto a la utilización del espacio del contenedor.
+    \end{center}
+\end{frame}
+
+\section{Algoritmo Genético}
+
+\begin{frame}{Algoritmo Genético}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+            \begin{exampleblock}{Es una técnica de optimización inspirada en la evolución natural:}
+                \begin{itemize}[<+-| alert@+>]
+                    \item Inicia con una población aleatoria de soluciones.
+                    \item Evalúa su calidad con una función de aptitud.
+                    \item Selecciona las mejores para reproducirse mediante cruces y mutaciones.
+                    \item Reemplaza la población anterior con nuevas generaciones.
+                    \item Repite el ciclo hasta alcanzar una solución óptima o cumplir un criterio de parada.
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.75\textwidth]{pic/algoritmo-genetico.png}
+                \label{fig:algoritmo-genetico}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Codificación de las Soluciones:}
+                \begin{itemize}[<+-| alert@+>]
+                    \item Uso de 3 listas correlacionadas para representar el orden de llenado.
+                    \item Ayuda a garantizar factibilidad.
+                    \item Sirve de guía para el operario.
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=1\textwidth]{pic/codificacion.png}
+                \caption*{Ejemplo de codificación}
+                \label{fig:codificacion}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético}
+    \begin{exampleblock}{Función de evaluación:}
+        \begin{itemize}[<+-| alert@+>]
+            \item Calcula el valor total de la carga.
+            \item Es necesario el desarrollo de un algoritmo que \textbf{simula el llenado manual}.
+            \item Corregir soluciones no factibles.
+            \item Punto de aplicación de \textbf{mejoras} al llenado.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Función de evaluación}
+    \begin{exampleblock}{Algoritmo de llenado manual:}
+        Basado en el método Deepest Bottom Left with Fill (DBLF) propuesto por Karabulut 2005.
+        \begin{figure}
+            \centering
+            \includegraphics[width=1\textwidth]{pic/dblf.png}
+            \caption*{División del espacio restante en el contenedor luego de colocar un paquete}
+            \label{fig:dblf}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Función de evaluación}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Adaptación del Algoritmo DBLF:}
+                \begin{itemize}[<+-| alert@+>]
+                    \item Unión de subespacios
+                    \item Eliminación de subespacios inaccesibles
+                    \item Eliminación de subespacios profundos
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{overlayarea}{\textwidth}{\textheight}
+                \visible<1->{
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.7\textwidth]{pic/dblf-adaptado1.png}
+                    \end{figure}
+                }
+                \visible<2->{
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{pic/dblf-adaptado2.png}
+                    \end{figure}
+                }
+                \visible<3->{
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.75\textwidth]{pic/dblf-adaptado3.png}
+                    \end{figure}
+                }
+            \end{overlayarea}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Función de evaluación}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Mejoras del Algoritmo DBLF:}
+                \begin{itemize}[<+-| alert@+>]
+                    \item Ayuda a completar espacios vacíos si aún hay paquetes disponibles.
+                    \item Aplicarla durante el llenado podría empeorar una solución.
+                    \item Aplicarla luego del llenado garantiza que la solución no sea peor.
+                    \item Agregan tiempo adicional de cómputo.
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=1\textwidth]{pic/dblf-mejora.png}
+                \label{fig:dblf-mejora}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Población Inicial y Selección}
+    \begin{exampleblock}{Generación aleatoria de la población inicial}
+        \vspace{1cm}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.5\textwidth]{pic/codificacion.png}
+            \caption*{Ejemplo de un individuo de la población}
+            \label{fig:individuo}
+        \end{figure}
+    \end{exampleblock}
+    \begin{exampleblock}{Método de torneo para la selección}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Cruce}
+    \begin{exampleblock}{Adaptación del operador de cruce de un punto}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.75\textwidth]{pic/ag-cruce.png}
+            \caption*{Método de cruce que evita generar soluciones no factibles}
+            \label{fig:solucion}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Algoritmo Genético: Mutación}
+    \begin{exampleblock}{Adaptación del operador de mutación de tres tipos}
+        \vspace{1cm}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.35\textwidth]{pic/ag-mutacion1.png}
+            \includegraphics[width=0.275\textwidth]{pic/ag-mutacion2.png}
+            \includegraphics[width=0.275\textwidth]{pic/ag-mutacion3.png}
+            \caption*{Métodos de mutación para el orden, la rotación y la cantidad por tipo}
+            \label{fig:mutacion}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+
+\section[Experimentación]{Estudio Experimental}
+
+\begin{frame}{Experimentación}
+    \begin{exampleblock}{Generación de Datos de Prueba}
+        \begin{itemize}[<+-| alert@+>]
+            \item Un contenedor con dimensiones fijas $12010 \times 2330 \times 2380 mm$.
+            \item Instancias con $5$, $10$, $20$, $30$, $40$ y $50$ tipos de cajas.
+            \item Tamaños de cajas aleatorias entre $250$ y $750$mm
+            \item Valores aleatorios entre $10$ y $100$
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación}
+    \begin{exampleblock}{Diseño del Experimento}
+        Evaluar las mejoras propuestas
+        \begin{itemize}[<+-| alert@+>]
+            \item \textbf{M0}: Sin mejora del algoritmo en el llenado.
+            \item \textbf{M1}: Mejora de llenado adicional inmediato.
+            \item \textbf{M2}: Mejora de llenado adicional al final.
+            \item \textbf{M3}: Mejora similar a M2, solo aplicada a la mitad de la población.
+            \item \textbf{M4}: Mejora similar a M2, solo aplicada al mejor individuo de la población.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación}
+    \begin{exampleblock}{Configuración del Experimento}
+        \begin{itemize}[<+-| alert@+>]
+            \item Algoritmos implementados en Python 3.10.
+            \item 25 instancias para cada tipo de caja (5T, 10T, 20T, 30T, 40T y 50T), total 150 instancias.
+            \item Población inicial de 100 individuos, $P_{cross}=0.05$, $P_{mut}=0.01$.
+            \item Tiempo fijo de 5 minutos para cada problema.
+            \item Tiempo de ejecución total de 62.5 horas.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación: Resultados}
+    \begin{exampleblock}{Valor aportado por las soluciones}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación: Resultados}
+    \begin{exampleblock}{Tiempo de ejecución}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación: Resultados}
+    \begin{exampleblock}{Valor aportado por las soluciones}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación: Resultados}
+    \begin{exampleblock}{Rendimiento}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Experimentación: Resultados}
+    \begin{exampleblock}{Progreso de las soluciones}
+
+    \end{exampleblock}
+\end{frame}
+
+\section[Conclusiones]{Conclusiones y Trabajos Futuros}
+
+\begin{frame}{Conclusiones}
+    \begin{exampleblock}{Conclusiones}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Conclusiones}
+    \begin{exampleblock}{Trabajos Futuros}
+
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\Huge Gracias}
+    \end{center}
+\end{frame}
+
+\end{document}
