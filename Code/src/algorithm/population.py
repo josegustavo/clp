@@ -4,7 +4,7 @@ import random
 from typing import Iterator, Optional
 
 
-from lcp.src.problems import Problem
+from Code.src.problems import Problem
 from .chromosome import Chromosome, Gene, Improvement
 
 GroupImprovement = Enum(

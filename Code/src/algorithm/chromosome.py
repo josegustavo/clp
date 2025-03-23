@@ -4,8 +4,8 @@ from enum import Enum
 # import logging
 import random
 
-from lcp.src.location import Position
-from lcp.src.container import Box, Container, FreeSpace
+from Code.src.location import Position
+from Code.src.container import Box, Container, FreeSpace
 from .gene import Gene
 from .dblf import DBLF
 

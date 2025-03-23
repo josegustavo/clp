@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from lcp.src.location import Space, Size, Position
+from Code.src.location import Space, Size, Position
 
 
 @dataclass

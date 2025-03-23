@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 import random
 
-from lcp.src.container import BoxType
-from lcp.src.location import Size
+from Code.src.container import BoxType
+from Code.src.location import Size
 
 
 @dataclass

@@ -1,7 +1,7 @@
 from typing import Container
 from dataclasses import dataclass
 
-from lcp.src.container import Container, BoxType
+from Code.src.container import Container, BoxType
 
 
 @dataclass

@@ -4,8 +4,8 @@ from itertools import chain
 import logging
 from typing import Iterator, Optional
 
-from lcp.src.location import Size, Position
-from lcp.src.container import FreeSpace
+from Code.src.location import Size, Position
+from Code.src.container import FreeSpace
 
 
 @dataclass

@@ -3,7 +3,7 @@ import logging
 from dataclasses import dataclass, field
 from typing import Optional
 
-from lcp.src.location import Space, Size, Position
+from Code.src.location import Space, Size, Position
 
 
 @dataclass

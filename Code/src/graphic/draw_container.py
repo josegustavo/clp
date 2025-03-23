@@ -4,7 +4,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-from lcp.src.container import Box, Container
+from Code.src.container import Box, Container
 # %matplotlib qt
 
 # %matplotlib inline

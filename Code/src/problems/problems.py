@@ -6,8 +6,8 @@ from os import makedirs
 import os
 from dataclasses import dataclass, field
 
-from lcp.src.container import BoxType, Container
-from lcp.src.problems.problem import Problem
+from Code.src.container import BoxType, Container
+from Code.src.problems.problem import Problem
 
 from .problem_maker import ProblemMaker
 
